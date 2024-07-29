@@ -590,12 +590,12 @@ p {
 }
 @media (max-width: 800px) {
   .content {
-    height: 80%;
+    height: 88.5%;
   }
   .container-content {
     width: 450px;
-    height: 100%;
-    margin: 21px auto;
+    height: 80%;
+    margin: 100px auto;
   }
   .container-casinos {
     margin: 50px auto;
