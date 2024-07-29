@@ -705,7 +705,7 @@ p {
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 3250px;
+    width: 320px;
   }
   .container {
     margin: 0 0 0 10px;
@@ -736,8 +736,11 @@ p {
     flex-direction: row;
     overflow: visible;
   }
+  .dropedown {
+    width: 300px;
+  }
   .btnBox {
-    width: 100px;
+    width: 80px;
   }
   /* content */
   .content {
@@ -745,13 +748,13 @@ p {
   }
 
   .container-content {
-    width: 450px;
+    width: 420px;
     height: 90%;
     margin: 20px auto;
   }
   .container-casinos {
     margin: 0 auto;
-    width: 450px;
+    width: 420px;
   }
 
   .second,
