@@ -123,7 +123,7 @@ body {
     box-sizing: border-box;
     height: 150px;
     width: 100%;
-
+    border-bottom: 1px solid rgb(241, 4, 241);
     position: fixed;
     align-self: start;
     position: fixed;
@@ -601,7 +601,7 @@ p {
 }
 @media (max-width: 800px) {
   .content {
-    height: 80%;
+    height: 82%;
   }
   .container-content {
     width: 450px;
