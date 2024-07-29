@@ -590,7 +590,7 @@ p {
 }
 @media (max-width: 800px) {
   .content {
-    height: 88.5%;
+    height: 80%;
   }
   .container-content {
     width: 450px;
