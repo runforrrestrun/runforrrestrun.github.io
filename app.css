@@ -589,6 +589,9 @@ p {
   }
 }
 @media (max-width: 800px) {
+  .content {
+    height: 80%;
+  }
   .container-content {
     width: 450px;
     height: 100%;
