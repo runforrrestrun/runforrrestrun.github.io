@@ -539,8 +539,25 @@ p {
   }
   /*  */
   /* navBar */
+  .navBar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    overflow-y: scroll; /* Add the ability to scroll */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .navBar {
+    height: 100vh;
+    position: fixed;
+    overflow: scroll;
+  }
+
   .container {
-    row-gap: 20px;
+    height: 100%;
+    position: absolute;
+    row-gap: 5px;
+    margin-top: 0;
+
+    align-self: center;
   }
   #fourth {
     display: none;
