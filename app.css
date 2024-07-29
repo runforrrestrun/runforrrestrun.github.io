@@ -274,6 +274,7 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   flex: 1 1 0%;
   column-gap: 10px;
   margin: 14px 0 0 0;
@@ -525,19 +526,39 @@ p {
 /*  */
 /* max-mediaquwry content Desktop */
 
-@media (min-width: 1000px) {
+@media (min-width: 1241px) {
   #fourth {
     display: none;
   }
+  .content-box {
+    flex-wrap: wrap;
+  }
+  .buttons-casino-info {
+    flex-wrap: nowrap;
+  }
 }
-
 /* max-mediaquwry content Tablets iPads (portrait mode) */
 @media (max-width: 1240px) {
   /* content */
   .content {
     height: 100%;
   }
-  /*  */
+  .content-box {
+    flex-wrap: wrap;
+  }
+  /* .second {
+    justify-content: center;
+    align-content: center;
+  } */
+  .second {
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+    align-content: flex-start;
+  }
+
+  /*
+    */
   /* navBar */
   .navBar::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari and Opera */
@@ -613,7 +634,6 @@ p {
     height: 150px;
     flex-direction: row;
     flex-wrap: wrap;
-
     justify-content: start;
     align-items: start;
     align-content: start;
@@ -654,13 +674,19 @@ p {
   }
 
   .container-content {
-    width: 740px;
+    width: 720px;
     margin: 20px auto;
   }
   .container-casinos {
     margin: 0 auto;
-    width: 740px;
+    width: 720px;
   }
+}
+.content-box {
+  flex-wrap: nowrap;
+}
+.second {
+  justify-content: center;
 }
 
 /*  */
@@ -762,5 +788,8 @@ p {
   .name-holder,
   .buttons-casino-info {
     justify-content: center;
+  }
+  .content-box {
+    flex-wrap: wrap;
   }
 }
