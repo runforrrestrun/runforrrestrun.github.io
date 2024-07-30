@@ -16,7 +16,7 @@ body {
 }
 .navBar {
   opacity: 80%;
-  background-image: linear-gradient(black, purple);
+  background-image: linear-gradient(black 30%, purple);
   box-sizing: border-box;
   height: 100vh;
   width: 200px;
@@ -26,15 +26,12 @@ body {
   display: flex;
   flex-direction: column;
   position: fixed;
-  align-content: start;
-  align-items: start;
-  justify-content: start;
 }
 .container {
   box-sizing: border-box;
-  margin: 100px 0 0 20px;
-  width: 70%;
-  height: 50%;
+  margin: 100px 0 0 10px;
+  width: 100%;
+  height: 60%;
   display: flex;
   flex-direction: column;
 }
@@ -42,23 +39,59 @@ body {
   text-decoration: none;
   color: inherit;
 }
-.box:hover .info-btn {
-  border-bottom: 1px solid rgb(240, 3, 228);
-  transition: 0.6s;
-}
 
 .box {
-  border: 0px solid rgba(255, 255, 255, 0.411);
-  border-radius: 10px;
-  justify-content: start;
+  box-sizing: border-box;
+
+  margin: 10px 5px;
   align-content: flex-end;
-  height: 350px;
-  width: 100%;
+  height: 51px;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
+  border: 1px solid rgb(240, 3, 228);
+  border-radius: 10px;
+}
+.box:hover {
+  box-shadow: 5px 9px 20px rgba(240, 3, 228, 0.438);
 }
 
+.logo {
+  box-sizing: border-box;
+  background-color: inherit;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 95%;
+  height: 90%;
+  height: inherit;
+  align-items: center;
+}
+#logo-img {
+  display: block;
+  height: 30px;
+  width: 30px;
+}
+.logo-img-box {
+  margin: auto 0;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.info-btn a {
+  justify-content: flex-start;
+}
 .info-btn {
+  padding: 0 0 0 5px;
+  align-items: end;
+  display: flex;
+  box-sizing: border-box;
+  width: 80%;
   border: 0 solid black;
   background-color: inherit;
   color: white;
@@ -233,7 +266,7 @@ body {
   min-width: 150px;
 }
 .casino-image {
-  background-color: black;
+  /* background-color: black; */
   border: 0 solid black;
   border-radius: 6px;
   display: block;
@@ -558,6 +591,10 @@ body {
 
       */
   /* navBar */
+
+  .info-btn a {
+    align-self: center;
+  }
   .navBar::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari and Opera */
     overflow-y: scroll; /* Add the ability to scroll */
@@ -594,14 +631,20 @@ body {
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
 @media (max-width: 767px) {
   /* navar */
+
   .box {
-    margin: 50px auto;
+    margin: 30px auto;
     height: 30px;
-    width: 170px;
+    width: 175px;
     justify-content: center;
     align-content: center;
   }
-
+  .logo {
+    width: 70%;
+  }
+  .logo-img-box {
+    width: 30px;
+  }
   .info-btn {
     font-size: 18px;
     width: 100%;
@@ -620,11 +663,18 @@ body {
     position: fixed;
   }
   #fourth {
+    border: 0px solid rgb(241, 4, 241);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 325px;
+    width: 300px;
+  }
+  .dropedown {
+    margin-top: 5px;
+  }
+  .btnBox {
+    margin-top: 20px;
   }
   .container {
     margin: 0 0 0 10px;
@@ -643,7 +693,10 @@ body {
   .EIGHTH {
     display: none;
   }
-
+  .dropbtn .logo {
+    width: 90px;
+    height: 10px;
+  }
   #fourth:hover .dropedown {
     box-sizing: border-box;
     justify-content: space-between;
@@ -654,6 +707,7 @@ body {
     flex-direction: row;
     overflow: visible;
   }
+
   .btnBox {
     width: 100%;
   }
@@ -692,18 +746,24 @@ body {
 /*  */
 /*  */
 /* max- media query  phones */
+
 @media (max-width: 520px) {
   /* navar */
   .box {
-    margin-right: 0px;
+    margin: 10px auto;
     height: 30px;
-    width: 120px;
+    width: 130px;
     justify-content: center;
     align-content: center;
   }
+  .logo {
+    width: 100%;
+    align-items: center;
+  }
+  .logo-img-box,
   .first,
   .SECOND {
-    margin: 10px auto;
+    margin: 5px auto;
   }
   .THIRD {
     margin: 5px auto;
@@ -726,20 +786,32 @@ body {
     position: fixed;
   }
   #fourth {
+    box-sizing: border-box;
+    border: 0px solid rgb(241, 4, 241);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 auto;
-    width: 320px;
+    margin: 0 auto 0 auto;
+    width: 160px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
   }
-  .container {
-    margin: 0 0 0 10px;
-    width: 100%;
 
-    height: 150px;
+  .logo-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .container {
+    padding: 0;
+    margin: 20px 0 0 0;
+    width: 100%;
+    height: 160px;
     flex-direction: row;
     flex-wrap: wrap;
-
     justify-content: start;
     align-items: start;
     align-content: start;
@@ -758,11 +830,22 @@ body {
     width: 100%;
     margin: 0 20px;
     display: flex;
+    justify-content: center;
     flex-direction: row;
     overflow: visible;
   }
   .dropedown {
     width: 300px;
+    height: 50px;
+  }
+  #special-img {
+    width: 50px;
+    height: 50px;
+  }
+  .dropbtn {
+    margin-top: 0;
+    width: 110px;
+    height: 5px;
   }
   .btnBox {
     width: 80px;
