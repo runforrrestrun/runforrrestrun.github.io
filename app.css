@@ -139,6 +139,10 @@ body {
   height: 500px;
   min-width: 300px;
   overflow: auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
 }
 /* Casino boxes with img ,buttons, more info(short info) , casino info*/
 .container-casinos {
@@ -236,7 +240,6 @@ body {
   box-sizing: border-box;
   max-width: 150px;
   min-width: 150px;
-  width: 100%;
 }
 
 .name-buttons {
