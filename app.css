@@ -11,7 +11,7 @@ body {
   /* NAV-BAR */
 }
 .navBar {
-  opacity: 0.9;
+  opacity: 80%;
   background-image: linear-gradient(black, purple);
   box-sizing: border-box;
   height: 100vh;
@@ -108,6 +108,7 @@ body {
 /*  */
 
 .content {
+  opacity: 85%;
   align-self: end;
   box-sizing: border-box;
   display: block;
@@ -125,7 +126,6 @@ body {
   border: 0 solid black;
   border-radius: 10px;
   margin: 50px auto;
-  opacity: 0.9;
   row-gap: 20px;
   box-sizing: border-box;
   display: flex;
@@ -150,7 +150,6 @@ body {
 }
 .main {
   overflow: hidden;
-  opacity: 0.95;
   border: 1px solid #e5e7eb;
   background-color: rgb(7, 9, 15);
   background-image: linear-gradient(240deg, black, purple);
@@ -181,10 +180,9 @@ body {
   min-width: 200px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   flex: 1 1 70%;
   align-content: center;
-  border-image-repeat: stretch;
-  flex-direction: row;
 }
 
 .casino-info a {
@@ -226,7 +224,6 @@ body {
   min-width: 150px;
 }
 .casino-image {
-  opacity: 2;
   background-color: black;
   border: 0 solid black;
   border-radius: 6px;
@@ -490,18 +487,20 @@ p {
   font-size: 24px;
 }
 
-.popUp {
-  position: fixed;
+.popUp1,
+.popUp2 {
+  position: absolute;
   overflow-wrap: break-word;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
-
-  background-color: white;
+  width: 70%;
+  height: 70%;
+  color: white;
+  background-image: linear-gradient(black 70%, purple);
   padding: 10px;
   border-radius: 5px;
+  border: 2px solid rgb(114, 112, 112);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
@@ -670,6 +669,7 @@ p {
   /* content */
   body {
     flex-direction: column;
+    background-size: contain;
   }
   .content {
     height: 100%;
@@ -773,6 +773,11 @@ p {
     width: 80px;
   }
   /* content */
+  body {
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+  }
   .content {
     margin: 150px auto 0 auto;
   }
