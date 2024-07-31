@@ -5,139 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="javaScript.js" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Document</title>
   </head>
-  <body>
+  <body id="ESports-backgound">
     <!-- navBar -->
-    <nav class="navBar">
-      <div class="container">
-        <div class="box first">
-          <div class="logo">
-            <div class="logo-img-box">
-              <img id="logo-img" src="casino-logo.png" alt="" />
-            </div>
-            <button class="info-btn">
-              <a href="websitePage.html">Casinos</a>
-            </button>
-          </div>
-        </div>
-        <div class="box SECOND">
-          <div class="logo">
-            <div class="logo-img-box">
-              <img id="logo-img" src="joystick-regular-24.png" alt="" />
-            </div>
-            <button class="info-btn">
-              <a href="E-Sports.html">ESports</a>
-            </button>
-          </div>
-        </div>
-        <div class="box THIRD">
-          <div class="logo">
-            <div class="logo-img-box">
-              <img id="logo-img" src="football-logo.png" alt="" />
-            </div>
-            <button class="info-btn">
-              <a href="casinos-sports.html">Sports</a>
-            </button>
-          </div>
-        </div>
+  
+    <!--  -->
+    <nav class="navBar"   id="navBar-ESports">
+      <ul class="container">
+        <li class="box first">
+          <img id="logo-img" src="img/casino-logo.png" alt="" />
+          <a class="a-links" href="websitePage.html">Casinos</a>
+        </li>
+        <li class="box SECOND">
+          <img id="logo-img" src="img/controller-logo.png" alt="" />
+          <a class="a-links" href="E-Sports.html">ESports</a>
+        </li>
+        <li class="box THIRD">
+          <img id="logo-img" src="img/football-logo.png" alt="" />
+          <a class="a-links" href="casinos-sports.html">Sports</a>
+        </li>
 
-        <div class="box" id="fourth">
-          <div class="dropbtn">
-            <div class="logo">
-              <div class="logo-img-box">
-                <img
-                  id="logo-img"
-                  id="special-img"
-                  src="menu-logo.png"
-                  alt=""
-                />
-              </div>
-              <!-- <button class="info-btn">
-                <a href="E-Sports.html">Menu</a>
-              </button> -->
-            </div>
+        <li class="box" id="fourth">
+          <a class="burger-menu-icon" href="#about"  href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+          <div id="myLinks">
+            <a class="myLinks-a"  href="#contact">Bonus</a>
+            <a class="myLinks-a" " href="#contact">News</a>
+            <a class="myLinks-a"  href="#about">smthg</a>
+            <a class="myLinks-a"  href="#about">smthg</a>
           </div>
+         
+        </li>
 
-          <div class="dropedown">
-            <div class="btnBox">
-              <button>
-                <a href="">Bonus</a>
-              </button>
-            </div>
-            <div class="btnBox">
-              <button>
-                <a href="">News</a>
-              </button>
-            </div>
-            <div class="btnBox">
-              <button>
-                <a href="">smthg</a>
-              </button>
-            </div>
-            <div class="btnBox">
-              <button>
-                <a href="">smthg</a>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="box FIFTH">
-          <div class="logo">
-            <div class="logo-img-box">
-              <img id="logo-img" src="diamond-logo.png" alt="" />
-            </div>
-            <button class="info-btn">
-              <a href="">Bonus</a>
-            </button>
-          </div>
-        </div>
-        <div class="box SIXTH">
-          <div class="logo">
-            <div class="logo-img-box">
-              <img id="logo-img" src="news-logo.png" alt="" />
-            </div>
-            <button class="info-btn">
-              <a href="">news</a>
-            </button>
-          </div>
-        </div>
-        <div class="box SEVENTH">
-          <div class="logo">
-            <div class="logo-img-box">
-              <img id="logo-img" src="joystick-regular-24.png" alt="" />
-            </div>
-            <button class="info-btn">
-              <a href="">smthg</a>
-            </button>
-          </div>
-        </div>
-        <div class="box EIGHTH">
-          <div class="logo">
-            <div class="logo-img-box">
-              <img id="logo-img" src="joystick-regular-24.png" alt="" />
-            </div>
-            <button class="info-btn">
-              <a href="">smthg</a>
-            </button>
-          </div>
-        </div>
-      </div>
+        <li class="box FIFTH">
+          <img id="logo-img" src="img/diamond-logo.png" alt="" />
+          <a class="a-links" href="">Bonus</a>
+        </li>
+
+        <li class="box SIXTH">
+          <img id="logo-img" src="img/news-logo.png" alt="" />
+          <a class="a-links" href="">news</a>
+        </li>
+        <li class="box SEVENTH">
+          <img id="logo-img" src="img/joystick-regular-24.png" alt="" />
+          <a class="a-links" href="">smthg</a>
+        </li>
+        <li class="box EIGHTH">
+          <img id="logo-img" src="img/joystick-regular-24.png" alt="" />
+          <a class="a-links" href="">smthg</a>
+        </li>
+      </ul>
     </nav>
     <main class="content">
-      <div class="container-content">
+      <div class="container-content" id="container-content-ESports">
         <h1>E-Sports content</h1>
       </div>
       <div class="container-casinos">
         <!-- empty slot -->
-        <div class="main">
+        <div class="main" id="main-ESports">
           <div class="second">
             <div class="casino-info">
               <a class="roobet-infoLinks-box" href="roobetInfo.html">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
-                      <img class="casino-image" src="coming soon.avif" alt="" />
+                      <img class="casino-image" src="img/coming soon.avif" alt="" />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
@@ -198,14 +136,14 @@
           <div class="bottom"></div>
         </div>
         <!-- empty slot -->
-        <div class="main">
+        <div class="main" id="main-ESports">
           <div class="second">
             <div class="casino-info">
               <a class="roobet-infoLinks-box" href="roobetInfo.html">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
-                      <img class="casino-image" src="coming soon.avif" alt="" />
+                      <img class="casino-image" src="img/coming soon.avif" alt="" />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
@@ -263,14 +201,14 @@
           <div class="bottom"></div>
         </div>
         <!-- empty slot -->
-        <div class="main">
+        <div class="main" id="main-ESports">
           <div class="second">
             <div class="casino-info">
               <a class="roobet-infoLinks-box" href="roobetInfo.html">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
-                      <img class="casino-image" src="coming soon.avif" alt="" />
+                      <img class="casino-image" src="img/coming soon.avif" alt="" />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
@@ -327,14 +265,14 @@
           <div class="bottom"></div>
         </div>
         <!-- empty slot -->
-        <div class="main">
+        <div class="main" id="main-ESports">
           <div class="second">
             <div class="casino-info">
               <a class="roobet-infoLinks-box" href="roobetInfo.html">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
-                      <img class="casino-image" src="coming soon.avif" alt="" />
+                      <img class="casino-image" src="img/coming soon.avif" alt="" />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
@@ -390,14 +328,14 @@
           <div class="bottom"></div>
         </div>
         <!-- empty slot -->
-        <div class="main">
+        <div class="main" id="main-ESports">
           <div class="second">
             <div class="casino-info">
               <a class="roobet-infoLinks-box" href="roobetInfo.html">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
-                      <img class="casino-image" src="coming soon.avif" alt="" />
+                      <img class="casino-image" src="img/coming soon.avif" alt="" />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
@@ -453,14 +391,14 @@
           <div class="bottom"></div>
         </div>
         <!-- empty slot -->
-        <div class="main">
+        <div class="main" id="main-ESports">
           <div class="second">
             <div class="casino-info">
               <a class="roobet-infoLinks-box" href="roobetInfo.html">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
-                      <img class="casino-image" src="coming soon.avif" alt="" />
+                      <img class="casino-image" src="img/coming soon.avif" alt="" />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
@@ -516,14 +454,14 @@
           <div class="bottom"></div>
         </div>
         <!-- empty slot -->
-        <div class="main">
+        <div class="main" id="main-ESports">
           <div class="second">
             <div class="casino-info">
               <a class="roobet-infoLinks-box" href="roobetInfo.html">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
-                      <img class="casino-image" src="coming soon.avif" alt="" />
+                      <img class="casino-image" src="img/coming soon.avif" alt="" />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
@@ -579,14 +517,14 @@
           <div class="bottom"></div>
         </div>
         <!-- empty slot -->
-        <div class="main">
+        <div class="main" id="main-ESports">
           <div class="second">
             <div class="casino-info">
               <a class="roobet-infoLinks-box" href="roobetInfo.html">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
-                      <img class="casino-image" src="coming soon.avif" alt="" />
+                      <img class="casino-image" src="img/coming soon.avif" alt="" />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
@@ -642,14 +580,14 @@
           <div class="bottom"></div>
         </div>
         <!-- empty slot -->
-        <div class="main">
+        <div class="main" id="main-ESports">
           <div class="second">
             <div class="casino-info">
               <a class="roobet-infoLinks-box" href="roobetInfo.html">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
-                      <img class="casino-image" src="coming soon.avif" alt="" />
+                      <img class="casino-image" src="img/coming soon.avif" alt="" />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
@@ -705,14 +643,14 @@
           <div class="bottom"></div>
         </div>
         <!-- empty slot -->
-        <div class="main">
+        <div class="main" id="main-ESports">
           <div class="second">
             <div class="casino-info">
               <a class="roobet-infoLinks-box" href="roobetInfo.html">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
-                      <img class="casino-image" src="coming soon.avif" alt="" />
+                      <img class="casino-image" src="img/coming soon.avif" alt="" />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
@@ -768,14 +706,14 @@
           <div class="bottom"></div>
         </div>
         <!-- empty slot -->
-        <div class="main">
+        <div class="main" id="main-ESports">
           <div class="second">
             <div class="casino-info">
               <a class="roobet-infoLinks-box" href="roobetInfo.html">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
-                      <img class="casino-image" src="coming soon.avif" alt="" />
+                      <img class="casino-image" src="img/coming soon.avif" alt="" />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
