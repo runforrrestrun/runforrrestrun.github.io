@@ -560,6 +560,7 @@ body {
     height: 100%;
     margin: 0 10px 0 200px;
     width: 100%;
+    position: fixed;
   }
   .container-casinos {
     box-sizing: border-box;
@@ -756,6 +757,9 @@ body {
     overflow-y: scroll; /* Add the ability to scroll */
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+  .content {
+    position: relative;
   }
 
   .container-content {
