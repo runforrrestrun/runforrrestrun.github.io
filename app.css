@@ -557,7 +557,7 @@ body {
   .content {
     height: 100%;
 
-    position: relative;
+    position: absolute;
   }
   .content-box {
     flex-wrap: wrap;
@@ -577,7 +577,7 @@ body {
   /* NAV BAR */
   .navBar {
     height: 100vh;
-    position: fixed;
+    position: absolute;
     overflow: scroll;
   }
   .navBar::-webkit-scrollbar {
