@@ -555,12 +555,12 @@ body {
 @media (max-width: 1240px) {
   /* content */
   body {
-    position: relative;
+    position: fixed;
   }
   .content {
     height: 100vh;
-    margin: 0;
-    position: relative;
+    margin: 0 0 0 200px;
+    position: absolute;
   }
   .content-box {
     flex-wrap: wrap;
@@ -580,7 +580,7 @@ body {
   /* NAV BAR */
   .navBar {
     height: 100vh;
-    position: relative;
+    position: absolute;
     overflow: scroll;
   }
   .navBar::-webkit-scrollbar {
@@ -619,15 +619,17 @@ body {
 @media (max-width: 800px) {
   /* navar */
   body {
+    background-size: contain;
     background-repeat: repeat;
     background-position: center;
+    background-position: center;
     flex-direction: column;
-    background-size: contain;
+
     position: relative;
   }
 
   .navBar {
-    position: relative;
+    position: fixed;
     display: block;
     margin: 0;
     box-sizing: border-box;
@@ -871,7 +873,6 @@ body {
     background-size: contain;
     background-repeat: repeat;
     background-position: center;
-    position: relative;
   }
   .content {
     margin: 122px auto 0 auto;
