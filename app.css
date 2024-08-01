@@ -562,10 +562,7 @@ body {
   .content-box {
     flex-wrap: wrap;
   }
-  /* .second {
-    justify-content: center;
-    align-content: center;
-  } */
+
   .second {
     justify-content: flex-start;
     align-items: flex-start;
@@ -577,6 +574,7 @@ body {
     align-self: center;
   }
 
+  /* NAV BAR */
   .navBar {
     height: 100vh;
     position: fixed;
@@ -597,11 +595,15 @@ body {
     overflow: visible;
     align-self: center;
   }
+  /* .FIFTH {
+    margin: 10px 5px;
+  } */
   #fourth {
     display: none;
   }
   .box {
     height: 50px;
+    margin: 20px 5px 5px 5px;
   }
   .box .info-btn {
     height: 50px;
