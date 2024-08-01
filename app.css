@@ -660,7 +660,7 @@ body {
 /*  */
 /*  */
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   /* navar */
   body {
     /* background-size: contain; */
@@ -765,14 +765,14 @@ body {
   }
 
   .container-content {
-    /* position: relative; */
-    width: 700px;
-    margin: 10px auto;
+    position: relative;
+    width: auto;
+    margin: 10px 20px;
   }
   .container-casinos {
-    /* position: relative; */
-    margin: 0 auto;
-    width: 700px;
+    position: relative;
+    margin: 0 20px;
+    width: auto;
   }
 }
 .content-box {
@@ -927,16 +927,14 @@ body {
   }
 
   .container-content {
-    width: 380px;
-    margin: 20px auto;
+    position: relative;
+    margin: 20px 10px;
   }
   .container-casinos {
-    margin: 0 auto;
-    width: 380px;
+    position: relative;
+    margin: 20px 10px;
   }
-  /* .second {
-    flex-direction: column;
-  } */
+
   .second,
   .content-box,
   .name-holder,
@@ -944,20 +942,14 @@ body {
     align-content: center;
     align-items: center;
     flex-direction: column;
-  }
-  .buttons-casino-info {
-    flex-direction: row;
-    justify-content: center;
-  }
-  .content-box {
     flex-wrap: wrap;
   }
+
   .best-rewards {
     font-size: 12px;
     width: 160px;
   }
   .high-withdrawal {
-    font-weight: 600;
     font-size: 12px;
     width: 180px;
   }
