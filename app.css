@@ -572,16 +572,14 @@ body {
     align-content: flex-start;
   }
 
-  /*
-
-
-
-
-      */
-  /* navBar */
-
   .info-btn a {
     align-self: center;
+  }
+
+  .navBar {
+    height: 100vh;
+    position: relative;
+    overflow: scroll;
   }
   .navBar::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari and Opera */
@@ -589,18 +587,13 @@ body {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
-  .navBar {
-    height: 100vh;
-    position: fixed;
-    overflow: scroll;
-  }
 
   .container {
     height: 100%;
     position: absolute;
     row-gap: 5px;
     margin-top: 0;
-
+    overflow: visible;
     align-self: center;
   }
   #fourth {
