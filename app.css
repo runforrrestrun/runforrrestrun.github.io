@@ -557,17 +557,19 @@ body {
   /* content */
 
   .content {
-    height: 100vh;
+    height: 100%;
     margin: 0 10px 0 200px;
     width: 100%;
   }
   .container-casinos {
+    box-sizing: border-box;
     margin: 20px 10px;
-    width: 100%;
+    width: 99%;
   }
   .container-content {
-    margin: 20px 20px;
-    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0 20px 10px;
+    width: 99%;
   }
   .second {
     flex-wrap: nowrap;
@@ -621,11 +623,10 @@ body {
   /* NAV BAR */
   .navBar {
     display: block;
-    height: 100vh;
-
-    overflow: scroll;
+    height: 100%;
+    position: fixed;
   }
-  .navBar::-webkit-scrollbar {
+  .container::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari and Opera */
     overflow-y: scroll; /* Add the ability to scroll */
     -ms-overflow-style: none; /* IE and Edge */
@@ -636,12 +637,11 @@ body {
     height: 100%;
     /* position: absolute; */
     row-gap: 5px;
-    margin-top: 0;
-    overflow: visible;
+    margin: 0 0 5px 0;
+    overflow: scroll;
     align-self: center;
   }
 
-  /* NAV BAR */
   #fourth {
     display: none;
   }
