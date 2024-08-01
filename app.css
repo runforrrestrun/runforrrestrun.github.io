@@ -843,7 +843,7 @@ body {
     border: 1px solid rgba(207, 205, 205, 0.664);
     border-radius: 10px;
     box-sizing: border-box;
-    padding: 2px 0 0 15px;
+    padding: 3px 0 0 15px;
 
     background-color: inherit;
     margin: 0 auto;
@@ -851,7 +851,7 @@ body {
     height: 30px;
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     display: block;
   }
