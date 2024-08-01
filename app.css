@@ -695,7 +695,7 @@ body {
     border-radius: 10px;
     box-sizing: border-box;
     padding: 2px 0 0 35px;
-    background-color: inherit;
+    background-color: #000000;
     margin: 0 auto;
     width: 120px;
     height: 30px;
@@ -706,7 +706,8 @@ body {
     display: block;
   }
   .myLinks-a:hover {
-    background-color: #000000;
+    background-color: rgba(255, 253, 255, 0.623);
+    color: #000000;
   }
 
   .content {
@@ -840,12 +841,13 @@ body {
     align-items: center;
   }
   .myLinks-a {
+    background-color: #000000;
     border: 1px solid rgba(207, 205, 205, 0.664);
     border-radius: 10px;
     box-sizing: border-box;
-    padding: 3px 0 0 15px;
+    padding: 5px 0 0 0;
+    text-align: center;
 
-    background-color: inherit;
     margin: 0 auto;
     width: 80px;
     height: 30px;
@@ -856,7 +858,8 @@ body {
     display: block;
   }
   .myLinks-a:hover {
-    background-color: #000000;
+    background-color: rgba(255, 253, 255, 0.623);
+    color: #000000;
   }
 
   /* content */
