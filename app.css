@@ -554,10 +554,13 @@ body {
 /* max-mediaquwry content Tablets iPads (portrait mode) */
 @media (max-width: 1240px) {
   /* content */
+  body {
+    position: relative;
+  }
   .content {
     height: 100vh;
-
-    position: absolute;
+    margin: 0;
+    position: relative;
   }
   .content-box {
     flex-wrap: wrap;
@@ -577,7 +580,7 @@ body {
   /* NAV BAR */
   .navBar {
     height: 100vh;
-    position: absolute;
+    position: relative;
     overflow: scroll;
   }
   .navBar::-webkit-scrollbar {
@@ -620,10 +623,11 @@ body {
     background-position: center;
     flex-direction: column;
     background-size: contain;
+    position: relative;
   }
 
   .navBar {
-    position: fixed;
+    position: relative;
     display: block;
     margin: 0;
     box-sizing: border-box;
@@ -724,12 +728,12 @@ body {
   }
 
   .container-content {
-    width: 720px;
-    margin: 0 5px 50px 5px;
+    width: 650px;
+    margin: 10px auto;
   }
   .container-casinos {
     margin: 0 auto;
-    width: 720px;
+    width: 650px;
   }
 }
 .content-box {
@@ -867,6 +871,7 @@ body {
     background-size: contain;
     background-repeat: repeat;
     background-position: center;
+    position: relative;
   }
   .content {
     margin: 122px auto 0 auto;
