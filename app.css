@@ -45,7 +45,7 @@ body {
 .container {
   padding: 0;
   box-sizing: border-box;
-  margin: 100px 0 0 0px;
+  margin: 150px 0 0 0px;
   width: 100%;
   height: 70%;
   display: flex;
@@ -79,6 +79,9 @@ body {
 }
 .box:hover {
   box-shadow: 5px 9px 20px rgba(240, 3, 228, 0.438);
+}
+.FIFTH {
+  margin-top: 100px;
 }
 
 #logo-img {
@@ -152,7 +155,6 @@ body {
   font-size: 30px;
   color: white;
 }
-/* Casino boxes with img ,buttons, more info(short info) , casino info*/
 
 .container-casinos {
   overflow: auto;
@@ -168,9 +170,6 @@ body {
   min-width: 300px;
 }
 
-#main-Sports {
-  background-image: linear-gradient(240deg, black, purple);
-}
 .main {
   overflow: hidden;
   border: 1px solid #e5e7eb;
@@ -557,6 +556,8 @@ body {
   /* content */
   .content {
     height: 100%;
+
+    position: relative;
   }
   .content-box {
     flex-wrap: wrap;
@@ -578,7 +579,7 @@ body {
 
   .navBar {
     height: 100vh;
-    position: relative;
+    position: fixed;
     overflow: scroll;
   }
   .navBar::-webkit-scrollbar {
@@ -610,7 +611,7 @@ body {
 /*  */
 /*  */
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   /* navar */
   body {
     background-repeat: repeat;
@@ -620,6 +621,7 @@ body {
   }
 
   .navBar {
+    position: fixed;
     display: block;
     margin: 0;
     box-sizing: border-box;
@@ -706,6 +708,7 @@ body {
   }
 
   .content {
+    position: relative;
     height: 100vh;
     width: 100vw;
     margin: 2px;
