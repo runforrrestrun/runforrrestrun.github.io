@@ -12,59 +12,78 @@
     <title>Document</title>
   </head>
   <body>
+   
     <!-- navBar -->
-    <nav class="navBar">
-      <ul class="container">
-        <li class="box first">
-          <img id="logo-img" src="img/casino-logo.png" alt="" />
-          <a class="a-links" href="websitePage.html">Casinos</a>
-        </li>
-        <li class="box SECOND">
-          <img id="logo-img" src="img/controller-logo.png" alt="" />
-          <a class="a-links" href="E-Sports.html">ESports</a>
-        </li>
-        <li class="box THIRD">
-          <img id="logo-img" src="img/football-logo.png" alt="" />
-          <a class="a-links" href="casinos-sports.html">Sports</a>
-        </li>
-        <!--  -->
-        <li class="box" id="fourth">
-          <a
-              class="burger-menu-icon"
-              href="#about"
-              href="javascript:void(0);"
-              class="icon"
-              onclick="myFunction()"
-            >
-            <i class="fa fa-bars"></i></a
-          > 
-          <div id="myLinks">
-            <a class="myLinks-a"  href="#contact">Bonus</a>
-            <a class="myLinks-a" " href="#contact">News</a>
-            <a class="myLinks-a"  href="#about">smthg</a>
-            <a class="myLinks-a"  href="#about">smthg</a>
+    <nav class="navBar" id="special-navBar">
+      <div class="content">
+        <ul>
+          <li class="box first">
+            <img id="logo-img"  src="img/casino-logo.png" alt="" />
+            <a   href="websitePage.html"><div id="a-links">Casinos</div></a>
+          </li>
+          <li class="box SECOND">
+            <img id="logo-img" src="img/controller-logo.png" alt="" />
+            <a  href="E-Sports.html"><div id="a-links">ESports</div></a>
+          </li>
+          <li class="box THIRD">
+            <img id="logo-img" src="img/football-logo.png" alt="" />
+            <a id="a-links" href="casinos-sports.html"><div id="a-links">Sports</div></a>
+          </li>
+          <li class="box-dropdown FOURTH">
+           <div class="dropdown-bonus">
+              <button class="drope-bonus" id="bonus-btn"" >
+                <img id="logo-img" src="img/diamond-logo.png" alt="" />
+                <samp class="bonus-btn">Bonus </samp>
+                
+              </button>
+              <div class="dropdown-content-bonus">
+                <a id="content-bonus"  href="#">Link 1</a>
+                <a id="content-bonus" href="#">Link 2</a>
+                <a id="content-bonus" href="#">Link 3</a>
+                <a id="content-bonus" href="#">Link4</a>
+              </div>
+            </div></a>
+          </li>
+  
+          <li class="box FIFTH">
+            <img id="logo-img" src="img/news-logo.png" alt="" />
+            <a  href=""><div id="a-links">NEWS</div></a>
+          </li>
+          <li class="box SIXTH">
+            <img id="logo-img" src="img/joystick-regular-24.png" alt="" />
+            <a  href=""><div id="a-links">Smthng</div></a>
+          </li>
+          <li class="box SEVENTH">
+            <img id="logo-img" src="img/joystick-regular-24.png" alt="" />
+            <a  href=""><div id="a-links">Smthng</div></a>
+          </li>
+        </ul>
+      </div>
+      <!-- Navigation links (hidden by default) -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <div id="myLinks">
+        <div class="dropdown">
+          <button class="dropedownbtn" id="bonus-btn"" >
+            Bonus
+            <i class="fa fa-caret-right"></i>
+          </button>
+          <div class="dropdown-content">
+            <a class href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link4</a>
           </div>
-        </li>
-        <li class="box FIFTH">
-          <img id="logo-img" src="img/diamond-logo.png" alt="" />
-          <a class="a-links" href="">Bonus</a>
-        </li>
-
-        <li class="box SIXTH">
-          <img id="logo-img" src="img/news-logo.png" alt="" />
-          <a class="a-links" href="">news</a>
-        </li>
-        <li class="box SEVENTH">
-          <img id="logo-img" src="img/joystick-regular-24.png" alt="" />
-          <a class="a-links" href="">smthg</a>
-        </li>
-        <li class="box EIGHTH">
-          <img id="logo-img" src="img/joystick-regular-24.png" alt="" />
-          <a class="a-links" href="">smthg</a>
-        </li>
-      </ul>
+        </div>
+        <a " href="#contact"><button class="dropedownbtn" >News</button></a>
+        <a href="#about"><button class="dropedownbtn" >smthng</button></a>
+        <a  href="#about"><button class="dropedownbtn" >smthng</button></a>
+        <a href="#about"><button class="dropedownbtn" >smthng</button></a>
+      </div>
     </nav>
-    <main class="content">
+    <!-- Content -->
+    <main class="container">
       <div class="container-content">
         <h1>Casino content</h1>
         

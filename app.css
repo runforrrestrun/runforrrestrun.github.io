@@ -2,128 +2,193 @@ body {
   margin: 0;
   background-image: url("img/casino-background-2.jpg");
   background-color: rgb(0, 0, 0);
-  /* background-size: cover; */
-  background-position: start;
-  background-repeat: repeat;
-  display: flex;
-  box-sizing: border-box;
-  margin: 0;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
+  opacity: 0.85;
 }
 
 #ESports-backgound {
   background-image: url("img/ESports-background.jpg");
-
   background-repeat: repeat;
 }
 #Casino-sports-background {
   background-image: url("img/Casino-Sports-background.jpg");
-
   background-repeat: repeat;
 }
 
-/*  */
-/*  */
-/*  */
-
-/* NAV-BAR */
+/* nav Bar */
 
 .navBar {
-  opacity: 80%;
-  background-image: linear-gradient(black 30%, purple);
-  box-sizing: border-box;
-  height: 100vh;
-  width: 200px;
-  margin: 0;
-  background-color: black;
-  box-shadow: 0 6px 20px rgb(0 0 0 / 0.2);
-  display: flex;
-  flex-direction: column;
+  background-image: linear-gradient(black, purple);
+  display: block;
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+  width: 100%;
   position: fixed;
 }
-.container {
-  padding: 0;
-  box-sizing: border-box;
-  margin: 150px 0 0 0px;
-  width: 100%;
-  height: 70%;
+.content {
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  position: relative;
+  flex-direction: row;
+  width: 90%;
+  height: 100%;
+  margin: 0;
 }
-.container a {
+.content a {
   text-decoration: none;
-  color: inherit;
+}
+.fa {
+  color: white;
 }
 
 .box {
-  color: white;
-  box-sizing: border-box;
-  margin: 10px 5px;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: center;
-  align-self: center;
-  height: 35px;
-  width: 80%;
+  background-color: black;
   display: flex;
-  flex-wrap: wrap;
-  border: 1px solid rgb(240, 3, 228);
+  flex-direction: row;
+  height: 30px;
+  width: 110px;
+  align-items: center;
+  border: 1px solid rgba(238, 235, 235, 0.404);
   border-radius: 10px;
-}
-.box:hover {
-  box-shadow: 5px 9px 20px rgba(240, 3, 228, 0.438);
-}
-.FIFTH {
-  margin-top: 100px;
+  margin: auto;
 }
 
+.content {
+  display: block;
+}
+.content ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+#a-links {
+  display: block;
+  width: 70%;
+  height: 100%;
+  padding: 0 0 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  align-content: center;
+}
 #logo-img {
   display: block;
   height: 30px;
   width: 30px;
 }
-
-.info-btn a {
-  justify-content: flex-start;
+/* Hide the links inside the navigation menu (except for logo/home) */
+.navBar #myLinks {
+  display: none;
+  flex-direction: row;
+  width: 40%;
 }
-/* .info-btn  */
-.a-links {
-  padding: 0 0 0 5px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-self: flex-end;
+
+/* Style the hamburger menu */
+.navBar a.icon {
+  height: 90%;
+  width: 40px;
+  display: block;
+  position: absolute;
+  right: -3%;
+  top: 1%;
+}
+
+/* Dropdown button */
+.dropdown {
+  overflow: hidden;
   display: flex;
-  box-sizing: border-box;
-  width: 60%;
-  border: 0 solid black;
+  flex-direction: row;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: inherit;
+  background-image: inherit;
   background-color: inherit;
-
-  font-size: 24px;
-  font-weight: 900;
-  text-size-adjust: 100%;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+.dropedownbtn {
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.418);
+  border-radius: 10px;
+  width: 90px;
+  height: 40px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+  background-color: inherit;
+  margin: 0 0 5px 0;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  text-align: center;
+}
+/* #bonus-btn {
+  width: 70px;
+  height: 40px;
+  justify-content: center;
+} */
+/* Add a purpe background color to navbar links on hover */
+.box:hover,
+.dropedownbtn:hover,
+.dropdown:hover .dropbtn {
+  background-color: rgba(212, 6, 240, 0.562);
 }
 
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  margin-left: 100px;
+  display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  color: white;
+  width: 65%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  border: 1px solid rgba(243, 240, 240, 0.445);
+  border-radius: 10px;
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  margin: 0 0 5px 0;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Add a purple background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #cb05e6;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
 /* end of navbar */
 /*  */
 /*  */
 /*  */
 /* page content */
-.content {
-  opacity: 85%;
-  align-self: end;
+.container {
   box-sizing: border-box;
   display: block;
-  flex-direction: column;
-  flex: 1 1 0%;
-  width: 80%;
+  width: 100;
   height: 100%;
-  min-width: 300px;
-  margin: 0 0 0 200px;
-  overflow: auto;
+
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 .content::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Chrome, Safari and Opera */
@@ -160,7 +225,7 @@ body {
   row-gap: 20px;
   box-sizing: border-box;
   display: flex;
-  flex: 1 1 0%;
+
   flex-direction: column;
   width: 92.1%;
 
@@ -534,403 +599,224 @@ body {
 /*  */
 /*  */
 /* MEDIA QUERY */
-/*  */
-/*  */
-/* max-mediaquwry content Desktop */
-@media (min-width: 1241px) {
-  #fourth {
-    display: none;
-  }
-  .content-box {
-    flex-wrap: wrap;
-  }
-  .buttons-casino-info {
-    flex-wrap: nowrap;
-  }
-}
-/*  
-
-
-*/
-/* max-mediaquwry content Tablets iPads (portrait mode) */
-@media (max-width: 1240px) {
-  /* content */
-
-  .content {
-    height: 100%;
-    margin: 0 10px 0 200px;
-    width: 100%;
-    position: fixed;
-  }
-  .container-casinos {
-    box-sizing: border-box;
-    margin: 20px 10px;
-    width: 99%;
-  }
-  .container-content {
-    box-sizing: border-box;
-    margin: 20px 0 20px 10px;
-    width: 99%;
-  }
-  .second {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-self: flex-start;
-    align-content: flex-start;
-  }
-  .Image-box,
-  .casino-image {
-    width: 90px;
-    height: 90px;
-  }
-
-  .buttons-casino-info {
-    display: flex;
-    flex-direction: row;
-    flex: wrap;
-  }
-  .buttons-casino-info {
-    min-width: 280px;
-  }
-  .best-rewards {
-    box-sizing: border-box;
-    font-size: 14px;
-    width: 170px;
-    height: 30px;
-
-    padding: 0;
-  }
-  .high-withdrawal {
-    box-sizing: border-box;
-    font-size: 14px;
-    width: 170px;
-    height: 30px;
-    padding: 0;
-  }
-  .info {
-    font-size: 15px;
-  }
-
-  .info-btn a {
-    align-self: center;
-  }
-  .more-info {
-    margin: 0;
-  }
-  .bottom {
-    margin: 10px;
-  }
-  /* NAV BAR */
-  .navBar {
-    display: block;
-    height: 100%;
-    position: fixed;
-  }
-  .container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
-    overflow-y: scroll; /* Add the ability to scroll */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .container {
-    height: 100%;
-    /* position: absolute; */
-    row-gap: 5px;
-    margin: 0 0 5px 0;
-    overflow: scroll;
-    align-self: center;
-  }
-
-  #fourth {
-    display: none;
-  }
-  .box {
-    height: 50px;
-    margin: 20px 5px 5px 5px;
-  }
-  .box .info-btn {
-    height: 50px;
-  }
-}
-/*  */
-/*  */
-/*  */
-/* max mediaQuery content Low-Resolution Tablets and iPad  */
-@media (max-width: 800px) {
-  /* navar */
-  body {
-    /* background-size: contain; */
-    background-position: center;
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-
-  .navBar {
-    position: relative;
-    flex-wrap: wrap;
-    margin: 0;
-    box-sizing: border-box;
-    height: 82px;
-    width: 100vw;
-    align-self: start;
-    position: relative;
-    overflow: visible;
-    border-bottom: 2px solid purple;
-  }
-  .box {
-    display: flex;
-    height: 30px;
-    width: 140px;
-    margin: 10px auto 0 auto;
-    justify-content: center;
-    align-content: center;
-  }
-  .container {
-    border: 0 solid black;
-    margin: 0;
-    width: 100%;
-    height: 70px;
-    overflow: visible;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .FIFTH,
-  .SIXTH,
-  .SEVENTH,
-  .EIGHTH {
-    display: none;
-  }
-  #fourth:hover {
-    box-shadow: 0 0 0 black;
-  }
-  #fourth {
-    box-sizing: border-box;
-    margin: 0 auto;
-    border: 0px solid rgb(243, 1, 1);
-    display: block;
-    width: 100%;
-    height: 20px;
-  }
-  .burger-menu-icon {
-    display: block;
-    position: absolute;
-    right: 1%;
-    top: 7%;
-  }
-
-  #myLinks {
-    box-sizing: border-box;
-    background-image: inherit;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 30px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-  }
-  .myLinks-a {
-    border: 1px solid rgba(207, 205, 205, 0.664);
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 2px 0 0 35px;
-    background-color: #000000;
-    margin: 0 auto;
-    width: 120px;
-    height: 30px;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 600;
-    display: block;
-  }
-  .myLinks-a:hover {
-    background-color: rgba(255, 253, 255, 0.623);
-    color: #000000;
-  }
-  /* cotent */
-
-  .content::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
-    overflow-y: scroll; /* Add the ability to scroll */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-  .content {
-    position: relative;
-  }
-
-  .container-content {
-    position: relative;
-    width: auto;
-    margin: 10px 20px;
-  }
-  .container-casinos {
-    position: relative;
-    margin: 0 20px;
-    width: auto;
-  }
-}
-.content-box {
-  flex-wrap: nowrap;
-}
-.Image-box,
-.casino-image {
-  width: 120px;
-  height: 120px;
-}
-
-.name-buttons {
-  width: 400px;
-}
-.buttons-casino-info {
-  display: flex;
-  flex-direction: row;
-  flex: wrap;
-}
-
-.info {
-  font-size: 25px;
-}
-
-/*  */
-/*  */
-/*  */
 /* max- media query  phones */
 
-@media (max-width: 550px) {
-  /* navar */
+@media only screen and (min-width: 500px) {
+  /* new navbar */
   .navBar {
-    margin: 0;
-    display: block;
-    box-sizing: border-box;
-    height: 80px;
     width: 100%;
-    position: fixed;
-    align-self: start;
-    /* position: fixed; */
   }
-  .container {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: start;
-    align-content: start;
-    align-self: start;
+  .content {
+    width: 90%;
   }
   .box {
-    margin: 10px 5px 0 5px;
-    height: 30px;
-    width: 110px;
+    margin: 0 0 0 auto;
   }
+  .dropdown-content {
+    width: 50%;
+  }
+  .FOURTH,
   .FIFTH,
   .SIXTH,
-  .SEVENTH,
-  .EIGHTH {
+  .SEVENTH {
     display: none;
   }
+}
 
-  .logo-img {
-    width: 30px;
-    height: 30px;
+/* max mediaQuery content Low-Resolution Tablets and iPad  */
+@media (min-width: 800px) {
+  /* new navbar */
+  .navBar a.icon {
+    right: -2%;
   }
-  .a-links {
-    font-size: 17px;
-    padding-bottom: 5px;
+  .dropdown-content {
+    width: 35%;
   }
+  .content {
+    width: 90%;
+    height: 100%;
+  }
+  .box {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    margin: 0 0 0 auto;
+    padding-left: 20px;
+  }
+  .dropdown a {
+    font-size: 20px;
+  }
+  .dropedownbtn {
+    width: 150px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .dropdown-content {
+    margin-left: 160px;
 
-  #fourth:hover {
-    box-shadow: 0 0 0 black;
+    width: 30%;
   }
-  #fourth {
-    margin: 0;
-    border: 0px solid rgb(243, 1, 1);
-    display: block;
+  #logo-img {
+    height: 35px;
+    width: 35px;
+  }
+  #a-links {
+    font-size: 25px;
+    width: 100px;
+  }
+}
+/*   */
+.FOURTH,
+.FIFTH,
+.SIXTH,
+.SEVENTH {
+  display: none;
+}
+/* max-mediaquwry content Tablets iPads (portrait mode) */
+@media (min-width: 1240px) {
+  .navBar {
+    width: 200px;
+    height: 100%;
+    overflow: scroll;
+  }
+  .navBar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    overflow-y: scroll; /* Add the ability to scroll */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .content ul {
+    flex-direction: column;
     width: 100%;
+    height: 60%;
   }
-  .burger-menu-icon {
-    display: block;
-    position: absolute;
-    right: 3%;
-    top: 7%;
+  li .box a {
+    width: 70%;
   }
-  /*  */
-
-  /*  */
-  /*  */
-  #myLinks {
+  .box {
     box-sizing: border-box;
+    margin: 20px 0 0 5px;
+    width: 100%;
+    height: 40px;
+    padding-left: 2px;
+  }
+  #a-links {
+    font-size: 25px;
+  }
+  .first {
+    margin-top: 100px;
+  }
+
+  .navBar a .icon {
+    display: block;
+  }
+  .icon {
+    visibility: hidden;
+  }
+
+  .FOURTH,
+  .FIFTH,
+  .SIXTH,
+  .SEVENTH {
+    display: flex;
+  }
+  .FOURTH {
+    margin-top: 0;
+  }
+  /* Dropedown bonus full-screen */
+  .box-dropdown {
     background-color: inherit;
+    border: 1px solid rgba(238, 235, 235, 0.404);
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 100px 0 0 5px;
+    width: 100%;
+    height: 40px;
+    padding-left: 2px;
+  }
+  .dropdown-bonus {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 30px;
-    display: none;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    border: 0 solid black;
+    border-radius: 1rgba (182, 178, 178, 0.445);
   }
-  .myLinks-a {
-    padding: 5px 0 0 0;
-    text-align: center;
-    margin: 0 auto;
-    width: 80px;
-    height: 30px;
+  .drope-bonus {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    border: 0 solid black;
+    border-radius: 10px;
+  }
+  .bonus-btn {
     display: block;
-  }
-  .myLinks-a:hover {
-    background-color: rgba(255, 253, 255, 0.623);
-    color: #000000;
-  }
-
-  /* content */
-  body {
-    /* position: fixed; */
-    background-position: center;
-  }
-  .content {
-    margin: 80px auto 0 auto;
-  }
-
-  .container-content {
-    position: relative;
-    margin: 20px 10px;
-  }
-  .container-casinos {
-    position: relative;
-    margin: 20px 10px;
-  }
-
-  .second,
-  .content-box,
-  .name-holder,
-  .buttons-casino-info {
+    width: 70%;
+    height: 100%;
+    padding: 0 0 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
     align-content: center;
-    align-items: center;
+    font-size: 25px;
+    font-family: inherit;
+  }
+  .dropdown-content-bonus {
+    border: 0px solid inherit;
+    margin: 40px 20px 0 0;
+    padding-top: 10px;
+    background-color: aliceblue;
+    display: none;
     flex-direction: column;
     flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: absolute;
+    color: white;
+    width: 200px;
+    height: 400px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-color: inherit;
+    background-image: inherit;
   }
-
-  .best-rewards {
-    font-size: 12px;
-    width: 160px;
-  }
-  .high-withdrawal {
-    font-size: 12px;
-    width: 180px;
-  }
-  .Image-box,
-  .casino-image {
-    width: 150px;
-    height: 150px;
-  }
-  .modal-content {
-    height: 50%;
+  #content-bonus {
+    background-color: inherit;
     width: 90%;
+    height: 30px;
+    color: white;
+    font-size: 20px;
+    border: 1px solid rgba(238, 235, 235, 0.404);
+    border-radius: 10px;
+    margin: 10px 0;
+    padding-top: 6px;
+    text-align: center;
+  }
+  #content-bonus:hover,
+  .drope-bonus:hover,
+  .box-dropdown:hover {
+    background-color: rgba(212, 6, 240, 0.562);
+  }
+  .box-dropdown:hover .dropdown-content-bonus {
+    display: flex;
+    transition: 0.01;
+  }
+  .box-dropdown:hover {
+    margin-bottom: 300px;
+  }
+  .container {
+    width: 100%;
+    margin: 0 0 0 250px;
+  }
+  body {
+    display: flex;
   }
 }
+/*  */
+/*  */
+/*  */
+
+/*  */
+/*  */
+/*  */
