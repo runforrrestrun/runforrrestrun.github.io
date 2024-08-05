@@ -209,9 +209,9 @@ body {
   display: block;
   width: 100%;
   height: 100vh;
-  padding-top: 150px;
-
+  padding-top: 100px;
   border: 1px solid rgba(0, 0, 0, 0);
+  margin: 0 0 0 200px;
 }
 .content::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Chrome, Safari and Opera */
@@ -772,16 +772,24 @@ body {
     display: none;
   }
   /* content */
+  .container {
+    margin: 0;
+  }
   .container-casinos {
     margin: 50px 0 0 0;
+    width: 100%;
   }
 
   .container-content {
-    margin: 10px 5px;
-    width: 97%;
+    margin: 10px 0px;
+    width: 100%;
   }
   .name-content {
     font-size: 17px;
+    margin: 0 5px;
+  }
+  .content-text {
+    margin: 0 5px;
   }
   .content-text p {
     font-size: 25px;
@@ -789,7 +797,7 @@ body {
   .top3casinos {
     padding: 3px;
     height: 250px;
-    margin: 0;
+    margin: 0 5px;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -839,7 +847,8 @@ body {
     justify-content: center;
   }
   .main {
-    width: 90%;
+    width: 60%;
+    margin: 10px auto;
   }
   .second {
     justify-content: center;
@@ -901,7 +910,8 @@ body {
   }
   /* content */
   .container-content {
-    margin: 20px;
+    margin: 0;
+    width: 100%;
   }
   .name-content {
     font-size: 20px;
@@ -984,6 +994,9 @@ body {
   }
   .content-box {
     flex-wrap: nowrap;
+  }
+  .container {
+    margin: 0;
   }
   .container-casinos {
     width: 100%;
@@ -1139,13 +1152,16 @@ body {
   .container {
     width: 100%;
     height: 100%;
-    margin: 0 0 0 250px;
+    margin: 0 0 0 205px;
   }
   body {
     display: flex;
     background-size: cover;
   }
   /* content */
+  .main {
+    margin: 10px auto;
+  }
   .buttons-casino-info {
     width: 100%;
   }
