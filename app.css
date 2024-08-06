@@ -865,6 +865,9 @@ body {
   #Casino-sports-background {
     background-size: contain;
   }
+  .name-buttons {
+    width: 100%;
+  }
 }
 
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
@@ -1003,6 +1006,20 @@ body {
   }
   .main {
     width: 90%;
+  }
+  .buttons-casino-info {
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .best-rewards {
+    box-sizing: border-box;
+    width: 170px;
+    font-size: 13px;
+  }
+  .high-withdrawal {
+    box-sizing: border-box;
+    width: 170px;
+    font-size: 13px;
   }
 }
 /*   */
