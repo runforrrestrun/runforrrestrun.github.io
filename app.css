@@ -294,10 +294,19 @@ body {
   justify-content: center;
   overflow: visible;
 }
+.top1 {
+  background-color: gold;
+}
+.top2 {
+  background-color: silver;
+}
+.top3 {
+  background-color: chocolate;
+}
 .top-left {
   width: 30px;
   height: 30px;
-  border: 1px solid rgba(179, 177, 177, 0.541);
+  border: 2px solid rgba(0, 0, 0, 0.199);
   text-align: center;
   border-radius: 100px;
   font-size: 20px;
@@ -312,7 +321,7 @@ body {
   background-color: silver;
 }
 .nr3 {
-  background-color: rgb(145, 37, 37);
+  background-color: chocolate;
 }
 .top-info {
   width: 35%;
@@ -837,6 +846,7 @@ body {
     font-size: 13px;
     font-weight: 900;
     text-shadow: 2px 2px 5px black;
+    margin: 0 0 5px 0;
   }
   .top-info {
     font-size: 15px;
@@ -961,7 +971,7 @@ body {
     align-items: center;
   }
   .top-left {
-    border-radius: 100px;
+    border-radius: 100%;
     width: 30px;
     height: 30px;
     font-size: 20px;
