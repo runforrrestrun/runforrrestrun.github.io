@@ -20,10 +20,17 @@ elsBtns.forEach((el) => el.addEventListener("click", toggleModal));
 // Hamburger menu
 
 function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
+  const x = document.getElementById("myLinks");
+  if (x.style.display === "none") {
     x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+//close menu click
+const y = document.getElementById("myLinks");
+function myFunction2() {
+  if (y.style.display === "block") {
+    y.style.display = "none";
   }
 }

@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon:XROT,YROT@-45..45,-45..45&display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
-  <body>
+  <body  >
   
     <!-- navBar -->
-    <nav class="navBar" id="special-navBar">
+    <nav class="navBar" id="special-navBar" >
       <div class="content">
         <ul>
             <!-- <li class="box home">
@@ -72,10 +72,11 @@
         </ul>
       </div>
       <!-- Navigation links (hidden by default) -->
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <!-- onclick="myFunction()" -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()" >
         <i class="fa fa-bars"></i>
       </a>
-      <div id="myLinks">
+      <div id="myLinks" >
         <div class="dropdown">
           <button class="dropedownbtn" id="bonus-btn"" >
             Bonus
@@ -94,8 +95,15 @@
         <a href="#about"><button class="dropedownbtn" >smthng</button></a>
       </div>
     </nav>
+    <!-- 
+    
+
+
+  -->
+
     <!-- Content -->
-    <main class="container">
+
+    <main class="container" onclick="myFunction2()">
       <div class="container-content">
 
         <div class="name-content">
@@ -192,18 +200,22 @@
             </div>
           </div>
           <div class="more-info">
-            <button type="button" data-modal="#roobet-popUp">more info</button>
+            <button type="button" data-modal="#roobet-popUp" >more info</button>
           </div>
 
-          <div class="modal" id="roobet-popUp">
-            <div class="modal-content">
+          <div class="modal" id="roobet-popUp"  >
+            <div
+            type="button"
+            data-modal="#roobet-popUp"
+            class="modal-close">
+          </div>
+            <div class="modal-content" >
               <button
-                type="button"
-                data-modal="#roobet-popUp"
-                class="modal-close"
-              >
-                &times;
-              </button>
+            type="button"
+            data-modal="#roobet-popUp"
+            class="modal-close" id="close-insede-content">
+            &times;
+          </button>
               <h1>Roober</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -215,8 +227,9 @@
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
             </div>
+          
           </div>
-
+        
           <div class="bottom"></div>
         </div>
         <!-- empty slot -->
@@ -269,8 +282,15 @@
           </div>
 
           <div id="other" class="modal">
+            <div
+            type="button"
+            data-modal="#other"
+            class="modal-close">
+          </div>
             <div class="modal-content">
-              <button type="button" data-modal="#other" class="modal-close">
+              <button type="button" data-modal="#other" 
+              class="modal-close"
+              id="close-insede-content">
                 &times;
               </button>
               <h1>other</h1>
@@ -337,8 +357,14 @@
           </div>
 
           <div id="casino3" class="modal">
+            <div
+            type="button"
+            data-modal="#casino3"
+            class="modal-close">
+          </div>
             <div class="modal-content">
-              <button type="button" data-modal="#casino3" class="modal-close">
+              <button type="button" data-modal="#casino3" class="modal-close"
+              id="close-insede-content">
                 &times;
               </button>
               <h1>casino3</h1>
@@ -405,8 +431,14 @@
           </div>
 
           <div id="casino4" class="modal">
+            <div
+            type="button"
+            data-modal="#casino4"
+            class="modal-close">
+          </div>
             <div class="modal-content">
-              <button type="button" data-modal="#casino4" class="modal-close">
+              <button type="button" data-modal="#casino4" class="modal-close"
+              id="close-insede-content">
                 &times;
               </button>
               <h1>casino4</h1>
@@ -472,8 +504,14 @@
           </div>
 
           <div id="casino5" class="modal">
+            <div
+            type="button"
+            data-modal="#casino5"
+            class="modal-close">
+          </div>
             <div class="modal-content">
-              <button type="button" data-modal="#casino5" class="modal-close">
+              <button type="button" data-modal="#casino5" class="modal-close"
+              id="close-insede-content">
                 &times;
               </button>
               <h1>casino5</h1>
@@ -539,8 +577,14 @@
           </div>
 
           <div id="casino6" class="modal">
+            <div
+            type="button"
+            data-modal="#casino6"
+            class="modal-close">
+          </div>
             <div class="modal-content">
-              <button type="button" data-modal="#casino6" class="modal-close">
+              <button type="button" data-modal="#casino6" class="modal-close"
+              id="close-insede-content">
                 &times;
               </button>
               <h1>casino6</h1>
@@ -606,8 +650,14 @@
           </div>
 
           <div id="casino7" class="modal">
+            <div
+            type="button"
+            data-modal="#casino7"
+            class="modal-close">
+          </div>
             <div class="modal-content">
-              <button type="button" data-modal="#casino7" class="modal-close">
+              <button type="button" data-modal="#casino7" class="modal-close"
+              id="close-insede-content">
                 &times;
               </button>
               <h1>casino7</h1>
@@ -673,8 +723,14 @@
           </div>
 
           <div id="casino8" class="modal">
+            <div
+            type="button"
+            data-modal="#casino8"
+            class="modal-close">
+          </div>
             <div class="modal-content">
-              <button type="button" data-modal="#casino8" class="modal-close">
+              <button type="button" data-modal="#casino8" class="modal-close"
+              id="close-insede-content">
                 &times;
               </button>
               <h1>casino8</h1>
@@ -740,8 +796,14 @@
           </div>
 
           <div id="casino9" class="modal">
+            <div
+            type="button"
+            data-modal="#casino9"
+            class="modal-close">
+          </div>
             <div class="modal-content">
-              <button type="button" data-modal="#casino9" class="modal-close">
+              <button type="button" data-modal="#casino9" class="modal-close"
+              id="close-insede-content">
                 &times;
               </button>
               <h1>casino9</h1>
@@ -807,8 +869,14 @@
           </div>
 
           <div class="modal" id="casino10">
+            <div
+            type="button"
+            data-modal="#casino10"
+            class="modal-close">
+          </div>
             <div class="modal-content">
-              <button type="button" data-modal="#casino10" class="modal-close">
+              <button type="button" data-modal="#casino10" class="modal-close"
+              id="close-insede-content">
                 &times;
               </button>
               <h1>casino10</h1>
@@ -874,8 +942,14 @@
           </div>
 
           <div class="modal" id="casino11">
+            <div
+            type="button"
+            data-modal="#casino11"
+            class="modal-close">
+          </div>
             <div class="modal-content">
-              <button type="button" data-modal="#casino11" class="modal-close">
+              <button type="button" data-modal="#casino11" class="modal-close"
+              id="close-insede-content">
                 &times;
               </button>
               <h1>casino11</h1>
