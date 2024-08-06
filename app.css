@@ -1277,6 +1277,16 @@ body {
     font-weight: 600;
     font-size: 20px;
   }
+  .best-rewards {
+    box-sizing: border-box;
+    width: 200px;
+    font-size: 15px;
+  }
+  .high-withdrawal {
+    box-sizing: border-box;
+    width: 200px;
+    font-size: 15px;
+  }
 }
 /*  */
 /*  */
