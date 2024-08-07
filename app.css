@@ -867,7 +867,7 @@ body {
   }
   .box {
     width: 85px;
-    margin: 0 0 0 auto;
+    margin: 0 0 0 20px;
   }
   #a-links {
     padding-left: 3px;
