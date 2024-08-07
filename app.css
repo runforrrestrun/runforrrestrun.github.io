@@ -1211,6 +1211,9 @@ body {
   .FOURTH {
     margin-top: 0;
   }
+  .bonusThird {
+    margin-bottom: 50px;
+  }
   /* Dropedown bonus full-screen */
   .box-dropdown {
     background-color: inherit;
