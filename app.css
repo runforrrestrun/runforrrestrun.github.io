@@ -871,6 +871,9 @@ body {
   .SEVENTH {
     display: none;
   }
+  .icon {
+    padding-left: 10px;
+  }
   /* content bonus page */
   .tab {
     padding: 0;
