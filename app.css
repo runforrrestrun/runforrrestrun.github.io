@@ -78,6 +78,7 @@ body {
   display: flex;
   flex-direction: row;
   padding: 0;
+  margin: 5px 0;
 }
 #a-links {
   display: block;
@@ -992,6 +993,7 @@ body {
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
 @media (min-width: 800px) {
   /* new navbar */
+
   .navBar a.icon {
     right: -1%;
     top: 10px;
