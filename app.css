@@ -1027,6 +1027,12 @@ body {
     margin: 0 auto;
     padding-left: 20px;
   }
+  .button-casino,
+  .button-ESports,
+  .button-Sports {
+    display: flex;
+  }
+
   .dropdown a {
     font-size: 20px;
   }
@@ -1176,6 +1182,7 @@ body {
   }
 }
 /*   */
+
 .FOURTH,
 .FIFTH,
 .SIXTH,
