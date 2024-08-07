@@ -219,6 +219,7 @@ body {
   width: 100%;
   font-family: inherit;
   border-bottom: 2px solid purple;
+
   padding: 0 0 0 30%;
 }
 
@@ -858,6 +859,11 @@ body {
 
   .navBar a.icon {
     width: 30px;
+    top: 0;
+    right: 0;
+  }
+  .fa {
+    padding-left: 10px;
   }
   .box {
     width: 85px;
@@ -995,8 +1001,13 @@ body {
   /* new navbar */
 
   .navBar a.icon {
-    right: -1%;
-    top: 10px;
+    height: 50px;
+    width: 50px;
+    right: 0;
+    top: 0;
+  }
+  .fa-bars {
+    padding: 15px 0 0 20px;
   }
   .dropdown-content {
     width: 35%;
@@ -1015,7 +1026,9 @@ body {
   .dropdown a {
     font-size: 20px;
   }
+
   .dropedownbtn {
+    text-align: center;
     width: 150px;
     font-size: 20px;
     font-weight: 600;
