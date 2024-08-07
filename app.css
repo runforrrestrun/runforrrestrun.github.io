@@ -26,6 +26,12 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+#Bonus-Page-Background {
+  background-image: url("img/bonus-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
 /* nav Bar */
 
@@ -201,6 +207,69 @@ body {
 }
 
 /* end of navbar */
+/*  */
+/*  */
+/* Bonus Page */
+.tab {
+  overflow: hidden;
+  border: opx solid #ccc;
+  background-color: inherit;
+  width: 100%;
+  font-family: inherit;
+  border-bottom: 2px solid purple;
+  padding: 0 0 0 30%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: purple;
+  float: left;
+  border: 1px solid rgba(226, 222, 222, 0.342);
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  margin: 5px 10px;
+  transition: 0.3s;
+  font-family: inherit;
+  font-weight: 600;
+  text-shadow: 2px 2px 10px black;
+  color: white;
+  font-size: 20px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #d703f3;
+}
+
+/* Style the tab content */
+.tabcontent {
+  width: 100%;
+  height: 100%;
+  display: none;
+  padding: 6px 12px;
+  border: 0px solid #ccc;
+  border-top: none;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*  */
 /*  */
 /*  */
 /*  */
@@ -802,7 +871,16 @@ body {
   .SEVENTH {
     display: none;
   }
-  /* content */
+  /* content bonus page */
+  .tab {
+    padding: 0;
+  }
+  .tab button {
+    width: 100px;
+    font-size: 13px;
+    padding: 14px 5px;
+  }
+  /* content main paiges */
   .container {
     margin: 0;
   }
@@ -897,7 +975,8 @@ body {
   }
   body,
   #ESports-backgound,
-  #Casino-sports-background {
+  #Casino-sports-background,
+  #Bonus-Page-Background {
     background-size: contain;
   }
   .name-buttons {
@@ -946,6 +1025,16 @@ body {
   #a-links {
     font-size: 25px;
     width: 100px;
+  }
+  /* bonus page */
+
+  .tab button {
+    width: 170px;
+    padding: 14px 16px;
+    margin: 5px 10px;
+    text-shadow: 2px 2px 10px black;
+    color: white;
+    font-size: 20px;
   }
   /* content */
   .casino-bonus {
@@ -1164,7 +1253,7 @@ body {
   }
   .dropdown-content-bonus {
     border: 0px solid inherit;
-    margin: 40px 20px 0 0;
+    margin: 35px 20px 0 0;
     padding-top: 10px;
     background-color: aliceblue;
     display: none;
@@ -1213,6 +1302,17 @@ body {
   body {
     display: flex;
     background-size: cover;
+  }
+  /* bonus page */
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+  }
+  .tab button {
+    width: 200px;
   }
   /* content */
   .main {
@@ -1325,6 +1425,13 @@ body {
     box-sizing: border-box;
     width: 200px;
     font-size: 15px;
+  }
+  body,
+  #ESports-backgound,
+  #Casino-sports-background,
+  #Bonus-Page-Background {
+    background-size: cover;
+    background-position-x: center;
   }
 }
 /*  */
