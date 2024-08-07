@@ -859,15 +859,15 @@ body {
 
   .navBar a.icon {
     width: 30px;
-    top: 0;
-    right: 0;
+    top: 6px;
+    right: 5px;
   }
   .fa {
     padding-left: 10px;
   }
   .box {
     width: 85px;
-    margin: 0 0 0 10px;
+    margin: 0 auto;
   }
   #a-links {
     padding-left: 3px;
