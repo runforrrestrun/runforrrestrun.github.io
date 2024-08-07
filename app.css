@@ -103,8 +103,9 @@ body {
 
 /* Style the hamburger menu */
 .navBar a.icon {
+  box-sizing: border-box;
   height: 90%;
-  width: 40px;
+  width: 30px;
   display: block;
   position: absolute;
   right: -3%;
@@ -845,7 +846,7 @@ body {
 /* MEDIA QUERY */
 /* max- media query  phones */
 
-@media only screen and (min-width: 250px) {
+@media only screen and (min-width: 200px) {
   /* new navbar */
   .navBar {
     width: 100%;
@@ -862,6 +863,7 @@ body {
   .box {
     margin: 0 0 0 auto;
   }
+
   .dropdown-content {
     width: 50%;
   }
@@ -872,15 +874,18 @@ body {
     display: none;
   }
   .icon {
-    padding-left: 10px;
+    width: 20px;
+  }
+  .fa {
+    padding-left: 15px;
   }
   /* content bonus page */
   .tab {
     padding: 0;
   }
   .tab button {
-    width: 100px;
-    font-size: 13px;
+    width: 80px;
+    font-size: 11px;
     padding: 14px 5px;
   }
   /* content main paiges */
@@ -988,7 +993,7 @@ body {
 }
 
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
-@media (min-width: 800px) {
+@media (min-width: 1024px) {
   /* new navbar */
   .navBar a.icon {
     right: -1%;
@@ -1161,7 +1166,7 @@ body {
   display: none;
 }
 /* max-mediaquwry content Tablets iPads (portrait mode) */
-@media (min-width: 1240px) {
+@media (min-width: 1280px) {
   .navBar {
     width: 200px;
     height: 100%;
