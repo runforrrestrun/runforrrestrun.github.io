@@ -876,6 +876,9 @@ body {
   .dropdown-content {
     width: 50%;
   }
+  .button-casino,
+  .button-ESports,
+  .button-Sports,
   .FOURTH,
   .FIFTH,
   .SIXTH,
@@ -1220,7 +1223,9 @@ body {
   .icon {
     visibility: hidden;
   }
-
+  .button-casino,
+  .button-ESports,
+  .button-Sports,
   .FOURTH,
   .FIFTH,
   .SIXTH,
