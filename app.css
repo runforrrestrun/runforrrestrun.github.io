@@ -1381,6 +1381,12 @@ body {
 .SEVENTH {
   display: none;
 }
+@media (max-height: 700px) {
+  .modal-content {
+    width: 50%;
+    height: 300px;
+  }
+}
 /* max-mediaquwry content Tablets iPads (portrait mode) */
 @media (min-width: 1280px) {
   .navBar {
