@@ -992,7 +992,167 @@ body {
   margin-top: 5px;
   text-align: center;
 }
-/*  */
+/* 
+
+
+
+*/
+/* Main Info pages od casinos */
+.casino-allInfo {
+  font-family: Tilt Neon;
+  margin-left: 200px;
+  width: 100%;
+  height: auto;
+}
+.casino-banner {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+}
+.casino-banner img {
+  width: 100%;
+  height: auto;
+}
+.casino-infoLogo {
+  display: flex;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  margin: 30px 0 50px 0;
+}
+.logo-box {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: black;
+  margin-left: 50px;
+}
+.logo-box img {
+  width: 150px;
+  height: 150px;
+}
+
+.tab-info {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 0px solid #ccc;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab-info button {
+  box-sizing: border-box;
+  background-color: inherit;
+  float: left;
+  border: none;
+  border-radius: 10px;
+  margin-left: 50px;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  height: 60px;
+  width: 120px;
+  transition: 0.3s;
+  color: white;
+  background-color: purple;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 600;
+  text-shadow: 2px 2px 10px black;
+}
+
+/* Change background color of buttons on hover */
+.tab-info button:hover {
+  background-color: #cb04fd;
+}
+
+/* Create an active/current tablink class */
+.tab-info button.active {
+  background-color: #cb04fd;
+}
+
+/* Style the tab content */
+.tabcontent-info {
+  display: none;
+  background-image: linear-gradient(black, purple);
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border: 1px solid #cccccc27;
+  border-top: none;
+  margin: 0 10px 0 10px;
+  justify-content: center;
+  animation: fadeEffect 1s;
+  border-radius: 10px;
+}
+.overview-button-container {
+  box-sizing: border-box;
+  border: 0 solid black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-wrap: wrap;
+  background-color: inherit;
+}
+.overview-button {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  border: 1px solid rgba(15, 15, 15, 0.39);
+  background-color: #000000;
+  border-radius: 10px;
+  margin: 0 0 10px 10px;
+  text-align: center;
+  padding: 5px;
+}
+.overview-button p {
+  margin: 10px 0 5px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.cardTipe-container {
+  box-sizing: content-box;
+  width: 100%;
+  margin: 0;
+}
+.cardTipe-container img {
+  width: 50px;
+  height: 50px;
+}
+#tipe4-info {
+  width: 70px;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.casino-review {
+  margin: px;
+  width: 98%;
+  margin: 50px auto;
+  height: 500px;
+  box-sizing: border-box;
+  border: 1px solid rgba(15, 15, 15, 0.39);
+  border-radius: 10px;
+  background-image: linear-gradient(purple, black);
+}
+/* 
+
+
+*/
 /*  */
 /*  */
 /* MEDIA QUERY */
@@ -1171,6 +1331,19 @@ body {
   .withdrawal h2,
   .bonus-terms h2 {
     font-size: 20px;
+  }
+  /* CAsino info page */
+
+  .casino-allInfo {
+    padding: 50px 0 0 0;
+    margin: 0;
+  }
+
+  .tab-info button {
+    margin: 10px 0 5px 5px;
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
   }
 }
 
@@ -1379,6 +1552,19 @@ body {
   .withdrawal h2,
   .bonus-terms h2 {
     font-size: 30px;
+  }
+  /* Casino info page */
+  .casino-allInfo {
+    padding: 50px 0 0 0;
+    margin: 0;
+  }
+
+  .tab-info button {
+    margin-left: 50px;
+    height: 60px;
+    width: 120px;
+    font-size: 20px;
+    font-weight: 600;
   }
 }
 /*   */
@@ -1694,6 +1880,12 @@ body {
   #news-background {
     background-size: cover;
     background-position-x: center;
+  }
+
+  /* Casino info page */
+  .casino-allInfo {
+    padding: 0;
+    margin: 0 0 0 200px;
   }
 }
 /*  */
