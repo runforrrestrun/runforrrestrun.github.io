@@ -905,8 +905,8 @@ body {
   border: 2px solid rgb(141, 3, 134);
   box-shadow: 1px 1px 10px rgb(203, 2, 243);
   background-image: linear-gradient(black 40%, rgb(99, 2, 99));
-  width: 70%;
-  height: 50%;
+  width: 40%;
+  height: auto;
   font-size: 20px;
   font-weight: 600;
   padding: 10px;
@@ -918,6 +918,7 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
 .modal-close {
   width: 100%;
   height: 100vh;
@@ -927,11 +928,13 @@ body {
   background-color: inherit;
   position: relative;
 }
+
 #close-insede-content {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 100%;
+  height: auto;
   right: 3%;
+  text-align: end;
 }
 
 .bottom {
@@ -942,6 +945,47 @@ body {
   min-width: 100px;
   margin-top: 24px;
   line-height: 24px;
+}
+
+/* content in more info */
+.deposit-methods {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 70px 0 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.425);
+  border-radius: 10px;
+  text-align: center;
+}
+.deposit-methods h2 {
+  margin: 5px;
+}
+.card-tipe {
+  margin: 0 0 10px 20px;
+  width: 50px;
+  height: 50px;
+}
+.tipe4 {
+  width: 70px;
+  height: 50px;
+  background-color: black;
+}
+.withdrawal,
+.bonus-terms {
+  font-size: auto;
+  width: 90%;
+  min-height: auto;
+  margin: 10px 0 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.425);
+  border-radius: 10px;
+  text-align: center;
+  list-style: none;
+}
+.bonus-terms ul li {
+  list-style: none;
+  margin-top: 5px;
+  text-align: center;
 }
 /*  */
 /*  */
@@ -1105,6 +1149,18 @@ body {
   }
   .name-buttons {
     width: 100%;
+  }
+  .modal-content {
+    width: 90%;
+    margin: 10px;
+  }
+  .modal {
+    width: 100%;
+  }
+  .deposit-methods h2,
+  .withdrawal h2,
+  .bonus-terms h2 {
+    font-size: 20px;
   }
 }
 
@@ -1293,6 +1349,15 @@ body {
     box-sizing: border-box;
     width: 170px;
     font-size: 13px;
+  }
+  .modal-content {
+    width: 50%;
+    height: auto;
+  }
+  .deposit-methods h2,
+  .withdrawal h2,
+  .bonus-terms h2 {
+    font-size: 30px;
   }
 }
 /*   */
