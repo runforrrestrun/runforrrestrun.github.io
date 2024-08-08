@@ -1177,6 +1177,7 @@ body {
     padding-left: 10px;
   }
   ::before {
+    padding-left: 20px;
     font-size: 25px;
   }
   .box {
@@ -1362,7 +1363,7 @@ body {
     top: 0;
   }
   .fa-bars {
-    padding: 15px 0 0 20px;
+    padding: 10px 0 0 0;
   }
   .dropdown-content {
     width: 35%;
