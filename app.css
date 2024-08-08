@@ -299,7 +299,7 @@ body {
   margin: 20px;
   display: flex;
   flex-direction: column;
-
+  text-align: center;
   border: 1px solid rgba(204, 201, 201, 0.733);
   border-radius: 10px;
   background-image: linear-gradient(black, purple);
@@ -327,8 +327,12 @@ body {
   box-sizing: border-box;
   margin: 10px;
   text-decoration: none;
+  word-spacing: 3px;
 }
-
+.news-content h2 span {
+  color: gold;
+  font-size: 30px;
+}
 .news-smallBox-content {
   margin-bottom: 0;
   box-sizing: border-box;
@@ -365,7 +369,7 @@ body {
 
   margin: 0;
   padding: 10px;
-  font-size: 20px;
+  font-size: 30px;
 }
 .news-content-main h1 {
   text-align: center;
@@ -1043,8 +1047,13 @@ body {
   /* news page */
   .container-news {
     margin: 0;
-    padding: 50px 10px 10px 10px;
+    padding: 50px 0 0 0;
     justify-content: center;
+  }
+  .news-content-main {
+    width: 100%;
+    font-size: 20px;
+    padding: 20px;
   }
 
   /* content main paiges */
@@ -1236,6 +1245,10 @@ body {
     margin: 0;
     justify-content: center;
     padding: 100px 10px 10px 10px;
+  }
+  .news-content-main {
+    font-size: 30px;
+    padding: 30px;
   }
   /* content */
   .casino-bonus {
@@ -1543,6 +1556,9 @@ body {
   /* article from news */
   .banner-img {
     height: 250px;
+  }
+  .news-content-main {
+    padding: 50px;
   }
 
   /* content */
