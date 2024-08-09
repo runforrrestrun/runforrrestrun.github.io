@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-image: url("img/Home\ screen.jpg");
+  background-image: url("img/Homescreen.jpg");
   background-color: rgb(0, 0, 0);
   background-size: cover;
   background-position: center;
@@ -22,7 +22,7 @@ body {
 }
 #ESports-backgound {
   background-color: black;
-  background-image: url("img/EsportsBackground3.jpg");
+  background-image: url("img/ESPortsBackground3.jpg");
   background-size: contain;
 
   background-attachment: fixed;
