@@ -1221,7 +1221,8 @@ body {
   }
   .box {
     width: 90px;
-    margin: 0 0 0 25px;
+
+    margin: 5px 0 5px 45px;
   }
   #a-links {
     padding-left: 3px;
