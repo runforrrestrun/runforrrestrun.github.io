@@ -378,10 +378,32 @@ body {
 }
 .news-content-main h1 {
   text-align: center;
+  color: gold;
 }
+
 .news-content-main h2 {
   margin: 50px 0 0 50px;
+  color: gold;
 }
+.claim-news-bonus {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.claim-news-bonus button {
+  box-sizing: border-box;
+  width: 200px;
+  height: 50px;
+  font-size: 25px;
+  font-family: inherit;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  background-color: gold;
+  border-radius: 10px;
+}
+
 /* end of navbar */
 /*  */
 /*  */
