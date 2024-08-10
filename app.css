@@ -1220,8 +1220,8 @@ body {
     font-size: 25px;
   }
   .box {
-    width: 85px;
-    margin: 0 auto;
+    width: 100px;
+    margin: 0 0 0 5px;
   }
   #a-links {
     padding-left: 3px;
@@ -1284,11 +1284,11 @@ body {
   }
   .name-content {
     font-size: 17px;
-    margin: 0 5px;
+    margin: 0;
   }
   .name-content img {
-    width: 350px;
-    height: 350px;
+    width: 340px;
+    height: 340px;
   }
   .content-text {
     margin: 0 5px;
