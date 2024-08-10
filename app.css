@@ -427,15 +427,11 @@ body {
   color: #ffffff;
 }
 .name-content {
-  background-image: linear-gradient(240deg, black, purple);
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
   max-width: 1100px;
   box-sizing: border-box;
-  border: 1px solid rgba(129, 129, 129, 0.582);
-  border-radius: 10px;
-  background-color: inherit;
   width: 100%;
-  height: 100px;
+  height: auto;
   text-align: center;
 }
 .content-text {
@@ -471,11 +467,25 @@ body {
   width: 20%;
   border: 2px solid rgba(128, 128, 128, 0.486);
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: visible;
+}
+.top3casinos .top a {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
   display: block;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: visible;
+  display: flex;
+  flex-direction: column;
 }
 .top1 {
   background-color: gold;
@@ -528,20 +538,20 @@ body {
 .content-top {
   font-size: 15px;
   width: 90%;
-  height: 50%;
+  height: 30%;
   text-align: center;
   margin-top: 20px;
 }
 .top-bonus {
   width: 200px;
   background-color: black;
-  margin-bottom: 10px;
 }
 .top-bonus a {
   text-decoration: none;
 }
-.top-bonus a span {
+.top-bonus span {
   display: block;
+  text-align: center;
   text-decoration: none;
   width: 100%;
   height: 100%;
@@ -550,6 +560,7 @@ body {
   font-family: inherit;
   font-weight: 600;
   font-size: 20px;
+  border-radius: 10px;
 }
 
 /* container casinos bosex */
@@ -1194,6 +1205,11 @@ body {
     padding-left: 3px;
     font-size: 14px;
   }
+  #myLinks {
+    height: 250px;
+
+    margin-top: 20px;
+  }
   .dropdown-content {
     width: 50%;
   }
@@ -1248,6 +1264,10 @@ body {
     font-size: 17px;
     margin: 0 5px;
   }
+  .name-content img {
+    width: 350px;
+    height: 350px;
+  }
   .content-text {
     margin: 0 5px;
   }
@@ -1269,6 +1289,10 @@ body {
     margin: 3px;
     border: 1px solid rgba(158, 156, 156, 0.493);
   }
+  .top a {
+    color: white;
+    width: 100%;
+  }
   .top-left {
     width: 20px;
     height: 20px;
@@ -1280,11 +1304,15 @@ body {
   .top-info {
     font-size: 15px;
   }
-  .img-box-top,
-  .img-box-top img {
-    margin: 0 auto;
+  .img-box-top {
     width: 60px;
     height: 60px;
+    border-radius: 10px;
+  }
+
+  .img-box-top img {
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
   }
   .content-top {
@@ -1362,7 +1390,9 @@ body {
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
 @media (min-width: 800px) {
   /* new navbar */
-
+  #myLinks {
+    height: 250px;
+  }
   .navBar a.icon {
     height: 50px;
     width: 50px;
@@ -1451,11 +1481,12 @@ body {
   .name-content {
     font-size: 20px;
   }
+
   .content-text {
     font-size: 20px;
   }
   .top3casinos {
-    height: 300px;
+    height: 350px;
   }
 
   .top {
@@ -1468,6 +1499,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .top a {
+    color: white;
   }
   .top-left {
     border-radius: 100%;
@@ -1493,8 +1527,8 @@ body {
     width: 100px;
   }
   .img-box-top img {
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
   }
   .content-top {
     font-size: 15px;
@@ -1509,10 +1543,8 @@ body {
     background-color: black;
     margin-bottom: 10px;
   }
-  .top-bonus a {
-    text-decoration: none;
-  }
-  .top-bonus a span {
+
+  .top-bonus span {
     display: block;
     text-decoration: none;
     width: 100%;
@@ -1786,17 +1818,18 @@ body {
     width: 100%;
   }
   .name-content {
-    background-image: linear-gradient(240deg, black, purple);
     text-shadow: 2px 2px 10px rgb(0, 0, 0);
     max-width: 1200px;
     box-sizing: border-box;
-    border: 1px solid rgba(129, 129, 129, 0.582);
-    border-radius: 10px;
-    background-color: inherit;
+
     width: 100%;
-    height: 100px;
+    height: auto;
     text-align: center;
     font-size: 30px;
+  }
+  .name-content img {
+    height: 400px;
+    width: 400px;
   }
   .bonus-info {
     margin-top: 20px;
@@ -1834,15 +1867,13 @@ body {
   }
   .top {
     margin: 0 10px;
-
     box-sizing: border-box;
     width: 20%;
     border: 2px solid rgba(128, 128, 128, 0.486);
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
   }
+
   .top-info {
     width: 30%;
     font-size: 25px;
@@ -1851,16 +1882,19 @@ body {
     align-items: center;
     align-self: center;
   }
-  .img-box-top,
-  img-box-top img {
+  .img-box-top {
     height: 120px;
     width: 120px;
+  }
+  img-box-top img {
+    height: 100%;
+    width: 100%;
   }
 
   .content-top {
     font-size: 15px;
     width: 90%;
-    height: 40%;
+    height: 30%;
     text-align: center;
     margin-top: 20px;
     padding-top: 20px;
@@ -1870,10 +1904,8 @@ body {
     background-color: black;
     margin-bottom: 10px;
   }
-  .top-bonus a {
-    text-decoration: none;
-  }
-  .top-bonus a span {
+
+  .top-bonus span {
     display: block;
     text-decoration: none;
     width: 100%;
