@@ -1405,8 +1405,23 @@ body {
   .deposit-methods h2,
   .withdrawal h2,
   .bonus-terms h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
+  .deposit-methods,
+  .withdrawal,
+  .bonus-terms {
+    font-size: 15px;
+  }
+  .logo-methods {
+    justify-content: start;
+    text-align: center;
+  }
+  .logo-methods img {
+    width: 50px;
+    height: 40px;
+    margin: 0 0 5px 10px;
+  }
+
   /* CAsino info page */
 
   .casino-allInfo {
@@ -1423,7 +1438,7 @@ body {
 }
 
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
-@media (min-width: 900px) {
+@media (min-width: 780px) {
   /* new navbar */
   #myLinks {
     height: 250px;
@@ -1505,6 +1520,10 @@ body {
     font-size: 30px;
     padding: 30px;
   }
+  /* 
+  
+  
+  */
   /* content */
   .casino-bonus {
     margin-top: 0;
@@ -1636,6 +1655,20 @@ body {
   .withdrawal h2,
   .bonus-terms h2 {
     font-size: 30px;
+  }
+  .deposit-methods,
+  .withdrawal,
+  .bonus-terms {
+    font-size: 20px;
+  }
+  .logo-methods {
+    justify-content: start;
+    text-align: center;
+  }
+  .logo-methods img {
+    width: 70px;
+    height: 60px;
+    margin: 0 0 5px 15px;
   }
   /* Casino info page */
   .casino-allInfo {
