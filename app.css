@@ -1122,6 +1122,8 @@ body {
   border-radius: 10px;
 }
 .overview-button-container {
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
   border: 0 solid black;
   display: flex;
@@ -1364,7 +1366,7 @@ body {
     justify-content: center;
   }
   .main {
-    width: 60%;
+    width: 70%;
     margin: 10px auto;
   }
   .second {
@@ -1375,7 +1377,7 @@ body {
     justify-content: center;
   }
   .casino-bonus {
-    width: 200px;
+    width: 250px;
   }
   body,
   #Casino-Background,
@@ -1424,9 +1426,25 @@ body {
 
   .tab-info button {
     margin: 10px 0 5px 5px;
-    width: 100px;
-    height: 50px;
+    width: 80px;
+    height: auto;
+    font-size: 13px;
+  }
+  .overview-button {
+    width: 100%;
+    height: auto;
+    margin: 0 0 10px 0;
+  }
+  .overview-button p {
     font-size: 15px;
+  }
+
+  .cardTipe-container img {
+    width: 40px;
+    height: 40px;
+  }
+  #overwiew {
+    padding: 10px;
   }
 }
 
@@ -1618,30 +1636,26 @@ body {
   }
   .main {
     width: 90%;
-    height: auto;
     padding: 10px 10px;
   }
   .buttons-casino-info {
     flex-wrap: nowrap;
     width: 100%;
   }
-  .best-rewards {
-    box-sizing: border-box;
-    width: 170px;
-    font-size: 13px;
-  }
+  .best-rewards,
   .high-withdrawal {
     box-sizing: border-box;
     width: 170px;
     font-size: 13px;
   }
+
   .more-info {
     height: auto;
     margin: 0;
     text-align: center;
   }
   .modal-content {
-    width: 50%;
+    width: 60%;
     height: auto;
   }
   .deposit-methods h2,
@@ -1675,6 +1689,17 @@ body {
     width: 120px;
     font-size: 20px;
     font-weight: 600;
+  }
+  .overview-button {
+    width: 180px;
+    margin: 0 0 5px 5px;
+  }
+  #card-tipe-container {
+    width: 250px;
+  }
+  .overview-button p {
+    font-size: 18px;
+    margin-bottom: 0;
   }
 }
 /*   */
