@@ -1203,9 +1203,24 @@ body {
   background-image: linear-gradient(purple, black);
 }
 /* 
+/* end of page */
+.bottom-page {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: inherit;
+  font-size: 20px;
+}
 
+.bottom-page img {
+  height: 50px;
+  width: 50px;
+}
 
-*/
 /*  */
 /*  */
 /* MEDIA QUERY */
