@@ -949,7 +949,7 @@ body {
   height: auto;
   font-size: 20px;
   font-weight: 600;
-  padding: 10px;
+
   overflow: scroll;
 }
 .modal-content::-webkit-scrollbar {
@@ -962,7 +962,7 @@ body {
 .modal-close {
   width: 100%;
   height: 100vh;
-  font-size: 40px;
+  font-size: 30px;
   border: 0 solid black;
   color: white;
   background-color: inherit;
@@ -989,11 +989,11 @@ body {
 
 /* content in more info */
 .deposit-methods {
-  width: 90%;
+  width: 95%;
   height: auto;
   display: flex;
   flex-direction: column;
-  margin: 50px 0 10px 20px;
+  margin: 40px auto 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.425);
   border-radius: 10px;
   text-align: center;
@@ -1014,9 +1014,9 @@ body {
 .withdrawal,
 .bonus-terms {
   font-size: auto;
-  width: 90%;
+  width: 95%;
   min-height: auto;
-  margin: 10px 0 10px 20px;
+  margin: 10px auto;
   border: 1px solid rgba(255, 255, 255, 0.425);
   border-radius: 10px;
   text-align: center;
@@ -1208,10 +1208,7 @@ body {
     top: 6px;
     right: 6px;
   }
-  .fa-caret-right {
-    width: 5px;
-    padding: 10px;
-  }
+
   .icon ::before {
     padding-left: 30px;
     font-size: 25px;
@@ -1240,6 +1237,10 @@ body {
   .SIXTH,
   .SEVENTH {
     display: none;
+  }
+  .fa-caret-right {
+    width: 5px;
+    padding: 10px 0 10px 0;
   }
 
   /* content bonus page */
@@ -1390,7 +1391,7 @@ body {
     width: 100%;
   }
   .modal-content {
-    width: 90%;
+    width: 70%;
     margin: 10px;
   }
   .modal {
@@ -1642,26 +1643,26 @@ body {
     text-align: center;
   }
   .modal-content {
-    width: 90%;
+    width: 50%;
     height: auto;
   }
   .deposit-methods h2,
   .withdrawal h2,
   .bonus-terms h2 {
-    font-size: 30px;
+    font-size: 20px;
   }
   .deposit-methods,
   .withdrawal,
   .bonus-terms {
-    font-size: 20px;
+    font-size: 15px;
   }
   .logo-methods {
     justify-content: start;
     text-align: center;
   }
   .logo-methods img {
-    width: 70px;
-    height: 60px;
+    width: 50px;
+    height: 40px;
     margin: 0 0 5px 15px;
   }
   /* Casino info page */
@@ -1686,10 +1687,10 @@ body {
 .SEVENTH {
   display: none;
 }
-@media (max-height: 800px) {
+@media (max-height: 650px) {
   .modal-content {
-    width: 90%;
-    height: 300px;
+    width: 60%;
+    height: auto;
   }
 }
 /* max-mediaquwry content Tablets iPads (portrait mode) */
