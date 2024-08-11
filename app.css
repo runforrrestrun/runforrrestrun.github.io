@@ -609,7 +609,7 @@ body {
   background-image: linear-gradient(240deg, black, purple);
   box-sizing: border-box;
   width: 100%;
-
+  height: auto;
   max-width: 1200px;
   min-width: 250px;
   align-self: center;
@@ -902,7 +902,6 @@ body {
   justify-content: center;
   flex: 1 1 0%;
   border-top: 0px solid rgb(186, 3, 241);
-
   width: 100%;
   min-width: 100px;
   color: rgb(255, 255, 255);
@@ -980,7 +979,6 @@ body {
 .bottom {
   box-sizing: border-box;
   display: block;
-  height: 0;
   width: 100%;
   min-width: 100px;
   margin-top: 10px;
@@ -1620,7 +1618,7 @@ body {
   }
   .main {
     width: 90%;
-    height: 230px;
+    height: auto;
     padding: 10px 10px;
   }
   .buttons-casino-info {
