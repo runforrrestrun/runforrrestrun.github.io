@@ -70,6 +70,11 @@ body {
 .fa {
   color: white;
 }
+.all4wins,
+.all4wins img {
+  width: 200px;
+  height: 200px;
+}
 
 .box {
   background-color: black;
@@ -338,9 +343,22 @@ body {
   text-decoration: none;
   word-spacing: 3px;
 }
+.news-button button {
+  width: auto;
+  height: auto;
+  font-family: inherit;
+  background-color: gold;
+  font-size: 25px;
+  font-weight: 600;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
 .news-content h2 span {
   color: gold;
   font-size: 30px;
+}
+.news-content h2 {
+  margin: 0 0 10px 0;
 }
 .news-smallBox-content {
   margin-bottom: 0;
@@ -1213,6 +1231,9 @@ body {
     padding-left: 30px;
     font-size: 25px;
   }
+  .all4wins {
+    display: none;
+  }
   .box {
     width: 90px;
 
@@ -1268,6 +1289,9 @@ body {
   /* content main paiges */
   .container {
     margin: 0;
+  }
+  .name-content img {
+    border-radius: 100%;
   }
   .container-casinos {
     margin: 50px 0 0 0;
@@ -1423,6 +1447,12 @@ body {
     padding: 50px 0 0 0;
     margin: 0;
   }
+  .casino-infoLogo {
+    justify-content: center;
+  }
+  .logo-box {
+    margin: 0;
+  }
 
   .tab-info button {
     margin: 10px 0 5px 5px;
@@ -1474,6 +1504,7 @@ body {
     width: 90%;
     height: 100%;
   }
+
   .box {
     width: 150px;
     height: 40px;
@@ -1682,6 +1713,12 @@ body {
     padding: 50px 0 0 0;
     margin: 0;
   }
+  .casino-infoLogo {
+    justify-content: start;
+  }
+  .logo-box {
+    margin: 50px;
+  }
 
   .tab-info button {
     margin-left: 50px;
@@ -1728,6 +1765,12 @@ body {
     overflow-y: scroll; /* Add the ability to scroll */
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+  .name-content {
+    display: none;
+  }
+  .all4wins {
+    display: block;
   }
   .content ul {
     flex-direction: column;
