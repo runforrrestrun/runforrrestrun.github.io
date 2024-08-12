@@ -150,7 +150,9 @@ body {
 #myLinks a {
   text-decoration: none;
 }
-
+#myLinks {
+  width: 100%;
+}
 .dropedownbtn {
   border: 0 solid black;
   box-sizing: border-box;
@@ -170,6 +172,12 @@ body {
   align-content: center;
   align-self: center;
   text-align: center;
+}
+.contact-us {
+  margin: 130px 0 0 20px;
+  box-sizing: border-box;
+  height: 30px;
+  width: 100%;
 }
 /* #bonus-btn {
   width: 70px;
