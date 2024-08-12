@@ -21,17 +21,17 @@ elsBtns.forEach((el) => el.addEventListener("click", toggleModal));
 
 function myFunction() {
   const x = document.getElementById("myLinks");
-  if (x.style.display === "none") {
+  if (x.style.display === "") {
     x.style.display = "block";
   } else {
-    x.style.display = "none";
+    x.style.display = "";
   }
 }
 //close menu click
 const y = document.getElementById("myLinks");
 function myFunction2() {
   if (y.style.display === "block") {
-    y.style.display = "none";
+    y.style.display = "";
   }
 }
 
