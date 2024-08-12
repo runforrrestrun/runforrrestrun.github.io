@@ -490,9 +490,9 @@ body {
   box-sizing: border-box;
   border: 1px solid rgba(129, 129, 129, 0.582);
   border-radius: 10px;
-
+  font-size: 20px;
   width: 100%;
-  height: 200px;
+  height: auto;
   text-align: center;
 }
 .top3casinos {
@@ -853,6 +853,7 @@ body {
   border: 0 solid black;
   font-family: inherit;
 }
+
 .buttons-bonus {
   width: 100%;
 }
@@ -860,6 +861,7 @@ body {
   text-decoration: none;
 }
 .inactive {
+  font-family: inherit;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
@@ -900,7 +902,8 @@ body {
   margin: 8px;
 }
 .bonus-link:hover {
-  opacity: 0.9;
+  background-color: #af03f398;
+  cursor: pointer;
 }
 
 /* mrore info(short info) */
@@ -1076,7 +1079,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: auto;
-  margin: 30px 0 50px 0;
+  margin: 10px 0 10px 0;
 }
 .logo-box {
   width: 150px;
@@ -1089,6 +1092,22 @@ body {
 .logo-box img {
   width: 150px;
   height: 150px;
+}
+.play-now {
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
+  margin: 10px 0 30px 0;
+}
+.play-now button {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 30px;
+  font-family: inherit;
+  font-weight: 600;
+  margin-left: 50px;
+  background-color: gold;
 }
 
 .tab-info {
@@ -1347,6 +1366,9 @@ body {
   .content-text p {
     font-size: 25px;
   }
+  .content-text p {
+    font-size: 19px;
+  }
   .name-content img .top3casinos {
     padding: 3px;
     height: 250px;
@@ -1604,7 +1626,7 @@ body {
     width: 100%;
   }
 
-  .content-text {
+  .content-text p {
     font-size: 20px;
   }
   .top3casinos {
@@ -1999,11 +2021,11 @@ body {
     border-radius: 10px;
 
     width: 100%;
-    height: 200px;
+    height: auto;
     text-align: center;
   }
   .content-text p {
-    font-size: 40px;
+    font-size: 30px;
   }
   .top3casinos {
     background-image: linear-gradient(240deg, black, purple);
