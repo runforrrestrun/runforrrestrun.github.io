@@ -382,7 +382,7 @@ body {
 .banner-box {
   box-sizing: border-box;
   width: 95%;
-  height: 100vh;
+  height: auto;
 }
 .banner-box img {
   background-image: url("img/news-banners/roobet-banner1.jpg");
@@ -405,6 +405,11 @@ body {
   margin: 0;
   padding: 10px;
   font-size: 30px;
+  text-align: center;
+}
+.news-content-main li {
+  list-style-position: inside;
+  text-align: start;
 }
 .news-content-main h1 {
   text-align: center;
@@ -1257,6 +1262,7 @@ body {
 .bottom-page img {
   height: 50px;
   width: 50px;
+  margin: 0;
 }
 
 /*  */
