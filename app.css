@@ -907,7 +907,8 @@ body {
   padding: 10px 5px;
   background-color: rgb(120, 15, 225);
   border-radius: 7px;
-  font-size: 15px;
+  font-size: 20px;
+  font-family: inherit;
   margin: 8px;
 }
 .bonus-link:hover {
