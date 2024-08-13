@@ -1174,6 +1174,7 @@ body {
   justify-content: center;
   animation: fadeEffect 1s;
   border-radius: 10px;
+  text-align: center;
 }
 .overview-button-container {
   width: 100%;
