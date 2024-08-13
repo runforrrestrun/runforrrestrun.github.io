@@ -773,6 +773,7 @@ body {
   background-color: rgb(167, 4, 189);
   transition: background-color 0.5s;
   box-shadow: 3px 3px 10px purple;
+  cursor: pointer;
 }
 .best-rewards {
   display: block;
@@ -799,6 +800,7 @@ body {
   background-color: rgb(167, 4, 189);
   transition: background-color 0.5s;
   box-shadow: 3px 3px 10px purple;
+  cursor: pointer;
 }
 .high-withdrawal {
   display: block;
@@ -876,7 +878,7 @@ body {
   flex: 1 1 0%;
   min-width: 100px;
   font-weight: 600;
-  background-color: rgb(41, 33, 49);
+  background-color: black;
   padding: 10px 5px;
   border-radius: 7px;
   color: white;
@@ -884,6 +886,10 @@ body {
   letter-spacing: 5px;
   margin: 8px;
   border: 0 solid black;
+}
+.inactive:hover {
+  background-color: rgb(41, 33, 49);
+  cursor: pointer;
 }
 .bonus-link {
   border: 0 solid black;
@@ -915,6 +921,7 @@ body {
   box-shadow: 1px 1px 5px rgb(197, 11, 182);
 }
 .more-info button {
+  cursor: pointer;
   background-color: inherit;
   display: block;
   font-weight: 600;
