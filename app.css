@@ -1506,6 +1506,13 @@ body {
   .logo-box {
     margin: 0;
   }
+  .play-now {
+    display: flex;
+    justify-content: center;
+  }
+  .play-now a button {
+    margin-left: 0;
+  }
 
   .tab-info button {
     margin: 10px 0 5px 5px;
@@ -1766,11 +1773,16 @@ body {
     padding: 50px 0 0 0;
     margin: 0;
   }
-  .casino-infoLogo {
+  .casino-infoLogo,
+  .play-now {
     justify-content: start;
   }
   .logo-box {
     margin: 50px;
+  }
+
+  .play-now a button {
+    margin-left: 50px;
   }
 
   .tab-info button {
