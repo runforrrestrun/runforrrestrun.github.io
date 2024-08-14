@@ -2234,19 +2234,25 @@ body {
 }
 
 @media (max-height: 850px) {
+  .dropdown-content {
+    width: 40%;
+  }
+  .dropdown-content a {
+    font-size: 15px;
+  }
+
   .content ul {
     width: 90%;
   }
-  .navBar {
-    height: auto;
-  }
+
   #a-links,
   .bonus-btn {
     font-size: 15px;
   }
   .box {
+    height: auto;
     width: 100px;
-    margin: 0 auto;
+    margin: 5px auto;
   }
 }
 /*  */
