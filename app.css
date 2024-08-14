@@ -867,6 +867,7 @@ body {
 }
 
 .buttons-bonus {
+  height: auto;
   width: 100%;
 }
 .buttons-bonus a {
