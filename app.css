@@ -2233,7 +2233,7 @@ body {
   }
 }
 
-@media (max-height: 500px) {
+@media (max-height: 850px) {
   .navBar {
     height: auto;
   }
