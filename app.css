@@ -1392,10 +1392,11 @@ body {
     width: 100%;
     justify-content: center;
   }
+
   .logo-container img,
   .name-content img {
-    width: 340px;
-    height: 340px;
+    width: 200px;
+    height: 200px;
   }
   .content-text {
     margin: 0 5px;
@@ -1642,6 +1643,11 @@ body {
     text-shadow: 2px 2px 10px black;
     color: white;
     font-size: 20px;
+  }
+  .logo-container img,
+  .name-content img {
+    width: 250px;
+    height: 250px;
   }
   /* news page */
   .container-news {
@@ -2024,6 +2030,9 @@ body {
   }
   .tab button {
     width: 200px;
+  }
+  .logo-container {
+    display: none;
   }
 
   /* News Page */
