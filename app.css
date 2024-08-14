@@ -2234,15 +2234,18 @@ body {
 }
 
 @media (max-height: 850px) {
+  .content ul {
+    width: 90%;
+  }
   .navBar {
     height: auto;
   }
   #a-links,
   .bonus-btn {
-    font-size: 20px;
+    font-size: 15px;
   }
   .box {
-    width: 120px;
+    width: 100px;
     margin: 0 auto;
   }
 }
