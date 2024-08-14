@@ -1282,9 +1282,56 @@ body {
 }
 
 /*  */
+
 /*  */
 /* MEDIA QUERY */
 /* max- media query  phones */
+@media (max-height: 1000px) {
+  .modal-content {
+    width: 60%;
+    height: auto;
+  }
+  .all4wins,
+  .all4wins img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+  }
+
+  #a-links {
+    font-size: 20px;
+  }
+  #logo-img {
+    width: 25px;
+    height: 25px;
+  }
+  .box {
+    margin: 0 auto;
+    width: 150px;
+  }
+  .first {
+    margin-top: 30px;
+  }
+  .bonus-btn {
+    font-size: 20px;
+  }
+  .drope-bonus {
+    width: 150px;
+  }
+  .box-dropdown {
+    width: 100%;
+  }
+  .dropdown-content-bonus {
+    width: 150px;
+    height: auto;
+    margin: 20px 0 0 10px;
+  }
+  #content-bonus {
+    width: 100px;
+    margin: 9px auto;
+    font-size: 15px;
+  }
+}
 
 @media only screen and (min-width: 5px) {
   /* new navbar */
@@ -1865,13 +1912,17 @@ body {
   .name-content {
     display: none;
   }
+  content {
+    width: 100%;
+    height: 50%;
+  }
   .all4wins {
     display: block;
   }
   .content ul {
     flex-direction: column;
     width: 100%;
-    height: 60%;
+    height: 77%;
     margin: 0 0 0 5px;
   }
   li .box a {
@@ -1886,9 +1937,6 @@ body {
   }
   #a-links {
     font-size: 30px;
-  }
-  .first {
-    margin-top: 40px;
   }
 
   .navBar a .icon {
@@ -1906,12 +1954,7 @@ body {
   .SEVENTH {
     display: flex;
   }
-  .FOURTH {
-    margin-top: 0;
-  }
-  .home {
-    margin-top: 50px;
-  }
+
   .bonusThird {
     margin-bottom: 50px;
   }
@@ -1920,7 +1963,7 @@ body {
     border: 0px solid rgba(238, 235, 235, 0.404);
     border-radius: 10px;
     box-sizing: border-box;
-    margin: 50px 0 0 5px;
+    margin: 40px 0 0 5px;
     width: 100%;
     height: 40px;
     padding-left: 2px;
@@ -1989,16 +2032,15 @@ body {
     text-align: center;
   }
   #content-bonus:hover,
-  .drope-bonus:hover,
-  .box-dropdown:hover {
+  .drope-bonus:hover {
     background-color: rgba(212, 6, 240, 0.562);
   }
   .box-dropdown:hover .dropdown-content-bonus {
     display: flex;
-    transition: 1s;
+    transition: 0.1s;
   }
   .box-dropdown:hover {
-    margin-bottom: 300px;
+    margin-bottom: 250px;
   }
   .container {
     width: 100%;
@@ -2011,9 +2053,11 @@ body {
   }
 
   .contact-us-desktop {
+    width: 100%;
+    height: auto;
     display: block;
+
     text-align: center;
-    margin: 250px 0 30px 0;
   }
   .contact-us-desktop p {
     margin: 5px 5px;
@@ -2186,77 +2230,6 @@ body {
   }
 }
 
-@media (max-height: 1000px) {
-  .modal-content {
-    width: 60%;
-    height: auto;
-  }
-  .all4wins,
-  .all4wins img {
-    width: 110px;
-    height: 110px;
-    margin: 0 auto;
-  }
-  .first {
-    margin-top: 5px;
-  }
-  .FOURTH {
-    margin-top: 20px;
-  }
-  #a-links {
-    font-size: 25px;
-  }
-  #logo-img {
-    width: 25px;
-    height: 25px;
-  }
-  .box {
-    margin: 0 auto;
-    width: 150px;
-  }
-  .bonus-btn {
-    font-size: 25px;
-  }
-  .drope-bonus,
-  .box-dropdown {
-    width: 150px;
-  }
-  .dropdown-content-bonus {
-    width: 150px;
-    height: auto;
-    margin: 20px 0 0 10px;
-  }
-  #content-bonus {
-    width: 100px;
-    margin: 9px auto;
-    font-size: 15px;
-  }
-}
-
-@media (max-height: 850px) {
-  .dropdown-content {
-    width: 40%;
-  }
-  .dropdown-content a {
-    font-size: 15px;
-  }
-
-  .content ul {
-    width: 90%;
-  }
-
-  #a-links,
-  .bonus-btn {
-    font-size: 15px;
-  }
-  .box {
-    height: auto;
-    width: 100px;
-    margin: 5px auto;
-  }
-}
-/*  */
-/*  */
 /*  */
 
 /*  */
