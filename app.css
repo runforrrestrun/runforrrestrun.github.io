@@ -1095,6 +1095,12 @@ body {
   width: 100%;
   height: auto;
 }
+.overview-summary {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 20px;
+}
 .casino-banner {
   box-sizing: border-box;
   width: 100%;
@@ -1565,7 +1571,7 @@ body {
     margin: 0 0 10px 0;
   }
   .overview-button p {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .cardTipe-container img {
@@ -2188,6 +2194,13 @@ body {
   }
   .modal-content {
     width: 50%;
+  }
+  /* main info page of casino */
+  .overview-summary,
+  #Bonuses,
+  #games,
+  #payments {
+    font-size: 25px;
   }
 }
 
