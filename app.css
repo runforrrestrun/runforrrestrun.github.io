@@ -1843,18 +1843,7 @@ body {
 .SEVENTH {
   display: none;
 }
-@media (max-height: 650px) {
-  .modal-content {
-    width: 60%;
-    height: auto;
-  }
-  .all4wins,
-  .all4wins img {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-  }
-}
+
 /* max-mediaquwry content Tablets iPads (portrait mode) */
 @media (min-width: 1200px) {
   .navBar {
@@ -2186,6 +2175,53 @@ body {
   }
   .modal-content {
     width: 50%;
+  }
+}
+
+@media (max-height: 800px) {
+  .modal-content {
+    width: 60%;
+    height: auto;
+  }
+  .all4wins,
+  .all4wins img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+  }
+  .first {
+    margin-top: 5px;
+  }
+  .FOURTH {
+    margin-top: 20px;
+  }
+  #a-links {
+    font-size: 25px;
+  }
+  #logo-img {
+    width: 25px;
+    height: 25px;
+  }
+  .box {
+    margin: 10px auto;
+    width: 150px;
+  }
+  .bonus-btn {
+    font-size: 25px;
+  }
+  .drope-bonus,
+  .box-dropdown {
+    width: 150px;
+  }
+  .dropdown-content-bonus {
+    width: 150px;
+    height: auto;
+    margin: 20px 0 0 10px;
+  }
+  #content-bonus {
+    width: 100px;
+    margin: 9px auto;
+    font-size: 15px;
   }
 }
 /*  */
