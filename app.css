@@ -1287,52 +1287,13 @@ body {
 /* MEDIA QUERY */
 /* max- media query  phones */
 @media (max-height: 1000px) {
-  .modal-content {
-    width: 60%;
-    height: auto;
-  }
   .all4wins,
   .all4wins img {
     width: 110px;
     height: 110px;
     margin: 0 auto;
   }
-
-  #a-links {
-    font-size: 20px;
-  }
-  #logo-img {
-    width: 25px;
-    height: 25px;
-  }
-  .box {
-    margin: 0 auto;
-    width: 150px;
-  }
-  .first {
-    margin-top: 30px;
-  }
-  .bonus-btn {
-    font-size: 20px;
-  }
-  .drope-bonus {
-    width: 150px;
-  }
-  .box-dropdown {
-    width: 100%;
-  }
-  .dropdown-content-bonus {
-    width: 150px;
-    height: auto;
-    margin: 20px 0 0 10px;
-  }
-  #content-bonus {
-    width: 100px;
-    margin: 9px auto;
-    font-size: 15px;
-  }
 }
-
 @media only screen and (min-width: 5px) {
   /* new navbar */
   .navBar {
