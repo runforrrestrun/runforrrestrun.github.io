@@ -1847,6 +1847,12 @@ body {
     width: 60%;
     height: auto;
   }
+  .all4wins,
+  .all4wins img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
 }
 /* max-mediaquwry content Tablets iPads (portrait mode) */
 @media (min-width: 1200px) {
@@ -1887,7 +1893,7 @@ body {
     font-size: 30px;
   }
   .first {
-    margin-top: 50px;
+    margin-top: 40px;
   }
 
   .navBar a .icon {
@@ -1919,7 +1925,7 @@ body {
     border: 0px solid rgba(238, 235, 235, 0.404);
     border-radius: 10px;
     box-sizing: border-box;
-    margin: 100px 0 0 5px;
+    margin: 50px 0 0 5px;
     width: 100%;
     height: 40px;
     padding-left: 2px;
