@@ -120,6 +120,7 @@ body {
 
 /* Style the hamburger menu */
 .navBar a.icon {
+  display: block;
   box-sizing: border-box;
   height: 90%;
   width: 30px;
@@ -601,6 +602,12 @@ body {
   text-align: center;
   margin-top: 20px;
 }
+.content-top p {
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: black;
+  border-radius: 10px;
+}
 .top-bonus {
   width: 200px;
   background-color: black;
@@ -916,6 +923,7 @@ body {
   box-sizing: border-box;
   align-items: flex-start;
   width: 90%;
+
   min-width: 100px;
   font-weight: 600;
   padding: 10px 5px;
@@ -1906,11 +1914,8 @@ body {
     font-size: 30px;
   }
 
-  .navBar a .icon {
-    display: block;
-  }
-  .icon {
-    visibility: hidden;
+  .navBar a.icon {
+    display: none;
   }
   .button-casino,
   .button-ESports,
