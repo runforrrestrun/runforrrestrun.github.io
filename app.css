@@ -1143,6 +1143,8 @@ body {
   box-sizing: border-box;
   height: auto;
   margin: 10px 0 30px 0;
+}
+.play-now button {
   cursor: pointer;
 }
 .play-now button {
