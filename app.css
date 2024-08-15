@@ -1351,6 +1351,7 @@ body {
   .dropdown-content {
     width: 50%;
   }
+  .home,
   .news-home,
   .bonus-home,
   .FOURTH,
@@ -1594,6 +1595,9 @@ body {
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
 @media (min-width: 780px) {
   /* new navbar */
+  .home {
+    display: flex;
+  }
   #myLinks {
     height: 250px;
   }
@@ -1917,6 +1921,7 @@ body {
   .navBar a.icon {
     display: none;
   }
+  .home,
   .button-casino,
   .button-ESports,
   .button-Sports,
