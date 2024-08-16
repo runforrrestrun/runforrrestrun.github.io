@@ -91,7 +91,6 @@ function Buttons(evt, button) {
   document.getElementById(button).style.display = "block";
   evt.currentTarget.className += " active";
 }
-const specificTab = document.getElementById("defaultOpen");
 
 document.addEventListener("DOMContentLoaded", function () {
   const element = document.getElementById("defaultOpen");
