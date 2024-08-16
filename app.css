@@ -552,18 +552,36 @@ body {
   border-radius: 10px;
   max-width: 1100px;
   width: 100%;
-  height: 300px;
+  height: auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 10px;
-  padding: 15px;
 }
+.top3casinos .top a {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+.top-container {
+  display: flex;
+  width: auto;
+  height: auto;
+}
+
 .top {
   margin: 0 10px;
   box-sizing: border-box;
-  width: 20%;
+  width: 32%;
+  height: 300px;
   border: 2px solid rgba(128, 128, 128, 0.486);
   border-radius: 10px;
   display: flex;
@@ -573,19 +591,7 @@ body {
   align-content: center;
   overflow: visible;
 }
-.top3casinos .top a {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
 
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-}
 .top1 {
   background-color: gold;
 }
@@ -616,7 +622,7 @@ body {
   background-color: chocolate;
 }
 .top-info {
-  width: 35%;
+  width: 100%;
   text-align: center;
   align-items: center;
   align-self: center;
@@ -627,17 +633,17 @@ body {
   background-color: black;
   border: 1px solid black;
   box-sizing: border-box;
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
 }
 .img-box-top img {
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
 }
 .content-top {
   font-size: 15px;
-  width: 90%;
-  height: 30%;
+  width: auto;
+  height: auto;
   text-align: center;
   margin-top: 20px;
 }
@@ -1478,21 +1484,26 @@ body {
   .content-text p {
     font-size: 19px;
   }
-  .name-content img .top3casinos {
+  .name-content img {
     padding: 3px;
     height: 250px;
+    width: 250px;
     margin: 0 5px;
     justify-content: center;
     align-items: center;
     align-content: center;
     align-self: center;
   }
+  .top3casinos {
+    flex-direction: column;
+    height: 400px;
+  }
   .top {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 240px;
-    margin: 3px;
+
+    margin: 10px 5px;
     border: 1px solid rgba(158, 156, 156, 0.493);
   }
   .top3casinos .top a {
@@ -1510,8 +1521,8 @@ body {
     font-size: 15px;
   }
   .img-box-top {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 10px;
     margin-bottom: auto;
   }
@@ -1525,7 +1536,6 @@ body {
     margin: 0 auto;
     height: auto;
     font-size: 12px;
-
     margin-bottom: auto;
   }
   .top-bonus {
@@ -1650,13 +1660,6 @@ body {
     height: auto;
   }
 
-  .fa-bars {
-    padding: 10px 0 0 0;
-  }
-  .icon ::before {
-    padding-left: 0;
-    padding-right: 20px;
-  }
   .dropdown-content {
     width: 50%;
   }
@@ -1750,14 +1753,17 @@ body {
     font-size: 20px;
   }
   .top3casinos {
-    height: 350px;
+    height: auto;
   }
-
+  .top-container {
+    justify-content: center;
+    padding: 10px;
+  }
   .top {
     margin: 0 10px;
     box-sizing: border-box;
     width: 20%;
-    height: 99%;
+    height: 400px;
     border: 2px solid rgba(128, 128, 128, 0.486);
     border-radius: 10px;
     display: flex;
@@ -1776,10 +1782,6 @@ body {
     text-shadow: 2px 2px 5px black;
   }
   .top-info {
-    width: 35%;
-    text-align: center;
-    align-items: center;
-    align-self: center;
     font-size: 25px;
   }
   .img-box-top {
@@ -2143,29 +2145,16 @@ body {
   }
 
   .content-text {
-    background-image: linear-gradient(240deg, black, purple);
-    text-shadow: 2px 2px 10px rgb(0, 0, 0);
     max-width: 1200px;
-    box-sizing: border-box;
-    border: 1px solid rgba(129, 129, 129, 0.582);
-    border-radius: 10px;
-
-    width: 100%;
-    height: auto;
-    text-align: center;
   }
   .content-text p {
     font-size: 20px;
     margin-top: 40px;
   }
   .top3casinos {
-    background-image: linear-gradient(240deg, black, purple);
-    text-shadow: 2px 2px 10px rgb(0, 0, 0);
-    border: 1px solid rgba(129, 129, 129, 0.582);
-    border-radius: 10px;
     max-width: 1200px;
     width: 100%;
-    height: 400px;
+    height: auto;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -2173,10 +2162,13 @@ body {
     margin: 10px;
     padding: 15px;
   }
+  .top-container {
+    width: 60%;
+  }
   .top {
     margin: 0 10px;
     box-sizing: border-box;
-    width: 20%;
+    width: 30%;
     border: 2px solid rgba(128, 128, 128, 0.486);
     border-radius: 10px;
     display: flex;
