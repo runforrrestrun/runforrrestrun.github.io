@@ -93,4 +93,10 @@ function Buttons(evt, button) {
 }
 const specificTab = document.getElementById("defaultOpen");
 
-document.getElementById("defaultOpen").click();
+document.addEventListener("DOMContentLoaded", function () {
+  const element = document.getElementById("defaultOpen");
+  if (element !== null) {
+    element.addEventListener("click", function () {});
+    element.click(); // Simulate a click event
+  }
+});
