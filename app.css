@@ -1111,20 +1111,23 @@ body {
   border-radius: 10px;
   text-align: center;
 }
+.logo-methods {
+  height: fit-content;
+}
 .deposit-methods h2 {
   margin: 5px;
 }
+
 .card-tipe {
-  margin: 0 0 10px 20px;
+  margin-left: 20px;
   width: 48px;
   height: 48px;
 }
 .tipe4 {
-  margin: 0;
   width: 46px;
   height: 30px;
+  margin-bottom: 10px;
 }
-
 .withdrawal,
 .bonus-terms {
   font-size: auto;
@@ -1298,7 +1301,7 @@ body {
   width: 100%;
   margin: 0;
 }
-.cardTipe-container img {
+.card-tipe-info {
   width: 48px;
   height: 48px;
 }
@@ -1603,11 +1606,7 @@ body {
   .logo-methods {
     justify-content: start;
     text-align: center;
-  }
-  .logo-methods img {
-    width: 48px;
-    height: 48px;
-    margin: 0 0 5px 10px;
+    height: auto;
   }
 
   /* CAsino info page */
@@ -1645,9 +1644,9 @@ body {
     font-size: 20px;
   }
 
-  .cardTipe-container img {
-    width: 40px;
-    height: 40px;
+  .card-tipe-info {
+    width: 48px;
+    height: 48px;
   }
   #overwiew {
     padding: 10px;
@@ -1875,10 +1874,9 @@ body {
     justify-content: start;
     text-align: center;
   }
-  .logo-methods img {
-    width: 50px;
-    height: 50px;
-    margin: 0 0 5px 15px;
+
+  .tipe4 {
+    margin: 0 0 10px 15px;
   }
   /* Casino info page */
   .casino-allInfo {
@@ -2256,6 +2254,13 @@ body {
   #games,
   #payments {
     font-size: 25px;
+  }
+  .cardTipe-container {
+    height: fit-content;
+  }
+  .tipe4 {
+    width: 46px;
+    height: 30px;
   }
 }
 
