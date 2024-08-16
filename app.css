@@ -45,6 +45,46 @@ body {
   background-attachment: fixed;
 }
 
+/* hamburger menu x animation */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 22px;
+  width: 22px;
+}
+
+.nav-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  transition: all 100ms ease-in-out;
+}
+
+.nav-toggle:hover {
+  cursor: pointer;
+}
+
+.x:nth-of-type(1) {
+  transition: all 100ms ease-in-out;
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 28px;
+}
+
+.x:nth-of-type(2) {
+  transition: all 100ms ease-in-out;
+  transform-origin: center;
+  width: 0;
+}
+
+.x:nth-of-type(3) {
+  transition: all 100ms ease-in-out;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  width: 28px;
+}
+
 /* nav Bar */
 
 .navBar {
@@ -57,13 +97,7 @@ body {
   width: 100%;
   position: fixed;
 }
-.content {
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-  height: 100%;
-  margin: 0;
-}
+
 .content a {
   text-decoration: none;
 }
@@ -83,8 +117,6 @@ body {
   flex-direction: row;
   height: 30px;
   width: 110px;
-  align-items: center;
-  margin: auto;
 }
 
 .content {
@@ -95,6 +127,7 @@ body {
   flex-direction: row;
   padding: 0;
   margin: 5px 0;
+  width: 100%;
 }
 #a-links {
   display: block;
@@ -119,25 +152,26 @@ body {
 }
 
 /* Style the hamburger menu */
-.navBar a.icon {
+.navBar .icon {
   display: block;
   box-sizing: border-box;
-  height: 90%;
-  width: 30px;
+  width: 50px;
   display: block;
   position: absolute;
   right: -3%;
-  top: 10%;
+  top: 20%;
 }
 
 /* Dropdown button */
 .dropdown {
+  box-sizing: border-box;
   font-family: inherit;
   text-decoration: none;
   overflow: hidden;
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: column;
+  width: 500px;
+  height: 400px;
   border: 1px solid black;
   font-size: 16px;
   border: none;
@@ -152,30 +186,35 @@ body {
   text-decoration: none;
 }
 #myLinks {
-  width: 100%;
+  width: 500px;
+  height: auto;
 }
 .dropedownbtn {
+  display: flex;
+  flex-direction: row;
   border: 0 solid black;
   box-sizing: border-box;
-  width: 90px;
-  height: 40px;
+  width: 110px;
+
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  justify-content: flex-start;
   font-weight: 600;
   font-family: inherit;
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
-  display: block;
   background-color: inherit;
-  margin: 0 0 10px 10px;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  align-self: center;
-  text-align: center;
+  margin: 10px 0 10px 20px;
+  padding: 0;
+}
+.box-menu-drop {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0 10px 20px;
+  width: 110px;
 }
 .contact-us {
-  margin: 110px 0 0 10px;
+  margin: 0 0 0 10px;
   box-sizing: border-box;
   height: 50px;
   width: 100%;
@@ -190,14 +229,13 @@ body {
 } */
 /* Add a purpe background color to navbar links on hover */
 .box:hover,
-.dropedownbtn:hover,
 .dropdown:hover .dropbtn {
   background-color: rgba(212, 6, 240, 0.562);
 }
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-  margin-left: 110px;
+  margin: 0 0 0 90px;
   display: none;
   flex-direction: column;
   flex-wrap: wrap;
@@ -231,9 +269,10 @@ body {
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+.dropdown .dropedownbtn:hover .dropdown-content {
   display: flex;
 }
+/* vertical menu hamburger menu */
 
 /*  */
 /*  */
@@ -1311,12 +1350,19 @@ body {
   }
 }
 @media only screen and (min-width: 5px) {
+  /* burger menu */
+  .nav-toggle {
+    margin: 5px 10px 0 auto;
+  }
   /* new navbar */
   .navBar {
     width: 100%;
   }
   .content {
-    width: 94%;
+    width: 100%;
+  }
+  .content ul {
+    width: 100%;
   }
 
   .navBar a.icon {
@@ -1326,34 +1372,36 @@ body {
     right: 15px;
   }
 
-  .icon ::before {
-    padding-left: 30px;
-    font-size: 25px;
-  }
   .all4wins {
     display: none;
   }
   .box {
     width: 110px;
-    margin: 0 auto;
   }
+
   #logo-img {
     height: 25px;
     width: 25px;
   }
   #a-links {
+    width: auto;
     padding-left: 3px;
     font-size: 18px;
   }
   #myLinks {
-    height: 250px;
-
+    display: block;
+    height: auto;
+    width: 100%;
     margin-top: 20px;
   }
   .dropdown-content {
     width: 50%;
+    border-radius: 10px;
   }
   .home,
+  .first,
+  .SECOND,
+  .THIRD,
   .news-home,
   .bonus-home,
   .FOURTH,
@@ -1597,18 +1645,11 @@ body {
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
 @media (min-width: 780px) {
   /* new navbar */
-  .home {
-    display: flex;
-  }
+
   #myLinks {
-    height: 250px;
+    height: auto;
   }
-  .navBar a.icon {
-    height: 50px;
-    width: 50px;
-    right: 0;
-    top: 0;
-  }
+
   .fa-bars {
     padding: 10px 0 0 0;
   }
@@ -1617,10 +1658,10 @@ body {
     padding-right: 20px;
   }
   .dropdown-content {
-    width: 35%;
+    width: 50%;
   }
   .content {
-    width: 90%;
+    width: 100%;
     height: 100%;
   }
 
@@ -1628,7 +1669,7 @@ body {
     width: 150px;
     height: 40px;
     font-size: 20px;
-    margin: 0 auto;
+
     padding-left: 20px;
   }
   .button-casino,
@@ -1643,12 +1684,15 @@ body {
 
   .dropedownbtn {
     text-align: center;
-    width: 150px;
+    margin-top: 20px;
     font-size: 20px;
     font-weight: 600;
   }
+  .box-menu-drop {
+    margin-top: 20px;
+  }
   .dropdown-content {
-    margin-left: 170px;
+    margin-left: 110px;
 
     width: 30%;
   }
@@ -1870,13 +1914,6 @@ body {
 }
 /*   */
 
-.FOURTH,
-.FIFTH,
-.SIXTH,
-.SEVENTH {
-  display: none;
-}
-
 /* max-mediaquwry content Tablets iPads (portrait mode) */
 @media (min-width: 1200px) {
   .navBar {
@@ -1912,18 +1949,26 @@ body {
   .box {
     box-sizing: border-box;
     margin: 20px 0 0 5px;
-    width: 100%;
+    width: 170px;
     height: 40px;
     padding-left: 2px;
+    justify-content: flex-start;
   }
   #a-links {
     font-size: 30px;
   }
 
-  .navBar a.icon {
+  .nav-toggle {
+    display: none;
+  }
+
+  .home2 {
     display: none;
   }
   .home,
+  .first,
+  .SECOND,
+  .THIRD,
   .button-casino,
   .button-ESports,
   .button-Sports,
@@ -1957,20 +2002,21 @@ body {
     font-family: inherit;
   }
   .drope-bonus {
-    width: 100%;
+    width: 170px;
     height: 100%;
     display: flex;
     background-color: inherit;
     border: 0 solid black;
     border-radius: 10px;
     font-family: inherit;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 0;
   }
   .bonus-btn {
     display: block;
     width: 60%;
     height: 100%;
-    padding: 0 0 0 10px;
+    padding-left: 5px;
     color: white;
     text-decoration: none;
     font-weight: 600;

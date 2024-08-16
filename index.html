@@ -27,14 +27,21 @@
     <!-- navBar -->
     <nav class="navBar" id="special-navBar" >
       <div class="content">
+      
         <div class="all4wins">
           <img src="img/All4Wins-logo.png" alt="">
          </div> 
         <ul>
-            <!-- <li class="box home">
+             <!-- <li class="box home ">
                 <img id="logo-img"  src="img/home-logo.png" alt="" />
-                <a   href="HomePage.html"><div id="a-links">home</div></a>
-              </li> -->
+                <a   href="/"><div id="a-links">All4Wins</div></a>
+              </li>  -->
+
+              <li class="box home2 ">
+                <img id="logo-img"  src="img/home-logo.png" alt="" />
+                <a   href="/"><div id="a-links">All4Wins</div></a>
+              </li> 
+              
              
           <li class="box first">
             <img id="logo-img"  src="img/casino-logo.png" alt="" />
@@ -64,7 +71,7 @@
 
                 <a id="content-bonus" href="/Bonuses/Cashback/">Cashback</a>
 
-                <a id="content-bonus" href="/Bonuses/No-Deposit/">No Wagering</a>
+                <a id="content-bonus" href="/Bonuses/No-Wagering/">No Wagering</a>
                 
               </div>
             </div>
@@ -82,7 +89,16 @@
             <img id="logo-img" src="img/joystick-regular-24.png" alt="" />
             <a  href=""><div id="a-links">Smthng</div></a>
           </li> -->
+          <a   onclick="myFunction()" class="nav-toggle ">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </a>
+        
+       
         </ul>
+
+        
 
         <div class="contact-us-desktop">
           <p>Contact us at: </p>
@@ -91,31 +107,53 @@
       </div>
       <!-- Navigation links (hidden by default) -->
       <!-- onclick="myFunction()" -->
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()" >
-        <i class="fa fa-bars"></i>
-      </a>
-      <div id="myLinks" >
-        <div class="dropdown">
-          <button class="dropedownbtn" id="bonus-btn"" >
-            Bonus
-            <i class="fa fa-caret-right"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="/Bonuses/No-Deposit/">No Deposit</a>
-            <a href="/Bonuses/First-Deposit/">First Deposit</a>
-            <a href="/Bonuses/Cashback/">Cashbak</a>
-            <a href="/Bonuses/No-Deposit/">No Wagering</a>
+      
+        <!-- <i class="fa fa-bars icon"></i> -->
+        <div id="myLinks" >
+          <div class="dropdown">
+  
+            <div class="box-menu-drop">
+              <img id="logo-img"  src="img/casino-logo.png" alt="" />
+              <a   href="/Casinos"><div id="a-links">Casinos</div></a>
+            </div>
+  
+            <div class="box-menu-drop">
+              <img id="logo-img" src="img/controller-logo.png" alt="" />
+              <a  href="/Esports"><div id="a-links">ESports</div></a>
+            </div>
+  
+            <div class="box-menu-drop">
+              <img id="logo-img" src="img/football-logo.png" alt="" />
+              <a href="/Sports"><div id="a-links">Sports</div></a>
+            </div>
+  
+            <button class="dropedownbtn" id="bonus-btn"" >
+              <img id="logo-img" src="img/diamond-logo.png" alt="" />
+                   <span  id="a-links">Bonus </span>
+                   <div class="dropdown-content">
+                    <a href="/Bonuses/No-Deposit/">No Deposit</a>
+                    <a href="/Bonuses/First-Deposit/">First Deposit</a>
+                    <a href="/Bonuses/Cashback/">Cashback</a>
+                    <a href="/Bonuses/No-Wagering/">No Wagering</a>
+                  </div>
+            </button>
+            
+  
+            <div class="box-menu-drop">
+              <img id="logo-img" src="img/news-logo.png" alt="" />
+              <a  href="/News/"><div id="a-links">News</div></a>
+            </div>
           </div>
+          
+  
+          <div class="contact-us">
+            <p>Contact us at: </p>
+            <p>contact@all4wins.com</p>
+          </div>
+          <!-- <a href="#about"><button class="dropedownbtn" >smthng</button></a>
+          <a  href="#about"><button class="dropedownbtn" >smthng</button></a>
+          <a href="#about"><button class="dropedownbtn" >smthng</button></a> -->
         </div>
-        <a  href="/News"><button class="dropedownbtn" >News</button></a>
-        <div class="contact-us">
-          <p>Contact us at: </p>
-          <p>contact@all4wins.com</p>
-        </div>
-        <!-- <a href="#about"><button class="dropedownbtn" >smthng</button></a>
-        <a  href="#about"><button class="dropedownbtn" >smthng</button></a>
-        <a href="#about"><button class="dropedownbtn" >smthng</button></a> -->
-      </div>
       
     </nav>
     <!-- 

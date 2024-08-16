@@ -17,6 +17,16 @@ const toggleModal = (ev) => {
 const elsBtns = document.querySelectorAll("[data-modal]");
 elsBtns.forEach((el) => el.addEventListener("click", toggleModal));
 
+// hamburger menu x animation
+let navToggle = document.querySelector(".nav-toggle");
+let bars = document.querySelectorAll(".bar");
+
+function toggleHamburger(e) {
+  bars.forEach((bar) => bar.classList.toggle("x"));
+}
+
+navToggle.addEventListener("click", toggleHamburger);
+
 // Hamburger menu
 
 function myFunction() {
