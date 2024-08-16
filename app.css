@@ -1119,11 +1119,7 @@ body {
   width: 50px;
   height: 50px;
 }
-.tipe4 {
-  width: 70px;
-  height: 50px;
-  background-color: black;
-}
+
 .withdrawal,
 .bonus-terms {
   font-size: auto;
@@ -2219,6 +2215,9 @@ body {
     font-family: inherit;
     font-weight: 600;
     font-size: 20px;
+  }
+  .casino-info {
+    padding-bottom: 50px;
   }
   .best-rewards {
     box-sizing: border-box;
