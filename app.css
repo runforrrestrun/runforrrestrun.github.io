@@ -1116,8 +1116,13 @@ body {
 }
 .card-tipe {
   margin: 0 0 10px 20px;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
+}
+.tipe4 {
+  margin: 0;
+  width: 46px;
+  height: 30px;
 }
 
 .withdrawal,
@@ -1294,11 +1299,8 @@ body {
   margin: 0;
 }
 .cardTipe-container img {
-  width: 50px;
-  height: 50px;
-}
-#tipe4-info {
-  width: 70px;
+  width: 48px;
+  height: 48px;
 }
 
 /* Go from zero to full opacity */
@@ -1603,8 +1605,8 @@ body {
     text-align: center;
   }
   .logo-methods img {
-    width: 50px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     margin: 0 0 5px 10px;
   }
 
