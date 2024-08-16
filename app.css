@@ -947,7 +947,7 @@ body {
   color: white;
   font-size: 20px;
   letter-spacing: 5px;
-  margin: 8px;
+  margin: 24px;
   border: 0 solid black;
 }
 .inactive a {
@@ -980,7 +980,7 @@ body {
   border-radius: 7px;
   font-size: 20px;
   font-family: inherit;
-  margin: 8px;
+  margin: 24px;
 }
 .bonus-link a {
   text-decoration: none;
