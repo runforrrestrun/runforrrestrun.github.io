@@ -15,7 +15,7 @@ body {
 }
 #Casino-Background {
   background-color: black;
-  background-image: url("img/CasinoBackground1.jpg");
+  background-image: url("img/CasinoBackground.jpg");
   background-size: contain;
 
   background-attachment: fixed;
