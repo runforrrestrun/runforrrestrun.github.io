@@ -1529,6 +1529,9 @@ body {
     text-align: center;
     height: auto;
   }
+  .more-info button {
+    width: fit-content;
+  }
 
   /* CAsino info page */
 
