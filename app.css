@@ -1532,7 +1532,14 @@ body {
   .more-info button {
     width: fit-content;
   }
-
+  .card-tipe {
+    width: 72px;
+    height: 72px;
+  }
+  .tipe4 {
+    height: 45px;
+    width: 69px;
+  }
   /* CAsino info page */
 
   .casino-allInfo {
@@ -1792,10 +1799,16 @@ body {
     justify-content: start;
     text-align: center;
   }
-
+  .card-tipe {
+    width: 48px;
+    height: 48px;
+  }
   .tipe4 {
+    height: 30px;
+    width: 46px;
     margin: 0 0 10px 15px;
   }
+
   /* Casino info page */
   .casino-allInfo {
     padding: 50px 0 0 0;
