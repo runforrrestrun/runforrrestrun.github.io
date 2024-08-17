@@ -883,7 +883,7 @@ body {
   color: white;
   font-size: 24px;
   letter-spacing: 5px;
-  margin: 20px;
+  margin: 10px 0 20px 0;
   border: 0 solid black;
 }
 
@@ -910,7 +910,7 @@ body {
   border-radius: 7px;
   font-size: 20px;
   font-family: inherit;
-  margin: 24px;
+  margin: 10px 0 20px 0;
 }
 
 .bonus-link:hover {
