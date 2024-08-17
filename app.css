@@ -871,7 +871,7 @@ body {
   box-sizing: border-box;
   align-items: flex-start;
   width: 90%;
-  height: fit-content;
+  height: 50px;
   flex: 1 1 0%;
   min-width: 100px;
   font-weight: 600;
@@ -900,7 +900,7 @@ body {
   box-sizing: border-box;
   align-items: flex-start;
   width: 90%;
-  height: fit-content;
+  height: 50px;
   min-width: 100px;
   font-weight: 600;
   padding: 10px 5px;
