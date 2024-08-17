@@ -1487,6 +1487,10 @@ body {
   .second {
     justify-content: center;
   }
+  .bonus-link,
+  .inactive {
+    width: 100%;
+  }
   .name-holder,
   .buttons-casino-info {
     justify-content: center;
@@ -1756,6 +1760,10 @@ body {
     box-sizing: border-box;
     width: 170px;
     font-size: 13px;
+  }
+  .bonus-link,
+  .inactive {
+    width: 90%;
   }
 
   .more-info {
