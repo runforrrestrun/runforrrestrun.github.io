@@ -13,6 +13,7 @@ body {
   color: #ffffff;
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
 }
+
 #Casino-Background {
   background-color: black;
   background-image: url("img/CasinoBackground.jpg");
@@ -276,72 +277,6 @@ body {
 
 /*  */
 /*  */
-/* Bonus Page */
-.tab {
-  overflow: hidden;
-  border: opx solid #ccc;
-  background-color: inherit;
-  width: 100%;
-  font-family: inherit;
-  border-bottom: 2px solid purple;
-
-  padding: 0 0 0 30%;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: purple;
-  float: left;
-  border: 1px solid rgba(226, 222, 222, 0.342);
-  border-radius: 10px;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  margin: 5px 10px;
-  transition: 0.3s;
-  font-family: inherit;
-  font-weight: 600;
-  text-shadow: 2px 2px 10px black;
-  color: white;
-  font-size: 20px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #d703f3;
-}
-
-/* Style the tab content */
-.tabcontent {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  display: none;
-  padding: 6px 12px;
-  border: 0px solid #ccc;
-  border-top: none;
-  animation: fadeEffect 1s; /* Fading effect takes 1 second */
-}
-
-/* Go from zero to full opacity */
-@keyframes fadeEffect {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.top-info span {
-  color: gold;
-}
-/* 
-
 
 */
 /* news page */
@@ -717,7 +652,8 @@ body {
 .casino-info {
   box-sizing: border-box;
   border: 0px solid (7, 9, 15);
-  width: 100%;
+  width: 60%;
+  height: fit-content;
   min-width: 200px;
   display: flex;
   flex-wrap: wrap;
@@ -725,6 +661,7 @@ body {
   flex: 1 1 70%;
   align-content: center;
   font-family: inherit;
+  margin-top: 30px;
 }
 
 .casino-info a {
@@ -887,7 +824,7 @@ body {
   display: block;
   align-items: flex-start;
   border: 1px solid(7, 9, 15);
-  width: 30%;
+  width: 40%;
   min-width: 200px;
   box-sizing: border-box;
   flex-basis: 30%;
@@ -947,7 +884,7 @@ body {
   color: white;
   font-size: 20px;
   letter-spacing: 5px;
-  margin: 24px;
+  margin-top: 10px;
   border: 0 solid black;
 }
 .inactive a {
@@ -972,7 +909,6 @@ body {
   align-items: flex-start;
   width: 90%;
   height: 50px;
-
   min-width: 100px;
   font-weight: 600;
   padding: 10px 5px;
@@ -980,7 +916,7 @@ body {
   border-radius: 7px;
   font-size: 20px;
   font-family: inherit;
-  margin: 24px;
+  margin-top: 15px;
 }
 .bonus-link a {
   text-decoration: none;
@@ -1429,16 +1365,6 @@ body {
     display: none;
   }
 
-  /* content bonus page */
-  .tab {
-    padding: 0;
-  }
-  .tab button {
-    width: 80px;
-    font-size: 11px;
-    padding: 14px 5px;
-  }
-
   /* news page */
   .container-news {
     margin: 0;
@@ -1503,12 +1429,16 @@ body {
     flex-direction: column;
     height: 400px;
   }
+  .top-container {
+    justify-content: center;
+  }
   .top {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    margin: 10px 5px;
+    width: 25%;
+    height: 280px;
+    margin: 10px 10px;
     border: 1px solid rgba(158, 156, 156, 0.493);
   }
   .top3casinos .top a {
@@ -1526,8 +1456,8 @@ body {
     font-size: 15px;
   }
   .img-box-top {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 10px;
     margin-bottom: auto;
   }
@@ -1538,7 +1468,7 @@ body {
     border-radius: 10px;
   }
   .content-top {
-    margin: 0 auto;
+    margin: 0 5px;
     height: auto;
     font-size: 12px;
     margin-bottom: auto;
@@ -1549,7 +1479,7 @@ body {
     width: 80%;
     text-decoration: none;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 15px;
   }
   .top-bonus span {
@@ -1654,7 +1584,7 @@ body {
 }
 
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
-@media (min-width: 780px) {
+@media (min-width: 550px) {
   /* new navbar */
 
   #myLinks {
@@ -1709,21 +1639,7 @@ body {
     font-size: 25px;
     width: 100px;
   }
-  /* bonus page */
 
-  .tab button {
-    width: 170px;
-    padding: 14px 16px;
-    margin: 5px 10px;
-    text-shadow: 2px 2px 10px black;
-    color: white;
-    font-size: 20px;
-  }
-  .logo-container img,
-  .name-content img {
-    width: 250px;
-    height: 250px;
-  }
   /* news page */
   .container-news {
     margin: 0;
@@ -1754,7 +1670,8 @@ body {
     font-size: 20px;
   }
   .top3casinos {
-    height: auto;
+    height: 300px;
+    flex-direction: row;
   }
   .top-container {
     justify-content: center;
@@ -1763,36 +1680,40 @@ body {
   .top {
     margin: 0 10px;
     box-sizing: border-box;
-    width: 20%;
-    height: 400px;
+    width: 25%;
+    height: auto;
     border: 2px solid rgba(128, 128, 128, 0.486);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font: 15px;
   }
   .top a {
     color: white;
   }
   .top-left {
     border-radius: 100%;
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
     font-weight: 900;
     text-shadow: 2px 2px 5px black;
   }
   .top-info {
     font-size: 25px;
+    width: 35%;
+    font-size: 20px;
+    padding: 10px;
   }
   .img-box-top {
-    margin: 10px 0 0 0;
+    margin: 5px 0 0 0;
     display: block;
     background-color: black;
     border: 1px solid black;
     box-sizing: border-box;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
   }
   .img-box-top img {
     height: 100%;
@@ -1803,7 +1724,6 @@ body {
     width: 90%;
     height: 50%;
     text-align: center;
-    margin-top: 20px;
   }
   .top-bonus {
     box-sizing: border-box;
@@ -1821,7 +1741,7 @@ body {
     color: white;
     font-family: inherit;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 15px;
   }
   .name-holder,
   .buttons-casino-info {
@@ -2090,21 +2010,6 @@ body {
     margin: 5px 5px;
   }
 
-  /* bonus page */
-  .tab {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    align-content: center;
-  }
-  .tab button {
-    width: 200px;
-  }
-  .logo-container {
-    display: none;
-  }
-
   /* News Page */
   .container-news {
     margin: 0 0 0 200px;
@@ -2154,7 +2059,7 @@ body {
   .top3casinos {
     max-width: 1200px;
     width: 100%;
-    height: auto;
+    height: 450px;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
