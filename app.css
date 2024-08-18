@@ -223,12 +223,7 @@ body {
 .contact-us p {
   margin: 2px 5px;
 }
-/* #bonus-btn {
-  width: 70px;
-  height: 40px;
-  justify-content: center;
-} */
-/* Add a purpe background color to navbar links on hover */
+
 .box:hover,
 .dropdown:hover .dropbtn {
   background-color: rgba(212, 6, 240, 0.562);
@@ -278,13 +273,9 @@ body {
 /*  */
 /*  */
 
-*/
 /* news page */
 .container-news {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   width: 100%;
   padding-top: 20px;
   border: 1px solid rgba(0, 0, 0, 0);
@@ -292,7 +283,6 @@ body {
 }
 .news-box {
   box-sizing: border-box;
-  width: 450px;
   height: autox;
   margin: 20px;
   display: flex;
@@ -1291,22 +1281,6 @@ body {
     margin: 5px 10px 0 auto;
   }
   /* new navbar */
-  .navBar {
-    width: 100%;
-  }
-  .content {
-    width: 100%;
-  }
-  .content ul {
-    width: 100%;
-  }
-
-  .navBar a.icon {
-    width: 50px;
-    height: auto;
-    top: 5px;
-    right: 15px;
-  }
 
   .all4wins {
     display: none;
@@ -1346,10 +1320,7 @@ body {
   .SEVENTH {
     display: none;
   }
-  .fa-caret-right {
-    width: 5px;
-    padding: 10px 0 10px 0;
-  }
+
   .contact-us-desktop {
     display: none;
   }
@@ -1361,9 +1332,16 @@ body {
     justify-content: center;
   }
   .news-content-main {
+    box-sizing: border-box;
     width: 100%;
     font-size: 20px;
-    padding: 20px;
+    padding: 10px 10px;
+  }
+  .news-box {
+    width: 90%;
+  }
+  .banner-box {
+    width: 100%;
   }
 
   /* content main paiges */
@@ -1636,13 +1614,20 @@ body {
 
   /* news page */
   .container-news {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 0;
-    justify-content: center;
     padding: 100px 10px 10px 10px;
   }
   .news-content-main {
     font-size: 30px;
     padding: 30px;
+  }
+  .news-box {
+    margin: 20px auto;
+    width: 300px;
   }
   /* 
   
@@ -1791,10 +1776,6 @@ body {
   .logo-methods {
     justify-content: start;
     text-align: center;
-  }
-
-  .tipe4 {
-    margin: 0 0 10px 15px;
   }
 
   /* Casino info page */
@@ -2012,6 +1993,10 @@ body {
   /* News Page */
   .container-news {
     margin: 0 0 0 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: 100vh;
   }
   /* article from news */
@@ -2021,16 +2006,12 @@ body {
   .news-content-main {
     padding: 50px;
   }
+  .news-box {
+    width: 400px;
+  }
 
   /* content */
 
-  .main {
-    margin: 10px auto;
-  }
-
-  .buttons-casino-info {
-    width: 100%;
-  }
   .name-content {
     text-shadow: 2px 2px 10px rgb(0, 0, 0);
     max-width: 1200px;
@@ -2059,16 +2040,14 @@ body {
     max-width: 1200px;
     width: 100%;
     height: 450px;
-    box-sizing: border-box;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 10px;
     padding: 15px;
   }
-  .top-container {
-    width: 60%;
-  }
+
   .top {
     margin: 0 10px;
     box-sizing: border-box;
@@ -2104,44 +2083,19 @@ body {
     padding-top: 20px;
   }
   .top-bonus {
-    width: 70%px;
-    background-color: black;
     margin-bottom: 10px;
   }
 
   .top-bonus span {
-    display: block;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    background-color: inherit;
-    color: white;
-    font-family: inherit;
     font-weight: 600;
     font-size: 20px;
   }
-  .casino-info {
-    padding-bottom: 50px;
-  }
-  .best-rewards {
-    box-sizing: border-box;
-    width: 200px;
-    font-size: 15px;
-  }
+
+  .best-rewards,
   .high-withdrawal {
     box-sizing: border-box;
     width: 200px;
     font-size: 15px;
-  }
-  body,
-  #Casino-Background,
-  #ESports-backgound,
-  #Casino-sports-background,
-  #Bonus-Page-Background,
-  #news-background {
-    background-size: cover;
-    background-position-x: center;
-    background-color: #000000;
   }
 
   /* Casino info page */
@@ -2149,9 +2103,7 @@ body {
     padding: 0;
     margin: 0 0 0 200px;
   }
-  .modal-content {
-    width: 50%;
-  }
+
   /* main info page of casino */
   .overview-summary,
   #Bonuses,
@@ -2161,10 +2113,6 @@ body {
   }
   .cardTipe-container {
     height: fit-content;
-  }
-  .tipe4 {
-    width: 46px;
-    height: 30px;
   }
 }
 
