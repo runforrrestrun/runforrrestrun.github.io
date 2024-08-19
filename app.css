@@ -1308,6 +1308,7 @@ body {
   }
   .box {
     width: 110px;
+    margin-left: 10px;
   }
 
   #logo-img {
@@ -1597,7 +1598,7 @@ body {
     height: 40px;
     font-size: 20px;
 
-    padding-left: 20px;
+    margin-left: 20px;
   }
   .button-casino,
   .button-ESports,
