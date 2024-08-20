@@ -1258,7 +1258,7 @@ body {
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(black, purple);
-  border-radius: 10px;
+
   box-sizing: border-box;
   width: 100%;
   height: fit-content;
@@ -1280,7 +1280,9 @@ body {
   width: 50px;
   margin: 0;
 }
-
+.bottom-page p {
+  padding-left: 10px;
+}
 .bottom-page p a {
   text-decoration: none;
   color: white;
