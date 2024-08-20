@@ -283,7 +283,6 @@ body {
 }
 .news-box {
   box-sizing: border-box;
-  width: 400px;
   height: autox;
   margin: 20px;
   display: flex;
@@ -303,17 +302,15 @@ body {
   height: auto;
   margin: 0;
 }
-
 .news-banner img {
   box-sizing: border-box;
-  width: 398px;
+
+  width: 100%;
   height: auto;
-  min-height: 100px;
   border-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-
 .news-content {
   box-sizing: border-box;
   margin: 10px;
@@ -352,6 +349,11 @@ body {
   width: fit-content;
   height: fit-content;
 }
+.missionU img {
+  border: 1px solid rgba(228, 225, 225, 0.507);
+  border-radius: 10px;
+}
+
 .missionU img {
   width: auto;
   height: auto;
@@ -1367,14 +1369,7 @@ body {
     padding: 10px 10px;
   }
   .news-box {
-    width: 350px;
-    margin: 20px auto;
-  }
-  .news-banner {
-    width: 100%;
-  }
-  .news-banner img {
-    width: 100%;
+    width: 90%;
   }
   .banner-box {
     width: 100%;
@@ -1661,7 +1656,7 @@ body {
   }
   .news-box {
     margin: 20px auto;
-    width: 400px;
+    width: 300px;
   }
   /* 
   
