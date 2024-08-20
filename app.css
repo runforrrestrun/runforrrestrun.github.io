@@ -1077,6 +1077,7 @@ body {
 */
 /* Main Info pages of casinos */
 .casino-allInfo {
+  display: block;
   font-family: inherit;
   margin-left: 200px;
   width: 100%;
@@ -1247,9 +1248,6 @@ body {
   margin: 50px auto;
   height: 500px;
   box-sizing: border-box;
-  border: 1px solid rgba(15, 15, 15, 0.39);
-  border-radius: 10px;
-  background-image: linear-gradient(purple, black);
 }
 /* 
 /* end of page */
@@ -1260,8 +1258,7 @@ body {
   border-radius: 10px;
   box-sizing: border-box;
   width: 100%;
-  height: auto;
-  margin-top: auto;
+  height: fit-content;
 }
 .gambleAware {
   display: flex;
