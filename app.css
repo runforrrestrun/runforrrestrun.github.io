@@ -1077,8 +1077,6 @@ body {
 */
 /* Main Info pages of casinos */
 .casino-allInfo {
-  display: flex;
-  flex-direction: column;
   font-family: inherit;
   margin-left: 200px;
   width: 100%;
