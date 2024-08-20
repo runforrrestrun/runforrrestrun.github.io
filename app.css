@@ -1107,16 +1107,16 @@ body {
   margin: 10px 0 10px 0;
 }
 .logo-box {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border: 1px solid black;
   border-radius: 10px;
   background-color: black;
   margin-left: 50px;
 }
 .logo-box img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
 .play-now {
   width: 100%;
@@ -1263,7 +1263,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: auto;
-  margin-top: 30px;
+  margin-top: 70%;
 }
 .gambleAware {
   display: flex;
@@ -1819,10 +1819,14 @@ body {
   .play-now {
     justify-content: start;
   }
+  .logo-box,
+  .logo-box img {
+    width: 150px;
+    height: 150px;
+  }
   .logo-box {
     margin: 50px;
   }
-
   .play-now a button {
     margin-left: 50px;
   }
