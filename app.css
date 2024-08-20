@@ -283,6 +283,7 @@ body {
 }
 .news-box {
   box-sizing: border-box;
+  width: 400px;
   height: autox;
   margin: 20px;
   display: flex;
@@ -305,9 +306,7 @@ body {
 
 .news-banner img {
   box-sizing: border-box;
-
-  max-width: 100%;
-  min-width: 100%;
+  width: 398px;
   height: auto;
   min-height: 100px;
   border-radius: 10px;
@@ -1368,7 +1367,8 @@ body {
     padding: 10px 10px;
   }
   .news-box {
-    width: 90%;
+    width: 400px;
+    margin: 20px auto;
   }
   .banner-box {
     width: 100%;
@@ -1655,7 +1655,7 @@ body {
   }
   .news-box {
     margin: 20px auto;
-    width: 300px;
+    width: 400px;
   }
   /* 
   
