@@ -305,7 +305,7 @@ body {
 .news-banner img {
   box-sizing: border-box;
 
-  width: 397px;
+  width: 100%;
   height: auto;
   border-radius: 10px;
   border-bottom-left-radius: 0;
