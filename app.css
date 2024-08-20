@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-image: url("img/HomeScreen.png");
+  background-image: url("/img/HomeScreen.webp");
   background-color: rgb(0, 0, 0);
   background-size: cover;
   background-position: center;
@@ -16,31 +16,31 @@ body {
 
 #Casino-Background {
   background-color: black;
-  background-image: url("img/CasinoBackground.jpg");
+  background-image: url("img/CasinoBackground.webp");
   background-size: contain;
 
   background-attachment: fixed;
 }
 #ESports-backgound {
   background-color: black;
-  background-image: url("img/ESportsBackground1.jpg");
+  background-image: url("img/ESportsBackground1.webp");
   background-size: contain;
 
   background-attachment: fixed;
 }
 #Casino-sports-background {
-  background-image: url("img/Sports-background.jpg");
+  background-image: url("img/Sports-background.webp");
 
   background-attachment: fixed;
 }
 #Bonus-Page-Background {
-  background-image: url("img/BnusBackground.jpg");
+  background-image: url("img/BnusBackground.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 #news-background {
-  background-image: url("img/NewsBackground.jpg");
+  background-image: url("img/NewsBackground.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -346,13 +346,22 @@ body {
 }
 
 /* news-page article CONTENT */
+.missionU {
+  margin: 0 auto;
+  width: fit-content;
+  height: fit-content;
+}
+.missionU img {
+  width: auto;
+  height: auto;
+}
 .banner-box {
   box-sizing: border-box;
   width: 95%;
   height: auto;
 }
 .banner-box img {
-  background-image: url("img/news-banners/roobet-banner1.jpg");
+  background-image: url("img/news-banners/roobet-banner1.webp");
   background-size: cover;
   justify-content: center;
   align-items: center;
