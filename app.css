@@ -1077,11 +1077,12 @@ body {
 */
 /* Main Info pages of casinos */
 .casino-allInfo {
+  display: flex;
+  flex-direction: column;
   font-family: inherit;
-
   margin-left: 200px;
   width: 100%;
-  height: auto;
+  height: 100vh;
 }
 .overview-summary {
   width: 100%;
@@ -1100,7 +1101,6 @@ body {
 }
 .casino-infoLogo {
   display: flex;
-
   box-sizing: border-box;
   width: 100%;
   height: auto;
@@ -1263,7 +1263,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: auto;
-  margin-top: 70%;
+  margin-top: auto;
 }
 .gambleAware {
   display: flex;
@@ -1549,15 +1549,13 @@ body {
     padding: 50px 0 0 0;
     margin: 0;
   }
-  .casino-infoLogo {
-    justify-content: center;
-  }
+
   .logo-box {
-    margin: 0;
+    margin: 20px;
   }
   .play-now {
     display: flex;
-    justify-content: center;
+    margin: 20px;
   }
   .play-now a button {
     margin-left: 0;
