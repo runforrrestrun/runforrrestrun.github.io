@@ -1367,8 +1367,14 @@ body {
     padding: 10px 10px;
   }
   .news-box {
-    width: 400px;
+    width: 350px;
     margin: 20px auto;
+  }
+  .news-banner {
+    width: 100%;
+  }
+  .news-banner img {
+    width: 100%;
   }
   .banner-box {
     width: 100%;
