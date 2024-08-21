@@ -386,6 +386,11 @@ body {
   font-size: 30px;
   text-align: center;
 }
+.news-content-main p a {
+  text-decoration: none;
+  color: gold;
+  font-weight: 900;
+}
 .news-content-main li {
   list-style-position: inside;
   text-align: start;
