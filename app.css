@@ -1195,14 +1195,14 @@ body {
   background-image: linear-gradient(black, purple);
   width: auto;
   height: auto;
-  padding: 20px;
+  padding: 20px 20px 20px 30px;
   border: 1px solid #cccccc27;
   border-top: none;
   margin: 0 10px 0 10px;
   justify-content: center;
   animation: fadeEffect 1s;
   border-radius: 10px;
-  text-align: center;
+  text-align: start;
   list-style: inside;
 }
 
