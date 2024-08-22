@@ -384,7 +384,7 @@ body {
   margin: 0;
   padding: 10px;
   font-size: 30px;
-  text-align: center;
+  text-align: start;
 }
 .news-content-main p a {
   text-decoration: none;
@@ -1275,8 +1275,8 @@ h1 {
   height: fit-content;
   background-image: linear-gradient(black, purple);
   margin: 20px auto;
-  padding: 20px;
-  text-align: center;
+  padding: 20px 20px 20px 30px;
+  text-align: start;
   list-style: inside;
   font-size: 20px;
 }
