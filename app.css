@@ -1205,6 +1205,9 @@ body {
   text-align: start;
   list-style: inside;
 }
+.tabcontent-info ul li {
+  margin: 15px 0;
+}
 
 .tabcontent-info a,
 h1 {
