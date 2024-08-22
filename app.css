@@ -1159,6 +1159,7 @@ body {
 
 /* Style the buttons that are used to open the tab content */
 .tab-info button {
+  text-decoration: none;
   box-sizing: border-box;
   background-color: inherit;
   float: left;
