@@ -1875,6 +1875,9 @@ strong {
     font-size: 20px;
     font-weight: 600;
   }
+  .tabcontent-info {
+    font-size: 20px;
+  }
   .overview-button {
     width: 180px;
     margin: 0 0 5px 5px;
@@ -2186,6 +2189,9 @@ strong {
   }
   .cardTipe-container {
     height: fit-content;
+  }
+  .tabcontent-info {
+    font-size: 25px;
   }
 }
 
