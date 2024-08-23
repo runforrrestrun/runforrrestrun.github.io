@@ -1098,8 +1098,11 @@ body {
 .overview-summary {
   width: 100%;
   height: auto;
-  text-align: center;
+  text-align: start;
   padding: 20px;
+}
+.overview-summary h1 {
+  text-align: center;
 }
 .casino-banner {
   box-sizing: border-box;
@@ -1205,6 +1208,9 @@ body {
   border-radius: 10px;
   text-align: start;
   list-style: inside;
+}
+.tabcontent-info h1 {
+  text-align: center;
 }
 .tabcontent-info ul li {
   margin: 15px 0;
