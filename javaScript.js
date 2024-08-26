@@ -50,39 +50,3 @@ function myFunction2() {
 }
 
 //
-document.addEventListener("DOMContentLoaded", function () {
-  var toggleDemoBtn = document.getElementById("toggle-demo-btn");
-  var demoOverlay = document.getElementById("demo-overlay");
-  var closeDemoBtn = document.getElementById("close-demo-btn");
-
-  // Toggle the demo visibility
-  toggleDemoBtn.addEventListener("click", function () {
-    demoOverlay.style.display =
-      demoOverlay.style.display === "none" || demoOverlay.style.display === ""
-        ? "flex"
-        : "none";
-    toggleDemoBtn.textContent =
-      demoOverlay.style.display === "flex" ? "Close Demo" : "Play Demo";
-  });
-
-  // Close demo on clicking the close button
-  closeDemoBtn.addEventListener("click", function () {
-    demoOverlay.style.display = "none";
-    toggleDemoBtn.textContent = "Play Demo";
-  });
-
-  // Close demo when clicking outside the demo container
-  demoOverlay.addEventListener("click", function (e) {
-    if (e.target === demoOverlay) {
-      demoOverlay.style.display = "none";
-      toggleDemoBtn.textContent = "Play Demo";
-    }
-  });
-});
-
-var audioContext = new (window.AudioContext || window.webkitAudioContext)();
-document.addEventListener("click", function () {
-  if (audioContext.state === "suspended") {
-    audioContext.resume();
-  }
-});
