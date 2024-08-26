@@ -6,12 +6,14 @@ const elsModals = document.querySelectorAll(".modal");
 const toggleModal = (ev) => {
   const elBtn = ev.currentTarget;
   const elModal = document.querySelector(elBtn.dataset.modal);
-  // Close all currently open modals:
-  elsModals.forEach((el) => {
-    if (el !== elModal) el.classList.remove("is-active");
-  });
-  // Toggle open/close targeted one:
-  elModal.classList.toggle("is-active");
+  if (elModal) {
+    // Close all currently open modals:
+    elsModals.forEach((el) => {
+      if (el !== elModal) el.classList.remove("is-active");
+    });
+    // Toggle open/close targeted one:
+    elModal.classList.toggle("is-active");
+  }
 };
 
 const elsBtns = document.querySelectorAll("[data-modal]");
@@ -22,31 +24,39 @@ let navToggle = document.querySelector(".nav-toggle");
 let bars = document.querySelectorAll(".bar");
 
 function toggleHamburger(e) {
-  bars.forEach((bar) => bar.classList.toggle("x"));
-}
-
-navToggle.addEventListener("click", toggleHamburger);
-
-// Hamburger menu
-
-function myFunction() {
-  const x = document.getElementById("myLinks");
-  if (x.style.display === "") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "";
+  if (bars) {
+    bars.forEach((bar) => bar.classList.toggle("x"));
   }
 }
-//close menu click
+
+if (navToggle) {
+  navToggle.addEventListener("click", toggleHamburger);
+}
+
+// Hamburger menu
+function myFunction() {
+  const x = document.getElementById("myLinks");
+  if (x) {
+    x.style.display = x.style.display === "block" ? "" : "block";
+  }
+}
+
+// Close menu click
 const y = document.getElementById("myLinks");
 function myFunction2() {
-  if (y.style.display === "block") {
+  if (y && y.style.display === "block") {
     y.style.display = "";
   }
 }
 
 // CASIOS INFO TAB
 function Buttons(evt, tabId) {
+  const tabElement = document.getElementById(tabId);
+  if (!tabElement) {
+    console.error(`Element with id ${tabId} not found.`);
+    return;
+  }
+
   // Hide all tab content
   var tabcontent = document.getElementsByClassName("tabcontent-info");
   for (var i = 0; i < tabcontent.length; i++) {
@@ -60,7 +70,7 @@ function Buttons(evt, tabId) {
   }
 
   // Show the current tab and add an "active" class to the clicked button
-  document.getElementById(tabId).style.display = "block";
+  tabElement.style.display = "block";
   evt.currentTarget.className += " active";
 
   // Update the URL hash and add a new history entry
