@@ -1251,7 +1251,7 @@ h1 {
   flex-wrap: nowrap;
   box-sizing: border-box;
   width: auto;
-  height: auto;
+  height: fit-content;
   border: 1px solid rgba(15, 15, 15, 0.39);
   background-color: #000000;
   border-radius: 10px;
@@ -2154,12 +2154,14 @@ strong {
   .casino-allInfo {
     margin: 0 0 0 200px;
   }
-
+  .overview-button {
+    height: fit-content;
+  }
   /* main info page of casino */
-  .overview-summary,
+  #Overview,
   #Bonuses,
-  #games,
-  #payments {
+  #Games,
+  #Payments {
     font-size: 25px;
   }
 }
