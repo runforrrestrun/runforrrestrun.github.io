@@ -287,7 +287,7 @@ body {
 }
 .news-box {
   box-sizing: border-box;
-  height: fit-content;
+  height: auto;
   margin: 20px;
   display: flex;
   flex-direction: column;
