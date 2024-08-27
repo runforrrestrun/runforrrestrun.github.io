@@ -2110,15 +2110,13 @@ strong {
     flex-wrap: wrap;
     height: 100vh;
   }
+
   /* article from news */
   .banner-img {
     height: 250px;
   }
   .news-content-main {
     padding: 50px;
-  }
-  .news-box {
-    width: 400px;
   }
 
   /* content */
