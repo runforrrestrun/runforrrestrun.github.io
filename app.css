@@ -1643,6 +1643,14 @@ strong {
   #overwiew {
     padding: 10px;
   }
+  /* botom page */
+  .gambleAware {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
 }
 
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
@@ -1911,6 +1919,10 @@ strong {
   .overview-button p {
     font-size: 18px;
     margin-bottom: 0;
+  }
+  /* end of page */
+  .gambleAware {
+    flex-direction: row;
   }
 }
 /*   */
