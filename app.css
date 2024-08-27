@@ -1116,9 +1116,13 @@ body {
   width: 100%;
   height: auto;
 }
-.casino-banner img {
+/* .casino-banner img {
   width: 100%;
   height: auto;
+} */
+.responsive-gif {
+  max-width: 100%; /* Ensures the gif adjusts to the container */
+  height: auto; /* Maintains aspect ratio */
 }
 .casino-infoLogo {
   display: flex;
