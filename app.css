@@ -1601,6 +1601,9 @@ strong {
     box-sizing: border-box;
     width: 100%;
   }
+  .casino-banner {
+    width: 100%;
+  }
 
   .logo-box {
     margin: 20px;
