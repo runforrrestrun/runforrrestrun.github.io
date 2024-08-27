@@ -1334,7 +1334,7 @@ strong {
 .bottom-page img {
   height: 48px;
   width: 48px;
-  margin: 0;
+  margin: auto 10px;
 }
 .bottom-page p {
   padding-left: 10px;
