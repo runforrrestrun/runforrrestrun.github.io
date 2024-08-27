@@ -105,10 +105,14 @@ body {
 .fa {
   color: white;
 }
-.all4wins,
+.all4wins {
+  width: 100%;
+  height: auto;
+}
 .all4wins img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
 }
 
 .box {
@@ -1116,18 +1120,15 @@ body {
   width: 100%;
   height: auto;
 }
-/* .casino-banner img {
+.casino-banner img {
   width: 100%;
   height: auto;
-} */
-.responsive-gif {
-  max-width: 100%; /* Ensures the gif adjusts to the container */
-  height: auto; /* Maintains aspect ratio */
 }
+
 .casino-infoLogo {
   display: flex;
   box-sizing: border-box;
-  width: 100%;
+  width: fit-content;
   height: auto;
   margin: 10px 0 10px 0;
 }
@@ -1317,21 +1318,22 @@ strong {
   width: 100%;
   height: fit-content;
   margin-top: auto;
-}
-.gambleAware {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: fit-content;
   justify-content: center;
   align-items: center;
-  padding: 10px 0 0 0;
+}
+.gambleAware,
+.copyright {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+
   font-family: inherit;
   font-size: 20px;
 }
 .bottom-page img {
-  height: 50px;
-  width: 50px;
+  height: 48px;
+  width: 48px;
   margin: 0;
 }
 .bottom-page p {
@@ -1343,9 +1345,6 @@ strong {
 }
 .bottom-page p a span {
   color: orange;
-}
-.copyright {
-  text-align: center;
 }
 
 /* MEDIA QUERY */
@@ -1937,7 +1936,7 @@ strong {
     height: 50%;
   }
   .all4wins {
-    display: block;
+    display: flex;
   }
   .content ul {
     flex-direction: column;
