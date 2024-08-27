@@ -386,10 +386,17 @@ body {
   color: gold;
 }
 
-.news-content-main h2 {
+.news-content-main h2,
+h3 {
   margin: 50px 0 0 50px;
   color: gold;
 }
+.news-content-main strong,
+a {
+  text-decoration: none;
+  color: gold;
+}
+
 .claim-news-bonus {
   box-sizing: border-box;
   width: 100%;
