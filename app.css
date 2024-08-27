@@ -39,12 +39,12 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
-#news-background {
+/* #news-background {
   background-image: url("img/NewsBackground.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-}
+} */
 
 /* hamburger menu x animation */
 .nav-toggle {
@@ -278,7 +278,7 @@ body {
 /*  */
 
 /* news page */
-.container-news {
+/* .container-news {
   box-sizing: border-box;
   width: 100%;
   padding-top: 20px;
@@ -352,7 +352,7 @@ body {
   border-radius: 10px;
   width: 100%;
   height: 450px;
-}
+} */
 
 /* news-page article CONTENT */
 .missionU {
@@ -1409,7 +1409,7 @@ strong {
   }
 
   /* news page */
-  .container-news {
+  /* .container-news {
     margin: 0;
     height: 100%;
     padding: 50px 0 0 0;
@@ -1417,19 +1417,20 @@ strong {
   }
   .news-content-main {
     box-sizing: border-box;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     font-size: 20px;
     padding: 10px 10px;
-  }
-  .news-box {
+  } */
+  /* .news-box {
     width: 90%;
-  }
-  .banner-box {
+  } */
+  /* .banner-box {
     width: 100%;
   }
   .bottom-page {
-    margin-top: auto;
-  }
+    margin-top: 50px;
+  } */
   /* content main paiges */
   .container {
     margin: 0;
@@ -1704,7 +1705,7 @@ strong {
   }
 
   /* news page */
-  .container-news {
+  /* .container-news {
     height: 100%;
     justify-content: flex-start;
     display: flex;
@@ -1716,11 +1717,11 @@ strong {
   .news-content-main {
     font-size: 30px;
     padding: 30px;
-  }
-  .news-box {
+  } */
+  /* .news-box {
     margin: 20px auto;
     width: 300px;
-  }
+  } */
   /* 
   
   
@@ -2057,22 +2058,22 @@ strong {
   }
 
   /* News Page */
-  .container-news {
+  /* .container-news {
     margin: 0 0 0 200px;
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     height: 100vh;
-  }
+  } */
 
   /* article from news */
-  .banner-img {
+  /* .banner-img {
     height: 250px;
-  }
-  .news-content-main {
+  } */
+  /* .news-content-main {
     padding: 50px;
-  }
+  } */
 
   /* content */
 
