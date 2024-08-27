@@ -262,7 +262,7 @@ body {
 }
 .news-box {
   box-sizing: border-box;
-  height: fit-content;
+  height: 550px;
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -380,6 +380,7 @@ body {
 .news-content-main li {
   list-style-position: inside;
   text-align: start;
+  margin-top: 15px;
 }
 .news-content-main h1 {
   text-align: center;
