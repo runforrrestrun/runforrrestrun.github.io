@@ -310,7 +310,7 @@ body {
   box-sizing: border-box;
 
   width: 100%;
-  height: auto;
+  height: fit-content;
   border-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -1098,7 +1098,7 @@ body {
 
 
 */
-/* Main Info pages of casinos */
+/* review page */
 .casino-allInfo {
   box-sizing: border-box;
   width: 100%;
@@ -1122,7 +1122,7 @@ body {
 }
 .casino-banner img {
   width: 100%;
-  height: auto;
+  height: fit-content;
 }
 
 .casino-infoLogo {
@@ -2153,6 +2153,7 @@ strong {
   /* Casino info page */
   .casino-allInfo {
     margin: 0 0 0 200px;
+    padding: 0;
   }
   .overview-button {
     height: fit-content;
