@@ -931,6 +931,12 @@ body {
 
 */
 /* review page */
+.missionU {
+  margin: 0 auto;
+  width: fit-content;
+  height: fit-content;
+}
+
 .casino-allInfo {
   box-sizing: border-box;
   width: 100%;
@@ -1404,7 +1410,12 @@ strong {
   }
 
   /* CAsino info page */
-
+  .missionU img {
+    border: 1px solid rgba(228, 225, 225, 0.507);
+    border-radius: 10px;
+    width: 95%;
+    height: auto;
+  }
   .casino-allInfo {
     padding: 50px 0 0 0;
     margin-left: 0;
@@ -1926,6 +1937,7 @@ strong {
   .overview-button {
     height: fit-content;
   }
+
   /* main info page of casino */
   #Overview,
   #Bonuses,
