@@ -1126,7 +1126,7 @@ h1 {
   margin: px;
   width: 98%;
   margin: 50px auto;
-  height: 500px;
+  height: 100px;
   box-sizing: border-box;
 }
 /* Bonus pages */
@@ -1155,7 +1155,7 @@ strong {
   box-sizing: border-box;
   width: 100%;
   height: fit-content;
-  margin-top: auto;
+
   justify-content: center;
   align-items: center;
 }
@@ -1165,7 +1165,6 @@ strong {
   flex-direction: row;
   width: fit-content;
   height: fit-content;
-
   font-family: inherit;
   font-size: 20px;
 }
@@ -1175,7 +1174,7 @@ strong {
   margin: auto 10px;
 }
 .bottom-page p {
-  padding-left: 10px;
+  margin: 10px;
 }
 .bottom-page p a {
   text-decoration: none;
@@ -1677,6 +1676,9 @@ strong {
   /* end of page */
   .gambleAware {
     flex-direction: row;
+  }
+  .bottom-page {
+    margin: 40% 0 10px 0;
   }
 }
 /*   */
