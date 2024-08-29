@@ -425,7 +425,7 @@ a {
   box-sizing: border-box;
   width: 100%;
   height: fit-content;
-  margin-top: auto;
+ 
   justify-content: center;
   align-items: center;
 }
