@@ -176,17 +176,12 @@
 
 
 <div class="tab-info">
-  <button  class="tablinks-info" onclick="Buttons(event, 'Overview')"
- id="OverviewBtn"  >Overview</button>
-
-  <button   class="tablinks-info "  onclick="Buttons(event, 'Bonuses')" >Bonuses</button>
-
-  
-
-  <button class="tablinks-info "  onclick="Buttons(event, 'Games')" >Games</button>
-
-  <button class="tablinks-info "  onclick="Buttons(event, 'Payments')" >Payments</button>
+  <button class="tablinks" onclick="openTab(event, 'Overview')">Overview</button>
+  <button class="tablinks" onclick="openTab(event, 'Bonuses')">Bonuses</button>
+  <button class="tablinks" onclick="openTab(event, 'Games')">Games</button>
+  <button class="tablinks" onclick="openTab(event, 'Payments')">Payments</button>
 </div>
+  
 <!-- Tab content -->
 <div id="Bonuses" class="tabcontent-info">
   <h1>Unlock Exciting Rewards with GG.Bet's Exclusive Bonuses!</h1>
