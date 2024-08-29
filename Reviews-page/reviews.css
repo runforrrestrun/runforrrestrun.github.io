@@ -321,6 +321,7 @@ body {
 }
 
 .tab-info {
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
@@ -458,7 +459,8 @@ h1 {
   width: 100%;
   height: fit-content;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  margin-top: auto;
 }
 .gambleAware,
 .copyright {
@@ -587,6 +589,7 @@ h1 {
   .tab-info button {
     margin: 10px 0 5px 5px;
     width: 80px;
+    height: fit-content;
 
     font-size: 13px;
   }
@@ -719,6 +722,7 @@ h1 {
   }
   .bottom-page {
     justify-content: center;
+    margin-top: 30%;
   }
 }
 /*   */
