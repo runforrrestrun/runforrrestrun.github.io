@@ -389,7 +389,11 @@ body {
 h1 {
   text-decoration: none;
   color: gold;
-  font-weight: 900;
+  font-weight: 800;
+}
+.tabcontent-info h2,
+strong {
+  color: gold;
 }
 .overview-button-container {
   width: 100%;
