@@ -470,6 +470,7 @@ strong {
 .copyright {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: fit-content;
   height: fit-content;
   font-family: inherit;
@@ -627,6 +628,7 @@ strong {
   }
   .copyright {
     font-size: 15px;
+    justify-content: center;
   }
 }
 

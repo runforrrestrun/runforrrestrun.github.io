@@ -425,7 +425,7 @@ a {
   box-sizing: border-box;
   width: 100%;
   height: fit-content;
- 
+
   justify-content: center;
   align-items: center;
 }
@@ -550,12 +550,11 @@ a {
   }
 
   /* botom page */
-  .gambleAware {
-    flex-direction: column;
-    text-align: center;
+  .gambleAware,
+  .copyright {
+    flex-wrap: wrap;
+    font-size: 15px;
     justify-content: center;
-    align-content: center;
-    align-items: center;
   }
 }
 

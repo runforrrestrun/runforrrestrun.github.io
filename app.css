@@ -413,7 +413,6 @@ body {
   background-color: chocolate;
 }
 .top-info {
-  
   width: 100%;
   text-align: center;
   align-items: center;
@@ -1218,12 +1217,12 @@ strong {
   }
 
   /* botom page */
-  .gambleAware {
-    flex-direction: column;
-    text-align: center;
+
+  .gambleAware,
+  .copyright {
+    flex-wrap: wrap;
+    font-size: 15px;
     justify-content: center;
-    align-content: center;
-    align-items: center;
   }
 }
 
