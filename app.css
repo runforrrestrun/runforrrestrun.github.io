@@ -1077,11 +1077,12 @@ strong {
     padding: 10px;
   }
   .content-text h1 {
-    font-size: 25px;
+    font-size: 22px;
   }
 
   .content-text p {
-    font-size: 19px;
+    font-size: 15px;
+    padding: 10px;
   }
   .name-content img {
     padding: 3px;
@@ -1122,6 +1123,9 @@ strong {
   }
   .top-info {
     font-size: 15px;
+  }
+  .top-info p {
+    padding: 10px;
   }
   .img-box-top {
     width: 80px;
