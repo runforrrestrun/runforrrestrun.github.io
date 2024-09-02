@@ -250,8 +250,10 @@ body {
 
 /* review page */
 .missionU {
+  display: flex;
   margin: 0 auto;
-  width: fit-content;
+  width: 100%;
+  justify-content: center;
   height: fit-content;
 }
 
@@ -569,9 +571,10 @@ strong {
 
   /* CAsino info page */
   .missionU img {
+    display: block;
     border: 1px solid rgba(228, 225, 225, 0.507);
     border-radius: 10px;
-    width: 95%;
+    width: 350px;
     height: auto;
   }
   .casino-allInfo {
@@ -741,6 +744,9 @@ strong {
   .bottom-page {
     justify-content: center;
     margin-top: 45%;
+  }
+  .missionU img {
+    width: 70%;
   }
 }
 /*   */

@@ -1089,7 +1089,7 @@ strong {
     padding: 10px;
   }
   .content-text h1 {
-    font-size: 22.5px;
+    font-size: 20px;
   }
 
   .content-text p {
@@ -1232,7 +1232,7 @@ strong {
   .missionU img {
     border: 1px solid rgba(228, 225, 225, 0.507);
     border-radius: 10px;
-    width: 95%;
+    width: 450px;
     height: auto;
   }
 
@@ -1379,6 +1379,7 @@ strong {
     box-sizing: border-box;
     width: 170px;
     font-size: 13px;
+    font-weight: 600;
   }
   .bonus-link,
   .inactive {
