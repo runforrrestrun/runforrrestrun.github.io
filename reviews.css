@@ -321,12 +321,14 @@ body {
 }
 
 .tab-info {
+  background-color: #00000070;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
   overflow: hidden;
-  border: 0px solid #ccc;
+
+  border-bottom: 2px solid purple;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -341,11 +343,12 @@ body {
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
-  height: 60px;
+  height: fit-content;
   width: 120px;
   transition: 0.3s;
   color: white;
-  background-color: purple;
+  /* background-color: purple; */
+  background-color: rgba(0, 0, 0, 0);
   font-family: inherit;
   font-size: 20px;
   font-weight: 600;
@@ -354,12 +357,12 @@ body {
 
 /* Change background color of buttons on hover */
 .tab-info button:hover {
-  background-color: #cb04fd;
+  background-image: linear-gradient(black, purple);
 }
 
 /* Create an active/current tablink class */
 .tab-info button.active {
-  background-color: #cb04fd;
+  background-image: linear-gradient(black, purple);
 }
 
 /* Style the tab content */
@@ -707,7 +710,7 @@ strong {
 
   .tab-info button {
     margin-left: 50px;
-    height: 60px;
+    height: fit-content;
     width: 120px;
     font-size: 20px;
     font-weight: 600;
