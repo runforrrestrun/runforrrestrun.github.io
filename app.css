@@ -1109,6 +1109,7 @@ strong {
   .top3casinos {
     flex-direction: column;
     height: fit-content;
+    margin: 5px;
   }
   .top-container {
     justify-content: center;
@@ -1140,8 +1141,8 @@ strong {
     padding: 10px;
   }
   .img-box-top {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 10px;
     margin-bottom: auto;
   }
@@ -1158,7 +1159,7 @@ strong {
     margin-bottom: auto;
   }
   .top-bonus {
-    width: 100px;
+    width: 90%;
     height: 30px;
 
     border-radius: 10px;
@@ -1336,7 +1337,6 @@ strong {
     font-size: 20px;
     width: 100%;
     font-size: 17px;
-    padding: 10px;
   }
   .img-box-top {
     height: 80px;
