@@ -328,7 +328,7 @@ body {
   box-sizing: border-box;
   border: 1px solid rgba(129, 129, 129, 0.582);
   border-radius: 10px;
-  font-size: 20px;
+
   width: 100%;
   height: auto;
   text-align: center;
@@ -1089,7 +1089,7 @@ strong {
     padding: 10px;
   }
   .content-text h1 {
-    font-size: 22px;
+    font-size: 22.5px;
   }
 
   .content-text p {
@@ -1225,7 +1225,7 @@ strong {
   }
   /* bonus opage */
   .content-text-bonuses {
-    font-size: 15px;
+    font-size: 11px;
     background-color: #000000c9;
   }
   /* CAsino info page */
