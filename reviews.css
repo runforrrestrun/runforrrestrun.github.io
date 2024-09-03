@@ -619,9 +619,10 @@ strong {
     font-size: 15px;
   }
 
-  .card-tipe-info {
-    width: 48px;
-    height: 48px;
+  .card-tipe-info,
+  .card-tipe {
+    width: 38px;
+    height: 38px;
   }
   #overwiew {
     padding: 10px;
@@ -733,6 +734,11 @@ strong {
   }
   #card-tipe-container {
     width: 250px;
+  }
+  .card-tipe-info,
+  .card-tipe {
+    width: 48px;
+    height: 48px;
   }
   .overview-button p {
     font-size: 18px;
