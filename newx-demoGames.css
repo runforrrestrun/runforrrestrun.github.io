@@ -543,6 +543,12 @@ a {
   .news-content-main h1 {
     font-size: 28px;
   }
+  .news-content-main h2 {
+    font-size: 25px;
+  }
+  .news-content-main h3 {
+    font-size: 20px;
+  }
   .missionU img {
     width: 350px;
   }
@@ -631,7 +637,13 @@ a {
     padding: 30px;
   }
   .news-content-main h1 {
-    font-size: 37px;
+    font-size: 35px;
+  }
+  .news-content-main h2 {
+    font-size: 30px;
+  }
+  .news-content-main h3 {
+    font-size: 25px;
   }
   .news-box {
     margin: 20px auto;
@@ -837,7 +849,13 @@ a {
     padding-top: 0;
   }
   .news-content-main h1 {
-    font-size: 55px;
+    font-size: 50px;
+  }
+  .news-content-main h2 {
+    font-size: 40px;
+  }
+  .news-content-main h3 {
+    font-size: 35px;
   }
 
   /* article from news */
