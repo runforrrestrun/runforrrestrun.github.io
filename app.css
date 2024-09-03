@@ -2,7 +2,7 @@ body {
   margin: 0;
   background-image: url("/img/HomeScreen.webp");
   background-color: rgb(0, 0, 0);
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-attachment: fixed;
 

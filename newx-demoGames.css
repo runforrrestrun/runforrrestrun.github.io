@@ -20,6 +20,13 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+#ESports-backgound {
+  background-color: black;
+  background-image: url("img/ESportsBackground1.webp");
+  background-size: contain;
+
+  background-attachment: fixed;
+}
 
 /* hamburger menu x animation */
 .nav-toggle {
