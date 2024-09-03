@@ -486,13 +486,14 @@ strong {
   font-family: inherit;
   font-size: 10px;
 }
+
 .bottom-page img {
   height: 48px;
   width: 48px;
   margin: auto 10px;
 }
 .bottom-page p {
-  margin: 10px;
+  margin: 3px;
 }
 .bottom-page p a {
   text-decoration: none;
