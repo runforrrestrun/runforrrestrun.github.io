@@ -540,6 +540,9 @@ a {
     font-size: 20px;
     padding: 10px 10px;
   }
+  .news-content-main h1 {
+    font-size: 28px;
+  }
   .missionU img {
     width: 350px;
   }
@@ -626,6 +629,9 @@ a {
   .news-content-main {
     font-size: 30px;
     padding: 30px;
+  }
+  .news-content-main h1 {
+    font-size: 37px;
   }
   .news-box {
     margin: 20px auto;
@@ -829,6 +835,9 @@ a {
     flex-wrap: wrap;
     height: 100vh;
     padding-top: 0;
+  }
+  .news-content-main h1 {
+    font-size: 55px;
   }
 
   /* article from news */
