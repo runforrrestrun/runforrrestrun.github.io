@@ -1053,6 +1053,7 @@ strong {
   .contact-us-desktop {
     display: none;
   }
+  /* more info */
 
   /* content main paiges */
   .container {
@@ -1090,6 +1091,9 @@ strong {
   }
   .content-text h1 {
     font-size: 20px;
+  }
+  .content-text h2 {
+    font-size: 18px;
   }
 
   .content-text p {
@@ -1305,6 +1309,9 @@ strong {
   }
   .content-text h1 {
     font-size: 35px;
+  }
+  .content-text h2 {
+    font-size: 25px;
   }
 
   .content-text p {
@@ -1643,7 +1650,7 @@ strong {
 
   .top-info {
     width: 50%;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     text-align: center;
     align-items: center;

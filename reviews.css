@@ -618,7 +618,10 @@ strong {
   .overview-button p {
     font-size: 15px;
   }
-
+  .tipe4 {
+    width: 36px;
+    height: 320px;
+  }
   .card-tipe-info,
   .card-tipe {
     width: 38px;
@@ -735,11 +738,16 @@ strong {
   #card-tipe-container {
     width: 250px;
   }
+  .tipe4 {
+    width: 46px;
+    height: 30px;
+  }
   .card-tipe-info,
   .card-tipe {
     width: 48px;
     height: 48px;
   }
+
   .overview-button p {
     font-size: 18px;
     margin-bottom: 0;
