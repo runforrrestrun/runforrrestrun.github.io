@@ -328,7 +328,6 @@ body {
   box-sizing: border-box;
   border: 1px solid rgba(129, 129, 129, 0.582);
   border-radius: 10px;
-
   width: 100%;
   height: auto;
   text-align: center;
@@ -773,7 +772,21 @@ body {
   background-color: #af03f398;
   cursor: pointer;
 }
-
+.content-main {
+  background-image: linear-gradient(240deg, black, purple);
+  text-shadow: 2px 2px 10px rgb(0, 0, 0);
+  max-width: 1100px;
+  box-sizing: border-box;
+  border: 1px solid rgba(129, 129, 129, 0.582);
+  border-radius: 10px;
+  width: fit-content;
+  height: auto;
+  text-align: start;
+  padding: 20px;
+}
+.content-main h1 {
+  color: gold;
+}
 /* mrore info(short info) */
 .more-info:hover button {
   text-decoration: underline;
@@ -1085,20 +1098,25 @@ strong {
     width: 200px;
     height: 200px;
   }
-  .content-text {
+  .content-text,
+  .content-main {
     margin: 0 5px;
     padding: 10px;
   }
-  .content-text h1 {
+  .content-text h1,
+  .content-main h1 {
     font-size: 20px;
+    text-align: center;
   }
-  .content-text h2 {
+  .content-text h2,
+  .content-main h2 {
     font-size: 18px;
   }
 
-  .content-text p {
-    font-size: 15px;
-    padding: 10px 0;
+  .content-text p,
+  .content-main p {
+    font-size: 18px;
+    padding: 10px 0 0 0;
     margin: 0;
   }
   .name-content img {
@@ -1140,7 +1158,7 @@ strong {
     margin: 0 0 auto 0;
   }
   .top-info {
-    font-size: 15px;
+    font-size: 18px;
   }
   .top-info p {
     padding: 10px;
@@ -1230,6 +1248,9 @@ strong {
   .more-info button {
     width: fit-content;
   }
+  .content-main {
+    margin: 0 5px;
+  }
   /* bonus opage */
   .content-text-bonuses {
     font-size: 11px;
@@ -1309,14 +1330,21 @@ strong {
   .name-content {
     width: 100%;
   }
-  .content-text h1 {
+  .content-main {
+    margin: 0 auto;
+    padding: 30px;
+  }
+  .content-text h1,
+  .content-main h1 {
     font-size: 35px;
   }
-  .content-text h2 {
+  .content-text h2,
+  .content-main h2 {
     font-size: 25px;
   }
 
-  .content-text p {
+  .content-text p,
+  .content-main p {
     font-size: 20px;
   }
   .top3casinos {
@@ -1630,10 +1658,12 @@ strong {
     margin-top: 10px;
   }
 
-  .content-text {
+  .content-text,
+  .content-main {
     max-width: 1200px;
   }
-  .content-text p {
+  .content-text p,
+  .content-main p {
     font-size: 25px;
   }
   .top3casinos {
