@@ -268,7 +268,6 @@ body {
   width: 100%;
   height: auto;
   text-align: start;
-  padding: 20px;
 }
 .overview-summary h1 {
   text-align: center;
@@ -373,7 +372,7 @@ body {
   background-image: linear-gradient(black, purple);
   width: auto;
   height: auto;
-  padding: 20px 20px 20px 30px;
+  padding: 10px 10px 10px 20px;
   border: 1px solid #cccccc27;
   border-top: none;
   margin: 0 5px;
@@ -730,6 +729,7 @@ strong {
   }
   .tabcontent-info {
     font-size: 20px;
+    padding: 10px 30px;
   }
   .overview-button {
     width: 180px;
