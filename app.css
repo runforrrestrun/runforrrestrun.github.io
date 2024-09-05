@@ -1249,8 +1249,13 @@ strong {
     width: fit-content;
   }
   .content-main {
-    margin: 0 5px;
+    margin: 30px 5px;
   }
+  .main-page-imgs,
+  .main-page-imgs img {
+    width: 100%;
+  }
+
   /* bonus opage */
   .content-text-bonuses {
     font-size: 11px;
@@ -1331,7 +1336,6 @@ strong {
     width: 100%;
   }
   .content-main {
-    margin: 0 auto;
     padding: 30px;
   }
   .content-text h1,
@@ -1661,6 +1665,7 @@ strong {
   .content-text,
   .content-main {
     max-width: 1200px;
+    margin: 30px auto;
   }
   .content-text p,
   .content-main p {
