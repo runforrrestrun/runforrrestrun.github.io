@@ -735,7 +735,7 @@ strong {
   .short-info,
   .casino-bonus,
   .buttons-toWebsite {
-    margin: 0 0 20px 0;
+    margin: 0 10px 20px 0;
     padding: 0;
   }
   .short-info ul {
@@ -907,7 +907,7 @@ strong {
     justify-content: start;
   }
   .short-info {
-    width: 300px;
+    width: 290px;
   }
   .casino-bonus {
     width: 300px;
