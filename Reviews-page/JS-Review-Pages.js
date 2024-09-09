@@ -1,23 +1,23 @@
 "use strict";
 
 // more info popUp
-const elsModals = document.querySelectorAll(".modal");
+// const elsModals = document.querySelectorAll(".modal");
 
-const toggleModal = (ev) => {
-  const elBtn = ev.currentTarget;
-  const elModal = document.querySelector(elBtn.dataset.modal);
-  if (elModal) {
-    // Close all currently open modals:
-    elsModals.forEach((el) => {
-      if (el !== elModal) el.classList.remove("is-active");
-    });
-    // Toggle open/close targeted one:
-    elModal.classList.toggle("is-active");
-  }
-};
+// const toggleModal = (ev) => {
+//   const elBtn = ev.currentTarget;
+//   const elModal = document.querySelector(elBtn.dataset.modal);
+//   if (elModal) {
+//     // Close all currently open modals:
+//     elsModals.forEach((el) => {
+//       if (el !== elModal) el.classList.remove("is-active");
+//     });
+//     // Toggle open/close targeted one:
+//     elModal.classList.toggle("is-active");
+//   }
+// };
 
-const elsBtns = document.querySelectorAll("[data-modal]");
-elsBtns.forEach((el) => el.addEventListener("click", toggleModal));
+// const elsBtns = document.querySelectorAll("[data-modal]");
+// elsBtns.forEach((el) => el.addEventListener("click", toggleModal));
 
 // hamburger menu x animation
 let navToggle = document.querySelector(".nav-toggle");
@@ -113,3 +113,25 @@ window.onpopstate = function (event) {
     openTab(event, "Overview");
   }
 };
+//
+//
+// tab in bonus section of the review page
+function showTab(tabName) {
+  // Remove active class from all buttons and contents
+  var buttons = document.querySelectorAll(".tab-button-bonus");
+  var contents = document.querySelectorAll(".tab-content-bonus");
+
+  buttons.forEach(function (button) {
+    button.classList.remove("active");
+  });
+
+  contents.forEach(function (content) {
+    content.classList.remove("active");
+  });
+
+  // Add active class to the clicked button and corresponding content
+  document
+    .querySelector("button[onclick=\"showTab('" + tabName + "')\"]")
+    .classList.add("active");
+  document.getElementById(tabName).classList.add("active");
+}
