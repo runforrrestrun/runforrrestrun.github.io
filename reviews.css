@@ -461,7 +461,7 @@ strong {
   background-color: inherit;
   color: white;
   font-family: inherit;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 20px;
   border: 0 solid black;
   margin-right: 5px;
@@ -493,18 +493,17 @@ strong {
 }
 .buttons-toWebsite {
   box-sizing: border-box;
+
   width: 300px;
   display: flex;
   flex-direction: column;
 }
 #play-Bet-now {
   background-color: gold;
-  height: 30px;
-}
-#play-Bet-now p {
-  margin: auto 0;
+  height: 40px;
 }
 .buttons-toWebsite div {
+  box-sizing: border-box;
   padding: 5px 5px;
   text-shadow: none;
   text-align: center;
@@ -724,20 +723,44 @@ strong {
   }
   /* tab bonus section */
   .tab-content-bonus {
-    justify-content: center;
+    justify-content: start;
   }
+  #tab-buttons {
+    text-align: start;
+  }
+  .tab-button-bonus {
+    font-size: 13px;
+  }
+
   .short-info,
   .casino-bonus,
   .buttons-toWebsite {
     margin: 0 0 20px 0;
     padding: 0;
-    width: 300px;
+  }
+  .short-info ul {
+    font-size: 15px;
+    padding: 0;
+  }
+  .casino-bonus {
+    text-align: start;
+    width: 100%;
   }
   .casino-bonus p {
-    font-size: 25px;
+    font-size: 24px;
+    text-align: start;
   }
   .casino-bonus-title {
     color: gold;
+  }
+  .buttons-toWebsite {
+    width: 100%;
+    justify-content: start;
+  }
+
+  .buttons-toWebsite div {
+    font-size: 20px;
+    margin: 10px 0;
   }
 
   /* botom page */
@@ -875,10 +898,23 @@ strong {
     width: 70%;
   }
   /* tab bonus section */
-
+  .tab-button-bonus {
+    font-size: 20px;
+  }
   #tab-buttons,
   .tab-content-bonus {
     text-align: start;
+    justify-content: start;
+  }
+  .short-info,
+  .casino-bonus {
+    width: 300px;
+  }
+  .buttons-toWebsite {
+    width: 250px;
+  }
+  .short-info ul {
+    font-size: 20px;
   }
 }
 /*   */
@@ -1093,13 +1129,7 @@ strong {
   #tab-buttons,
   .tab-content-bonus {
     text-align: center;
-  }
-  .short-info,
-  .casino-bonus {
-    width: 350px;
-  }
-  .buttons-toWebsite {
-    width: 350px;
+    justify-content: center;
   }
 }
 
