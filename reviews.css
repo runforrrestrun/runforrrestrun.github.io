@@ -453,7 +453,100 @@ strong {
     opacity: 1;
   }
 }
+/* tab bonus section from review page */
 
+.tab-button-bonus {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: inherit;
+  color: white;
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 20px;
+  border: 0 solid black;
+  margin-right: 5px;
+}
+.short-info {
+  box-sizing: border-box;
+  width: 350px;
+  margin-right: 10px;
+}
+.short-info ul {
+  padding-left: 15px;
+  font-size: 20px;
+  font-weight: 900;
+  margin-top: 0;
+  text-align: start;
+}
+.short-info ul li {
+  margin: 0 0 10px 0;
+}
+.casino-bonus {
+  box-sizing: border-box;
+  width: 300px;
+}
+
+.casino-bonus p {
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-weight: 900;
+}
+.buttons-toWebsite {
+  box-sizing: border-box;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+#play-Bet-now {
+  background-color: gold;
+  height: 30px;
+}
+#play-Bet-now p {
+  margin: auto 0;
+}
+.buttons-toWebsite div {
+  padding: 5px 5px;
+  text-shadow: none;
+  text-align: center;
+  background-color: white;
+  width: 200px;
+  height: fit-content;
+  margin: 0 auto 10px auto;
+  border-radius: 10px;
+}
+
+.buttons-toWebsite a,
+.buttons-toWebsite p {
+  text-decoration: none;
+  color: #000000;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.tab-button-bonus.active {
+  border-bottom: 1px solid purple;
+  color: gold;
+}
+
+/* Content areas for each tab */
+.tab-content-bonus {
+  box-sizing: border-box;
+  width: 100%;
+  display: none;
+
+  border: 0px solid #ccc;
+  margin-top: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tab-content-bonus.active {
+  display: flex;
+  border-bottom: 1px solid purple;
+}
+
+/*  */
 .casino-review {
   margin: px;
   width: 98%;
@@ -629,6 +722,24 @@ strong {
   #overwiew {
     padding: 10px;
   }
+  /* tab bonus section */
+  .tab-content-bonus {
+    justify-content: center;
+  }
+  .short-info,
+  .casino-bonus,
+  .buttons-toWebsite {
+    margin: 0 0 20px 0;
+    padding: 0;
+    width: 300px;
+  }
+  .casino-bonus p {
+    font-size: 25px;
+  }
+  .casino-bonus-title {
+    color: gold;
+  }
+
   /* botom page */
   .gambleAware {
     flex-direction: column;
@@ -762,6 +873,12 @@ strong {
   }
   .missionU img {
     width: 70%;
+  }
+  /* tab bonus section */
+
+  #tab-buttons,
+  .tab-content-bonus {
+    text-align: start;
   }
 }
 /*   */
@@ -972,6 +1089,17 @@ strong {
   #Games,
   #Payments {
     font-size: 25px;
+  }
+  #tab-buttons,
+  .tab-content-bonus {
+    text-align: center;
+  }
+  .short-info,
+  .casino-bonus {
+    width: 350px;
+  }
+  .buttons-toWebsite {
+    width: 350px;
   }
 }
 
