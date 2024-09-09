@@ -906,12 +906,17 @@ strong {
     text-align: start;
     justify-content: start;
   }
-  .short-info,
+  .short-info {
+    width: 300px;
+  }
   .casino-bonus {
     width: 300px;
   }
   .buttons-toWebsite {
-    width: 250px;
+    width: 200px;
+  }
+  .buttons-toWebsite div {
+    margin-top: 0;
   }
   .short-info ul {
     font-size: 20px;
@@ -1126,10 +1131,14 @@ strong {
   #Payments {
     font-size: 25px;
   }
+  /* tabs bonus section */
   #tab-buttons,
   .tab-content-bonus {
     text-align: center;
     justify-content: center;
+  }
+  .casino-bonus {
+    width: 400px;
   }
 }
 
