@@ -132,11 +132,11 @@ body {
   display: block;
   width: 70%;
   height: 100%;
-  padding: 0 0 0 10px;
+
   color: white;
   text-decoration: none;
   font-weight: 600;
-  align-content: center;
+  text-align: start;
 }
 #logo-img {
   display: block;
@@ -170,7 +170,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 500px;
-  height: 400px;
+  height: 94%;
   border: 1px solid black;
   font-size: 16px;
   border: none;
@@ -193,7 +193,7 @@ body {
   flex-direction: row;
   border: 0 solid black;
   box-sizing: border-box;
-  width: 110px;
+  width: 190px;
 
   color: white;
   text-decoration: none;
@@ -229,7 +229,7 @@ body {
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-  margin: 0 0 0 90px;
+  margin: 0 0 0 100px;
   display: none;
   flex-direction: column;
   flex-wrap: wrap;
@@ -252,7 +252,7 @@ body {
   text-decoration: none;
   display: block;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
   font-family: inherit;
   font-weight: 600;
 }
@@ -1045,17 +1045,18 @@ strong {
   }
   #a-links {
     width: auto;
-    padding-left: 3px;
+
     font-size: 18px;
   }
   #myLinks {
     display: block;
-    height: auto;
+    height: 70vh;
     width: 100%;
     margin-top: 20px;
   }
   .dropdown-content {
-    width: 50%;
+    width: 30%;
+    height: fit-content;
     border-radius: 10px;
   }
   .home,
@@ -1302,12 +1303,9 @@ strong {
   /* new navbar */
 
   #myLinks {
-    height: auto;
+    height: 70vh;
   }
 
-  .dropdown-content {
-    width: 50%;
-  }
   .content {
     width: 100%;
     height: 100%;
@@ -1334,16 +1332,13 @@ strong {
     margin-top: 20px;
   }
   .dropdown-content {
-    margin-left: 110px;
-
-    width: 30%;
+    margin-left: 140px;
   }
   #logo-img {
     height: 35px;
     width: 35px;
   }
   #a-links {
-    padding-left: 5px;
     font-size: 25px;
     width: 100px;
   }
