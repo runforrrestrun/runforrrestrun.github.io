@@ -213,10 +213,12 @@ body {
   width: 110px;
 }
 .contact-us {
-  margin: auto 10px 20px 10px;
+  display: flex;
+  margin: 10px 0;
   box-sizing: border-box;
-  height: 50px;
-  width: 100%;
+  height: fit-content;
+  width: 99%;
+  justify-content: center;
 }
 .contact-us p {
   margin: 2px 5px;
@@ -998,13 +1000,14 @@ strong {
   font-family: inherit;
   font-size: 20px;
 }
+
 .bottom-page img {
   height: 48px;
   width: 48px;
-  margin: auto 10px;
+  margin: auto 50px;
 }
 .bottom-page p {
-  margin: 3px;
+  margin: 20px 0 20px 4px;
 }
 .bottom-page p a {
   text-decoration: none;

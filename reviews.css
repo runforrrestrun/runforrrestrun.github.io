@@ -144,7 +144,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 500px;
-  height: 400px;
+  height: 99%;
   border: 1px solid black;
   font-size: 16px;
   border: none;
@@ -167,7 +167,7 @@ body {
   flex-direction: row;
   border: 0 solid black;
   box-sizing: border-box;
-  width: 110px;
+  width: 190px;
 
   color: white;
   text-decoration: none;
@@ -187,10 +187,12 @@ body {
   width: 110px;
 }
 .contact-us {
-  margin: 0 0 0 10px;
+  display: flex;
+  margin: 10px 0;
   box-sizing: border-box;
-  height: 50px;
-  width: 100%;
+  height: fit-content;
+  width: 99%;
+  justify-content: center;
 }
 .contact-us p {
   margin: 2px 5px;
@@ -203,7 +205,7 @@ body {
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-  margin: 0 0 0 90px;
+  margin: 0 0 0 100px;
   display: none;
   flex-direction: column;
   flex-wrap: wrap;
@@ -226,7 +228,7 @@ body {
   text-decoration: none;
   display: block;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
   font-family: inherit;
   font-weight: 600;
 }
@@ -571,20 +573,19 @@ strong {
 .copyright {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   width: fit-content;
   height: fit-content;
   font-family: inherit;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .bottom-page img {
   height: 48px;
   width: 48px;
-  margin: auto 10px;
+  margin: auto 50px;
 }
 .bottom-page p {
-  margin: 3px;
+  margin: 20px 0 20px 4px;
 }
 .bottom-page p a {
   text-decoration: none;
@@ -630,12 +631,13 @@ strong {
   }
   #myLinks {
     display: block;
-    height: auto;
+    height: 96vh;
     width: 100%;
     margin-top: 20px;
   }
   .dropdown-content {
-    width: 50%;
+    width: 30%;
+    height: fit-content;
     border-radius: 10px;
   }
   .home,
@@ -785,12 +787,8 @@ strong {
 @media (min-width: 550px) {
   /* new navbar */
 
-  #myLinks {
-    height: auto;
-  }
-
   .dropdown-content {
-    width: 50%;
+    margin-left: 140px;
   }
   .content {
     width: 100%;
@@ -817,11 +815,7 @@ strong {
   .box-menu-drop {
     margin-top: 20px;
   }
-  .dropdown-content {
-    margin-left: 110px;
 
-    width: 30%;
-  }
   #logo-img {
     height: 35px;
     width: 35px;
