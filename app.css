@@ -170,7 +170,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 500px;
-  height: 94%;
+  height: 96%;
   border: 1px solid black;
   font-size: 16px;
   border: none;
@@ -213,7 +213,7 @@ body {
   width: 110px;
 }
 .contact-us {
-  margin: 0 0 0 10px;
+  margin: auto 10px 20px 10px;
   box-sizing: border-box;
   height: 50px;
   width: 100%;
