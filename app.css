@@ -1050,7 +1050,7 @@ strong {
   }
   #myLinks {
     display: block;
-    height: 70vh;
+    height: 96vh;
     width: 100%;
     margin-top: 20px;
   }
@@ -1301,10 +1301,6 @@ strong {
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
 @media (min-width: 550px) {
   /* new navbar */
-
-  #myLinks {
-    height: 70vh;
-  }
 
   .content {
     width: 100%;
