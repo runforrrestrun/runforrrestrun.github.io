@@ -455,7 +455,7 @@ a {
   margin: auto 50px;
 }
 .bottom-page p {
-  margin: 20px 0 20px 4px;
+  margin: 20px 3px 20px 4px;
 }
 .bottom-page p a {
   text-decoration: none;
@@ -520,10 +520,6 @@ a {
   .FIFTH,
   .SIXTH,
   .SEVENTH {
-    display: none;
-  }
-
-  .contact-us-desktop {
     display: none;
   }
 
@@ -834,17 +830,6 @@ a {
   body {
     display: flex;
     background-size: cover;
-  }
-
-  .contact-us-desktop {
-    width: 100%;
-    height: auto;
-    display: block;
-
-    text-align: center;
-  }
-  .contact-us-desktop p {
-    margin: 5px 5px;
   }
 
   /* News Page */
