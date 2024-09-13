@@ -1007,7 +1007,7 @@ strong {
   margin: auto 50px;
 }
 .bottom-page p {
-  margin: 20px 0 20px 4px;
+  margin: 20px 0 20px 0;
 }
 .bottom-page p a {
   text-decoration: none;
@@ -1298,6 +1298,10 @@ strong {
     flex-wrap: wrap;
     font-size: 15px;
     justify-content: center;
+  }
+  .gambleAware p {
+    text-align: center;
+    width: 100%;
   }
 }
 

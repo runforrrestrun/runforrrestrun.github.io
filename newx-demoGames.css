@@ -579,6 +579,10 @@ a {
     font-size: 15px;
     justify-content: center;
   }
+  .gambleAware p {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 /* max mediaQuery content Low-Resolution Tablets and iPad  */

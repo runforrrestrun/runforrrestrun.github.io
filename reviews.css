@@ -774,6 +774,10 @@ strong {
     align-items: center;
     font-size: 15px;
   }
+  .gambleAware p {
+    text-align: center;
+    width: 100%;
+  }
   .bottom-page {
     margin-top: 20px;
   }
