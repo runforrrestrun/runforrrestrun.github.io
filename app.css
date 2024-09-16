@@ -965,7 +965,7 @@ body {
   text-align: center;
 }
 .content-bonuses {
-  width: 90%;
+  width: 89%;
   height: fit-content;
   background-image: linear-gradient(black, purple);
   margin: 20px auto;
@@ -973,6 +973,8 @@ body {
   text-align: start;
   list-style: inside;
   font-size: 20px;
+  max-width: 1150px;
+  border-radius: 10px;
 }
 .content-bonuses h1,
 h2,
@@ -1729,6 +1731,8 @@ strong {
   }
   /* bonuse page */
   .content-text-bonuses {
+    width: 99%;
+    max-width: 1300px;
     background-color: #00000000;
   }
   /* main info page of casino */
