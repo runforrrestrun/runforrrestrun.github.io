@@ -358,9 +358,9 @@ body {
   box-sizing: border-box;
   width: 95%;
   height: auto;
+  background-color: black;
 }
 .banner-box img {
-  background-image: url("img/news-banners/roobet-banner1.webp");
   background-size: cover;
   justify-content: center;
   align-items: center;
