@@ -394,12 +394,13 @@ body {
 .tabcontent-info a,
 h1 {
   text-decoration: none;
-  color: gold;
+  color: white;
   font-weight: 800;
 }
 .tabcontent-info h2,
 strong {
-  color: gold;
+  color: white;
+  font-weight: 400;
 }
 .overview-button-container {
   width: 100%;
@@ -527,7 +528,7 @@ strong {
 
 .tab-button-bonus.active {
   border-bottom: 1px solid purple;
-  color: gold;
+  color: purple;
 }
 
 /* Content areas for each tab */
@@ -749,7 +750,7 @@ strong {
     text-align: start;
   }
   .casino-bonus-title {
-    color: gold;
+    color: white;
   }
   .buttons-toWebsite {
     width: 100%;

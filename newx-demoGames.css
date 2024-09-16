@@ -313,7 +313,7 @@ body {
   width: auto;
   height: auto;
   font-family: inherit;
-  background-color: gold;
+  background-color: white;
   font-size: 25px;
   font-weight: 600;
   border: 1px solid grey;
@@ -325,7 +325,7 @@ body {
   color: white;
 }
 .news-content h2 span {
-  color: gold;
+  color: white;
   font-size: 30px;
 }
 .news-content h2 {
@@ -384,7 +384,7 @@ body {
 }
 .news-content-main p a {
   text-decoration: none;
-  color: gold;
+  color: white;
   font-weight: 900;
 }
 .news-content-main li {
@@ -394,17 +394,17 @@ body {
 }
 .news-content-main h1 {
   text-align: center;
-  color: gold;
+  color: white;
 }
 
 .news-content-main h2,
 h3 {
-  color: gold;
+  color: white;
 }
 .news-content-main strong,
 a {
   text-decoration: none;
-  color: gold;
+  color: white;
 }
 
 .claim-news-bonus {

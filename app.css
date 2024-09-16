@@ -335,7 +335,7 @@ body {
   text-align: center;
 }
 .content-text h1 {
-  color: gold;
+  color: white;
 }
 .top3casinos {
   background-image: linear-gradient(240deg, black, purple);
@@ -796,7 +796,7 @@ body {
   padding: 20px;
 }
 .content-main h1 {
-  color: gold;
+  color: white;
 }
 /* mrore info(short info) */
 .more-info:hover button {
@@ -958,7 +958,7 @@ body {
   background-color: #00000042;
   max-width: 1100px;
   box-sizing: border-box;
-  color: gold;
+  color: white;
   border-radius: 10px;
 
   width: 100%;
@@ -980,7 +980,8 @@ body {
 .content-bonuses h1,
 h2,
 strong {
-  color: gold;
+  color: white;
+  font-weight: 400;
 }
 /* 
 /* end of page */
