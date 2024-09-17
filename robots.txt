@@ -3,4 +3,4 @@ Disallow:
 Sitemap: https://www.all4wins.com/sitemap.xml
 
 User-agent: *
-Disallow: /Mission-Uncrossable/index.html
+Disallow: /Mission-Uncrossable/
