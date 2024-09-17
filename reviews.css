@@ -782,6 +782,18 @@ strong {
     font-size: 15px;
     justify-content: center;
   }
+
+  .review-img {
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+  }
+
+  .review-img img {
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 10px;
+  }
 }
 
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
@@ -915,6 +927,15 @@ strong {
   }
   .short-info ul {
     font-size: 20px;
+  }
+  .review-img {
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+  }
+
+  .review-img img {
+    width: 100%;
   }
 }
 /*   */
