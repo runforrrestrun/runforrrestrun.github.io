@@ -1572,7 +1572,7 @@ strong {
     border: 0px solid rgba(238, 235, 235, 0.404);
     border-radius: 10px;
     box-sizing: border-box;
-    margin: 40px 0 0 0;
+    margin: 20px 0 0 0;
     width: 100%;
     height: 40px;
     padding: 0;
@@ -1597,7 +1597,7 @@ strong {
     border-radius: 10px;
     font-family: inherit;
     justify-content: flex-start;
-    margin-left: 7px;
+
     padding: 0 5px 0 5px;
   }
   .bonus-btn {
