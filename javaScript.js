@@ -50,4 +50,40 @@ function myFunction2() {
 }
 
 //
-// review from dropdown
+// news slidebar
+let currentSlide = 0;
+const slides = document.querySelectorAll(".news-item");
+const totalSlides = slides.length;
+
+document.querySelector(".forth-btn").addEventListener("click", () => {
+  moveToNextSlide();
+});
+
+document.querySelector(".back-btn").addEventListener("click", () => {
+  moveToPreviousSlide();
+});
+
+function moveToNextSlide() {
+  if (currentSlide < totalSlides - 1) {
+    currentSlide++;
+  } else {
+    currentSlide = 0; // Loop back to the first slide
+  }
+  updateSlidePosition();
+}
+
+function moveToPreviousSlide() {
+  if (currentSlide > 0) {
+    currentSlide--;
+  } else {
+    currentSlide = totalSlides - 1; // Loop back to the last slide
+  }
+  updateSlidePosition();
+}
+
+function updateSlidePosition() {
+  const sliderWidth = document.querySelector(".news-slider").offsetWidth;
+  document.querySelector(".news-wrapper").style.transform = `translateX(-${
+    currentSlide * sliderWidth
+  }px)`;
+}

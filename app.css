@@ -470,6 +470,89 @@ body {
   font-size: 20px;
   border-radius: 10px;
 }
+/*  */
+/*  */
+
+/* news slider */
+.news-slider {
+  box-sizing: border-box;
+  font-family: inherit;
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  min-width: 250px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.news-wrapper {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.news-slide {
+  display: flex;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  box-sizing: border-box;
+  padding: 20px;
+  border: 0px solid #96919128;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  margin-right: 10px;
+
+  background-image: linear-gradient(240deg, black, purple);
+}
+.news-item a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+.news-item img {
+  width: 550px;
+  height: 350px;
+  margin-right: 10px;
+}
+.news-item button {
+  border-radius: 10px;
+  margin-top: 30px;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.news-item h2 {
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.back-btn,
+.forth-btn {
+  height: 50px;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.back-btn {
+  left: 0;
+}
+
+.forth-btn {
+  right: 0;
+}
 
 /* container casinos bosex */
 .container-casinos {
@@ -1147,6 +1230,28 @@ strong {
     align-content: center;
     align-self: center;
   }
+  /* news slider */
+  .news-slider {
+    width: fit-content;
+  }
+  .news-item {
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    margin: 15px;
+
+    text-align: center;
+  }
+  .news-item a {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .news-item img {
+    width: 400px;
+    height: 300px;
+  }
+
+  /* top3 */
   .top3casinos {
     flex-direction: column;
     height: fit-content;
@@ -1374,6 +1479,52 @@ strong {
   .content-main p {
     font-size: 20px;
   }
+
+  /* news slider */
+  .news-slider {
+    margin: 5px;
+  }
+  .news-item {
+    display: flex;
+    flex-direction: row;
+    width: 98vw;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.274);
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    margin: 10px 0 10px 10px;
+    text-align: start;
+    background-image: linear-gradient(240deg, black, purple);
+  }
+  .news-item a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+  }
+  .news-item img {
+    width: 300px;
+    height: 200px;
+    margin-right: 10px;
+  }
+  .news-item button {
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .news-content {
+    width: 50%;
+  }
+  .news-item h2 {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  /* topp 3 */
   .top3casinos {
     height: fit-content;
     flex-direction: column;
@@ -1690,6 +1841,19 @@ strong {
   .content-main p {
     font-size: 25px;
   }
+  /* news slidebar */
+  .news-item {
+    width: 1200px;
+    margin: 0;
+  }
+  .news-item img {
+    width: 550px;
+    height: 350px;
+  }
+  .news-item button {
+    margin-top: 100px;
+  }
+  /* top 3 */
   .top3casinos {
     max-width: 1200px;
     width: 100%;
