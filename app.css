@@ -1235,11 +1235,13 @@ strong {
     width: fit-content;
   }
   .news-item {
-    width: 100%;
+    width: 88vw;
     height: fit-content;
     box-sizing: border-box;
     margin: 15px;
-
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     text-align: center;
   }
   .news-item a {
@@ -1247,8 +1249,11 @@ strong {
     flex-direction: column;
   }
   .news-item img {
-    width: 400px;
-    height: 300px;
+    width: 320px;
+    height: 200px;
+  }
+  .news-item h2 {
+    font-size: 20px;
   }
 
   /* top3 */
