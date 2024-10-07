@@ -533,6 +533,7 @@ a {
 
   .news-box {
     width: 90%;
+    height: fit-content;
   }
   .banner-box {
     width: 100%;
@@ -558,9 +559,7 @@ a {
   .missionU img {
     width: 350px;
   }
-  /* .news-box {
-    width: 90%;
-  } */
+
   .banner-box {
     width: 100%;
   }
@@ -652,6 +651,7 @@ a {
   .news-box {
     margin: 20px auto;
     width: 300px;
+    height: 550px;
   }
   .missionU {
     justify-content: center;

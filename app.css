@@ -488,6 +488,7 @@ body {
 .news-wrapper {
   display: flex;
   transition: transform 0.3s ease-in-out;
+  cursor: grab;
 }
 
 .news-slide {
@@ -1238,7 +1239,7 @@ strong {
     width: 90vw;
     height: fit-content;
     box-sizing: border-box;
-    margin: 15px 30px 15px 15px;
+    margin: 15px 25px 15px 15px;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -1500,6 +1501,8 @@ strong {
     background-color: #f4f4f4;
     margin: 10px 0 10px 10px;
     text-align: start;
+    align-content: start;
+    justify-content: start;
     background-image: linear-gradient(240deg, black, purple);
   }
   .news-item a {
