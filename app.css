@@ -1235,10 +1235,10 @@ strong {
     width: fit-content;
   }
   .news-item {
-    width: 89vw;
+    width: 88vw;
     height: fit-content;
     box-sizing: border-box;
-    margin: 15px 20px 15px 20px;
+    margin: 15px 20px 15px 5px;
     justify-content: center;
     align-items: center;
     align-content: center;
