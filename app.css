@@ -215,6 +215,7 @@ body {
 }
 .contact-us {
   display: flex;
+  flex-direction: column;
   margin: 10px 0;
   box-sizing: border-box;
   height: fit-content;
@@ -222,7 +223,7 @@ body {
   justify-content: center;
 }
 .contact-us p {
-  margin-left: 10px;
+  margin: 10px auto;
 }
 
 .box:hover,
@@ -1100,9 +1101,7 @@ strong {
   width: 48px;
   margin: auto 50px;
 }
-.bottom-page p {
-  margin: 20px 3px 20px 0px;
-}
+
 .bottom-page p a {
   text-decoration: none;
   color: white;
