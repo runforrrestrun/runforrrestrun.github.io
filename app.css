@@ -522,7 +522,7 @@ body {
 }
 .news-item button {
   border-radius: 10px;
-  margin-top: 30px;
+  margin-top: 10px;
   width: 150px;
   height: 40px;
   font-size: 20px;
@@ -532,6 +532,9 @@ body {
   margin-top: 50px;
   font-size: 30px;
   font-weight: 700;
+}
+.news-item strong {
+  font-size: 15px;
 }
 
 .back-btn,
@@ -1859,7 +1862,10 @@ strong {
     height: 300px;
   }
   .news-item button {
-    margin-top: 100px;
+    margin-top: 20px;
+  }
+  .news-item h2 {
+    font-size: 24px;
   }
   /* top 3 */
   .top3casinos {
