@@ -932,10 +932,11 @@ strong {
     display: block;
     margin: 10px auto;
     width: 90%;
+    text-align: center;
   }
 
   .review-img img {
-    width: 100%;
+    width: 80%;
   }
 }
 /*   */
@@ -1147,6 +1148,12 @@ strong {
   }
   .casino-bonus {
     width: 400px;
+  }
+  .review-img {
+    width: 100%;
+  }
+  .review-img img {
+    width: 70%;
   }
 }
 
