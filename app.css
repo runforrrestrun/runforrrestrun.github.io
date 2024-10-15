@@ -549,15 +549,15 @@ body {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1;
 }
 
 .back-btn {
-  left: 10px;
+  left: 5px;
 }
 
 .forth-btn {
-  right: 10px;
+  right: 5px;
 }
 
 /* container casinos bosex */
