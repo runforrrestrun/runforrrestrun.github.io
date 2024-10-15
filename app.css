@@ -489,8 +489,8 @@ body {
 
 .news-wrapper {
   display: flex;
-  transition: transform 0.3s ease-in-out;
-  cursor: grab;
+  transition: transform 0.3s ease;
+  cursor: transform;
 }
 
 .news-slide {
@@ -553,11 +553,11 @@ body {
 }
 
 .back-btn {
-  left: 0;
+  left: 10px;
 }
 
 .forth-btn {
-  right: 0;
+  right: 10px;
 }
 
 /* container casinos bosex */
