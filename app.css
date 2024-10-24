@@ -1481,7 +1481,8 @@ strong {
   }
   .content-text h2,
   .content-main h2 {
-    font-size: 25px;
+    font-size: 30px;
+    margin-top: 50px;
   }
 
   .content-text p,
