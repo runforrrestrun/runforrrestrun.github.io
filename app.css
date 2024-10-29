@@ -1263,7 +1263,8 @@ body {
   }
   .empty-diamond-underline::before,
   .diamond-underline::before {
-    bottom: -10px;
+    bottom: 0px;
+    transform: translateX(-1em);
   }
   /* news slider */
   .news-slider {
@@ -1524,6 +1525,10 @@ body {
 
   .diamond-underline::before {
     bottom: -19px;
+    transform: translateX(-0.6em);
+  }
+  .empty-diamond-underline::before {
+    transform: translateX(-0.6em);
   }
   /* news slider */
   .news-slider {
