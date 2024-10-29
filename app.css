@@ -891,6 +891,9 @@ body {
   text-align: start;
   padding: 20px;
 }
+.content-main ul li {
+  list-style-type: "◇";
+}
 .content-main p strong {
   font-weight: 600;
 }
