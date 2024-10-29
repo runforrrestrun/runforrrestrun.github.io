@@ -1267,7 +1267,7 @@ body {
   }
   .empty-diamond-underline::before,
   .diamond-underline::before {
-    bottom: -15px;
+    bottom: -13px;
   }
   /* news slider */
   .news-slider {
