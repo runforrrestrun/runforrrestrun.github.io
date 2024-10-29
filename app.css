@@ -917,12 +917,8 @@ body {
 .diamond-underline::before {
   content: "◆"; /* Diamond symbol */
   color: white;
-
   position: absolute;
-
   left: 0; /* Aligns the diamond with the beginning of the underline */
-
-  color: currentColor;
   font-size: 1em;
   transform: translateX(
     -0.6em
@@ -1267,7 +1263,7 @@ body {
   }
   .empty-diamond-underline::before,
   .diamond-underline::before {
-    bottom: -10px;
+    bottom: -2px;
   }
   /* news slider */
   .news-slider {
