@@ -909,39 +909,40 @@ body {
 .diamond-underline {
   position: relative;
   display: inline-block;
-  padding-bottom: 5px; /* space between text and underline */
+  padding-bottom: 2px; /* Adjusts space between text and underline */
+  border-bottom: 4px solid currentColor; /* Creates the underline */
 }
 
 /* Add the diamond */
 .diamond-underline::before {
   content: "◆"; /* Diamond symbol */
   color: white;
-  font-size: 18px;
+
   position: absolute;
 
-  left: -10px; /* position diamond to the left of the text */
+  left: 0; /* Aligns the diamond with the beginning of the underline */
+
+  color: currentColor;
+  font-size: 1em;
+  transform: translateX(
+    -0.6em
+  ); /* Adjusts diamond's position to sit at the beginning of the underline */
 }
 .empty-diamond-underline::before {
   content: "◇"; /* Diamond symbol */
   color: white;
-  font-size: 18px;
+
   position: absolute;
 
-  left: -10px; /* position diamond to the left of the text */
+  left: 0; /* Aligns the diamond with the beginning of the underline */
+
+  color: currentColor;
+  font-size: 1em;
+  transform: translateX(
+    -0.6em
+  ); /* Adjusts diamond's position to sit at the beginning of the underline */
 }
 
-/* Create the underline */
-.empty-diamond-underline::after,
-.diamond-underline::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px; /* thickness of the underline */
-  background-color: white;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
 /* mrore info(short info) */
 .more-info:hover button {
   text-decoration: underline;
@@ -1245,12 +1246,6 @@ body {
     padding: 10px 0 0 0;
     margin: 0 30px;
   }
-  .diamond-underline::before {
-    top: 15px;
-  }
-  .empty-diamond-underline::before {
-    top: 20px;
-  }
 
   .content-main ul li p {
     margin: 0;
@@ -1269,6 +1264,10 @@ body {
     align-items: center;
     align-content: center;
     align-self: center;
+  }
+  .empty-diamond-underline::before,
+  .diamond-underline::before {
+    bottom: -15px;
   }
   /* news slider */
   .news-slider {
@@ -1528,12 +1527,8 @@ body {
   }
 
   .diamond-underline::before {
-    top: 25px;
+    bottom: -19px;
   }
-  .empty-diamond-underline::before {
-    top: 24px;
-  }
-
   /* news slider */
   .news-slider {
     margin: 5px;
@@ -1896,11 +1891,13 @@ body {
   .content-main ul li {
     margin: 10px 50px;
   }
-  .empty-diamond-underline::before {
-    top: 30px;
-  }
+
   .content-main h2 {
     margin-left: 35px;
+  }
+  .empty-diamond-underline::before,
+  .diamond-underline::before {
+    bottom: -19px;
   }
   /* news slidebar */
   .news-item {
