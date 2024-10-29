@@ -1263,7 +1263,7 @@ body {
   }
   .empty-diamond-underline::before,
   .diamond-underline::before {
-    bottom: -2px;
+    bottom: -10px;
   }
   /* news slider */
   .news-slider {
