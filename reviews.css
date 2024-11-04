@@ -1,17 +1,24 @@
 body {
   margin: 0;
-  background-image: url("/img/HomeScreen.webp");
-  background-color: rgb(0, 0, 0);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 
   height: 100vh;
-  opacity: 0.97;
+
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-shadow: 5px;
   color: #ffffff;
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
+}
+#home-background {
+  background-color: black;
+  background-image: url("/img/HomeScreen.webp");
+  background-size: contain;
+  background-attachment: fixed;
+  background-position: center;
+  filter: blur(2px);
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }
 
 /* hamburger menu x animation */
@@ -947,6 +954,7 @@ strong {
     width: 200px;
     height: 100%;
     overflow: scroll;
+    position: fixed;
   }
   .navBar::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari and Opera */

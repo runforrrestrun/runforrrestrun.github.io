@@ -7,7 +7,7 @@ body {
   background-attachment: fixed;
 
   height: 100vh;
-  opacity: 0.97;
+
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-shadow: 5px;
   color: #ffffff;
@@ -19,13 +19,11 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-}
-#ESports-backgound {
-  background-color: black;
-  background-image: url("img/ESportsBackground1.webp");
-  background-size: contain;
-
-  background-attachment: fixed;
+  filter: blur(2px);
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }
 
 /* hamburger menu x animation */
@@ -674,6 +672,7 @@ a {
     width: 200px;
     height: 100%;
     overflow: scroll;
+    position: fixed;
   }
   .navBar::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari and Opera */
