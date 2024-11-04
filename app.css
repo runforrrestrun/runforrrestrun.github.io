@@ -874,12 +874,12 @@ body {
   font-size: 24px;
   letter-spacing: 2px;
   margin: 10px 0 20px 0;
-  border: 0 solid black;
+  border: 2px solid rgba(0, 0, 0, 0.336);
 }
 
 .bonus-link {
   letter-spacing: 2px;
-  border: 0 solid black;
+  border: 2px solid rgba(0, 0, 0, 0.336);
   color: black;
   display: flex;
   flex: 1 1 0%;
@@ -891,12 +891,11 @@ body {
   width: 90%;
   height: 50px;
   min-width: 100px;
-  font-weight: 800;
+  font-weight: 900;
   padding: 10px 5px;
   background-color: rgb(245, 229, 1);
   border-radius: 7px;
   font-size: 20px;
-
   font-family: inherit;
   margin: 10px 0 20px 0;
 }
