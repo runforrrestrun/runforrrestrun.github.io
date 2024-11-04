@@ -626,6 +626,9 @@ strong {
     width: 110px;
     margin-left: 10px;
   }
+  .home2 {
+    padding-top: 5px;
+  }
 
   #logo-img {
     height: 25px;
@@ -675,7 +678,7 @@ strong {
     height: auto;
   }
   .casino-allInfo {
-    padding: 40px 0 0 0;
+    padding: 45px 0 0 0;
     margin-left: 0;
     box-sizing: border-box;
     width: 100%;
@@ -849,7 +852,7 @@ strong {
 
   /* Casino info page */
   .casino-allInfo {
-    padding: 50px 0 0 0;
+    padding: 54px 0 0 0;
     margin: 0;
   }
   .casino-infoLogo,

@@ -1182,6 +1182,10 @@ body {
   .box {
     width: 110px;
     margin-left: 10px;
+    text-align: center;
+  }
+  .home2 {
+    padding-top: 5px;
   }
 
   #logo-img {
