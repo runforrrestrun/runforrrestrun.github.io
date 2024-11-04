@@ -11,7 +11,7 @@ body {
   background-color: black;
   background-image: url("/img/HomeScreen.webp");
   background-size: contain;
-  background-attachment: fixed;
+
   background-position: center;
   filter: blur(2px);
   z-index: -1;
@@ -24,7 +24,7 @@ body {
   background-color: black;
   background-image: url("img/CasinoBackground.webp");
   background-size: contain;
-  background-attachment: fixed;
+
   background-position: center;
   filter: blur(2px);
   z-index: -1;
@@ -36,7 +36,7 @@ body {
   background-color: black;
   background-image: url("img/ESportsBackground1.webp");
   background-size: cover;
-  background-attachment: fixed;
+
   background-position: center;
   filter: blur(2px);
   z-index: -1;
@@ -46,7 +46,7 @@ body {
 }
 #Casino-sports-background {
   background-image: url("img/Sports-background.webp");
-  background-attachment: fixed;
+
   background-position: center;
   filter: blur(2px);
   z-index: -1;
@@ -58,7 +58,7 @@ body {
   background-image: url("img/BnusBackground.webp");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+
   background-position: center;
   filter: blur(2px);
   z-index: -1;

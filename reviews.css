@@ -11,7 +11,7 @@ body {
   background-color: black;
   background-image: url("/img/HomeScreen.webp");
   background-size: contain;
-  background-attachment: fixed;
+
   background-position: center;
   filter: blur(2px);
   z-index: -1;
