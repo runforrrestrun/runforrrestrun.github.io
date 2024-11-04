@@ -1,10 +1,7 @@
 body {
   margin: 0;
-
   height: 100vh;
-
-  height: 100vh;
-
+  background-color: rgb(0, 0, 0);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-shadow: 5px;
   color: #ffffff;
@@ -270,7 +267,7 @@ body {
   position: absolute;
   color: white;
   width: 65%;
- 
+
   z-index: 1;
 }
 
