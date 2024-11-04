@@ -226,7 +226,7 @@ body {
   position: absolute;
   color: white;
   width: 65%;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
   z-index: 1;
 }
 
@@ -795,7 +795,7 @@ a {
     color: white;
     width: 100%;
     height: fit-content;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
     z-index: 1;
     background-color: inherit;
     background-image: inherit;
