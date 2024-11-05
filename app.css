@@ -588,50 +588,6 @@ body {
 .forth-btn {
   right: 5px;
 }
-/* ods */
-
-table {
-  border-radius: 10px;
-  max-width: 1200px;
-  width: 100%;
-
-  border: 1px solid #00000000;
-  background-image: linear-gradient(240deg, black, purple);
-  border-collapse: collapse;
-  /* Add this line for rounded edges */
-  overflow: hidden; /* Ensures the border radius applies correctly */
-}
-
-th,
-td {
-  padding: 10px;
-
-  border: 1px solid #dddddd71;
-  text-align: start;
-  font-size: 23px;
-}
-
-th {
-  font-weight: bold;
-  font-size: 25px;
-}
-
-tbody tr:nth-child(even) {
-  border: 1px solid white;
-}
-tr {
-  border-radius: 10px;
-  border: 1px solid #dddddd71;
-}
-thead {
-  border-radius: 10px;
-  border: 1px solid #dddddd71;
-}
-/* end of odds */
-
-/* esports odds */
-
-/* end of esports odds */
 
 /* container casinos bosex */
 .container-casinos {
@@ -1434,22 +1390,7 @@ thead {
   .top-bonus span {
     font-size: 20px;
   }
-  /* ods */
 
-  table {
-    margin: 5px;
-  }
-
-  th,
-  td {
-    font-size: 12px;
-  }
-
-  th {
-    font-size: 13px;
-  }
-
-  /* end of odds */
   .content-box {
     flex-wrap: wrap;
     justify-content: center;
@@ -1714,20 +1655,6 @@ thead {
     height: 50%;
   }
   /* ods */
-
-  table {
-    margin: 5px;
-  }
-
-  th,
-  td {
-    font-size: 17px;
-  }
-
-  th {
-    font-size: 18px;
-  }
-  /* end of odds  */
 
   .name-holder,
   .buttons-casino-info {
@@ -2071,22 +1998,6 @@ thead {
     margin-top: 20px;
     padding-top: 20px;
   }
-  /* ods */
-
-  table {
-    margin: 5px;
-  }
-
-  th,
-  td {
-    font-size: 20px;
-  }
-
-  th {
-    font-size: 24px;
-    text-align: center;
-  }
-  /* end of odds  */
 
   .best-rewards,
   .high-withdrawal {
