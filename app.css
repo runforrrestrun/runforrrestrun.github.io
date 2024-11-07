@@ -586,7 +586,7 @@ body {
 }
 
 .forth-btn {
-  right: 5px;
+  right: 12px;
 }
 
 /* container casinos bosex */
@@ -1952,6 +1952,13 @@ body {
   }
   .news-item h2 {
     font-size: 24px;
+  }
+  .back-btn {
+    left: 1px;
+  }
+
+  .forth-btn {
+    right: 1px;
   }
   /* top 3 */
   .top3casinos {
