@@ -854,26 +854,24 @@ body {
 }
 .inactive {
   font-family: inherit;
-  font-weight: 800;
-  margin: 0 auto;
+  font-weight: 900;
+  margin: 10px 0 20px 0;
   align-items: center;
   justify-content: center;
   display: flex;
-  flex-wrap: wrap;
   box-sizing: border-box;
   align-items: flex-start;
   width: 90%;
   height: 50px;
   flex: 1 1 0%;
   min-width: 100px;
-
   background-color: rgb(120, 15, 225);
-  padding: 10px 5px;
+  padding-top: 5px;
   border-radius: 7px;
   color: white;
   font-size: 24px;
   letter-spacing: 2px;
-  margin: 10px 0 20px 0;
+
   border: 2px solid rgba(0, 0, 0, 0.336);
 }
 
@@ -2004,6 +2002,11 @@ body {
     box-sizing: border-box;
     width: 200px;
     font-size: 15px;
+  }
+  .bonus-link,
+  .inactive {
+    width: 60%;
+    margin: 10px auto;
   }
 
   /* main info page of casino */
