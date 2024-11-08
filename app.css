@@ -1335,6 +1335,8 @@ body {
     font-weight: 800;
     border-radius: 10px;
     background-color: gold;
+    border: 2px solid rgba(0, 0, 0, 0.788);
+    cursor: pointer;
   }
 
   /* top3 */
