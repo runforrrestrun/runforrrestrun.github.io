@@ -1243,7 +1243,7 @@ body {
   }
   .content-text h1,
   .content-main h1 {
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
   }
   .content-text h2,
@@ -1290,10 +1290,10 @@ body {
     margin: 5px;
   }
   .slider-title {
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     padding: 0;
-    margin: 5px 0;
+    margin: 15px 0 0 0;
   }
   .news-slide {
     width: 100%;
@@ -1366,12 +1366,13 @@ body {
     text-shadow: 2px 2px 5px black;
     margin: 0 0 auto 0;
   }
-  .top-info {
-    font-size: 18px;
+  .top-info h2 {
+    font-size: 25px;
   }
   .top-info p {
     padding: 10px;
     margin: 0;
+    font-size: 18px;
   }
   .img-box-top {
     width: 70px;
@@ -1554,7 +1555,7 @@ body {
 
   .content-text h1,
   .content-main h1 {
-    font-size: 35px;
+    font-size: 30px;
   }
   .content-text h2,
   .content-main h2 {
@@ -1586,7 +1587,6 @@ body {
     font-size: 30px;
     text-align: center;
     padding: 0;
-    margin: 5px 0;
   }
   .news-slide {
     width: fit-content;
@@ -1652,7 +1652,9 @@ body {
   .top-info {
     font-size: 20px;
     width: 100%;
-    font-size: 17px;
+  }
+  .top-info h2 {
+    font-size: 30px;
   }
   .img-box-top {
     height: 80px;
@@ -1995,11 +1997,13 @@ body {
 
   .top-info {
     width: 50%;
-    font-size: 20px;
-    font-weight: 600;
+
     text-align: center;
     align-items: center;
     align-self: center;
+  }
+  .top-info p {
+    font-size: 25px;
   }
   .img-box-top {
     height: 120px;
