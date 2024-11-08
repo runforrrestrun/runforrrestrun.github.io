@@ -521,76 +521,57 @@ body {
 .news-wrapper {
   display: flex;
   transition: transform 0.3s ease;
-  cursor: transform;
+  width: 100%; /* Full width of the container */
 }
 
 .news-slide {
   display: flex;
+  width: 100%; /* Make each slide full width of news-slider */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .news-item {
   display: flex;
-  flex-direction: row;
-  width: 1200px;
+  flex-direction: column;
+  width: 100%; /* Full width of .news-slider */
   box-sizing: border-box;
-  padding: 20px;
-  border: 0px solid #96919128;
   border-radius: 10px;
-
-  margin-right: 10px;
   background-color: inherit;
+  text-align: center;
 }
 .news-item a {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
   color: white;
-}
-.news-item img {
-  width: 550px;
-  height: 350px;
-  margin-right: 10px;
-}
-.news-item button {
-  border-radius: 10px;
-  margin-top: 10px;
-  width: 150px;
-  height: 40px;
-  font-size: 20px;
-  font-weight: 700;
-}
-.news-item h2 {
-  margin-top: 50px;
-  font-size: 30px;
-  font-weight: 700;
-}
-.news-item strong {
-  font-size: 15px;
+  text-decoration: none;
 }
 
+.news-item img {
+  width: 100%; /* Adjusted to fill container */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Navigation Buttons */
 .back-btn,
 .forth-btn {
-  height: 50px;
-  font-size: 25px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #333;
+  background-color: rgba(51, 51, 51, 0.8);
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  z-index: 1;
+  font-size: 25px;
+  z-index: 2;
 }
 
 .back-btn {
-  left: 5px;
+  left: 10px;
 }
 
 .forth-btn {
-  right: 12px;
+  right: 10px;
 }
-
 /* container casinos bosex */
 .container-casinos {
   overflow: auto;
@@ -1169,7 +1150,7 @@ body {
     margin: 0 auto;
   }
 }
-@media only screen and (min-width: 5px) {
+@media (min-width: 5px) {
   /* burger menu */
   .nav-toggle {
     margin: 5px 10px 0 auto;
@@ -1304,7 +1285,7 @@ body {
   }
   /* news slider */
   .news-slider {
-    width: fit-content;
+    width: 100%;
     margin: 5px;
   }
   .slider-title {
@@ -1313,12 +1294,14 @@ body {
     padding: 0;
     margin: 5px 0;
   }
-
+  .news-slide {
+    width: fit-content;
+  }
   .news-item {
     width: 90vw;
     height: fit-content;
     box-sizing: border-box;
-    margin: 15px 25px 15px 15px;
+    margin-top: 20px;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -1591,17 +1574,6 @@ body {
   }
   .news-item {
     display: flex;
-    flex-direction: row;
-    width: 98vw;
-    box-sizing: border-box;
-    padding: 20px;
-    border: 0px solid rgba(128, 128, 128, 0.274);
-    border-radius: 10px;
-
-    margin: 10px 0 10px 10px;
-    text-align: start;
-    align-content: start;
-    justify-content: start;
   }
   .news-item a {
     display: flex;
@@ -1964,8 +1936,8 @@ body {
   }
   /* news slidebar */
   .news-item {
-    width: 1200px;
-    margin: 0;
+    width: 1195px;
+    margin-left: 5px;
   }
 
   .news-item img {
@@ -1978,13 +1950,7 @@ body {
   .news-item h2 {
     font-size: 24px;
   }
-  .back-btn {
-    left: 1px;
-  }
 
-  .forth-btn {
-    right: 1px;
-  }
   /* top 3 */
   .top3casinos {
     max-width: 1200px;
