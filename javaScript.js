@@ -53,58 +53,63 @@ function myFunction2() {
 // news slidebar
 
 let currentSlide = 0;
+let isDragging = false;
+let startX = 0;
+let previousTranslate = 0;
+let currentTranslate = 0;
+let animationID;
+
 const slides = document.querySelectorAll(".news-item");
 const totalSlides = slides.length;
-let startX = 0;
-let isDragging = false;
+const newsWrapper = document.querySelector(".news-wrapper");
 
+// Function to set each slide width based on the container width
+function setSlideWidth() {
+  const sliderWidth = document.querySelector(".news-slider").offsetWidth;
+  slides.forEach((slide) => (slide.style.width = `${sliderWidth}px`));
+  updateSlidePosition();
+}
+
+// Initialize widths on load and on window resize
+setSlideWidth();
+window.addEventListener("resize", setSlideWidth);
+
+// Function to update the slide position based on the current slide index
+function updateSlidePosition() {
+  const sliderWidth = document.querySelector(".news-slider").offsetWidth;
+  newsWrapper.style.transform = `translateX(-${currentSlide * sliderWidth}px)`;
+}
+
+// Move to the next slide function (looping back to the start if needed)
+function moveToNextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides; // Automatically loops back to 0 after last slide
+  updateSlidePosition();
+}
+
+// Move to the previous slide function
+function moveToPreviousSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // Loops back to the last slide if at the start
+  updateSlidePosition();
+}
+
+// Move to next slide button
 document.querySelector(".forth-btn").addEventListener("click", () => {
   moveToNextSlide();
 });
 
+// Move to previous slide button
 document.querySelector(".back-btn").addEventListener("click", () => {
   moveToPreviousSlide();
 });
 
-document
-  .querySelector(".news-wrapper")
-  .addEventListener("touchstart", handleTouchStart);
-document
-  .querySelector(".news-wrapper")
-  .addEventListener("touchmove", handleTouchMove);
-document
-  .querySelector(".news-wrapper")
-  .addEventListener("touchend", handleTouchEnd);
+// Automatically transition to the next slide every 30 seconds
+setInterval(moveToNextSlide, 5000); // 5 seconds in milliseconds
 
-function moveToNextSlide() {
-  if (currentSlide < totalSlides - 1) {
-    currentSlide++;
-  } else {
-    currentSlide = 0; // Loop back to the first slide
-  }
-  updateSlidePosition();
-}
-
-function moveToPreviousSlide() {
-  if (currentSlide > 0) {
-    currentSlide--;
-  } else {
-    currentSlide = totalSlides - 1; // Loop back to the last slide
-  }
-  updateSlidePosition();
-}
-
-function updateSlidePosition() {
-  const sliderWidth = document.querySelector(".news-slider").offsetWidth;
-  document.querySelector(".news-wrapper").style.transform = `translateX(-${
-    currentSlide * sliderWidth
-  }px)`;
-}
-
-// Touch event handlers
+// Handle touch events for mobile swipe functionality
 function handleTouchStart(e) {
   startX = e.touches[0].clientX;
   isDragging = true;
+  previousTranslate = currentTranslate;
 }
 
 function handleTouchMove(e) {
@@ -112,11 +117,11 @@ function handleTouchMove(e) {
   const touchX = e.touches[0].clientX;
   const deltaX = touchX - startX;
 
-  // Optional: add some feedback for drag movement (e.g., move the slide slightly)
-  const sliderWidth = document.querySelector(".news-slider").offsetWidth;
-  document.querySelector(".news-wrapper").style.transform = `translateX(-${
-    currentSlide * sliderWidth - deltaX
-  }px)`;
+  // Update the position while dragging
+  currentTranslate = previousTranslate + deltaX;
+
+  // Apply the transform to show the dragging effect
+  newsWrapper.style.transform = `translateX(${currentTranslate}px)`;
 }
 
 function handleTouchEnd(e) {
@@ -124,6 +129,7 @@ function handleTouchEnd(e) {
   const endX = e.changedTouches[0].clientX;
   const deltaX = endX - startX;
 
+  // Determine if we should move to the next or previous slide based on swipe distance
   if (Math.abs(deltaX) > 50) {
     if (deltaX < 0) {
       moveToNextSlide();
@@ -134,3 +140,14 @@ function handleTouchEnd(e) {
     updateSlidePosition();
   }
 }
+
+// Add event listeners for touch events
+newsWrapper.addEventListener("touchstart", handleTouchStart);
+newsWrapper.addEventListener("touchmove", handleTouchMove);
+newsWrapper.addEventListener("touchend", handleTouchEnd);
+
+// Optional: Mouse event handlers (for desktop support)
+newsWrapper.addEventListener("mousedown", handleTouchStart);
+newsWrapper.addEventListener("mousemove", handleTouchMove);
+newsWrapper.addEventListener("mouseup", handleTouchEnd);
+newsWrapper.addEventListener("mouseleave", handleTouchEnd);
