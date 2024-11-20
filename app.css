@@ -1991,6 +1991,9 @@ body {
   .news-item button {
     margin-top: 20px;
   }
+  .news-content h2 {
+    font-size: 28px;
+  }
 
   /* top 3 */
   .top3casinos {

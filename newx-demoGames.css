@@ -299,10 +299,10 @@ body {
   box-sizing: border-box;
   margin: 10px;
   text-decoration: none;
-  word-spacing: 3px;
+  word-spacing: 2px;
 }
 .news-button {
-  margin-top: 30px;
+  margin-top: 10px 5px;
 }
 .news-button button {
   width: auto;
@@ -319,10 +319,7 @@ body {
 .news-content h2 {
   color: white;
 }
-.news-content h2 span {
-  color: white;
-  font-size: 30px;
-}
+
 .news-content h2 {
   margin: 0 0 10px 0;
 }
@@ -662,8 +659,9 @@ a {
     font-size: 25px;
   }
   .news-button button {
-    font-size: 27px;
+    font-size: 25px;
   }
+
   .missionU {
     justify-content: center;
   }
