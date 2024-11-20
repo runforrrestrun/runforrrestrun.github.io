@@ -300,7 +300,7 @@ body {
   word-spacing: 3px;
 }
 .news-button {
-  margin-bottom: 30px;
+  margin-top: 30px;
 }
 .news-button button {
   width: auto;
@@ -533,6 +533,15 @@ a {
     width: 100%;
     height: auto;
   }
+  .news-content h2 {
+    font-size: 20px;
+  }
+
+  .news-button button {
+    font-size: 25px;
+    background-color: gold;
+    border: 2px solid rgba(0, 0, 0, 0.788);
+  }
 
   .news-content-main {
     box-sizing: border-box;
@@ -646,6 +655,12 @@ a {
     margin: 20px auto;
     width: 300px;
     height: 550px;
+  }
+  .news-content h2 {
+    font-size: 25px;
+  }
+  .news-button button {
+    font-size: 27px;
   }
   .missionU {
     justify-content: center;
