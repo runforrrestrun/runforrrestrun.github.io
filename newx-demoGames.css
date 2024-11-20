@@ -270,6 +270,8 @@ body {
   flex-direction: column;
   text-align: center;
   border: 1px solid rgba(204, 201, 201, 0.733);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
+    /* Softer top shadow */ 0 40px 40px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
   border-radius: 10px;
   background-image: linear-gradient(black, purple);
 }
@@ -882,8 +884,11 @@ a {
 
 @media (min-width: 2000px) {
   .container-news {
-    max-width: 2000px;
-    margin: auto;
+    width: 100%;
+    margin: 0 auto 0 200px;
+  }
+  .news-box {
+    margin: 15px auto;
   }
 }
 /*  */
