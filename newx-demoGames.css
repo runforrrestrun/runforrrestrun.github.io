@@ -283,6 +283,9 @@ body {
   width: 100%;
   height: auto;
   margin: 0;
+  image-rendering: -webkit-optimize-contrast; /* For Webkit (Chrome, Safari) */
+  image-rendering: crisp-edges; /* For modern browsers */
+  image-rendering: pixelated; /* For blocky effects, e.g., retro games */
 }
 .news-banner img {
   box-sizing: border-box;
