@@ -326,6 +326,7 @@ body {
   /* background-image: linear-gradient(270deg, black, purple); */
   overflow: auto;
   border: 0 solid black;
+
   border-radius: 10px;
   margin: 50px auto;
   row-gap: 20px;
@@ -358,6 +359,8 @@ body {
   max-width: 1100px;
   box-sizing: border-box;
   border: 1px solid rgba(129, 129, 129, 0.582);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
+    /* Softer top shadow */ 0 40px 40px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
   border-radius: 10px;
   width: 100%;
   height: auto;
@@ -376,6 +379,8 @@ body {
   background-image: linear-gradient(240deg, black, purple);
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
   border: 1px solid rgba(129, 129, 129, 0.582);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
+    /* Softer top shadow */ 0 40px 40px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
   border-radius: 10px;
   max-width: 1100px;
   width: 100%;
@@ -516,6 +521,8 @@ body {
   margin: 0 auto;
   background-image: linear-gradient(240deg, black, purple);
   border: 1px solid rgba(129, 129, 129, 0.582);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
+    /* Softer top shadow */ 0 40px 40px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
 }
 
 .news-wrapper {
@@ -591,6 +598,8 @@ body {
 .main {
   overflow: hidden;
   border: 1px solid rgba(129, 129, 129, 0.582);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
+    /* Softer top shadow */ 0 40px 40px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
   background-image: linear-gradient(240deg, black, purple);
   box-sizing: border-box;
   width: 100%;
@@ -894,6 +903,7 @@ body {
   max-width: 1100px;
   box-sizing: border-box;
   border: 1px solid rgba(129, 129, 129, 0.582);
+
   border-radius: 10px;
   width: fit-content;
   height: auto;
@@ -1415,7 +1425,8 @@ body {
   }
   .main {
     width: 70%;
-    margin: 10px auto;
+    align-self: center;
+    margin: 0 0 10px 0;
   }
   .second {
     justify-content: center;
@@ -1946,8 +1957,8 @@ body {
   .content-text,
   .content-main {
     max-width: 1200px;
-    margin: 30px auto;
     text-align: start;
+    justify-self: center;
   }
 
   .content-text p,
@@ -1989,7 +2000,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 10px;
+    margin: 10px 10px 0 10px;
     padding: 15px;
   }
 
