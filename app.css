@@ -127,14 +127,46 @@ body {
 .fa {
   color: white;
 }
+/* Style the all4wins container */
 .all4wins {
-  width: 100%;
-  height: auto;
-}
-.all4wins img {
   width: 150px;
-  height: 150px;
+  height: auto;
   margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  overflow: hidden; /* Ensures any overflow is clipped */
+}
+
+/* Style the image inside the all4wins class */
+.all4wins img {
+  display: block;
+  width: 100%; /* Ensure the image scales properly */
+  height: auto;
+  transition: box-shadow 0.5s ease, filter 0.5s ease;
+}
+
+/* Lighting up effect on hover */
+.all4wins img:hover {
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Glowing effect */
+  filter: brightness(1.5); /* Brighten the image */
+}
+
+/* Automatic lighting up animation */
+@keyframes lightUp {
+  0%,
+  100% {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+    filter: brightness(1.8);
+  }
+}
+
+/* Apply animation to make it automatic */
+.all4wins img {
+  animation: lightUp 3s infinite; /* Replace "2s" with desired duration */
 }
 
 .box {
