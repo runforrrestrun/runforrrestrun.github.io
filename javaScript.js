@@ -103,7 +103,7 @@ document.querySelector(".back-btn").addEventListener("click", () => {
 });
 
 // Automatically transition to the next slide every 30 seconds
-setInterval(moveToNextSlide, 5000); // 5 seconds in milliseconds
+setInterval(moveToNextSlide, 7000); // 5 seconds in milliseconds
 
 // Handle touch events for mobile swipe functionality
 function handleTouchStart(e) {
