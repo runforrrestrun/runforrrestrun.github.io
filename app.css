@@ -1282,7 +1282,8 @@ body {
   .content-main {
     margin: 0 10px;
   }
-  .content-text p {
+  .content-text p,
+  h2 {
     text-align: center;
   }
   .content-text h1,
