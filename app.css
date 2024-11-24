@@ -147,7 +147,7 @@ body {
 
 /* Lighting up effect on hover */
 .all4wins img:hover {
-  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Glowing effect */
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8); /* Glowing effect */
   filter: brightness(1.5); /* Brighten the image */
 }
 
@@ -159,7 +159,7 @@ body {
     filter: brightness(1);
   }
   50% {
-    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.39);
     filter: brightness(1.8);
   }
 }
@@ -1281,12 +1281,15 @@ body {
   .content-text,
   .content-main {
     margin: 0 10px;
+  }
+  .content-text p {
     text-align: center;
   }
   .content-text h1,
   .content-main h1 {
     font-size: 25px;
     text-align: center;
+    padding: 5px;
   }
   .content-text h2,
   .content-main h2 {
@@ -1985,11 +1988,10 @@ body {
   .bonus-info {
     margin-top: 10px;
   }
-
   .content-text,
   .content-main {
     max-width: 1200px;
-    text-align: start;
+
     justify-self: center;
   }
 
