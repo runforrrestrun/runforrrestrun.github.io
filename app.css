@@ -1580,9 +1580,11 @@ body {
     z-index: 10;
   }
   .top-info p {
+    position: relative;
     padding: 10px;
     margin: 0;
     font-size: 18px;
+    z-index: 10;
   }
   .img-box-top {
     width: 70px;
