@@ -2222,6 +2222,8 @@ body {
   .content-main p,
   .content-main ul li p {
     font-size: 25px;
+    position: relative;
+    z-index: 10;
   }
   .content-main ul li {
     margin: 10px 50px;
