@@ -585,7 +585,7 @@ body {
   top: 0px; /* Adjust as needed */
   right: 5px; /* Adjust as needed */
   width: 400px; /* Adjust width */
-  height: 300px; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
   z-index: 10; /* Ensure it stays above other elements */
   -webkit-transform: translateZ(
     0
@@ -689,7 +689,7 @@ body {
 }
 .lol-main img {
   width: 400px;
-  height: fit-content;
+  height: auto;
   position: relative;
   z-index: 10;
   top: 83px;
@@ -1356,7 +1356,7 @@ body {
   .content-img {
     width: 300px;
     position: absolute;
-    height: fit-content;
+    height: auto;
     top: -170px; /* Adjust as needed */
     left: 0px; /* Adjust as needed */
     /* Adjust width */
@@ -1434,6 +1434,7 @@ body {
     top: -20px; /* Adjust as needed */
     right: 0px; /* Adjust as needed */
     width: fit-content; /* Adjust width */
+    height: auto;
     height: 200px; /* Maintain aspect ratio */
     z-index: 10; /* Ensure it stays above other elements */
   }
@@ -1535,7 +1536,7 @@ body {
   .top3img {
     width: 300px;
     position: absolute;
-    height: fit-content;
+    height: auto;
     top: -120px; /* Adjust as needed */
     left: 90px; /* Adjust as needed */
     /* Adjust width */
@@ -2169,7 +2170,7 @@ body {
   .content-img {
     width: 400px;
     position: absolute;
-    height: fit-content;
+    height: auto;
     top: -225px; /* Adjust as needed */
   }
   .content-text,
