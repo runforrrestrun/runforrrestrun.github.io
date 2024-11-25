@@ -226,7 +226,7 @@ body {
   box-sizing: border-box;
   font-family: inherit;
   text-decoration: none;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -247,6 +247,15 @@ body {
 #myLinks {
   width: 500px;
   height: auto;
+  margin-bottom: 0;
+}
+.menu-img {
+  position: relative;
+  z-index: 0;
+  width: 500px;
+  height: auto;
+  margin-top: auto;
+  margin-bottom: 0;
 }
 .dropedownbtn {
   display: flex;
@@ -590,6 +599,8 @@ body {
   -webkit-transform: translateZ(
     0
   ); /* WebKit optimization for smooth rendering */
+  max-width: 400px;
+  max-height: 302px;
 }
 
 .news-slider {
@@ -697,6 +708,8 @@ body {
   -webkit-transform: translateZ(
     0
   ); /* WebKit optimization for smooth rendering */
+  max-width: 400px;
+  max-height: 322px;
 }
 
 .main {
@@ -1298,6 +1311,13 @@ body {
     height: 96vh;
     width: 100%;
     margin-top: 20px;
+    overflow: visible;
+  }
+  .menu-img {
+    width: 500px;
+    z-index: 0;
+    position: relative;
+    top: auto;
   }
   .dropdown-content {
     width: 30%;
@@ -1366,6 +1386,8 @@ body {
     -webkit-transform: translateZ(
       0
     ); /* WebKit optimization for smooth rendering */
+    max-width: 400px;
+    max-height: 400px;
   }
   .content-text,
   .content-main {
@@ -1433,7 +1455,7 @@ body {
     position: absolute;
     top: -20px; /* Adjust as needed */
     right: 0px; /* Adjust as needed */
-    width: fit-content; /* Adjust width */
+    width: 300px; /* Adjust width */
     height: auto;
     height: 200px; /* Maintain aspect ratio */
     z-index: 10; /* Ensure it stays above other elements */
@@ -1543,6 +1565,11 @@ body {
     /* Maintain aspect ratio */
     z-index: 10; /* Ensure it stays above other elements */
     margin: 0;
+    -webkit-transform: translateZ(
+      0
+    ); /* WebKit optimization for smooth rendering */
+    max-width: 500px;
+    max-height: 354px;
   }
   .top-info {
     margin-top: 0;
@@ -1662,6 +1689,11 @@ body {
   .more-info button {
     width: fit-content;
   }
+  .moreInfo-img {
+    position: relative;
+    z-index: 10;
+    bottom: -39px;
+  }
   .content-main {
     margin: 30px 5px;
   }
@@ -1727,6 +1759,10 @@ body {
     margin-top: 20px;
     width: fit-content;
   }
+  .menu-img {
+    width: 100vw;
+    margin: auto 0 0 auto;
+  }
   .dropdown-content {
     margin-left: 140px;
   }
@@ -1786,7 +1822,7 @@ body {
     top: 0px; /* Adjust as needed */
     right: 5px; /* Adjust as needed */
     width: 400px; /* Adjust width */
-    height: 300px; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
   }
   .news-slider {
     width: 100%;
