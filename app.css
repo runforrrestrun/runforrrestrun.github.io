@@ -1358,10 +1358,11 @@ body {
   .news-slider-container {
     width: 98%;
     margin: 0 5px;
+    border: 0 solid black;
   }
   .top-right-image {
     position: absolute;
-    top: 50px; /* Adjust as needed */
+    top: -20px; /* Adjust as needed */
     right: 0px; /* Adjust as needed */
     width: fit-content; /* Adjust width */
     height: 200px; /* Maintain aspect ratio */
@@ -1372,7 +1373,7 @@ body {
     box-sizing: border-box;
     height: fit-content;
     width: 99%;
-    margin: 250px auto 50px auto;
+    margin: 180px auto 50px auto;
   }
   .slider-title {
     font-size: 25px;
