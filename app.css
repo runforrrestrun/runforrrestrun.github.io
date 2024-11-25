@@ -407,7 +407,8 @@ body {
   font-weight: 600;
 }
 /* top3 */
-.top3-container {
+.top3-container,
+.content-text-container {
   position: relative;
   width: 100%;
   box-sizing: border-box;
@@ -418,7 +419,7 @@ body {
   border-radius: 10px;
   min-width: 250px;
 
-  margin: 300px auto;
+  margin: 10px auto;
 }
 .top3-image {
   position: absolute;
@@ -1324,6 +1325,20 @@ body {
     width: 200px;
     height: 200px;
   }
+  .content-text-container {
+    margin-top: 150px;
+  }
+  .content-img {
+    width: 300px;
+    position: absolute;
+    height: fit-content;
+    top: -170px; /* Adjust as needed */
+    left: 0px; /* Adjust as needed */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+  }
   .content-text,
   .content-main {
     margin: 5px;
@@ -1335,8 +1350,11 @@ body {
   }
   .content-text h1,
   .content-main h1 {
+    position: relative;
+    z-index: 10;
     font-size: 25px;
     text-align: center;
+    margin-top: 50px;
     padding: 5px 0;
   }
   .content-text h2,
@@ -1491,7 +1509,7 @@ body {
     position: absolute;
     height: fit-content;
     top: -120px; /* Adjust as needed */
-    left: 120px; /* Adjust as needed */
+    left: 90px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
     z-index: 10; /* Ensure it stays above other elements */
@@ -1689,6 +1707,11 @@ body {
   .name-content {
     width: 100%;
   }
+  .content-img {
+    width: 350px;
+
+    top: -200px; /* Adjust as needed */
+  }
 
   .content-text h1,
   .content-main h1 {
@@ -1730,7 +1753,7 @@ body {
   }
   .news-slider {
     width: 100%;
-    margin: 300px 0 0 0;
+    margin: 300px 0 40px 0;
   }
   .slider-title {
     font-size: 30px;
@@ -2093,6 +2116,17 @@ body {
   .bonus-info {
     margin-top: 10px;
   }
+
+  /* content top */
+  .content-text-container {
+    margin-top: 200px;
+  }
+  .content-img {
+    width: 400px;
+    position: absolute;
+    height: fit-content;
+    top: -225px; /* Adjust as needed */
+  }
   .content-text,
   .content-main {
     max-width: 1200px;
@@ -2136,6 +2170,9 @@ body {
   }
 
   /* top 3 */
+  .top3-container {
+    margin-top: 150px;
+  }
   .top3casinos {
     max-width: 1200px;
     width: 100%;
@@ -2143,7 +2180,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 10px auto;
+    margin: 40px auto;
     padding: 15px;
   }
 
@@ -2166,9 +2203,9 @@ body {
   }
 
   .top3img {
-    width: 400px;
-    top: -95px; /* Adjust as needed */
-    left: 175px; /* Adjust as needed */
+    width: 500px;
+    top: -165px; /* Adjust as needed */
+    left: 135px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
     z-index: 10; /* Ensure it stays above other elements */
