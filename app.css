@@ -673,6 +673,22 @@ body {
 
   min-width: 300px;
 }
+.lol-main {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  min-width: 250px;
+  margin: 0 auto;
+}
+.lol-main img {
+  width: 400px;
+  height: fit-content;
+  position: relative;
+  z-index: 10;
+  top: 83px;
+  left: 350px;
+}
 
 .main {
   overflow: hidden;
@@ -1561,6 +1577,11 @@ body {
     flex-wrap: wrap;
     justify-content: center;
   }
+  .lol-main img {
+    width: 350px;
+    left: 10px;
+    top: 74px;
+  }
   .main {
     width: 70%;
     align-self: center;
@@ -1868,6 +1889,11 @@ body {
   .container-content {
     width: 100%;
   }
+  .lol-main img {
+    left: 170px;
+    width: 400px;
+    top: 83px;
+  }
   .main {
     width: 90%;
     padding: 10px 10px;
@@ -2118,6 +2144,7 @@ body {
   }
 
   /* content top */
+
   .content-text-container {
     margin-top: 200px;
   }
