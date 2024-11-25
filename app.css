@@ -356,16 +356,14 @@ body {
 
 .container-content {
   /* background-image: linear-gradient(270deg, black, purple); */
-  overflow: auto;
-  border: 0 solid black;
 
+  border: 0 solid black;
   border-radius: 10px;
   margin: 50px auto;
   row-gap: 20px;
   box-sizing: border-box;
   display: flex;
-  flex: 1 1 0%;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
   height: fit-content;
@@ -388,7 +386,7 @@ body {
 .content-text {
   background-image: linear-gradient(240deg, black, purple);
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
-  max-width: 1100px;
+  max-width: 1200px;
   box-sizing: border-box;
   border: 1px solid rgba(129, 129, 129, 0.582);
   box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
@@ -541,16 +539,41 @@ body {
 /*  */
 
 /* news slider */
-.news-slider {
+.news-slider-container {
   box-sizing: border-box;
   font-family: inherit;
   position: relative;
+  z-index: 1;
+  margin-top: 50px;
   max-width: 1200px;
   width: 100%;
   border-radius: 10px;
   min-width: 250px;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 300px auto;
+}
+
+.top-right-image {
+  position: absolute;
+  top: 0px; /* Adjust as needed */
+  right: 5px; /* Adjust as needed */
+  width: 400px; /* Adjust width */
+  height: 300px; /* Maintain aspect ratio */
+  z-index: 10; /* Ensure it stays above other elements */
+}
+
+.news-slider {
+  box-sizing: border-box;
+  font-family: inherit;
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 10px;
+  min-width: 250px;
+  overflow: hidden;
+  margin: 300px auto;
   background-image: linear-gradient(240deg, black, purple);
   border: 1px solid rgba(129, 129, 129, 0.582);
   box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
@@ -1280,7 +1303,8 @@ body {
   }
   .content-text,
   .content-main {
-    margin: 0 10px;
+    margin: 5px;
+    width: 97%;
   }
   .content-text p,
   h2 {
@@ -1290,7 +1314,7 @@ body {
   .content-main h1 {
     font-size: 25px;
     text-align: center;
-    padding: 5px;
+    padding: 5px 0;
   }
   .content-text h2,
   .content-main h2 {
@@ -1331,10 +1355,24 @@ body {
     transform: translateX(-1em);
   }
   /* news slider */
+  .news-slider-container {
+    width: 98%;
+    margin: 0 5px;
+  }
+  .top-right-image {
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    right: 0px; /* Adjust as needed */
+    width: fit-content; /* Adjust width */
+    height: 200px; /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it stays above other elements */
+  }
+
   .news-slider {
+    box-sizing: border-box;
     height: fit-content;
-    width: 100%;
-    margin: 5px;
+    width: 99%;
+    margin: 250px auto 50px auto;
   }
   .slider-title {
     font-size: 25px;
@@ -1393,6 +1431,7 @@ body {
   .top3casinos {
     flex-direction: column;
     height: fit-content;
+    width: 98%;
     margin: 5px;
   }
   .top-container {
@@ -1632,18 +1671,28 @@ body {
     transform: translateX(-0.6em);
   }
   /* news slider */
+  .news-slider-container {
+    position: relative;
+    margin: 5px;
+    width: 98%;
+    height: fit-content;
+  }
+  .top-right-image {
+    top: 0px; /* Adjust as needed */
+    right: 5px; /* Adjust as needed */
+    width: 400px; /* Adjust width */
+    height: 300px; /* Maintain aspect ratio */
+  }
   .news-slider {
-    width: fit-content;
-    margin: 15px;
+    width: 100%;
+    margin: 300px 0 0 0;
   }
   .slider-title {
     font-size: 30px;
     text-align: center;
     padding: 0;
   }
-  .news-slide {
-    width: fit-content;
-  }
+
   .news-item {
     display: flex;
     text-align: start;
@@ -1683,7 +1732,7 @@ body {
   .top3casinos {
     height: fit-content;
     flex-direction: column;
-    margin: 15px;
+    margin: 15px auto;
   }
   .top-container {
     justify-content: center;
@@ -1992,7 +2041,7 @@ body {
   .content-text,
   .content-main {
     max-width: 1200px;
-
+    margin: 10px auto;
     justify-self: center;
   }
 
@@ -2013,6 +2062,7 @@ body {
     bottom: -19px;
   }
   /* news slidebar */
+
   .news-item {
     width: 1195px;
     margin-left: 5px;
@@ -2038,7 +2088,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 10px 10px 0 10px;
+    margin: 10px auto;
     padding: 15px;
   }
 
