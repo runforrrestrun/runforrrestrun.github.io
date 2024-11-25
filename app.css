@@ -365,6 +365,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
   width: 100%;
   height: fit-content;
   min-width: 300px;
@@ -405,6 +406,28 @@ body {
   color: white;
   font-weight: 600;
 }
+/* top3 */
+.top3-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  z-index: 1;
+  margin-top: 50px;
+  max-width: 1200px;
+  border-radius: 10px;
+  min-width: 250px;
+
+  margin: 300px auto;
+}
+.top3-image {
+  position: absolute;
+  top: 100px; /* Adjust as needed */
+  left: 100px; /* Adjust as needed */
+  width: 100px; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 1; /* Ensure it stays above other elements */
+}
 .top3casinos {
   background-image: linear-gradient(240deg, black, purple);
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
@@ -418,7 +441,7 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-
+  position: relative;
   margin: 10px;
 }
 .top3casinos .top a {
@@ -1429,11 +1452,16 @@ body {
   }
 
   /* top3 */
+  .top3-container {
+    width: 98%;
+    margin: 100px 5px 10px 5px;
+    border: 0 solid black;
+  }
   .top3casinos {
     flex-direction: column;
     height: fit-content;
-    width: 98%;
-    margin: 5px;
+    width: 100%;
+    margin: 0;
   }
   .top-container {
     justify-content: center;
@@ -1458,8 +1486,24 @@ body {
     text-shadow: 2px 2px 5px black;
     margin: 0 0 auto 0;
   }
+  .top3img {
+    width: 300px;
+    position: absolute;
+    height: fit-content;
+    top: -120px; /* Adjust as needed */
+    left: 120px; /* Adjust as needed */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it stays above other elements */
+    margin: 0;
+  }
+  .top-info {
+    margin-top: 0;
+  }
   .top-info h2 {
     font-size: 25px;
+    position: relative;
+    z-index: 10;
   }
   .top-info p {
     padding: 10px;
@@ -1733,7 +1777,7 @@ body {
   .top3casinos {
     height: fit-content;
     flex-direction: column;
-    margin: 15px auto;
+    margin: 180px auto 0 auto;
   }
   .top-container {
     justify-content: center;
@@ -1758,6 +1802,16 @@ body {
     font-size: 20px;
     width: 100%;
   }
+  .top3img {
+    width: 400px;
+    top: -5px; /* Adjust as needed */
+    left: 300px; /* Adjust as needed */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it stays above other elements */
+    margin: 0;
+  }
+
   .top-info h2 {
     font-size: 30px;
   }
@@ -2105,11 +2159,22 @@ body {
 
   .top-info {
     width: 50%;
-
+    margin-bottom: 100px;
     text-align: center;
     align-items: center;
     align-self: center;
   }
+
+  .top3img {
+    width: 400px;
+    top: -95px; /* Adjust as needed */
+    left: 175px; /* Adjust as needed */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it stays above other elements */
+    margin: 0;
+  }
+
   .top-info p {
     font-size: 25px;
   }
