@@ -428,6 +428,9 @@ body {
   width: 100px; /* Adjust width */
   height: auto; /* Maintain aspect ratio */
   z-index: 1; /* Ensure it stays above other elements */
+  -webkit-transform: translateZ(
+    0
+  ); /* WebKit optimization for smooth rendering */
 }
 .top3casinos {
   background-image: linear-gradient(240deg, black, purple);
@@ -584,6 +587,9 @@ body {
   width: 400px; /* Adjust width */
   height: 300px; /* Maintain aspect ratio */
   z-index: 10; /* Ensure it stays above other elements */
+  -webkit-transform: translateZ(
+    0
+  ); /* WebKit optimization for smooth rendering */
 }
 
 .news-slider {
@@ -688,6 +694,9 @@ body {
   z-index: 10;
   top: 83px;
   left: 350px;
+  -webkit-transform: translateZ(
+    0
+  ); /* WebKit optimization for smooth rendering */
 }
 
 .main {
@@ -1354,6 +1363,9 @@ body {
     /* Maintain aspect ratio */
     z-index: 1; /* Ensure it stays above other elements */
     margin: 0;
+    -webkit-transform: translateZ(
+      0
+    ); /* WebKit optimization for smooth rendering */
   }
   .content-text,
   .content-main {
@@ -1581,6 +1593,9 @@ body {
     width: 350px;
     left: 10px;
     top: 74px;
+    -webkit-transform: translateZ(
+      0
+    ); /* WebKit optimization for smooth rendering */
   }
   .main {
     width: 70%;
@@ -1893,6 +1908,9 @@ body {
     left: 170px;
     width: 400px;
     top: 83px;
+    -webkit-transform: translateZ(
+      0
+    ); /* WebKit optimization for smooth rendering */
   }
   .main {
     width: 90%;
