@@ -725,7 +725,7 @@ body {
   position: relative;
   z-index: 10;
   top: 25px;
-  left: 30px;
+  left: 0px;
 
   max-width: 500px;
   max-height: 322px;
@@ -1413,7 +1413,7 @@ body {
     position: absolute;
     height: auto;
     top: -228px; /* Adjust as needed */
-    left: 290px; /* Adjust as needed */
+    left: 240px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
     z-index: 1; /* Ensure it stays above other elements */
