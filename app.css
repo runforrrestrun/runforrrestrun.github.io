@@ -1409,10 +1409,10 @@ body {
   }
   /* Sports content-text img */
   .content-sports {
-    width: 150px;
+    width: 170px;
     position: absolute;
     height: auto;
-    top: -178px; /* Adjust as needed */
+    top: -197px; /* Adjust as needed */
     left: 180px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
@@ -1455,7 +1455,7 @@ body {
   .content-main ul {
     font-size: 18px;
     padding: 10px 0 0 0;
-    margin: 5px;
+    margin: 0 5px;
   }
 
   .content-main ul li p {
