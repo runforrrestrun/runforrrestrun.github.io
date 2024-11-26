@@ -1500,7 +1500,7 @@ body {
   .news-sports-img {
     position: absolute;
     top: -2px; /* Adjust as needed */
-    right: 12px; /* Adjust as needed */
+    right: 50px; /* Adjust as needed */
     width: 350px; /* Adjust width */
     height: auto; /* Maintain aspect ratio */
   }
