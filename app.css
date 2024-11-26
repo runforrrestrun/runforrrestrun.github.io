@@ -423,7 +423,7 @@ body {
   box-sizing: border-box;
   font-family: inherit;
   z-index: 1;
-  margin-top: 50px;
+  margin-top: 20px;
   max-width: 1200px;
   border-radius: 10px;
   min-width: 250px;
@@ -585,7 +585,7 @@ body {
   overflow: hidden;
   margin: 300px auto;
 }
-
+/* news esports img */
 .top-right-image {
   position: absolute;
   top: 0px; /* Adjust as needed */
@@ -596,6 +596,18 @@ body {
 
   max-width: 400px;
   max-height: 302px;
+}
+/* news sports img */
+.news-sports-img {
+  position: absolute;
+  top: 0px; /* Adjust as needed */
+  right: 5px; /* Adjust as needed */
+  width: 400px; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 10; /* Ensure it stays above other elements */
+
+  max-width: 500px;
+  max-height: 350px;
 }
 
 .news-slider {
@@ -675,7 +687,7 @@ body {
 .container-casinos {
   overflow: auto;
   border: 0 solid black;
-  margin: 50px auto;
+  margin: 0 auto 50px auto;
   row-gap: 20px;
   box-sizing: border-box;
   display: flex;
@@ -685,7 +697,8 @@ body {
 
   min-width: 300px;
 }
-.lol-main {
+.lol-main,
+.sports-main {
   box-sizing: border-box;
   width: 100%;
   height: auto;
@@ -693,6 +706,7 @@ body {
   min-width: 250px;
   margin: 0 auto;
 }
+/* main esports img */
 .lol-main img {
   width: 400px;
   height: auto;
@@ -702,6 +716,18 @@ body {
   left: 350px;
 
   max-width: 400px;
+  max-height: 322px;
+}
+/* main sports img */
+.sports-main img {
+  width: 450px;
+  height: auto;
+  position: relative;
+  z-index: 10;
+  top: 25px;
+  left: 30px;
+
+  max-width: 500px;
   max-height: 322px;
 }
 
@@ -1341,7 +1367,7 @@ body {
     border-radius: 100%;
   }
   .container-casinos {
-    margin: 50px 0 0 0;
+    margin: 0 0 0 0;
     width: 100%;
   }
   .casino-bonus {
@@ -1364,8 +1390,9 @@ body {
     height: 200px;
   }
   .content-text-container {
-    margin-top: 150px;
+    margin-top: 220px;
   }
+  /* esports content-text img*/
   .content-img {
     width: 300px;
     position: absolute;
@@ -1380,6 +1407,21 @@ body {
     max-width: 400px;
     max-height: 400px;
   }
+  /* Sports content-text img */
+  .content-sports {
+    width: 190px;
+    position: absolute;
+    height: auto;
+    top: -228px; /* Adjust as needed */
+    left: 290px; /* Adjust as needed */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 600px;
+    max-height: 400px;
+  }
   .content-text,
   .content-main {
     margin: 5px;
@@ -1388,6 +1430,8 @@ body {
   .content-text p,
   h2 {
     text-align: center;
+    position: relative;
+    z-index: 10;
   }
   .content-text h1,
   .content-main h1 {
@@ -1396,6 +1440,7 @@ body {
     font-size: 25px;
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 0;
     padding: 5px 0;
   }
   .content-text h2,
@@ -1442,21 +1487,29 @@ body {
     margin: 0 5px;
     border: 0 solid black;
   }
+  /* news esports img */
   .top-right-image {
     position: absolute;
     top: -20px; /* Adjust as needed */
     right: 0px; /* Adjust as needed */
     width: 300px; /* Adjust width */
-    height: auto;
-    height: 200px; /* Maintain aspect ratio */
-    z-index: 10; /* Ensure it stays above other elements */
+
+    height: 250px; /* Maintain aspect ratio */
+  }
+  /* news sports img */
+  .news-sports-img {
+    position: absolute;
+    top: -29px; /* Adjust as needed */
+    right: 40px; /* Adjust as needed */
+    width: 390px; /* Adjust width */
+    height: auto; /* Maintain aspect ratio */
   }
 
   .news-slider {
     box-sizing: border-box;
     height: fit-content;
     width: 99%;
-    margin: 180px auto 50px auto;
+    margin: 230px auto 50px auto;
   }
   .slider-title {
     font-size: 25px;
@@ -1514,7 +1567,7 @@ body {
   /* top3 */
   .top3-container {
     width: 98%;
-    margin: 100px 5px 10px 5px;
+    margin: 70px 5px 10px 5px;
     border: 0 solid black;
   }
   .top3casinos {
@@ -1546,6 +1599,7 @@ body {
     text-shadow: 2px 2px 5px black;
     margin: 0 0 auto 0;
   }
+  /* top3 esports img */
   .top3img {
     width: 300px;
     position: absolute;
@@ -1559,6 +1613,21 @@ body {
 
     max-width: 500px;
     max-height: 354px;
+  }
+  /* top3 sports img */
+  .top3-spors-img {
+    width: 470px;
+    position: absolute;
+    height: auto;
+    top: -130px; /* Adjust as needed */
+    left: 0px; /* Adjust as needed */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 700px;
+    max-height: 400px;
   }
   .top-info {
     margin-top: 0;
@@ -1681,6 +1750,8 @@ body {
     position: relative;
     z-index: 10;
     bottom: -39px;
+    width: 70vw;
+    height: fit-content;
   }
   .content-main {
     margin: 30px 5px;
@@ -1764,14 +1835,24 @@ body {
   }
 
   /* content */
+  .content-text-container {
+    margin-top: 250px;
+  }
 
   .name-content {
     width: 100%;
   }
+  /* esports content-text img */
   .content-img {
     width: 350px;
 
     top: -200px; /* Adjust as needed */
+  }
+  /* scports content-text img */
+  .content-sports {
+    width: 220px;
+    top: -263px;
+    left: 250px;
   }
 
   .content-text h1,
@@ -1806,10 +1887,19 @@ body {
     width: 98%;
     height: fit-content;
   }
+  /* news esports img */
   .top-right-image {
     top: 0px; /* Adjust as needed */
     right: 5px; /* Adjust as needed */
     width: 400px; /* Adjust width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  /* news sports img */
+  .news-sports-img {
+    position: absolute;
+    top: -32px; /* Adjust as needed */
+    right: 50px; /* Adjust as needed */
+    width: 500px; /* Adjust width */
     height: auto; /* Maintain aspect ratio */
   }
   .news-slider {
@@ -1886,6 +1976,7 @@ body {
     font-size: 20px;
     width: 100%;
   }
+  /* top3 esports img */
   .top3img {
     width: 400px;
     top: -5px; /* Adjust as needed */
@@ -1894,6 +1985,12 @@ body {
     /* Maintain aspect ratio */
     z-index: 10; /* Ensure it stays above other elements */
     margin: 0;
+  }
+  /* top3 sports img */
+  .top3-spors-img {
+    width: 100vw;
+    top: -5px; /* Adjust as needed */
+    left: -70px; /* Adjust as needed */
   }
 
   .top-info h2 {
@@ -1929,10 +2026,16 @@ body {
   .container-content {
     width: 100%;
   }
+  /* main esports img */
   .lol-main img {
     left: 170px;
     width: 400px;
     top: 83px;
+  }
+  .sports-main img {
+    width: 500px;
+
+    left: 250px;
   }
   .main {
     width: 90%;
@@ -1964,7 +2067,7 @@ body {
     text-align: center;
   }
   .modal-content {
-    width: 60%;
+    width: 50%;
     height: auto;
   }
   .deposit-methods h2,
@@ -1980,6 +2083,9 @@ body {
   .logo-methods {
     justify-content: start;
     text-align: center;
+  }
+  .moreInfo-img {
+    width: 50vw;
   }
 
   /* end of page */
@@ -2186,13 +2292,20 @@ body {
   /* content top */
 
   .content-text-container {
-    margin-top: 200px;
+    margin-top: 250px;
   }
+  /* esports content-text img */
   .content-img {
     width: 400px;
     position: absolute;
     height: auto;
     top: -225px; /* Adjust as needed */
+  }
+  /* scports content-text img */
+  .content-sports {
+    width: 230px;
+    top: -260px;
+    left: 740px;
   }
   .content-text,
   .content-main {
@@ -2220,6 +2333,9 @@ body {
     bottom: -19px;
   }
   /* news slidebar */
+  .news-sports-img {
+    right: 350px; /* Adjust as needed */
+  }
 
   .news-item {
     width: 1195px;
@@ -2270,7 +2386,7 @@ body {
     align-items: center;
     align-self: center;
   }
-
+  /* top3 esports img */
   .top3img {
     width: 500px;
     top: -165px; /* Adjust as needed */
@@ -2279,6 +2395,12 @@ body {
     /* Maintain aspect ratio */
     z-index: 10; /* Ensure it stays above other elements */
     margin: 0;
+  }
+  /* top3 sports img */
+  .top3-spors-img {
+    width: 700px;
+    top: -85px; /* Adjust as needed */
+    left: -20px; /* Adjust as needed */
   }
 
   .top-info p {
@@ -2308,6 +2430,14 @@ body {
   .inactive {
     width: 60%;
     margin: 10px auto;
+  }
+  .moreInfo-img {
+    width: 20vw;
+    justify-content: center;
+  }
+  .modal-content {
+    width: 25%;
+    height: auto;
   }
 
   /* main info page of casino */
