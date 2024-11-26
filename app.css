@@ -923,7 +923,7 @@ body {
   text-align: center;
   text-size-adjust: 100%;
   font-weight: 600;
-  width: 230px;
+  width: 20px;
   min-width: 100px;
   height: 40px;
   border-radius: 9999px;
@@ -1413,7 +1413,7 @@ body {
     position: absolute;
     height: auto;
     top: -145px; /* Adjust as needed */
-    left: 0px; /* Adjust as needed */
+    left: 30px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
     z-index: 1; /* Ensure it stays above other elements */
