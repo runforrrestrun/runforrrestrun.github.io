@@ -1413,7 +1413,7 @@ body {
     position: absolute;
     height: auto;
     top: -145px; /* Adjust as needed */
-    left: 10px; /* Adjust as needed */
+    left: 0px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
     z-index: 1; /* Ensure it stays above other elements */
@@ -1619,7 +1619,7 @@ body {
     width: 340px;
     position: absolute;
     height: auto;
-    top: -120px; /* Adjust as needed */
+    top: -130px; /* Adjust as needed */
     left: 0px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
@@ -1627,7 +1627,7 @@ body {
     margin: 0;
 
     max-width: 500px;
-    max-height: 300px;
+    max-height: 400px;
   }
   .top-info {
     margin-top: 0;
@@ -1991,8 +1991,8 @@ body {
   /* top3 sports img */
   .top3-spors-img {
     width: 500px;
-    top: 20px; /* Adjust as needed */
-    left: 100px; /* Adjust as needed */
+    top: -10px; /* Adjust as needed */
+    left: -20px; /* Adjust as needed */
   }
 
   .top-info h2 {
@@ -2401,7 +2401,7 @@ body {
   /* top3 sports img */
   .top3-spors-img {
     width: 500px;
-    top: -85px; /* Adjust as needed */
+    top: -105px; /* Adjust as needed */
     left: 50px; /* Adjust as needed */
   }
 
