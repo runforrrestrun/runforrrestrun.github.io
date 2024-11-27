@@ -394,7 +394,7 @@ body {
   text-align: center;
 }
 .content-text {
-  background-image: linear-gradient(240deg, black, purple);
+  background-image: linear-gradient(180deg, black 20%, purple);
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
   max-width: 1200px;
   box-sizing: border-box;
@@ -440,7 +440,7 @@ body {
   z-index: 1; /* Ensure it stays above other elements */
 }
 .top3casinos {
-  background-image: linear-gradient(240deg, black, purple);
+  background-image: linear-gradient(180deg, black 30%, purple);
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
   border: 1px solid rgba(129, 129, 129, 0.582);
   box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
@@ -612,7 +612,7 @@ body {
   min-width: 250px;
   overflow: hidden;
   margin: 300px auto;
-  background-image: linear-gradient(240deg, black, purple);
+  background-image: linear-gradient(180deg, black 20%, purple);
   border: 1px solid rgba(129, 129, 129, 0.582);
   box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
     /* Softer top shadow */ 0 20px 20px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
@@ -728,10 +728,10 @@ body {
 }
 /* main casino img */
 .casino-main img {
-  width: 350px;
+  width: 400px;
   position: relative;
   height: auto;
-  top: 190px; /* Adjust as needed */
+  top: 240px; /* Adjust as needed */
   left: 50%;
 
   transform: translate(-50%, -50%); /* Adjust to center the element */
@@ -740,7 +740,7 @@ body {
   z-index: 1; /* Ensure it stays above other elements */
   margin: 0;
 
-  max-width: 600px;
+  max-width: 700px;
   max-height: 600px;
 }
 
@@ -749,7 +749,7 @@ body {
   border: 1px solid rgba(129, 129, 129, 0.582);
   box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
     /* Softer top shadow */ 0 40px 40px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
-  background-image: linear-gradient(240deg, black, purple);
+  background-image: linear-gradient(210deg, black 30%, purple);
   box-sizing: border-box;
   width: 100%;
   height: auto;
@@ -1425,7 +1425,7 @@ body {
     width: 350px;
     position: absolute;
     height: auto;
-    top: -10%; /* Adjust as needed */
+    top: -7%; /* Adjust as needed */
     left: 50%; /* Adjust as needed */
     transform: translate(-50%, -50%); /* Adjust to center the element */
 
@@ -1439,10 +1439,10 @@ body {
   }
   /* casino content-text img */
   .poker-cards-casino {
-    width: 350px;
+    width: 300px;
     position: absolute;
     height: auto;
-    top: -5%; /* Adjust as needed */
+    top: -8%; /* Adjust as needed */
     left: 50%; /* Adjust as needed */
     transform: translate(-50%, -50%); /* Adjust to center the element */
 
@@ -1451,8 +1451,8 @@ body {
     z-index: 1; /* Ensure it stays above other elements */
     margin: 0;
 
-    max-width: 600px;
-    max-height: 400px;
+    max-width: 900px;
+    max-height: 600px;
   }
   .content-text,
   .content-main {
@@ -1472,7 +1472,7 @@ body {
     font-size: 25px;
     text-align: center;
     margin-top: 10px;
-    margin: 5px auto;
+    margin: 10px 5px 0 5px;
     padding: 5px 0;
   }
   .content-text h2,
@@ -1486,8 +1486,8 @@ body {
   .content-main p,
   .content-main ul {
     font-size: 18px;
-    padding: 50px 0 0 0;
-    margin: 0 5px;
+    padding: 20px 5px 0 5px;
+    margin: 30px 5px 0 5px;
   }
 
   .content-main ul li p {
@@ -1547,10 +1547,10 @@ body {
   }
   /* news casino img */
   .slots-news-casino {
-    width: 350px;
+    width: 200px;
     position: absolute;
     height: auto;
-    top: 240px; /* Adjust as needed */
+    top: 220px; /* Adjust as needed */
     left: 50%;
 
     transform: translate(-50%, -50%); /* Adjust to center the element */
@@ -1560,7 +1560,7 @@ body {
     margin: 0;
 
     max-width: 600px;
-    max-height: 400px;
+    max-height: 600px;
   }
   .news-slider {
     box-sizing: border-box;
@@ -1572,7 +1572,7 @@ body {
     font-size: 30px;
     text-align: center;
     padding: 0;
-    margin: 15px 0 0 0;
+    margin: 25px 0 0 0;
 
     text-shadow: -10px -8px 20px rgb(0, 0, 0);
   }
@@ -1690,7 +1690,7 @@ body {
   }
   /* top3 casino img */
   .roulette-top3-casino {
-    width: 350px;
+    width: 300px;
     position: absolute;
     height: auto;
     top: -2%; /* Adjust as needed */
@@ -1712,7 +1712,7 @@ body {
     font-size: 25px;
     position: relative;
     z-index: 10;
-    text-shadow: -10px -8px 20px rgb(0, 0, 0);
+    text-shadow: 10px -2px 5px rgb(0, 0, 0), 5px 2px 5px rgb(0, 0, 0);
   }
   .top-info p {
     position: relative;
@@ -1933,18 +1933,18 @@ body {
   /* scports content-text img */
   .content-sports {
     width: 500px;
-    top: -4%;
+    top: -12%;
   }
   /* casino content text img */
   .poker-cards-casino {
-    width: 500px;
-    top: 0;
+    width: 400px;
+    top: -10px;
   }
 
   .content-text h1,
   .content-main h1 {
-    font-size: 35px;
-    margin-top: 50px;
+    font-size: 32px;
+    margin-top: 23px;
   }
   .content-text h2,
   .content-main h2 {
@@ -1986,9 +1986,9 @@ body {
   }
   /* news casino img */
   .slots-news-casino {
-    width: 400px;
+    width: 250px;
 
-    top: 310px;
+    top: 280px;
   }
   .news-slider {
     width: 100%;
@@ -1998,6 +1998,7 @@ body {
     font-size: 40px;
     text-align: center;
     padding: 0;
+    margin-bottom: 20px;
   }
 
   .news-item {
@@ -2083,12 +2084,12 @@ body {
 
   /* top3 sports img */
   .roulette-top3-casino {
-    width: 400px;
+    width: 350px;
     left: 50%;
-    top: 27%;
+    top: 26%;
   }
   .top-info h2 {
-    font-size: 30px;
+    font-size: 35px;
   }
   .img-box-top {
     height: 80px;
@@ -2137,8 +2138,8 @@ body {
     top: 167px;
   }
   .casino-main img {
-    width: 400px;
-    top: 190px;
+    width: 450px;
+    top: 240px;
   }
   .main {
     width: 90%;
@@ -2388,7 +2389,7 @@ body {
     top: 224px;
   }
   .casino-main img {
-    width: 500px;
+    width: 700px;
     top: 245px;
   }
   .name-content {
@@ -2411,7 +2412,7 @@ body {
   /* content top */
 
   .content-text-container {
-    margin-top: 250px;
+    margin-top: 350px;
   }
   /* esports content-text img */
   .content-img {
@@ -2423,17 +2424,18 @@ body {
   /* scports content-text img */
   .content-sports {
     width: 600px;
-    top: -8%;
+    top: -14%;
   }
   /* casino content text img */
   .poker-cards-casino {
-    width: 600px;
-    top: -3%;
+    width: 410px;
+    top: -20%;
   }
   .content-text,
   .content-main {
+    width: 100%;
     max-width: 1200px;
-    margin: 10px auto;
+    margin: 10px 0;
     justify-self: center;
   }
 
@@ -2459,7 +2461,8 @@ body {
 
   /* news casino img */
   .slots-news-casino {
-    width: 500px;
+    width: 300px;
+    top: 268px;
   }
   .news-item {
     width: 1195px;
