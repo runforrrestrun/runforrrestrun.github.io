@@ -1943,8 +1943,9 @@ body {
 
   .content-text h1,
   .content-main h1 {
-    font-size: 32px;
+    font-size: 40px;
     margin-top: 23px;
+    padding: 0 10px;
   }
   .content-text h2,
   .content-main h2 {
@@ -2428,8 +2429,8 @@ body {
   }
   /* casino content text img */
   .poker-cards-casino {
-    width: 410px;
-    top: -20%;
+    width: 390px;
+    top: -17%;
   }
   .content-text,
   .content-main {
