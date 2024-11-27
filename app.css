@@ -409,6 +409,7 @@ body {
 }
 .content-text h1 {
   color: white;
+  text-shadow: 1px -5px 5px rgb(0, 0, 0);
 }
 .content-text a {
   text-decoration: none;
@@ -598,23 +599,12 @@ body {
   max-height: 302px;
 }
 /* news sports img */
-.news-sports-img {
-  position: absolute;
-  top: 0px; /* Adjust as needed */
-  right: 5px; /* Adjust as needed */
-  width: 400px; /* Adjust width */
-  height: auto; /* Maintain aspect ratio */
-  z-index: 10; /* Ensure it stays above other elements */
-
-  max-width: 500px;
-  max-height: 350px;
-}
 
 .news-slider {
   box-sizing: border-box;
   font-family: inherit;
   position: relative;
-  z-index: 1;
+
   margin-top: 50px;
   max-width: 1200px;
   width: 100%;
@@ -698,10 +688,11 @@ body {
   min-width: 300px;
 }
 .lol-main,
-.sports-main {
+.sports-main,
+.casino-main {
   box-sizing: border-box;
   width: 100%;
-  height: auto;
+  height: 400px;
   max-width: 1200px;
   min-width: 250px;
   margin: 0 auto;
@@ -712,8 +703,8 @@ body {
   height: auto;
   position: relative;
   z-index: 10;
-  top: 83px;
-  left: 350px;
+  top: -280px;
+  left: 0px;
 
   max-width: 400px;
   max-height: 322px;
@@ -721,14 +712,36 @@ body {
 /* main sports img */
 .sports-main img {
   width: 350px;
-  height: auto;
   position: relative;
-  z-index: 10;
-  top: 25px;
-  left: 20px;
+  height: auto;
+  top: 196px; /* Adjust as needed */
+  left: 50%;
 
-  max-width: 500px;
-  max-height: 322px;
+  transform: translate(-50%, -50%); /* Adjust to center the element */
+  /* Adjust width */
+  /* Maintain aspect ratio */
+  z-index: 1; /* Ensure it stays above other elements */
+  margin: 0;
+
+  max-width: 600px;
+  max-height: 400px;
+}
+/* main casino img */
+.casino-main img {
+  width: 350px;
+  position: relative;
+  height: auto;
+  top: 190px; /* Adjust as needed */
+  left: 50%;
+
+  transform: translate(-50%, -50%); /* Adjust to center the element */
+  /* Adjust width */
+  /* Maintain aspect ratio */
+  z-index: 1; /* Ensure it stays above other elements */
+  margin: 0;
+
+  max-width: 600px;
+  max-height: 600px;
 }
 
 .main {
@@ -1412,8 +1425,27 @@ body {
     width: 350px;
     position: absolute;
     height: auto;
-    top: -145px; /* Adjust as needed */
-    left: 30px; /* Adjust as needed */
+    top: -10%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Adjust to center the element */
+
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 600px;
+    max-height: 400px;
+  }
+  /* casino content-text img */
+  .poker-cards-casino {
+    width: 350px;
+    position: absolute;
+    height: auto;
+    top: -5%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Adjust to center the element */
+
     /* Adjust width */
     /* Maintain aspect ratio */
     z-index: 1; /* Ensure it stays above other elements */
@@ -1440,7 +1472,7 @@ body {
     font-size: 25px;
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 0;
+    margin: 5px auto;
     padding: 5px 0;
   }
   .content-text h2,
@@ -1498,13 +1530,38 @@ body {
   }
   /* news sports img */
   .news-sports-img {
+    width: 350px;
     position: absolute;
-    top: -2px; /* Adjust as needed */
-    right: 50px; /* Adjust as needed */
-    width: 350px; /* Adjust width */
-    height: auto; /* Maintain aspect ratio */
-  }
+    height: auto;
+    top: 114px; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Adjust to center the element */
 
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 600px;
+    max-height: 400px;
+  }
+  /* news casino img */
+  .slots-news-casino {
+    width: 350px;
+    position: absolute;
+    height: auto;
+    top: 240px; /* Adjust as needed */
+    left: 50%;
+
+    transform: translate(-50%, -50%); /* Adjust to center the element */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 600px;
+    max-height: 400px;
+  }
   .news-slider {
     box-sizing: border-box;
     height: fit-content;
@@ -1512,10 +1569,12 @@ body {
     margin: 230px auto 50px auto;
   }
   .slider-title {
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     padding: 0;
     margin: 15px 0 0 0;
+
+    text-shadow: -10px -8px 20px rgb(0, 0, 0);
   }
   .news-slide {
     width: 100%;
@@ -1629,6 +1688,23 @@ body {
     max-width: 500px;
     max-height: 400px;
   }
+  /* top3 casino img */
+  .roulette-top3-casino {
+    width: 350px;
+    position: absolute;
+    height: auto;
+    top: -2%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Adjust to center the element */
+
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 600px;
+    max-height: 400px;
+  }
   .top-info {
     margin-top: 0;
   }
@@ -1636,6 +1712,7 @@ body {
     font-size: 25px;
     position: relative;
     z-index: 10;
+    text-shadow: -10px -8px 20px rgb(0, 0, 0);
   }
   .top-info p {
     position: relative;
@@ -1681,6 +1758,11 @@ body {
     width: 350px;
     left: 10px;
     top: 74px;
+  }
+  .lol-main,
+  .sports-main,
+  .casino-main {
+    height: 290px;
   }
   .main {
     width: 70%;
@@ -1851,14 +1933,17 @@ body {
   /* scports content-text img */
   .content-sports {
     width: 500px;
-    top: -209px;
-    left: 100px;
-    margin: 0 auto;
+    top: -4%;
+  }
+  /* casino content text img */
+  .poker-cards-casino {
+    width: 500px;
+    top: 0;
   }
 
   .content-text h1,
   .content-main h1 {
-    font-size: 30px;
+    font-size: 35px;
     margin-top: 50px;
   }
   .content-text h2,
@@ -1884,8 +1969,6 @@ body {
   }
   /* news slider */
   .news-slider-container {
-    position: relative;
-    margin: 5px;
     width: 98%;
     height: fit-content;
   }
@@ -1898,18 +1981,21 @@ body {
   }
   /* news sports img */
   .news-sports-img {
-    position: absolute;
-    top: -32px; /* Adjust as needed */
-    right: 50px; /* Adjust as needed */
+    top: 134px; /* Adjust as needed */
     width: 500px; /* Adjust width */
-    height: auto; /* Maintain aspect ratio */
+  }
+  /* news casino img */
+  .slots-news-casino {
+    width: 400px;
+
+    top: 310px;
   }
   .news-slider {
     width: 100%;
     margin: 300px 0 40px 0;
   }
   .slider-title {
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     padding: 0;
   }
@@ -1982,7 +2068,7 @@ body {
   .top3img {
     width: 400px;
     top: -5px; /* Adjust as needed */
-    left: 300px; /* Adjust as needed */
+    left: 140px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
     z-index: 10; /* Ensure it stays above other elements */
@@ -1995,6 +2081,12 @@ body {
     left: -20px; /* Adjust as needed */
   }
 
+  /* top3 sports img */
+  .roulette-top3-casino {
+    width: 400px;
+    left: 50%;
+    top: 27%;
+  }
   .top-info h2 {
     font-size: 30px;
   }
@@ -2028,16 +2120,25 @@ body {
   .container-content {
     width: 100%;
   }
+
+  .lol-main,
+  .sports-main,
+  .casino-main {
+    height: 310px;
+  }
   /* main esports img */
   .lol-main img {
     left: 170px;
     width: 400px;
-    top: 83px;
+    top: 63px;
   }
   .sports-main img {
     width: 500px;
-
-    left: 250px;
+    top: 167px;
+  }
+  .casino-main img {
+    width: 400px;
+    top: 190px;
   }
   .main {
     width: 90%;
@@ -2273,7 +2374,23 @@ body {
     display: flex;
     background-size: cover;
   }
-
+  .lol-main,
+  .sports-main,
+  .casino-main {
+    height: 400px;
+  }
+  .lol-main img {
+    top: 150px;
+    left: 450px;
+  }
+  .sports-main img {
+    width: 600px;
+    top: 224px;
+  }
+  .casino-main img {
+    width: 500px;
+    top: 245px;
+  }
   .name-content {
     text-shadow: 2px 2px 10px rgb(0, 0, 0);
     max-width: 1200px;
@@ -2306,8 +2423,12 @@ body {
   /* scports content-text img */
   .content-sports {
     width: 600px;
-    top: -247px;
-    left: 290px;
+    top: -8%;
+  }
+  /* casino content text img */
+  .poker-cards-casino {
+    width: 600px;
+    top: -3%;
   }
   .content-text,
   .content-main {
@@ -2335,10 +2456,11 @@ body {
     bottom: -19px;
   }
   /* news slidebar */
-  .news-sports-img {
-    right: 350px; /* Adjust as needed */
-  }
 
+  /* news casino img */
+  .slots-news-casino {
+    width: 500px;
+  }
   .news-item {
     width: 1195px;
     margin-left: 5px;
@@ -2392,7 +2514,7 @@ body {
   .top3img {
     width: 500px;
     top: -165px; /* Adjust as needed */
-    left: 135px; /* Adjust as needed */
+    left: 110px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
     z-index: 10; /* Ensure it stays above other elements */
@@ -2403,6 +2525,13 @@ body {
     width: 500px;
     top: -105px; /* Adjust as needed */
     left: 50px; /* Adjust as needed */
+  }
+
+  /* top3 sports img */
+  .roulette-top3-casino {
+    width: 400px;
+    left: 30%;
+    top: 15%;
   }
 
   .top-info p {
