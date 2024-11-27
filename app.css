@@ -1410,7 +1410,7 @@ body {
     width: 300px;
     position: absolute;
     height: auto;
-    top: -170px; /* Adjust as needed */
+    top: -175px; /* Adjust as needed */
     left: 0px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
@@ -1477,8 +1477,9 @@ body {
   }
   .content-text h2,
   .content-main h2 {
-    font-size: 18px;
-    margin-left: 20px;
+    font-size: 20px;
+    margin: 30px 0 0 20px;
+
     font-weight: 600;
   }
 
@@ -1486,7 +1487,7 @@ body {
   .content-main p,
   .content-main ul {
     font-size: 18px;
-    padding: 20px 5px 0 5px;
+    padding: 12px 5px 0 5px;
     margin: 30px 5px 0 5px;
   }
 
