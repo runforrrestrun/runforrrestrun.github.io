@@ -1847,7 +1847,7 @@ body {
     background-size: contain;
   }
   .name-buttons {
-    width: 100%;
+    width: 80%;
   }
   .modal-content {
     width: 70%;
@@ -2197,6 +2197,8 @@ body {
   .name-holder,
   .buttons-casino-info {
     justify-content: start;
+    width: 90%;
+    flex-wrap: wrap;
   }
   .content-box {
     flex-wrap: nowrap;
@@ -2230,13 +2232,10 @@ body {
     top: 240px;
   }
   .main {
-    width: 90%;
+    width: 99%;
     padding: 10px 10px;
   }
-  .buttons-casino-info {
-    flex-wrap: wrap;
-    width: 100%;
-  }
+
   .best-rewards,
   .high-withdrawal {
     box-sizing: border-box;
