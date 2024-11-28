@@ -896,7 +896,7 @@ body {
   column-gap: 10px;
   margin: 14px 0 0 0;
   text-size-adjust: 100%;
-  width: 100%;
+
   min-width: 100px;
   row-gap: 10px;
 }
@@ -1016,10 +1016,10 @@ body {
   align-items: flex-start;
   width: 90%;
   height: 50px;
-  flex: 1 1 0%;
+
   min-width: 100px;
   background-color: rgb(120, 15, 225);
-  padding-top: 5px;
+
   border-radius: 7px;
   color: white;
   font-size: 24px;
@@ -1686,8 +1686,8 @@ body {
     font-weight: 900;
     text-shadow: 2px 2px 5px black;
     margin: 0 0 auto 0;
-    top: -20px;
-    left: -5px;
+    top: -12px;
+    left: -9px;
   }
   /* top3 esports img */
   .top3img {
@@ -1816,7 +1816,11 @@ body {
   }
   .bonus-link,
   .inactive {
-    width: 100%;
+    margin: 20px auto;
+    width: 80%;
+    height: fit-content;
+    padding: 5px;
+    font-size: 18px;
   }
   .game-icons {
     width: 100%;
@@ -2119,7 +2123,8 @@ body {
   }
 
   .n1 {
-    left: 11px;
+    top: 2px;
+    left: 11.5px;
     font-size: 20px;
   }
   .top-info {
@@ -2235,13 +2240,20 @@ body {
   .best-rewards,
   .high-withdrawal {
     box-sizing: border-box;
-    width: 170px;
-    font-size: 13px;
+    width: 160px;
+    font-size: 12px;
     font-weight: 600;
   }
   .bonus-link,
   .inactive {
-    width: 90%;
+    width: 80%;
+    height: fit-content;
+    font-size: 20px;
+    padding: 5px;
+  }
+  .game-icons {
+    width: 80%;
+    margin: 20px 0;
   }
   .game-icons img {
     width: 48px;
@@ -2653,7 +2665,7 @@ body {
   .bonus-link,
   .inactive {
     width: 60%;
-    margin: 10px auto;
+    margin: 20px auto;
   }
   .moreInfo-img {
     width: 20vw;
