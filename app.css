@@ -310,7 +310,7 @@ body {
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-  margin: 0 0 0 110px;
+  margin: 0 0 0 120px;
   display: none;
   flex-direction: column;
   flex-wrap: wrap;
