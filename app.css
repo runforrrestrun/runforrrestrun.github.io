@@ -1682,14 +1682,15 @@ body {
     color: white;
   }
   .top-left {
+    position: absolute;
     width: 25px;
     height: 25px;
     font-size: 13px;
     font-weight: 900;
     text-shadow: 2px 2px 5px black;
     margin: 0 0 auto 0;
-    top: -12px;
-    left: -9px;
+    top: -6px;
+    left: -5px;
   }
   /* top3 esports img */
   .top3img {
@@ -2109,6 +2110,7 @@ body {
   .top {
     width: 150px;
     height: 370px;
+    margin: 5px 10px;
   }
   .top a {
     color: white;
@@ -2120,8 +2122,8 @@ body {
     font-size: 15px;
     font-weight: 900;
     text-shadow: 2px 2px 5px black;
-    top: -14px;
-    left: -8px;
+    top: -11px;
+    left: -5px;
   }
 
   .n1 {
