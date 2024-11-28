@@ -479,6 +479,7 @@ body {
 }
 .top-container {
   display: flex;
+
   width: auto;
   height: auto;
 }
@@ -508,15 +509,20 @@ body {
   background-color: chocolate;
 }
 .top-left {
-  width: 30px;
-  height: 30px;
-  border: 2px solid rgba(0, 0, 0, 0.199);
-  text-align: center;
+  border: 1px solid rgba(128, 119, 119, 0.705);
+
   border-radius: 100px;
   font-size: 20px;
-  margin: 5px 0 0 5px;
+
   align-self: flex-start;
   background-color: black;
+  position: relative;
+}
+.n1 {
+  font-size: 20px;
+  margin: 0;
+  position: relative;
+  left: 8px;
 }
 .nr1 {
   background-color: gold;
@@ -1673,12 +1679,14 @@ body {
     color: white;
   }
   .top-left {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     font-size: 13px;
     font-weight: 900;
     text-shadow: 2px 2px 5px black;
     margin: 0 0 auto 0;
+    top: -9px;
+    left: -5px;
   }
   /* top3 esports img */
   .top3img {
@@ -2090,11 +2098,16 @@ body {
   }
   .top-left {
     border-radius: 100%;
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
     font-size: 15px;
     font-weight: 900;
     text-shadow: 2px 2px 5px black;
+    top: -14px;
+    left: -8px;
+  }
+  .n1 {
+    left: 11px;
   }
   .top-info {
     font-size: 20px;
