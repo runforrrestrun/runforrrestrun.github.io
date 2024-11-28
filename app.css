@@ -2100,7 +2100,7 @@ body {
   .top3casinos {
     height: fit-content;
     flex-direction: column;
-    margin: 180px auto 0 auto;
+    margin: 180px auto 30px auto;
   }
   .top-container {
     justify-content: center;
