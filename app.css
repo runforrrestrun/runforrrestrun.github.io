@@ -714,7 +714,7 @@ body {
   width: 400px;
   height: auto;
   position: relative;
-  z-index: 10;
+  z-index: 12;
   top: -280px;
   left: 0px;
 
@@ -1064,12 +1064,13 @@ body {
   max-width: 1100px;
   box-sizing: border-box;
   border: 1px solid rgba(129, 129, 129, 0.582);
-
+  z-index: 10;
   border-radius: 10px;
   width: fit-content;
   height: auto;
   text-align: start;
   padding: 20px 0 20px 20px;
+  position: relative;
 }
 .content-main ul li {
   list-style-type: "◇";
@@ -1323,6 +1324,45 @@ body {
   }
 }
 @media (min-width: 5px) {
+  /* snow */
+  #snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1; /* Ensure snowflakes are in the background */
+    overflow: hidden;
+  }
+
+  .snowflake {
+    position: absolute;
+    color: white;
+    font-size: 0.8em; /* Smaller snowflakes */
+    user-select: none;
+    pointer-events: none;
+    opacity: 0; /* Start with opacity 0 for a smooth fade-in effect */
+    animation: snow 10s linear infinite, fadeIn 2s ease-in forwards; /* Fade-in and snowfall animation */
+  }
+
+  /* Snowfall animation */
+  @keyframes snow {
+    to {
+      transform: translateY(100vh); /* Snowflakes move vertically */
+      opacity: 0; /* Fade out as it reaches the bottom */
+    }
+  }
+
+  /* Smooth fade-in effect for snowflakes at the start */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   /* burger menu */
   .nav-toggle {
     margin: 5px 10px 0 auto;
@@ -1468,6 +1508,8 @@ body {
   }
   .content-text,
   .content-main {
+    overflow: hidden;
+    z-index: 10;
     margin: 30px 5px;
     width: 97%;
   }
@@ -1624,7 +1666,7 @@ body {
   }
 
   .news-content h2 {
-    width: 100%;
+    width: 90%;
     font-size: 20px;
     box-sizing: border-box;
     padding: 5px;
@@ -1809,6 +1851,7 @@ body {
     height: 290px;
   }
   .main {
+    z-index: 10;
     width: 70%;
     align-self: center;
     margin: 0 0 10px 0;
@@ -2578,7 +2621,7 @@ body {
     margin-top: 20px;
   }
   .news-content h2 {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   /* top 3 */
