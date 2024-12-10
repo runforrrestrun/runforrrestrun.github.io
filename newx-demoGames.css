@@ -892,16 +892,16 @@ a {
     padding-top: 0;
   }
   .news-content-main h1 {
-    font-size: 40px;
-  }
-  .news-content-main h2 {
     font-size: 35px;
   }
-  .news-content-main h3 {
+  .news-content-main h2 {
     font-size: 30px;
   }
+  .news-content-main h3 {
+    font-size: 28px;
+  }
   .news-content-main p {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   /* article from news */
@@ -922,6 +922,19 @@ a {
   }
   .news-box {
     margin: 15px auto;
+  }
+  .news-content-main h1 {
+    font-size: 45px;
+  }
+  .news-content-main h2 {
+    font-size: 35px;
+  }
+  .news-content-main h3 {
+    font-size: 30px;
+  }
+  .news-content-main p {
+    font-size: 30px;
+    font-weight: 450;
   }
 }
 /*  */
