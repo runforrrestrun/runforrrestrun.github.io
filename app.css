@@ -2627,9 +2627,12 @@ body {
     width: 300px;
     top: 268px;
   }
+  .news-slider-container {
+    width: 100%;
+  }
   .news-item {
     width: 1195px;
-    margin: 10px 0 10px 5px;
+    margin: 10px 0;
   }
   .news-item a {
     flex-direction: row;
@@ -2639,15 +2642,19 @@ body {
   .news-item img {
     width: 450px;
     height: 300px;
-    margin-left: 50px;
+    margin-left: 10px;
   }
 
   .news-item button {
     margin-top: 20px;
   }
+  .news-content {
+    width: 70%;
+  }
   .news-content h2 {
     font-size: 25px;
     text-align: start;
+    max-width: 600px;
   }
 
   /* top 3 */
