@@ -675,8 +675,9 @@ body {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  font-size: 23px;
+  font-size: 20px;
   z-index: 15;
+  opacity: 0.7;
 }
 
 .back-btn {
@@ -1668,6 +1669,11 @@ body {
     height: 200px;
     border: 5px solid rgba(131, 130, 130, 0.336);
     border-radius: 10px;
+    margin-top: 20px;
+  }
+  .news-content {
+    width: 100%;
+    margin: 10px auto;
   }
 
   .news-content h2 {
@@ -1675,7 +1681,7 @@ body {
     font-size: 20px;
     box-sizing: border-box;
     padding: 15px;
-    margin: 10px 0px;
+    margin: 50px 0px 10px 0px;
     font-weight: 500;
   }
   .news-content br {
@@ -2142,7 +2148,7 @@ body {
   }
   .news-content {
     width: 100%;
-    margin: auto auto;
+    margin: 30px auto;
   }
 
   .news-content h2 {
