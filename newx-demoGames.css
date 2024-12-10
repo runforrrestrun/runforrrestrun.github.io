@@ -283,27 +283,37 @@ body {
   text-decoration: none;
   color: #ffffff;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .news-banner {
   box-sizing: border-box;
   width: 100%;
   height: auto;
   margin: 0;
+  flex-shrink: 0;
 }
 .news-banner img {
   box-sizing: border-box;
   border-bottom: 1px solid rgba(204, 201, 201, 0.733);
   width: 100%;
+  max-height: 370px;
   height: fit-content;
   border-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 .news-content {
   box-sizing: border-box;
-  margin: 10px;
+  margin: auto 10px;
   text-decoration: none;
   word-spacing: 2px;
+}
+.news-content br {
+  content: "";
+  display: block;
+  margin-top: 10px;
 }
 .news-button {
   margin-top: auto;
@@ -472,6 +482,8 @@ a {
   }
 }
 @media only screen and (min-width: 5px) {
+  /* snow */
+
   /* burger menu */
   .nav-toggle {
     margin: 5px 10px 0 auto;
@@ -543,6 +555,9 @@ a {
   }
   .news-content p {
     font-size: 15px;
+  }
+  .br {
+    margin-top: 10px;
   }
 
   .news-button button {
@@ -669,7 +684,7 @@ a {
     font-size: 23px;
   }
   .news-content p {
-    font-size: 15px;
+    font-size: 19px;
   }
   .news-button button {
     font-size: 25px;
