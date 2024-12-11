@@ -2136,8 +2136,11 @@ body {
     flex-direction: column;
     text-decoration: none;
   }
+  .news-banner {
+    width: fit-content;
+  }
   .news-item img {
-    width: 450px;
+    width: fit-content;
     height: 300px;
     margin: 0 10px 0 10px;
     border: 5px solid rgba(128, 128, 128, 0.274);
