@@ -1097,7 +1097,7 @@ body {
 .diamond-underline {
   position: relative;
   display: inline-block;
-  padding-bottom: 2px; /* Adjusts space between text and underline */
+
   border-bottom: 4px solid currentColor; /* Creates the underline */
 }
 
@@ -1583,7 +1583,7 @@ body {
   }
   .diamond-underline::before {
     transform: translateX(50%, 50%);
-    top: 16px;
+    top: 14px;
     left: -3px;
   }
   /* news slider */
@@ -2102,7 +2102,7 @@ body {
     font-size: 20px;
   }
   .diamond-underline::before {
-    top: 18px;
+    top: 16px;
     left: -3px;
     transform: translateX(50%, 50%);
   }
@@ -2657,7 +2657,7 @@ body {
   }
 
   .diamond-underline::before {
-    top: 22px;
+    top: 20.5px;
     left: -3px;
   }
   /* news slidebar */
