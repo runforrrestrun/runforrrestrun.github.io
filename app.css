@@ -1511,7 +1511,7 @@ body {
     position: relative;
     z-index: 10;
     font-size: 20px;
-    margin: 30px 10px 0 20px;
+    margin: 30px 10px 0 0px;
     font-weight: 700;
     text-decoration: underline;
   }
@@ -2608,7 +2608,7 @@ body {
   }
 
   .content-main h2 {
-    margin-left: 20px;
+    margin-left: 10px;
     font-size: 30px;
   }
   .content-main h3 {
