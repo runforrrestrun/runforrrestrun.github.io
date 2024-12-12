@@ -1076,8 +1076,11 @@ body {
 .content-main ul li {
   list-style-type: "◇";
 }
-.content-main p strong {
+.content-main p strong,
+.content-main em {
   font-weight: 700;
+  color: white;
+  text-decoration: none;
 }
 
 #content-main-title {
@@ -1965,8 +1968,12 @@ body {
   .missionU img {
     border: 1px solid rgba(228, 225, 225, 0.507);
     border-radius: 10px;
-    width: 350px;
+    width: 70%;
     height: auto;
+  }
+  .missionU {
+    text-align: center;
+    margin: 50px 0;
   }
 
   /* botom page */
@@ -2632,6 +2639,9 @@ body {
 
   .content-main h2 {
     margin-left: 20px;
+    font-size: 30px;
+  }
+  .content-main h3 {
     font-size: 25px;
   }
   #content-main-title {
