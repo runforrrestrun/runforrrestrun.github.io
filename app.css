@@ -1582,9 +1582,9 @@ body {
     transform: translateX(-1em);
   }
   .diamond-underline::before {
-    transform: translateX(50%);
+    transform: translateX(50%, 50%);
     top: 16px;
-    left: -23px;
+    left: -3px;
   }
   /* news slider */
   .news-slider-container {
@@ -2103,8 +2103,8 @@ body {
   }
   .diamond-underline::before {
     top: 18px;
-    left: -25px;
-    transform: translateX(50%);
+    left: -3px;
+    transform: translateX(50%, 50%);
   }
   .empty-diamond-underline::before {
     left: -5px;
@@ -2658,7 +2658,7 @@ body {
 
   .diamond-underline::before {
     top: 22px;
-    left: -30px;
+    left: -3px;
   }
   /* news slidebar */
 
