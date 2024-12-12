@@ -1972,6 +1972,7 @@ body {
     height: auto;
   }
   .missionU {
+    width: 100%;
     text-align: center;
     margin: 50px 0;
   }
