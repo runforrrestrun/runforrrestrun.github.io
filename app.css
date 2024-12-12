@@ -1097,35 +1097,10 @@ body {
 .diamond-underline {
   position: relative;
   display: inline-block;
-
-  border-bottom: 4px solid currentColor; /* Creates the underline */
+  text-decoration: underline;
 }
 
 /* Add the diamond */
-.diamond-underline::before {
-  content: "◆"; /* Diamond symbol */
-  color: white;
-  position: absolute;
-  left: 0; /* Aligns the diamond with the beginning of the underline */
-  font-size: 1em;
-  transform: translateX(
-    -0.6em
-  ); /* Adjusts diamond's position to sit at the beginning of the underline */
-}
-.empty-diamond-underline::before {
-  content: "◇"; /* Diamond symbol */
-  color: white;
-
-  position: absolute;
-
-  left: 0; /* Aligns the diamond with the beginning of the underline */
-
-  color: currentColor;
-  font-size: 1em;
-  transform: translateX(
-    -0.6em
-  ); /* Adjusts diamond's position to sit at the beginning of the underline */
-}
 
 /* mrore info(short info) */
 .more-info:hover button {
@@ -1537,9 +1512,12 @@ body {
     font-size: 20px;
     margin: 30px 10px 0 20px;
     font-weight: 700;
+    text-decoration: underline;
   }
   .content-main h3 {
     font-size: 20px;
+
+    padding-left: 5px;
   }
 
   .content-text p {
@@ -1576,16 +1554,7 @@ body {
     align-content: center;
     align-self: center;
   }
-  .empty-diamond-underline::before {
-    bottom: 0px;
-    left: 3px;
-    transform: translateX(-1em);
-  }
-  .diamond-underline::before {
-    transform: translateX(50%, 50%);
-    top: 14px;
-    left: -3px;
-  }
+
   /* news slider */
   .news-slider-container {
     width: 98%;
@@ -2101,15 +2070,7 @@ body {
   .content-main ul li {
     font-size: 20px;
   }
-  .diamond-underline::before {
-    top: 16px;
-    left: -3px;
-    transform: translateX(50%, 50%);
-  }
-  .empty-diamond-underline::before {
-    left: -5px;
-    transform: translateX(-0.6em);
-  }
+
   /* news slider */
   .news-slider-container {
     width: 98%;
@@ -2656,10 +2617,6 @@ body {
     font-size: 35px;
   }
 
-  .diamond-underline::before {
-    top: 20.5px;
-    left: -3px;
-  }
   /* news slidebar */
 
   /* news casino img */
