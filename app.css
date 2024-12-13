@@ -2674,6 +2674,11 @@ body {
     width: 180px;
     height: 450px;
   }
+  .top1,
+  .top2,
+  .top3 {
+    top: -20.5px;
+  }
   .top-info {
     width: 50%;
     margin-bottom: 100px;
@@ -2709,8 +2714,8 @@ body {
   /* top3 esports img */
   .top3img {
     width: 500px;
-    top: -165px; /* Adjust as needed */
-    left: 110px; /* Adjust as needed */
+    top: -125px; /* Adjust as needed */
+    left: 130px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
     z-index: 10; /* Ensure it stays above other elements */
