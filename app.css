@@ -1076,6 +1076,9 @@ body {
 .content-main ul li {
   list-style-type: "◇";
 }
+.content-main a {
+  text-decoration: none;
+}
 .content-main p strong,
 .content-main em {
   font-weight: 700;
