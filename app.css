@@ -589,14 +589,14 @@ body {
   font-family: inherit;
   position: relative;
   z-index: 1;
-  margin-top: 50px;
+
   max-width: 1200px;
   width: 100%;
   height: fit-content;
   border-radius: 10px;
   min-width: 250px;
   overflow: hidden;
-  margin: 300px auto;
+  margin: 0 auto;
 }
 /* news esports img */
 .top-right-image {
@@ -1597,7 +1597,7 @@ body {
     width: 200px;
     position: absolute;
     height: auto;
-    top: 220px; /* Adjust as needed */
+    top: 230px; /* Adjust as needed */
     left: 50%;
 
     transform: translate(-50%, -50%); /* Adjust to center the element */
@@ -2091,7 +2091,7 @@ body {
   }
   /* news sports img */
   .news-sports-img {
-    top: 380px; /* Adjust as needed */
+    top: 340px; /* Adjust as needed */
     left: 50%;
     width: 500px; /* Adjust width */
     height: fit-content;
@@ -2099,14 +2099,14 @@ body {
 
   /* news casino img */
   .slots-news-casino {
-    width: 250px;
+    width: 300px;
 
     top: 280px;
   }
   .news-slider {
     width: 100%;
     height: fit-content;
-    margin: 350px 0 40px 0;
+    margin: 300px 0 40px 0;
   }
   .slider-title {
     font-size: 40px;
@@ -2632,7 +2632,7 @@ body {
   /* news casino img */
   .slots-news-casino {
     width: 300px;
-    top: 268px;
+    top: 280px;
   }
   .news-slider-container {
     width: 100%;
@@ -2760,7 +2760,7 @@ body {
   }
   /* news slider img sports */
   .news-sports-img {
-    top: 390px; /* Adjust as needed */
+    top: 330px; /* Adjust as needed */
     left: 50%;
     width: 600px; /* Adjust width */
     height: fit-content;
