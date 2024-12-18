@@ -661,7 +661,7 @@ body {
 .news-item img {
   width: 100%; /* Adjusted to fill container */
   height: auto;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 /* Navigation Buttons */
@@ -1576,11 +1576,11 @@ body {
   }
   /* news sports img */
   .news-sports-img {
-    width: 250px;
+    width: 390px;
     position: absolute;
     height: auto;
-    top: 214px; /* Adjust as needed */
-    left: 74%; /* Adjust as needed */
+    top: 280px; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
     transform: translate(-50%, -50%); /* Adjust to center the element */
 
     /* Adjust width */
@@ -1592,22 +1592,6 @@ body {
     max-height: 600px;
   }
 
-  .news-sports-img2 {
-    width: 250px;
-    position: absolute;
-    height: auto;
-    top: 214px; /* Adjust as needed */
-    left: 21%; /* Adjust as needed */
-    transform: translate(-50%, -50%); /* Adjust to center the element */
-
-    /* Adjust width */
-    /* Maintain aspect ratio */
-    z-index: 1; /* Ensure it stays above other elements */
-    margin: 0;
-
-    max-width: 600px;
-    max-height: 600px;
-  }
   /* news casino img */
   .slots-news-casino {
     width: 200px;
@@ -1665,9 +1649,10 @@ body {
   }
   .news-item img {
     width: 320px;
-    height: 200px;
+    height: auto;
+    max-height: 200px;
     border: 5px solid rgba(131, 130, 130, 0.336);
-    border-radius: 10px;
+
     margin-top: 20px;
   }
   .news-content {
@@ -2106,17 +2091,12 @@ body {
   }
   /* news sports img */
   .news-sports-img {
-    top: 360px; /* Adjust as needed */
-    left: 79%;
-    width: 350px; /* Adjust width */
+    top: 380px; /* Adjust as needed */
+    left: 50%;
+    width: 500px; /* Adjust width */
     height: fit-content;
   }
-  .news-sports-img2 {
-    top: 350px; /* Adjust as needed */
-    left: 15%;
-    width: 320px; /* Adjust width */
-    height: fit-content;
-  }
+
   /* news casino img */
   .slots-news-casino {
     width: 250px;
@@ -2147,14 +2127,15 @@ body {
     text-decoration: none;
   }
   .news-banner {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
   }
   .news-item img {
-    width: 80%;
-    height: 350px;
-    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+
     border: 5px solid rgba(128, 128, 128, 0.274);
-    border-radius: 10px;
   }
   .news-item button {
     border-radius: 10px;
@@ -2669,11 +2650,13 @@ body {
     margin: 0 auto;
   }
   .news-banner {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
   }
   .news-item img {
     width: 100%;
-    height: 350px;
+    height: auto;
+    max-height: 350px;
     margin: 0 auto;
   }
 
@@ -2777,15 +2760,9 @@ body {
   }
   /* news slider img sports */
   .news-sports-img {
-    top: 350px; /* Adjust as needed */
-    left: 79%;
-    width: 400px; /* Adjust width */
-    height: fit-content;
-  }
-  .news-sports-img2 {
-    top: 348px; /* Adjust as needed */
-    left: 20%;
-    width: 380px; /* Adjust width */
+    top: 390px; /* Adjust as needed */
+    left: 50%;
+    width: 600px; /* Adjust width */
     height: fit-content;
   }
 
