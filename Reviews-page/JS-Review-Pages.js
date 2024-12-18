@@ -226,7 +226,6 @@ function showTab(tabName) {
 }
 
 // smartphone menu
-// Get the toggle button, side navigation, and overlay
 // Wait for the DOM to fully load before attaching event listeners
 document.addEventListener("DOMContentLoaded", () => {
   const toggleButton = document.querySelector(".toggle-button");
@@ -278,13 +277,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Close side navigation when clicking inside but not on dropdowns
+  // Prevent closing the side navigation when clicking on dropdown toggle or menu
   sideNavigation.addEventListener("click", (event) => {
-    const isClickInsideDropdown = event.target.closest(
-      ".dropdown-toggle, .dropdown-menu"
-    );
-    if (!isClickInsideDropdown) {
-      closeSideNavigation();
+    const isDropdownToggle = event.target.closest(".dropdown-toggle");
+    const isDropdownMenu = event.target.closest(".dropdown-menu");
+
+    // If clicked on a dropdown toggle, toggle its menu
+    if (isDropdownToggle) {
+      const dropdownId = isDropdownToggle.dataset.dropdownId;
+      if (dropdownId) {
+        toggleDropdown(dropdownId);
+      }
+      event.stopPropagation(); // Prevent closing the navigation
+    }
+
+    // If clicked on a dropdown menu, do nothing
+    if (isDropdownMenu) {
+      event.stopPropagation(); // Prevent closing the navigation
     }
   });
 
