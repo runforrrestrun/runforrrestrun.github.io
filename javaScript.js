@@ -325,14 +325,14 @@ document.addEventListener("DOMContentLoaded", () => {
   overlay.addEventListener("click", closeSideNavigation);
 
   // Close side navigation if clicked outside
-  document.addEventListener("click", (event) => {
-    if (
-      !sideNavigation.contains(event.target) &&
-      !toggleButton.contains(event.target)
-    ) {
-      closeSideNavigation();
-    }
-  });
+  // document.addEventListener("click", (event) => {
+  //   if (
+  //     !sideNavigation.contains(event.target) &&
+  //     !toggleButton.contains(event.target)
+  //   ) {
+  //     closeSideNavigation();
+  //   }
+  // });
 
   // Swipe detection for touch devices
   function handleTouchStart(e) {
