@@ -36,13 +36,17 @@ body {
 .side-navigation {
   position: fixed;
   top: 0;
-  left: -250px;
+  left: -250px; /* Move off the screen initially */
   width: 250px;
   height: 100%;
+  transition: left 0.3s ease-in-out; /* Animate the left property */
   background-image: linear-gradient(190deg, black 50%, purple);
-  transition: 0.3s;
-  z-index: 1000;
-  overflow-y: auto;
+  color: white;
+  z-index: 1000; /* Ensure it's above other content */
+}
+/* When side navigation is open, slide it in */
+.side-navigation.open {
+  left: 0; /* Move the side navigation into view */
 }
 .side-navigation a {
   width: 100%;
@@ -184,7 +188,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 999; /* Ensure it's below the side navigation */
 }
 
 /* Toggle Button Styles */
