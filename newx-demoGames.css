@@ -380,6 +380,7 @@ body {
   height: auto;
   background-color: black;
   margin: 0 auto;
+  border-radius: 10px;
 }
 .news-content-main {
   box-sizing: border-box;

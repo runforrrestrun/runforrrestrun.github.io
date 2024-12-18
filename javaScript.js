@@ -1,5 +1,21 @@
 "use strict";
+// Hamburger menu
+function myFunction() {
+  const x = document.getElementById("myLinks");
+  if (x) {
+    x.style.display = x.style.display === "block" ? "" : "block";
+  }
+}
 
+// Close menu click
+const y = document.getElementById("myLinks");
+function myFunction2() {
+  if (y && y.style.display === "block") {
+    y.style.display = "";
+  }
+}
+
+//
 // sidebar menu dropedown bonus
 document.addEventListener("DOMContentLoaded", () => {
   const dropdowns = document.querySelectorAll(".box-dropdown");
@@ -122,23 +138,6 @@ if (navToggle) {
   navToggle.addEventListener("click", toggleHamburger);
 }
 
-// Hamburger menu
-function myFunction() {
-  const x = document.getElementById("myLinks");
-  if (x) {
-    x.style.display = x.style.display === "block" ? "" : "block";
-  }
-}
-
-// Close menu click
-const y = document.getElementById("myLinks");
-function myFunction2() {
-  if (y && y.style.display === "block") {
-    y.style.display = "";
-  }
-}
-
-//
 // news slidebar
 
 let currentSlide = 0;
@@ -272,3 +271,89 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// smartphone menu
+// Get the toggle button, side navigation, and overlay
+const toggleButton = document.querySelector(".toggle-button");
+const sideNavigation = document.querySelector(".side-navigation");
+const overlay = document.querySelector(".overlay");
+
+// Variables for swipe detection
+let touchStartX = 0;
+let touchEndX = 0;
+
+// Function to open the side navigation and hide the toggle button
+function openSideNavigation() {
+  sideNavigation.classList.add("open"); // Open the side navigation
+  overlay.classList.add("show"); // Show the overlay
+  toggleButton.style.display = "none"; // Hide the toggle button
+}
+
+// Function to close the side navigation and show the toggle button again
+function closeSideNavigation() {
+  sideNavigation.classList.remove("open"); // Close the side navigation
+  overlay.classList.remove("show"); // Hide the overlay
+  toggleButton.style.display = "block"; // Show the toggle button
+}
+
+// Event listener for the toggle button to open the side navigation
+toggleButton.addEventListener("click", openSideNavigation);
+
+// Event listener for the overlay to close the side navigation
+overlay.addEventListener("click", closeSideNavigation);
+
+// Function to toggle the visibility of dropdown menus
+function toggleDropdown(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  // Toggle the display of the dropdown
+  dropdown.style.display =
+    dropdown.style.display === "block" ? "none" : "block";
+}
+
+// Close dropdowns if clicked outside the navigation
+document.addEventListener("click", function (event) {
+  const sideNavigation = document.getElementById("side-navigation");
+  const navigationOverlay = document.getElementById("navigation-overlay");
+  const isClickInsideNavigation = sideNavigation.contains(event.target);
+
+  if (!isClickInsideNavigation) {
+    // Close all dropdowns if clicked outside the navigation
+    document.querySelectorAll(".dropdown-menu").forEach(function (dropdown) {
+      dropdown.style.display = "none";
+    });
+  }
+});
+
+// Close the side navigation if clicked inside the side navigation itself (not the dropdown button)
+sideNavigation.addEventListener("click", function (event) {
+  // Check if the clicked element is not a dropdown button or menu
+  const isClickInsideDropdown = event.target.closest(
+    ".dropdown-toggle, .dropdown-menu"
+  );
+  if (!isClickInsideDropdown) {
+    closeSideNavigation(); // Close the menu if clicked anywhere else
+  }
+});
+
+// Functions for swipe detection to open/close the side navigation
+sideNavigation.addEventListener("touchstart", handleTouchStart, false);
+sideNavigation.addEventListener("touchmove", handleTouchMove, false);
+sideNavigation.addEventListener("touchend", handleTouchEnd, false);
+
+function handleTouchStart(e) {
+  touchStartX = e.changedTouches[0].screenX;
+}
+
+function handleTouchMove(e) {
+  touchEndX = e.changedTouches[0].screenX;
+}
+
+function handleTouchEnd() {
+  if (touchStartX - touchEndX > 50) {
+    // Swiped left, close the side navigation
+    closeSideNavigation();
+  } else if (touchEndX - touchStartX > 50) {
+    // Swiped right, open the side navigation
+    openSideNavigation();
+  }
+}

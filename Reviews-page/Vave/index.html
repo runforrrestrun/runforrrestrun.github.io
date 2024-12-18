@@ -175,69 +175,72 @@
               </div>
             </div>
           </li>
-
-          <!-- <li class="box SIXTH">
-            <img id="logo-img" src="img/joystick-regular-24.webp" alt="" />
-            <a  href=""><div id="a-links">Smthng</div></a>
-          </li>
-          <li class="box SEVENTH">
-            <img id="logo-img" src="img/joystick-regular-24.webp" alt="" />
-            <a  href=""><div id="a-links">Smthng</div></a>
-          </li> -->
-          <li onclick="myFunction()" class="nav-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </li>
         </ul>
-      </div>
-      <!-- Navigation links (hidden by default) -->
-      <!-- onclick="myFunction()" -->
+        <!-- smartphone  Menu Button -->
+        <div class="toggle-button" onclick="toggleNavigation()">
+          <div class="toggle-bar"></div>
+          <div class="toggle-bar"></div>
+          <div class="toggle-bar"></div>
+        </div>
 
-      <!-- <i class="fa fa-bars icon"></i> -->
-      <div id="myLinks">
-        <div class="dropdown">
-          <div class="box-menu-drop">
-            <img
-              id="logo-img"
-              src="/img/casino-logo.webp"
-              loading="lazy"
-              alt="casino logo"
-            />
-            <a href="/Casinos"><div id="a-links">Casinos</div></a>
+        <!-- Side Menu -->
+        <div id="side-navigation" class="side-navigation">
+          <div class="navigation-header">
+            <img src="/img/All4Wins-logo.webp" alt="Logo" class="logo-image" />
+            <a href="/"><p>All4Wins</p></a>
+            <span class="close-button" onclick="toggleNavigation()"
+              >&times;</span
+            >
           </div>
 
-          <div class="box-menu-drop">
-            <img
-              id="logo-img"
-              src="/img/controller-logo.webp"
-              loading="lazy"
-              alt="controller logo"
-            />
-            <a href="/Esports"><div id="a-links">ESports</div></a>
-          </div>
+          <div class="navigation-links">
+            <a href="/Casinos">
+              <div class="nav-link casino-link">
+                <img
+                  src="/img/casino-logo.webp"
+                  alt="Casino Icon"
+                  class="nav-icon"
+                />
+                Casinos
+              </div>
+            </a>
 
-          <div class="box-menu-drop">
-            <img
-              id="logo-img"
-              src="/img/football-logo.webp"
-              loading="lazy"
-              alt="football logo"
-            />
-            <a href="/Sports"><div id="a-links">Sports</div></a>
-          </div>
+            <a href="/Esports">
+              <div class="nav-link esports-link">
+                <img
+                  src="/img/controller-logo.webp"
+                  alt="Esports Icon"
+                  class="nav-icon"
+                />
+                ESports
+              </div>
+            </a>
 
-          <button class="dropedownbtn" id="bonus-btn">
-            <img
-              id="logo-img"
-              src="/img/review-icon.webp"
-              loading="lazy"
-              alt="diamond logo"
-            />
-            <span id="a-links">Reviews </span>
-            <div class="dropdown-content">
+            <a href="/Sports">
+              <div class="nav-link sports-link">
+                <img
+                  src="/img/football-logo.webp"
+                  alt="Sports Icon"
+                  class="nav-icon"
+                />
+                Sports
+              </div>
+            </a>
+
+            <!-- Dropdown Button for Reviews -->
+            <button
+              class="dropdown-toggle reviews-dropdown-toggle"
+              onclick="toggleDropdown('reviews-dropdown-content')"
+            >
+              <img
+                src="/img/review-icon.webp"
+                alt="Reviews Icon"
+                class="nav-icon"
+              />
+              Reviews
+            </button>
+            <div class="dropdown-menu" id="reviews-dropdown-content">
               <a href="/Reviews-page/Roobet/">Roobet</a>
-              <a href="/Reviews-page/Thunderpick/">Thunderpick</a>
               <a href="/Reviews-page/BC.Games/">BC.Games</a>
               <a href="/Reviews-page/BetFury/">BetFury</a>
               <a href="/Reviews-page/Vave/">Vave</a>
@@ -245,40 +248,48 @@
               <a href="/Reviews-page/CloudBet/">ClowdBet</a>
               <a href="/Reviews-page/Rabona/">Rabona</a>
               <a href="/Reviews-page/Wazamba/">Wazamba</a>
-              <a href="/Reviews-page/7Bit-Casino/">7Bit</a>
+              <a href="/Reviews-page/Loot.bet/">Loot.Bet</a>
+              <a href="/Reviews-page/TrustDice/">TrustDice</a>
             </div>
-          </button>
 
-          <button class="dropedownbtn" id="bonus-btn">
-            <img
-              id="logo-img"
-              src="/img/diamond-logo.webp"
-              loading="lazy"
-              alt="diamond logo"
-            />
-            <span id="a-links">Bonus </span>
-            <div class="dropdown-content">
+            <!-- Dropdown Button for Bonus -->
+            <button
+              class="dropdown-toggle bonus-dropdown-toggle"
+              onclick="toggleDropdown('bonus-dropdown-content')"
+            >
+              <img
+                src="/img/diamond-logo.webp"
+                alt="Bonus Icon"
+                class="nav-icon"
+              />
+              Bonus
+            </button>
+            <div class="dropdown-menu" id="bonus-dropdown-content">
               <a href="/Bonuses/No-Deposit/">No Deposit</a>
               <a href="/Bonuses/First-Deposit/">First Deposit</a>
               <a href="/Bonuses/Cashback/">Cashback</a>
               <a href="/Bonuses/No-Wagering/">No Wagering</a>
             </div>
-          </button>
 
-          <div class="box-menu-drop">
-            <img
-              id="logo-img"
-              src="/img/news-logo.webp"
-              loading="lazy"
-              alt="news logo"
-            />
-            <a href="/News/"><div id="a-links">News</div></a>
+            <a href="/News/">
+              <div class="nav-link news-link">
+                <img
+                  src="/img/news-logo.webp"
+                  alt="News Icon"
+                  class="nav-icon"
+                />
+                News
+              </div>
+            </a>
           </div>
         </div>
 
-        <!-- <a href="#about"><button class="dropedownbtn" >smthng</button></a>
-          <a  href="#about"><button class="dropedownbtn" >smthng</button></a>
-          <a href="#about"><button class="dropedownbtn" >smthng</button></a> -->
+        <!-- Overlay -->
+        <div
+          id="navigation-overlay"
+          class="overlay"
+          onclick="toggleNavigation()"
+        ></div>
       </div>
     </nav>
     <!-- 

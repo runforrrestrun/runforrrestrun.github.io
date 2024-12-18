@@ -20,45 +20,228 @@ body {
   position: fixed;
 }
 
-/* hamburger menu x animation */
-.nav-toggle {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 22px;
-  width: 22px;
+/* smarthphone menu*/
+/* scroll bars */
+/* Custom thin black scrollbar styles for Webkit browsers */
+.side-navigation::-webkit-scrollbar {
+  width: 6px; /* Set width of the scrollbar to thin */
 }
 
-.nav-toggle .bar {
-  height: 3px;
+/* Make the scrollbar track invisible */
+.side-navigation::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track, making it invisible */
+}
+
+/* Style for the scrollbar thumb (the part that moves) */
+.side-navigation::-webkit-scrollbar-thumb {
+  height: 10px;
+  background-color: #000; /* Black color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.side-navigation::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker shade when hovering over the thumb */
+}
+
+/* ens of scroll bars  */
+/* Side Navigation Styles */
+.side-navigation {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-image: linear-gradient(190deg, black 50%, purple);
+  transition: 0.3s;
+  z-index: 1000;
+  overflow-y: auto;
+}
+.side-navigation a {
   width: 100%;
-  background-color: white;
-  transition: all 100ms ease-in-out;
+  text-decoration: none;
 }
 
-.nav-toggle:hover {
+.side-navigation p {
+  width: 100%;
+  font-size: 27px;
+  font-weight: 800;
+  text-decoration: none;
+  color: white;
+}
+.navigation-header {
+  display: flex;
+  flex-direction: row;
+  background-color: inherit;
+}
+
+.side-navigation .navigation-header {
+  padding: 20px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side-navigation .navigation-header .logo-image {
+  width: 40%;
+  height: auto;
+}
+
+.side-navigation .navigation-header .close-button {
+  font-size: 30px;
   cursor: pointer;
+  color: #fff;
+}
+.close-button {
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  left: 85%;
 }
 
-.x:nth-of-type(1) {
-  transition: all 100ms ease-in-out;
-  transform: rotate(45deg);
-  transform-origin: top left;
-  width: 28px;
+/* Navigation Links Styles */
+.navigation-links {
+  padding: 20px;
+}
+/* Styling for images in the navigation links */
+.nav-icon {
+  width: 30px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 4px; /* Space between the image and text */
+  padding-bottom: 6px;
+  vertical-align: middle; /* Vertically align the image with the text */
 }
 
-.x:nth-of-type(2) {
-  transition: all 100ms ease-in-out;
-  transform-origin: center;
-  width: 0;
+/* Optional: Style for dropdown button images */
+.dropdown-toggle img {
+  padding-bottom: 6px;
+  width: 30px;
+  height: auto;
+  margin-right: 4px;
+  vertical-align: middle;
 }
 
-.x:nth-of-type(3) {
-  transition: all 100ms ease-in-out;
-  transform: rotate(-45deg);
-  transform-origin: bottom left;
-  width: 28px;
+.nav-link {
+  width: fit-content;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
 }
+.nav-link a {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: purple;
+  border-radius: 10px;
+}
+
+/* Dropdown Button Styles */
+.dropdown-toggle {
+  background-color: inherit;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: fit-content;
+  padding: 5px 10px;
+  text-align: left;
+  font-size: 20px;
+  margin: 10px 0;
+  border-radius: 10px; /* Make the button edges round like the dropdown menu */
+  text-align: center;
+}
+
+/* Hover effect for dropdown buttons */
+.dropdown-toggle:hover {
+  background-color: purple;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none;
+  background-color: inherit;
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
+
+.dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+  padding: 5px 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.dropdown-menu a:hover {
+  background-color: purple;
+}
+
+/* Overlay for Navigation */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Toggle Button Styles */
+.toggle-button {
+  position: fixed;
+  top: 50%;
+  left: 0px; /* Move the button further outside the screen */
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1001;
+  background-color: purple; /* Background color for the rectangle */
+  color: #fff;
+  border: none;
+  padding: 100px 8px; /* Increase padding for a larger button */
+  border-top-right-radius: 25px; /* Increase border radius for more rounded corners */
+  border-bottom-right-radius: 25px;
+  border: 1px solid rgba(192, 191, 191, 0.849);
+  border-left: 0 solid white;
+  font-size: 100px; /* Increase font size for larger text */
+  text-align: center; /* Center the text inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* Allow width to be dynamic */
+}
+
+.toggle-button:hover {
+  /* Slightly lighter shade on hover */
+  padding: 130px 15px;
+}
+
+/* To make the button visible once the navigation is opened */
+.side-navigation.open .toggle-button {
+  display: none; /* Hide button when navigation is open */
+}
+
+/* Animation for the Side Navigation */
+.side-navigation.open {
+  left: 0;
+}
+
+.overlay.show {
+  display: block;
+}
+/* end smarthphone side menu */
 
 /* nav Bar */
 
@@ -883,10 +1066,11 @@ strong {
   }
   .overview-button {
     width: 180px;
-    margin: 0 0 5px 5px;
+    margin: auto;
   }
   #card-tipe-container {
-    width: 250px;
+    width: fit-content;
+    margin: auto;
   }
   .tipe4 {
     width: 46px;
@@ -963,6 +1147,9 @@ strong {
     overflow-y: scroll; /* Add the ability to scroll */
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+  .toggle-button {
+    display: none;
   }
   .name-content {
     display: none;

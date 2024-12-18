@@ -224,3 +224,89 @@ function showTab(tabName) {
     .classList.add("active");
   document.getElementById(tabName).classList.add("active");
 }
+
+// smartphone menu
+// Get the toggle button, side navigation, and overlay
+// Wait for the DOM to fully load before attaching event listeners
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.querySelector(".toggle-button");
+  const sideNavigation = document.querySelector(".side-navigation");
+  const overlay = document.querySelector(".overlay");
+
+  // Variables for swipe detection
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  // Function to open the side navigation
+  function openSideNavigation() {
+    sideNavigation.classList.add("open");
+    overlay.classList.add("show");
+    toggleButton.style.display = "none";
+  }
+
+  // Function to close the side navigation
+  function closeSideNavigation() {
+    sideNavigation.classList.remove("open");
+    overlay.classList.remove("show");
+    toggleButton.style.display = "block";
+  }
+
+  // Function to toggle dropdown visibility
+  function toggleDropdown(dropdownId) {
+    const dropdown = document.getElementById(dropdownId);
+    dropdown.style.display =
+      dropdown.style.display === "block" ? "none" : "block";
+  }
+
+  // Make toggleDropdown globally accessible
+  window.toggleDropdown = toggleDropdown;
+
+  // Event listener for the toggle button
+  toggleButton.addEventListener("click", openSideNavigation);
+
+  // Event listener for the overlay
+  overlay.addEventListener("click", closeSideNavigation);
+
+  // Close dropdowns if clicked outside the navigation
+  document.addEventListener("click", (event) => {
+    const isClickInsideNavigation = sideNavigation.contains(event.target);
+
+    if (!isClickInsideNavigation) {
+      document.querySelectorAll(".dropdown-menu").forEach((dropdown) => {
+        dropdown.style.display = "none";
+      });
+    }
+  });
+
+  // Close side navigation when clicking inside but not on dropdowns
+  sideNavigation.addEventListener("click", (event) => {
+    const isClickInsideDropdown = event.target.closest(
+      ".dropdown-toggle, .dropdown-menu"
+    );
+    if (!isClickInsideDropdown) {
+      closeSideNavigation();
+    }
+  });
+
+  // Swipe detection for touch devices
+  function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }
+
+  function handleTouchMove(e) {
+    touchEndX = e.changedTouches[0].screenX;
+  }
+
+  function handleTouchEnd() {
+    if (touchStartX - touchEndX > 50) {
+      closeSideNavigation();
+    } else if (touchEndX - touchStartX > 50) {
+      openSideNavigation();
+    }
+  }
+
+  // Attach swipe event listeners
+  sideNavigation.addEventListener("touchstart", handleTouchStart, false);
+  sideNavigation.addEventListener("touchmove", handleTouchMove, false);
+  sideNavigation.addEventListener("touchend", handleTouchEnd, false);
+});
