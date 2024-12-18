@@ -226,11 +226,11 @@ function showTab(tabName) {
 }
 
 // smartphone menu
-// Wait for the DOM to fully load before attaching event listeners
 document.addEventListener("DOMContentLoaded", () => {
   const toggleButton = document.querySelector(".toggle-button");
-  const sideNavigation = document.querySelector(".side-navigation");
-  const overlay = document.querySelector(".overlay");
+  const sideNavigation = document.querySelector("#side-navigation");
+  const overlay = document.querySelector("#navigation-overlay");
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
   // Variables for swipe detection
   let touchStartX = 0;
@@ -240,60 +240,50 @@ document.addEventListener("DOMContentLoaded", () => {
   function openSideNavigation() {
     sideNavigation.classList.add("open");
     overlay.classList.add("show");
-    toggleButton.style.display = "none";
   }
 
   // Function to close the side navigation
   function closeSideNavigation() {
     sideNavigation.classList.remove("open");
     overlay.classList.remove("show");
-    toggleButton.style.display = "block";
   }
 
   // Function to toggle dropdown visibility
   function toggleDropdown(dropdownId) {
     const dropdown = document.getElementById(dropdownId);
-    dropdown.style.display =
-      dropdown.style.display === "block" ? "none" : "block";
+    if (dropdown) {
+      dropdown.style.display =
+        dropdown.style.display === "block" ? "none" : "block";
+    }
   }
 
-  // Make toggleDropdown globally accessible
-  window.toggleDropdown = toggleDropdown;
+  // Attach the toggleDropdown function to each dropdown toggle button
+  dropdownToggles.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const dropdownId = e.target.getAttribute("onclick").match(/'([^']+)'/)[1];
+      toggleDropdown(dropdownId);
+    });
+  });
 
   // Event listener for the toggle button
-  toggleButton.addEventListener("click", openSideNavigation);
-
-  // Event listener for the overlay
-  overlay.addEventListener("click", closeSideNavigation);
-
-  // Close dropdowns if clicked outside the navigation
-  document.addEventListener("click", (event) => {
-    const isClickInsideNavigation = sideNavigation.contains(event.target);
-
-    if (!isClickInsideNavigation) {
-      document.querySelectorAll(".dropdown-menu").forEach((dropdown) => {
-        dropdown.style.display = "none";
-      });
+  toggleButton.addEventListener("click", () => {
+    if (sideNavigation.classList.contains("open")) {
+      closeSideNavigation();
+    } else {
+      openSideNavigation();
     }
   });
 
-  // Prevent closing the side navigation when clicking on dropdown toggle or menu
-  sideNavigation.addEventListener("click", (event) => {
-    const isDropdownToggle = event.target.closest(".dropdown-toggle");
-    const isDropdownMenu = event.target.closest(".dropdown-menu");
+  // Event listener for the overlay to close the side navigation
+  overlay.addEventListener("click", closeSideNavigation);
 
-    // If clicked on a dropdown toggle, toggle its menu
-    if (isDropdownToggle) {
-      const dropdownId = isDropdownToggle.dataset.dropdownId;
-      if (dropdownId) {
-        toggleDropdown(dropdownId);
-      }
-      event.stopPropagation(); // Prevent closing the navigation
-    }
-
-    // If clicked on a dropdown menu, do nothing
-    if (isDropdownMenu) {
-      event.stopPropagation(); // Prevent closing the navigation
+  // Close side navigation if clicked outside
+  document.addEventListener("click", (event) => {
+    if (
+      !sideNavigation.contains(event.target) &&
+      !toggleButton.contains(event.target)
+    ) {
+      closeSideNavigation();
     }
   });
 
@@ -314,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Attach swipe event listeners
+  // Attach swipe event listeners for opening/closing the menu
   sideNavigation.addEventListener("touchstart", handleTouchStart, false);
   sideNavigation.addEventListener("touchmove", handleTouchMove, false);
   sideNavigation.addEventListener("touchend", handleTouchEnd, false);
