@@ -273,75 +273,49 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // smartphone menu
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.querySelector(".toggle-button");
-  const sideNavigation = document.querySelector("#side-navigation");
-  const overlay = document.querySelector("#navigation-overlay");
-  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+// Get the toggle button, side navigation, and overlay
+const toggleButton = document.querySelector(".toggle-button");
+const sideNavigation = document.querySelector(".side-navigation");
+const overlay = document.querySelector(".overlay");
 
-  // Function to open the side navigation with slide effect
-  function openSideNavigation() {
-    sideNavigation.classList.add("open");
-    overlay.classList.add("show");
-  }
+// Function to open the side navigation and hide the toggle button
+function openSideNavigation() {
+  sideNavigation.classList.add("open"); // Open the side navigation
+  overlay.classList.add("show"); // Show the overlay
+  toggleButton.style.display = "none"; // Hide the toggle button
+}
 
-  // Function to close the side navigation
-  function closeSideNavigation() {
-    sideNavigation.classList.remove("open");
-    overlay.classList.remove("show");
-  }
+// Function to close the side navigation and show the toggle button again
+function closeSideNavigation() {
+  sideNavigation.classList.remove("open"); // Close the side navigation
+  overlay.classList.remove("show"); // Hide the overlay
+  toggleButton.style.display = "block"; // Show the toggle button
+}
 
-  // Function to toggle dropdown visibility for Reviews and Bonus
-  function toggleDropdown(dropdownId) {
-    const dropdown = document.getElementById(dropdownId);
-    if (dropdown) {
-      dropdown.style.display =
-        dropdown.style.display === "block" ? "none" : "block";
-    }
-  }
+// Event listener for the toggle button to open the side navigation
+toggleButton.addEventListener("click", openSideNavigation);
 
-  // Attach the toggleDropdown function to each dropdown toggle button
-  dropdownToggles.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      const dropdownId = e.target.getAttribute("onclick").match(/'([^']+)'/)[1];
-      toggleDropdown(dropdownId);
+// Event listener for the overlay to close the side navigation
+overlay.addEventListener("click", closeSideNavigation);
+
+// Function to toggle the visibility of dropdown menus
+function toggleDropdown(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  // Toggle the display of the dropdown
+  dropdown.style.display =
+    dropdown.style.display === "block" ? "none" : "block";
+}
+
+// Close dropdowns if clicked outside the navigation
+document.addEventListener("click", function (event) {
+  const sideNavigation = document.getElementById("side-navigation");
+  const navigationOverlay = document.getElementById("navigation-overlay");
+  const isClickInsideNavigation = sideNavigation.contains(event.target);
+
+  if (!isClickInsideNavigation) {
+    // Close all dropdowns if clicked outside the navigation
+    document.querySelectorAll(".dropdown-menu").forEach(function (dropdown) {
+      dropdown.style.display = "none";
     });
-  });
-
-  // Event listener for the toggle button (hamburger button)
-  toggleButton.addEventListener("click", () => {
-    if (sideNavigation.classList.contains("open")) {
-      closeSideNavigation();
-    } else {
-      openSideNavigation();
-    }
-  });
-
-  // Event listener for the overlay to close the side navigation
-  overlay.addEventListener("click", closeSideNavigation);
-
-  // Swipe detection for touch devices (for opening/closing the menu with swipe)
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  function handleTouchStart(e) {
-    touchStartX = e.changedTouches[0].screenX;
   }
-
-  function handleTouchMove(e) {
-    touchEndX = e.changedTouches[0].screenX;
-  }
-
-  function handleTouchEnd() {
-    if (touchStartX - touchEndX > 50) {
-      closeSideNavigation();
-    } else if (touchEndX - touchStartX > 50) {
-      openSideNavigation();
-    }
-  }
-
-  // Attach swipe event listeners for opening/closing the side navigation (slide effect)
-  sideNavigation.addEventListener("touchstart", handleTouchStart, false);
-  sideNavigation.addEventListener("touchmove", handleTouchMove, false);
-  sideNavigation.addEventListener("touchend", handleTouchEnd, false);
 });
