@@ -47,6 +47,7 @@ body {
 /* When side navigation is open, slide it in */
 .side-navigation.open {
   left: 0; /* Move the side navigation into view */
+  overflow: scroll;
 }
 .side-navigation a {
   width: 100%;
