@@ -279,11 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector("#navigation-overlay");
   const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
-  // Variables for swipe detection
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  // Function to open the side navigation
+  // Function to open the side navigation with slide effect
   function openSideNavigation() {
     sideNavigation.classList.add("open");
     overlay.classList.add("show");
@@ -295,7 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.classList.remove("show");
   }
 
-  // Function to toggle dropdown visibility
+  // Function to toggle dropdown visibility for Reviews and Bonus
   function toggleDropdown(dropdownId) {
     const dropdown = document.getElementById(dropdownId);
     if (dropdown) {
@@ -312,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Event listener for the toggle button
+  // Event listener for the toggle button (hamburger button)
   toggleButton.addEventListener("click", () => {
     if (sideNavigation.classList.contains("open")) {
       closeSideNavigation();
@@ -324,17 +320,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Event listener for the overlay to close the side navigation
   overlay.addEventListener("click", closeSideNavigation);
 
-  // Close side navigation if clicked outside
-  // document.addEventListener("click", (event) => {
-  //   if (
-  //     !sideNavigation.contains(event.target) &&
-  //     !toggleButton.contains(event.target)
-  //   ) {
-  //     closeSideNavigation();
-  //   }
-  // });
+  // Swipe detection for touch devices (for opening/closing the menu with swipe)
+  let touchStartX = 0;
+  let touchEndX = 0;
 
-  // Swipe detection for touch devices
   function handleTouchStart(e) {
     touchStartX = e.changedTouches[0].screenX;
   }
@@ -351,7 +340,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Attach swipe event listeners for opening/closing the menu
+  // Attach swipe event listeners for opening/closing the side navigation (slide effect)
   sideNavigation.addEventListener("touchstart", handleTouchStart, false);
   sideNavigation.addEventListener("touchmove", handleTouchMove, false);
   sideNavigation.addEventListener("touchend", handleTouchEnd, false);
