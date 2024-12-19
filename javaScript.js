@@ -304,12 +304,31 @@ overlay.addEventListener("click", closeSideNavigation);
 // Event listener for the close button to close the side navigation
 closeButton.addEventListener("click", closeSideNavigation);
 
-// Handle swipe gestures for opening and closing the side navigation
+// Handle swipe gestures for opening
 toggleButton.addEventListener("touchstart", (e) => {
   touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
 });
 
 toggleButton.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
+
+// Handle swipe gestures for closing
+sideNavigation.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+});
+
+sideNavigation.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
+
+overlay.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+});
+
+overlay.addEventListener("touchend", (e) => {
   touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
   handleSwipeGesture(); // Handle the swipe gesture
 });
