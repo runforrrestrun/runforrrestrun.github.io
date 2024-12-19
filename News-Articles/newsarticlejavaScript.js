@@ -33,74 +33,118 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // smartphone menu
-// Get references to the toggle button, side navigation, overlay, and close button
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.querySelector(".toggle-button");
-  const sideNavigation = document.getElementById("side-navigation");
-  const overlay = document.getElementById("navigation-overlay");
-  const closeButton = document.querySelector(".close-button");
+// Select necessary elements
+const toggleButton = document.querySelector(".toggle-button");
+const sideNavigation = document.querySelector(".side-navigation");
+const overlay = document.querySelector(".overlay");
+const closeButton = document.querySelector(".close-button");
 
-  const reviewsDropdown = document.querySelector(".reviews-dropdown-toggle");
-  const bonusDropdown = document.querySelector(".bonus-dropdown-toggle");
-  const reviewsDropdownContent = document.getElementById(
-    "reviews-dropdown-content"
-  );
-  const bonusDropdownContent = document.getElementById(
-    "bonus-dropdown-content"
-  );
+// Track if the side menu is open
+let isSideMenuOpen = false;
 
-  // Check if elements exist
-  if (
-    !toggleButton ||
-    !sideNavigation ||
-    !overlay ||
-    !closeButton ||
-    !reviewsDropdown ||
-    !bonusDropdown ||
-    !reviewsDropdownContent ||
-    !bonusDropdownContent
-  ) {
-    console.error("One or more elements are missing.");
-    return;
+// Variables to track swipe gestures
+let touchStartX = 0;
+let touchEndX = 0;
+
+// Function to open the side navigation
+function openSideNavigation() {
+  sideNavigation.classList.add("open"); // Open the side navigation
+  overlay.classList.add("show"); // Show the overlay
+  toggleButton.style.display = "none"; // Hide the toggle button
+  isSideMenuOpen = true; // Set the flag to true when side menu is open
+}
+
+// Function to close the side navigation
+function closeSideNavigation() {
+  sideNavigation.classList.remove("open"); // Close the side navigation
+  overlay.classList.remove("show"); // Hide the overlay
+  toggleButton.style.display = "block"; // Show the toggle button
+  isSideMenuOpen = false; // Set the flag to false when side menu is closed
+}
+
+// Function to toggle dropdown menus (Review and Bonus)
+function toggleDropdown(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  // Toggle the display of the dropdown
+  if (dropdown.style.display === "block") {
+    dropdown.style.display = "none";
+  } else {
+    dropdown.style.display = "block";
   }
+}
 
-  // Functions to toggle navigation
-  function openSideNavigation() {
-    sideNavigation.classList.add("open");
-    overlay.classList.add("show");
-    toggleButton.style.display = "none";
-  }
+// Event listener for the toggle button to open the side navigation
+toggleButton.addEventListener("click", openSideNavigation);
 
-  function closeSideNavigation() {
-    sideNavigation.classList.remove("open");
-    overlay.classList.remove("show");
-    toggleButton.style.display = "block";
-  }
+// Event listener for the overlay to close the side navigation
+overlay.addEventListener("click", closeSideNavigation);
 
-  function toggleNavigation() {
-    if (sideNavigation.classList.contains("open")) {
-      closeSideNavigation();
-    } else {
-      openSideNavigation();
+// Event listener for the close button to close the side navigation
+closeButton.addEventListener("click", closeSideNavigation);
+
+// Handle swipe gestures for opening
+toggleButton.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+});
+
+toggleButton.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
+
+// Handle swipe gestures for closing
+sideNavigation.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+});
+
+sideNavigation.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
+
+overlay.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+});
+
+overlay.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
+
+// Function to handle swipe gestures
+function handleSwipeGesture() {
+  if (isSideMenuOpen) {
+    // Check for a left swipe to close the side navigation (swiping right to left)
+    if (touchStartX > touchEndX && touchStartX - touchEndX > 50) {
+      closeSideNavigation(); // Close the side navigation if swipe is from right to left
+    }
+  } else {
+    // Check for a right swipe to open the side navigation (swiping left to right)
+    if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
+      openSideNavigation(); // Open the side navigation if swipe is from left to right
     }
   }
+}
 
-  // Functions to toggle dropdown menus
-  function toggleReviewsDropdown() {
-    reviewsDropdownContent.classList.toggle("show");
+// Close dropdowns if clicked outside
+document.addEventListener("click", function (event) {
+  const isClickInsideNavigation = sideNavigation.contains(event.target);
+
+  if (!isClickInsideNavigation) {
+    // Close all dropdowns if clicked outside the navigation
+    document.querySelectorAll(".dropdown-menu").forEach(function (dropdown) {
+      dropdown.style.display = "none";
+    });
   }
+});
 
-  function toggleBonusDropdown() {
-    bonusDropdownContent.classList.toggle("show");
-  }
+// Make sure that clicking on the dropdown button toggles the dropdown menu
+document.querySelector(".dropdownbtn-review").addEventListener("click", () => {
+  toggleDropdown("dropdown-content-review");
+});
 
-  // Attach event listeners
-  toggleButton.addEventListener("click", toggleNavigation);
-  closeButton.addEventListener("click", toggleNavigation);
-  overlay.addEventListener("click", toggleNavigation);
-
-  reviewsDropdown.addEventListener("click", toggleReviewsDropdown);
-  bonusDropdown.addEventListener("click", toggleBonusDropdown);
+document.querySelector(".dropdownbtn-bonus").addEventListener("click", () => {
+  toggleDropdown("dropdown-content-bonus");
 });
 
 console.log("JavaScript is loaded!");
