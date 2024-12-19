@@ -1117,7 +1117,7 @@ body {
 
 .modal {
   position: fixed;
-  z-index: 99999;
+  z-index: 999999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1796,7 +1796,6 @@ body {
     height: 290px;
   }
   .main {
-    z-index: 10;
     width: 80%;
     align-self: center;
     margin: 0 0 10px 0;
