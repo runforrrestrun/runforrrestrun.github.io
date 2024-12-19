@@ -29,35 +29,6 @@ body::-webkit-scrollbar {
 /* smarthphone menu*/
 /* scroll bars */
 /* Custom thin black scrollbar styles for Webkit browsers */
-.side-navigation::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  width: 6px; /* Set width of the scrollbar to thin */
-}
-
-/* Make the scrollbar track invisible */
-.side-navigation::-webkit-scrollbar-track,
-body::-webkit-scrollbar {
-  background: transparent; /* Transparent track, making it invisible */
-}
-
-/* Style for the scrollbar thumb (the part that moves) */
-.side-navigation::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar {
-  height: 10px;
-  background-color: #000; /* Black color for the scrollbar thumb */
-  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
-}
-
-.side-navigation::-webkit-scrollbar-thumb:hover,
-body::-webkit-scrollbar {
-  background-color: #555; /* Darker shade when hovering over the thumb */
-}
-
-/* Ends of scroll bars */
-
-/* smarthphone menu*/
-/* scroll bars */
-/* Custom thin black scrollbar styles for Webkit browsers */
 .side-navigation::-webkit-scrollbar {
   width: 6px; /* Set width of the scrollbar to thin */
 }
@@ -575,28 +546,7 @@ a {
 
   /* news page */
 
-  /* Custom thin black scrollbar styles for Webkit browsers */
-  .container-news::-webkit-scrollbar {
-    width: 6px; /* Set width of the scrollbar to thin */
-  }
-
-  /* Make the scrollbar track invisible */
-  .container-news::-webkit-scrollbar-track {
-    background: transparent; /* Transparent track, making it invisible */
-  }
-
-  /* Style for the scrollbar thumb (the part that moves) */
-  .container-news::-webkit-scrollbar-thumb {
-    height: 10px;
-    background-color: #000; /* Black color for the scrollbar thumb */
-    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
-  }
-
-  .container-news::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Darker shade when hovering over the thumb */
-  }
   .container-news {
-    overflow-y: scroll;
     margin: 0;
     height: 100%;
     padding: 70px 0px 0px 0px;
