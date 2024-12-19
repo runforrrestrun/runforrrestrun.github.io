@@ -54,7 +54,30 @@ body::-webkit-scrollbar {
 
 /* Ends of scroll bars */
 
-/* smartphone menu */
+/* smarthphone menu*/
+/* scroll bars */
+/* Custom thin black scrollbar styles for Webkit browsers */
+.side-navigation::-webkit-scrollbar {
+  width: 6px; /* Set width of the scrollbar to thin */
+}
+
+/* Make the scrollbar track invisible */
+.side-navigation::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track, making it invisible */
+}
+
+/* Style for the scrollbar thumb (the part that moves) */
+.side-navigation::-webkit-scrollbar-thumb {
+  height: 10px;
+  background-color: #000; /* Black color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.side-navigation::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker shade when hovering over the thumb */
+}
+
+/* ens of scroll bars  */
 /* Side Navigation Styles */
 .side-navigation {
   position: fixed;
