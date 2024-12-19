@@ -220,13 +220,18 @@ body {
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1001;
-  background-color: purple; /* Background color for the rectangle */
+  background-color: rgba(
+    128,
+    0,
+    128,
+    0.5
+  ); /* Background color for the rectangle */
   color: #fff;
   border: none;
-  padding: 100px 8px; /* Increase padding for a larger button */
+  padding: 130px 15px; /* Increase padding for a larger button */
   border-top-right-radius: 25px; /* Increase border radius for more rounded corners */
   border-bottom-right-radius: 25px;
-  border: 1px solid rgba(192, 191, 191, 0.849);
+  border: 1px solid rgba(63, 58, 58, 0.849);
   border-left: 0 solid white;
   font-size: 100px; /* Increase font size for larger text */
   text-align: center; /* Center the text inside */
@@ -238,6 +243,7 @@ body {
 
 .toggle-button:hover {
   /* Slightly lighter shade on hover */
+  background-color: purple;
   padding: 130px 15px;
 }
 
