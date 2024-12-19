@@ -139,61 +139,47 @@ if (navToggle) {
 }
 
 // news slidebar
-
 let currentSlide = 0;
 let isDragging = false;
 let startX = 0;
 let previousTranslate = 0;
 let currentTranslate = 0;
-let animationID;
 
 const slides = document.querySelectorAll(".news-item");
 const totalSlides = slides.length;
 const newsWrapper = document.querySelector(".news-wrapper");
 
-// Function to set each slide width based on the container width
 function setSlideWidth() {
   const sliderWidth = document.querySelector(".news-slider").offsetWidth;
   slides.forEach((slide) => (slide.style.width = `${sliderWidth}px`));
   updateSlidePosition();
 }
 
-// Initialize widths on load and on window resize
 setSlideWidth();
 window.addEventListener("resize", setSlideWidth);
 
-// Function to update the slide position based on the current slide index
 function updateSlidePosition() {
   const sliderWidth = document.querySelector(".news-slider").offsetWidth;
   newsWrapper.style.transform = `translateX(-${currentSlide * sliderWidth}px)`;
 }
 
-// Move to the next slide function (looping back to the start if needed)
 function moveToNextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides; // Automatically loops back to 0 after last slide
+  currentSlide = (currentSlide + 1) % totalSlides;
   updateSlidePosition();
 }
 
-// Move to the previous slide function
 function moveToPreviousSlide() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // Loops back to the last slide if at the start
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
   updateSlidePosition();
 }
 
-// Move to next slide button
-document.querySelector(".forth-btn").addEventListener("click", () => {
-  moveToNextSlide();
-});
+document.querySelector(".forth-btn").addEventListener("click", moveToNextSlide);
+document
+  .querySelector(".back-btn")
+  .addEventListener("click", moveToPreviousSlide);
 
-// Move to previous slide button
-document.querySelector(".back-btn").addEventListener("click", () => {
-  moveToPreviousSlide();
-});
+setInterval(moveToNextSlide, 7000);
 
-// Automatically transition to the next slide every 30 seconds
-setInterval(moveToNextSlide, 7000); // 5 seconds in milliseconds
-
-// Handle touch events for mobile swipe functionality
 function handleTouchStart(e) {
   startX = e.touches[0].clientX;
   isDragging = true;
@@ -205,10 +191,7 @@ function handleTouchMove(e) {
   const touchX = e.touches[0].clientX;
   const deltaX = touchX - startX;
 
-  // Update the position while dragging
   currentTranslate = previousTranslate + deltaX;
-
-  // Apply the transform to show the dragging effect
   newsWrapper.style.transform = `translateX(${currentTranslate}px)`;
 }
 
@@ -217,24 +200,24 @@ function handleTouchEnd(e) {
   const endX = e.changedTouches[0].clientX;
   const deltaX = endX - startX;
 
-  // Determine if we should move to the next or previous slide based on swipe distance
-  if (Math.abs(deltaX) > 50) {
-    if (deltaX < 0) {
-      moveToNextSlide();
+  // Only handle swipe if side menu is not open
+  if (!isSideMenuOpen) {
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX < 0) {
+        moveToNextSlide();
+      } else {
+        moveToPreviousSlide();
+      }
     } else {
-      moveToPreviousSlide();
+      updateSlidePosition();
     }
-  } else {
-    updateSlidePosition();
   }
 }
 
-// Add event listeners for touch events
 newsWrapper.addEventListener("touchstart", handleTouchStart);
 newsWrapper.addEventListener("touchmove", handleTouchMove);
 newsWrapper.addEventListener("touchend", handleTouchEnd);
 
-// Optional: Mouse event handlers (for desktop support)
 newsWrapper.addEventListener("mousedown", handleTouchStart);
 newsWrapper.addEventListener("mousemove", handleTouchMove);
 newsWrapper.addEventListener("mouseup", handleTouchEnd);
@@ -273,11 +256,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // smartphone menu
-// Get the toggle button, side navigation, and overlay
 const toggleButton = document.querySelector(".toggle-button");
 const sideNavigation = document.querySelector(".side-navigation");
 const overlay = document.querySelector(".overlay");
 const closeButton = document.querySelector(".close-button");
+
+// Track if the side menu is open
+let isSideMenuOpen = false;
 
 // Variables to track swipe gestures
 let touchStartX = 0;
@@ -288,6 +273,7 @@ function openSideNavigation() {
   sideNavigation.classList.add("open"); // Open the side navigation
   overlay.classList.add("show"); // Show the overlay
   toggleButton.style.display = "none"; // Hide the toggle button
+  isSideMenuOpen = true; // Set the flag to true when side menu is open
 }
 
 // Function to close the side navigation
@@ -295,14 +281,18 @@ function closeSideNavigation() {
   sideNavigation.classList.remove("open"); // Close the side navigation
   overlay.classList.remove("show"); // Hide the overlay
   toggleButton.style.display = "block"; // Show the toggle button
+  isSideMenuOpen = false; // Set the flag to false when side menu is closed
 }
 
-// Function to toggle dropdown menus
+// Function to toggle dropdown menus (Review and Bonus)
 function toggleDropdown(dropdownId) {
   const dropdown = document.getElementById(dropdownId);
   // Toggle the display of the dropdown
-  dropdown.style.display =
-    dropdown.style.display === "block" ? "none" : "block";
+  if (dropdown.style.display === "block") {
+    dropdown.style.display = "none";
+  } else {
+    dropdown.style.display = "block";
+  }
 }
 
 // Event listener for the toggle button to open the side navigation
@@ -325,6 +315,8 @@ toggleButton.addEventListener("touchend", (e) => {
 });
 
 function handleSwipeGesture() {
+  if (isSideMenuOpen) return; // Prevent opening the side menu if it's already open
+
   // Check for a right swipe to open the side navigation (swiping left to right)
   if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
     openSideNavigation(); // Open the side navigation if swipe is from left to right
@@ -336,7 +328,7 @@ function handleSwipeGesture() {
   }
 }
 
-// Close dropdowns if clicked outside the navigation
+// Close dropdowns if clicked outside
 document.addEventListener("click", function (event) {
   const isClickInsideNavigation = sideNavigation.contains(event.target);
 
@@ -346,4 +338,13 @@ document.addEventListener("click", function (event) {
       dropdown.style.display = "none";
     });
   }
+});
+
+// Make sure that clicking on the dropdown button toggles the dropdown menu
+document.querySelector(".dropdownbtn-review").addEventListener("click", () => {
+  toggleDropdown("dropdown-content-review");
+});
+
+document.querySelector(".dropdownbtn-bonus").addEventListener("click", () => {
+  toggleDropdown("dropdown-content-bonus");
 });
