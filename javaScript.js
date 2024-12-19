@@ -256,6 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // smartphone menu
+// Select necessary elements
 const toggleButton = document.querySelector(".toggle-button");
 const sideNavigation = document.querySelector(".side-navigation");
 const overlay = document.querySelector(".overlay");
@@ -368,3 +369,5 @@ document.querySelector(".dropdownbtn-review").addEventListener("click", () => {
 document.querySelector(".dropdownbtn-bonus").addEventListener("click", () => {
   toggleDropdown("dropdown-content-bonus");
 });
+
+console.log("JavaScript is loaded!");
