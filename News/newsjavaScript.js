@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
 document.addEventListener("DOMContentLoaded", () => {
   // Get references to navigation and dropdown elements
   const toggleButton = document.querySelector(".toggle-button");
@@ -63,47 +62,34 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Function to open the side navigation
+  // Open the side navigation
   function openSideNavigation() {
-    sideNavigation.classList.add("open"); // Show side navigation
-    overlay.classList.add("show"); // Show overlay
-    toggleButton.style.display = "none"; // Hide toggle button
+    sideNavigation.classList.add("open");
+    overlay.classList.add("show");
+    toggleButton.style.display = "none";
   }
 
-  // Function to close the side navigation
+  // Close the side navigation
   function closeSideNavigation() {
-    sideNavigation.classList.remove("open"); // Hide side navigation
-    overlay.classList.remove("show"); // Hide overlay
-    toggleButton.style.display = "block"; // Show toggle button
+    sideNavigation.classList.remove("open");
+    overlay.classList.remove("show");
+    toggleButton.style.display = "flex";
   }
 
-  // Function to toggle the side navigation
-  function toggleNavigation() {
-    if (sideNavigation.classList.contains("open")) {
-      closeSideNavigation();
-    } else {
-      openSideNavigation();
-    }
-  }
-
-  // Function to toggle the reviews dropdown
+  // Toggle reviews dropdown
   function toggleReviewsDropdown() {
-    reviewsDropdownContent.classList.toggle("show"); // Toggle visibility
+    reviewsDropdownContent.classList.toggle("show");
   }
 
-  // Function to toggle the bonus dropdown
+  // Toggle bonus dropdown
   function toggleBonusDropdown() {
-    bonusDropdownContent.classList.toggle("show"); // Toggle visibility
+    bonusDropdownContent.classList.toggle("show");
   }
 
-  // Event listeners for side navigation
-  toggleButton.addEventListener("click", toggleNavigation); // Open/close on toggle button click
-  closeButton.addEventListener("click", toggleNavigation); // Open/close on close button click
-  overlay.addEventListener("click", toggleNavigation); // Close on overlay click
-
-  // Event listeners for dropdown toggles
-  reviewsDropdown.addEventListener("click", toggleReviewsDropdown); // Toggle reviews dropdown
-  bonusDropdown.addEventListener("click", toggleBonusDropdown); // Toggle bonus dropdown
+  // Event listeners
+  toggleButton.addEventListener("click", openSideNavigation);
+  closeButton.addEventListener("click", closeSideNavigation);
+  overlay.addEventListener("click", closeSideNavigation);
+  reviewsDropdown.addEventListener("click", toggleReviewsDropdown);
+  bonusDropdown.addEventListener("click", toggleBonusDropdown);
 });
-
-console.log("JavaScript is loaded!");
