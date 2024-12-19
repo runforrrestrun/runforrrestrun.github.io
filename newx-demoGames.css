@@ -255,7 +255,7 @@ body::-webkit-scrollbar {
 .toggle-button:hover {
   /* Slightly lighter shade on hover */
   background-color: purple;
-  padding: 130px 15px;
+  
 }
 
 /* To make the button visible once the navigation is opened */
@@ -658,7 +658,9 @@ a {
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
 @media (min-width: 550px) {
   /* new navbar */
-
+  .toggle-button {
+    padding: 150px 20px;
+  }
   /* news page */
   .container-news {
     height: 100%;

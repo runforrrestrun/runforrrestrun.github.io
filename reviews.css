@@ -244,7 +244,6 @@ body {
 .toggle-button:hover {
   /* Slightly lighter shade on hover */
   background-color: purple;
-  padding: 130px 15px;
 }
 
 /* To make the button visible once the navigation is opened */
@@ -812,7 +811,9 @@ strong {
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
 @media (min-width: 550px) {
   /* content */
-
+  .toggle-button {
+    padding: 150px 20px;
+  }
   /* Casino info page */
   .casino-allInfo {
     padding: 70px 0 0 0;
