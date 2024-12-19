@@ -314,17 +314,18 @@ toggleButton.addEventListener("touchend", (e) => {
   handleSwipeGesture(); // Handle the swipe gesture
 });
 
+// Function to handle swipe gestures
 function handleSwipeGesture() {
-  if (isSideMenuOpen) return; // Prevent opening the side menu if it's already open
-
-  // Check for a right swipe to open the side navigation (swiping left to right)
-  if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
-    openSideNavigation(); // Open the side navigation if swipe is from left to right
-  }
-
-  // Check for a left swipe to close the side navigation (swiping right to left)
-  if (touchStartX > touchEndX && touchStartX - touchEndX > 50) {
-    closeSideNavigation(); // Close the side navigation if swipe is from right to left
+  if (isSideMenuOpen) {
+    // Check for a left swipe to close the side navigation (swiping right to left)
+    if (touchStartX > touchEndX && touchStartX - touchEndX > 50) {
+      closeSideNavigation(); // Close the side navigation if swipe is from right to left
+    }
+  } else {
+    // Check for a right swipe to open the side navigation (swiping left to right)
+    if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
+      openSideNavigation(); // Open the side navigation if swipe is from left to right
+    }
   }
 }
 
