@@ -93,3 +93,4 @@ document.addEventListener("DOMContentLoaded", () => {
   reviewsDropdown.addEventListener("click", toggleReviewsDropdown);
   bonusDropdown.addEventListener("click", toggleBonusDropdown);
 });
+console.log("JavaScript is loaded!");
