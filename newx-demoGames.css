@@ -598,13 +598,14 @@ a {
     overflow-y: scroll;
     margin: 0;
     height: 100%;
-    padding: 70px 0 0 0;
-    width: 100%;
+    padding: 70px 0px 0px 0px;
+    width: 98%;
     justify-content: center;
   }
 
   .news-box {
-    width: 90%;
+    box-sizing: border-box;
+    width: fit-content;
     height: fit-content;
   }
   .banner-box {
@@ -697,6 +698,7 @@ a {
   .news-content-main {
     font-size: 25px;
     padding: 30px;
+    margin: 0;
   }
   .news-content-main h1 {
     font-size: 32px;
