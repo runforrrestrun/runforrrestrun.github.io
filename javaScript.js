@@ -315,11 +315,11 @@ overlay.addEventListener("click", closeSideNavigation);
 closeButton.addEventListener("click", closeSideNavigation);
 
 // Handle swipe gestures for opening and closing the side navigation
-document.addEventListener("touchstart", (e) => {
+toggleButton.addEventListener("touchstart", (e) => {
   touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
 });
 
-document.addEventListener("touchend", (e) => {
+toggleButton.addEventListener("touchend", (e) => {
   touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
   handleSwipeGesture(); // Handle the swipe gesture
 });
