@@ -334,6 +334,13 @@ document.addEventListener("DOMContentLoaded", () => {
     bonusDropdownContent.classList.toggle("show");
   }
 
+  // Prevent swipe gestures from going back when side navigation is open
+  function preventBackSwipe(event) {
+    if (sideNavigation.classList.contains("open")) {
+      event.preventDefault(); // Prevent swipe gesture to go back
+    }
+  }
+
   // Attach event listeners
   toggleButton.addEventListener("click", toggleNavigation);
   closeButton.addEventListener("click", toggleNavigation);
@@ -341,6 +348,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   reviewsDropdown.addEventListener("click", toggleReviewsDropdown);
   bonusDropdown.addEventListener("click", toggleBonusDropdown);
+
+  // Add touch event listener to prevent swipe gestures when side navigation is open
+  document.addEventListener("touchstart", preventBackSwipe, { passive: false });
 });
 
 console.log("JavaScript is loaded!");
