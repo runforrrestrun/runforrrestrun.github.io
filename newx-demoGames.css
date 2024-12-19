@@ -187,7 +187,7 @@ body::-webkit-scrollbar {
 .dropdown-menu {
   display: none; /* Hide by default */
   background-color: inherit;
-  padding-left: 20px;
+
   margin-top: 5px;
   margin-bottom: 40px;
   border-radius: 5px;
@@ -255,7 +255,6 @@ body::-webkit-scrollbar {
 .toggle-button:hover {
   /* Slightly lighter shade on hover */
   background-color: purple;
-  
 }
 
 /* To make the button visible once the navigation is opened */
@@ -734,6 +733,25 @@ a {
   }
   .close-button {
     display: none;
+  }
+  .nav-link,
+  .dropdown-toggle {
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+  .nav-icon,
+  .dropdown-toggle img {
+    width: 35px;
+    height: 35px;
+  }
+  .dropdown-menu a {
+    font-weight: 700;
+    width: fit-content;
+    font-size: 20px;
+    padding: 5px;
   }
 
   .name-content {

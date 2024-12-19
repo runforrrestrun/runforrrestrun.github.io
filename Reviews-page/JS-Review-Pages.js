@@ -226,11 +226,14 @@ function showTab(tabName) {
 }
 
 // smartphone menu
-// Get the toggle button, side navigation, and overlay
+// Select necessary elements
 const toggleButton = document.querySelector(".toggle-button");
 const sideNavigation = document.querySelector(".side-navigation");
 const overlay = document.querySelector(".overlay");
 const closeButton = document.querySelector(".close-button");
+
+// Track if the side menu is open
+let isSideMenuOpen = false;
 
 // Variables to track swipe gestures
 let touchStartX = 0;
@@ -241,6 +244,7 @@ function openSideNavigation() {
   sideNavigation.classList.add("open"); // Open the side navigation
   overlay.classList.add("show"); // Show the overlay
   toggleButton.style.display = "none"; // Hide the toggle button
+  isSideMenuOpen = true; // Set the flag to true when side menu is open
 }
 
 // Function to close the side navigation
@@ -248,14 +252,18 @@ function closeSideNavigation() {
   sideNavigation.classList.remove("open"); // Close the side navigation
   overlay.classList.remove("show"); // Hide the overlay
   toggleButton.style.display = "block"; // Show the toggle button
+  isSideMenuOpen = false; // Set the flag to false when side menu is closed
 }
 
-// Function to toggle dropdown menus
+// Function to toggle dropdown menus (Review and Bonus)
 function toggleDropdown(dropdownId) {
   const dropdown = document.getElementById(dropdownId);
   // Toggle the display of the dropdown
-  dropdown.style.display =
-    dropdown.style.display === "block" ? "none" : "block";
+  if (dropdown.style.display === "block") {
+    dropdown.style.display = "none";
+  } else {
+    dropdown.style.display = "block";
+  }
 }
 
 // Event listener for the toggle button to open the side navigation
@@ -267,24 +275,51 @@ overlay.addEventListener("click", closeSideNavigation);
 // Event listener for the close button to close the side navigation
 closeButton.addEventListener("click", closeSideNavigation);
 
-// Handle swipe gestures for opening the side navigation
-document.addEventListener("touchstart", (e) => {
-  touchStartX = e.touches[0].clientX;
+// Handle swipe gestures for opening
+toggleButton.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
 });
 
-document.addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].clientX;
-  handleSwipeGesture();
+toggleButton.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
 });
 
+// Handle swipe gestures for closing
+sideNavigation.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+});
+
+sideNavigation.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
+
+overlay.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+});
+
+overlay.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
+
+// Function to handle swipe gestures
 function handleSwipeGesture() {
-  // Check for a right swipe to open the side navigation
-  if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
-    openSideNavigation();
+  if (isSideMenuOpen) {
+    // Check for a left swipe to close the side navigation (swiping right to left)
+    if (touchStartX > touchEndX && touchStartX - touchEndX > 50) {
+      closeSideNavigation(); // Close the side navigation if swipe is from right to left
+    }
+  } else {
+    // Check for a right swipe to open the side navigation (swiping left to right)
+    if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
+      openSideNavigation(); // Open the side navigation if swipe is from left to right
+    }
   }
 }
 
-// Close dropdowns if clicked outside the navigation
+// Close dropdowns if clicked outside
 document.addEventListener("click", function (event) {
   const isClickInsideNavigation = sideNavigation.contains(event.target);
 
@@ -295,3 +330,14 @@ document.addEventListener("click", function (event) {
     });
   }
 });
+
+// Make sure that clicking on the dropdown button toggles the dropdown menu
+document.querySelector(".dropdownbtn-review").addEventListener("click", () => {
+  toggleDropdown("dropdown-content-review");
+});
+
+document.querySelector(".dropdownbtn-bonus").addEventListener("click", () => {
+  toggleDropdown("dropdown-content-bonus");
+});
+
+console.log("JavaScript is loaded!");
