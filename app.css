@@ -36,19 +36,21 @@ body {
 .side-navigation {
   position: fixed;
   top: 0;
-  left: -250px; /* Move off the screen initially */
-  width: 250px;
+  left: -250px; /* Initially off-screen */
+  width: 200px;
   height: 100%;
-  transition: left 0.3s ease-in-out; /* Animate the left property */
+  transition: left 0.3s ease-in-out; /* Smooth transition for left property */
   background-image: linear-gradient(190deg, black 50%, purple);
   color: white;
-  z-index: 1000; /* Ensure it's above other content */
+  z-index: 1000; /* Ensure it appears above other content */
 }
+
 /* When side navigation is open, slide it in */
 .side-navigation.open {
   left: 0; /* Move the side navigation into view */
-  overflow: scroll;
+  overflow-y: scroll; /* Allow scrolling within side navigation */
 }
+
 .side-navigation a {
   width: 100%;
   text-decoration: none;
@@ -56,11 +58,12 @@ body {
 
 .side-navigation p {
   width: 100%;
-  font-size: 27px;
+  font-size: 25px;
   font-weight: 800;
   text-decoration: none;
   color: white;
 }
+
 .navigation-header {
   display: flex;
   flex-direction: row;
@@ -69,7 +72,6 @@ body {
 
 .side-navigation .navigation-header {
   padding: 20px 0;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,6 +87,7 @@ body {
   cursor: pointer;
   color: #fff;
 }
+
 .close-button {
   position: absolute;
   z-index: 10;
@@ -96,6 +99,7 @@ body {
 .navigation-links {
   padding: 20px;
 }
+
 /* Styling for images in the navigation links */
 .nav-icon {
   width: 30px; /* Adjust size as needed */
@@ -125,6 +129,7 @@ body {
   text-align: center;
   text-decoration: none;
 }
+
 .nav-link a {
   text-decoration: none;
 }
@@ -157,12 +162,15 @@ body {
 
 /* Dropdown Menu Styles */
 .dropdown-menu {
-  display: none;
+  display: none; /* Hide by default */
   background-color: inherit;
   padding-left: 20px;
   margin-top: 5px;
   margin-bottom: 40px;
   border-radius: 5px;
+}
+.dropdown-menu.show {
+  display: block; /* Show when the 'show' class is added */
 }
 
 .dropdown-menu a {
@@ -236,45 +244,6 @@ body {
 }
 /* end test */
 
-/* hamburger menu x animation */
-.nav-toggle {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 22px;
-  width: 22px;
-}
-
-.nav-toggle .bar {
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  transition: all 100ms ease-in-out;
-}
-
-.nav-toggle:hover {
-  cursor: pointer;
-}
-
-.x:nth-of-type(1) {
-  transition: all 100ms ease-in-out;
-  transform: rotate(45deg);
-  transform-origin: top left;
-  width: 28px;
-}
-
-.x:nth-of-type(2) {
-  transition: all 100ms ease-in-out;
-  transform-origin: center;
-  width: 0;
-}
-
-.x:nth-of-type(3) {
-  transition: all 100ms ease-in-out;
-  transform: rotate(-45deg);
-  transform-origin: bottom left;
-  width: 28px;
-}
 #home-background {
   background-color: black;
   background-image: url("/img/HomeScreen.webp");
@@ -347,233 +316,7 @@ body {
   width: 100%;
   position: fixed;
   z-index: 999;
-}
-
-.content a {
-  text-decoration: none;
-}
-.fa {
-  color: white;
-}
-/* Style the all4wins container */
-.all4wins {
-  width: 150px;
-  height: auto;
-  margin: 0 auto;
-  display: inline-block;
-  position: relative;
-  overflow: hidden; /* Ensures any overflow is clipped */
-}
-
-/* Style the image inside the all4wins class */
-.all4wins img {
-  display: block;
-  width: 100%; /* Ensure the image scales properly */
-  height: auto;
-  transition: box-shadow 0.5s ease, filter 0.5s ease;
-}
-
-/* Lighting up effect on hover */
-.all4wins img:hover {
-  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8); /* Glowing effect */
-  filter: brightness(1.5); /* Brighten the image */
-}
-
-/* Automatic lighting up animation */
-@keyframes lightUp {
-  0%,
-  100% {
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
-    filter: brightness(1);
-  }
-  50% {
-    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.39);
-    filter: brightness(1.8);
-  }
-}
-
-/* Apply animation to make it automatic */
-.all4wins img {
-  animation: lightUp 3s infinite; /* Replace "2s" with desired duration */
-}
-
-.box {
-  justify-content: center;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  height: 30px;
-  width: 110px;
-}
-
-.content {
-  display: block;
-}
-.content ul {
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-  margin: 5px 0;
-  width: 100%;
-}
-#a-links {
-  display: block;
-  width: 90%;
-  height: 100%;
-
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  text-align: start;
-}
-#logo-img {
-  display: block;
-  height: 30px;
-  width: 30px;
-}
-/* Hide the links inside the navigation menu (except for logo/home) */
-.navBar #myLinks {
-  display: none;
-  flex-direction: row;
-  width: 40%;
-}
-
-/* Style the hamburger menu */
-.navBar .icon {
-  display: block;
-  box-sizing: border-box;
-  width: 50px;
-  display: block;
-  position: absolute;
-  right: -3%;
-  top: 20%;
-}
-
-/* Dropdown button */
-.dropdown {
-  box-sizing: border-box;
-  font-family: inherit;
-  text-decoration: none;
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  border: 0px solid black;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: inherit;
-  background-image: inherit;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-  background-image: url(/img/news-banners/menu-casino-img.avif);
-  background-size: cover;
-}
-#myLinks a {
-  text-decoration: none;
-}
-#myLinks {
-  width: 500px;
-  height: auto;
-  margin-bottom: 0;
-}
-.menu-img {
-  position: relative;
-  z-index: 0;
-  width: 500px;
-  height: auto;
-  margin-top: auto;
-  margin-bottom: 0;
-}
-.menu-img-casino {
-  margin-top: auto;
-
-  z-index: 0;
-  width: 100%;
-  height: auto;
-}
-.dropedownbtn {
-  display: flex;
-  flex-direction: row;
-  border: 0 solid black;
-  box-sizing: border-box;
-  width: 190px;
-
-  color: white;
-  text-decoration: none;
-  justify-content: flex-start;
-  font-weight: 600;
-  font-family: inherit;
-  text-shadow: 2px 2px 10px rgb(0, 0, 0);
-  background-color: inherit;
-  margin: 20px 0 10px 20px;
-  padding: 0;
-}
-.box-menu-drop {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  margin: 20px 0 10px 20px;
-  width: fit-content;
-}
-.contact-us {
-  display: flex;
-  flex-direction: column;
-  margin: 10px 0;
-  box-sizing: border-box;
-  height: fit-content;
-  width: 99%;
-  justify-content: center;
-}
-.contact-us p {
-  margin: 10px auto;
-}
-
-.box:hover,
-.dropdown:hover .dropbtn {
-  background-color: rgba(212, 6, 240, 0.562);
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  margin: 0 0 0 120px;
-  display: none;
-  flex-direction: column;
-  flex-wrap: wrap;
-  position: absolute;
-  color: white;
-  width: 100%;
-  opacity: 0;
-  z-index: 1;
-}
-.dropdown-content.visible {
-  display: flex;
-  opacity: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  width: 125px;
-  background-image: inherit;
-  border: 0 solid black;
-  border-radius: 10px;
-  float: none;
-  color: white;
-  padding: 12px 5px;
-  margin: 3px 5px;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  font-size: 19px;
-  font-family: inherit;
-  font-weight: 600;
-}
-
-/* Add a purple background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #cb05e6;
+  margin-bottom: 50px;
 }
 
 /* end of navbar */
@@ -1576,62 +1319,32 @@ body {
       opacity: 1;
     }
   }
-  /* burger menu */
-  .nav-toggle {
-    margin: 5px 10px 0 auto;
+  .content ul {
+    padding: 0;
+    margin: 5px;
   }
-  /* new navbar */
 
-  .all4wins {
-    display: none;
-  }
   .box {
-    width: 110px;
-    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
     text-align: center;
+    margin: 0 auto;
   }
-  .home2 {
-    padding-top: 5px;
+  .box a {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 750;
+    align-self: center;
   }
 
   #logo-img {
-    height: 30px;
-    width: 30px;
-  }
-  #a-links {
-    width: auto;
-
-    font-size: 22px;
-  }
-  #myLinks {
-    display: block;
-    height: 99vh;
-    width: 100%;
-    margin-top: 20px;
-    overflow: visible;
-  }
-  .menu-img {
-    width: 500px;
-    z-index: 0;
-    position: relative;
-    top: auto;
-  }
-  .dropdown-content {
-    width: 30%;
-    height: fit-content;
-    border-radius: 10px;
-  }
-  .home,
-  .first,
-  .SECOND,
-  .THIRD,
-  .news-home,
-  .bonus-home,
-  .FOURTH,
-  .FIFTH,
-  .SIXTH,
-  .SEVENTH {
-    display: none;
+    width: 60px;
+    height: 60px;
   }
 
   /* more info */
@@ -2201,48 +1914,6 @@ body {
 @media (min-width: 550px) {
   /* new navbar */
 
-  .content {
-    width: 100%;
-    height: 100%;
-  }
-
-  .box {
-    width: 150px;
-    height: 40px;
-    font-size: 20px;
-
-    margin-left: 20px;
-  }
-  .button-casino,
-  .button-ESports,
-  .button-Sports {
-    display: flex;
-  }
-
-  .dropdown a {
-    font-size: 20px;
-  }
-
-  .box-menu-drop {
-    margin-top: 20px;
-    width: fit-content;
-  }
-  .menu-img {
-    width: 100vw;
-    margin: auto 0 0 auto;
-  }
-  .dropdown-content {
-    margin-left: 140px;
-  }
-  #logo-img {
-    height: 35px;
-    width: 35px;
-  }
-  #a-links {
-    font-size: 25px;
-    width: fit-content;
-  }
-
   /* content */
   .content-text-container {
     margin-top: 250px;
@@ -2598,12 +2269,17 @@ body {
     background-size: cover;
   }
   .navBar {
-    width: 200px;
-    height: 100%;
+    width: 0;
+  }
+  .toggle-button {
+    display: none;
+  }
+  .side-navigation {
+    left: 0;
     overflow: scroll;
     position: fixed;
   }
-  .toggle-button {
+  .close-button {
     display: none;
   }
   .navBar::-webkit-scrollbar {
@@ -2615,146 +2291,13 @@ body {
   .name-content {
     display: none;
   }
-  content {
-    width: 100%;
-    height: 50%;
-  }
-  .all4wins {
-    display: flex;
-  }
-  .content ul {
-    flex-direction: column;
-    width: 100%;
-    height: 77%;
-  }
-  li .box a {
-    width: 70%;
-  }
-  .box {
-    box-sizing: border-box;
-    margin: 20px 0 0 10px;
-    width: fit-content;
-    height: 40px;
-    padding-left: 2px;
-    justify-content: flex-start;
-  }
-  #a-links {
-    font-size: 25px;
-    width: fit-content;
-    padding-right: 5px;
-  }
-
-  .nav-toggle {
-    display: none;
-  }
 
   .home2 {
     display: none;
   }
-  .home,
-  .first,
-  .SECOND,
-  .THIRD,
-  .button-casino,
-  .button-ESports,
-  .button-Sports,
-  .FOURTH,
-  .FIFTH,
-  .SIXTH,
-  .SEVENTH {
-    display: flex;
-  }
 
   .bonusThird {
     margin-bottom: 50px;
-  }
-  /* Dropedown bonus full-screen */
-  .box-dropdown {
-    border: 0px solid rgba(238, 235, 235, 0.404);
-    border-radius: 10px;
-    box-sizing: border-box;
-    margin: 20px 0 0 0;
-    width: 100%;
-    height: 40px;
-    padding: 0;
-  }
-  .dropdown-bonus {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    border: 0 solid black;
-    border-radius: 1rgba (182, 178, 178, 0.445);
-    font-family: inherit;
-    transition: margin-bottom 0.3s ease-out; /* Smooth transition for margin change */
-  }
-  .drope-bonus {
-    box-sizing: border-box;
-    width: fit-content;
-    height: 100%;
-    display: flex;
-    background-color: inherit;
-    border: 0 solid black;
-    border-radius: 10px;
-    font-family: inherit;
-    justify-content: flex-start;
-    margin-left: 10px;
-    padding: 0 5px 0 5px;
-  }
-  .bonus-btn {
-    display: block;
-    width: 60%;
-    height: fit-content;
-    padding-left: 5px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    text-align: start;
-    font-size: 25px;
-    font-family: inherit;
-    text-shadow: 2px 2px 10px rgb(0, 0, 0);
-    cursor: pointer;
-  }
-
-  .dropdown-content-bonus {
-    border: 0px solid inherit;
-    margin-top: 35px;
-    padding-top: 10px;
-    background-color: aliceblue;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    flex-direction: column;
-    position: absolute;
-    color: white;
-    width: 100%;
-    height: fit-content;
-
-    z-index: 1;
-    background-color: inherit;
-    background-image: inherit;
-    align-items: center;
-  }
-  .dropdown-content-bonus.visible {
-    display: flex; /* Visible when .visible is added */
-    opacity: 1;
-  }
-  #content-bonus {
-    background-color: inherit;
-    width: fit-content;
-    height: 30px;
-    color: white;
-    text-shadow: inherit;
-    font-size: 20px;
-    border-radius: 10px;
-    margin: 10px 0;
-    padding: 6px;
-    text-align: center;
-  }
-  #content-bonus:hover,
-  .drope-bonus:hover {
-    background-color: rgba(212, 6, 240, 0.562);
   }
 
   .container {
