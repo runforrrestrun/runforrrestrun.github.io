@@ -273,74 +273,72 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // smartphone menu
-// Get references to the toggle button, side navigation, overlay, and close button
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.querySelector(".toggle-button");
-  const sideNavigation = document.getElementById("side-navigation");
-  const overlay = document.getElementById("navigation-overlay");
-  const closeButton = document.querySelector(".close-button");
+// Get the toggle button, side navigation, and overlay
+const toggleButton = document.querySelector(".toggle-button");
+const sideNavigation = document.querySelector(".side-navigation");
+const overlay = document.querySelector(".overlay");
+const closeButton = document.querySelector(".close-button");
 
-  const reviewsDropdown = document.querySelector(".reviews-dropdown-toggle");
-  const bonusDropdown = document.querySelector(".bonus-dropdown-toggle");
-  const reviewsDropdownContent = document.getElementById(
-    "reviews-dropdown-content"
-  );
-  const bonusDropdownContent = document.getElementById(
-    "bonus-dropdown-content"
-  );
+// Variables to track swipe gestures
+let touchStartX = 0;
+let touchEndX = 0;
 
-  // Check if elements exist
-  if (
-    !toggleButton ||
-    !sideNavigation ||
-    !overlay ||
-    !closeButton ||
-    !reviewsDropdown ||
-    !bonusDropdown ||
-    !reviewsDropdownContent ||
-    !bonusDropdownContent
-  ) {
-    console.error("One or more elements are missing.");
-    return;
-  }
+// Function to open the side navigation
+function openSideNavigation() {
+  sideNavigation.classList.add("open"); // Open the side navigation
+  overlay.classList.add("show"); // Show the overlay
+  toggleButton.style.display = "none"; // Hide the toggle button
+}
 
-  // Functions to toggle navigation
-  function openSideNavigation() {
-    sideNavigation.classList.add("open");
-    overlay.classList.add("show");
-    toggleButton.style.display = "none";
-  }
+// Function to close the side navigation
+function closeSideNavigation() {
+  sideNavigation.classList.remove("open"); // Close the side navigation
+  overlay.classList.remove("show"); // Hide the overlay
+  toggleButton.style.display = "block"; // Show the toggle button
+}
 
-  function closeSideNavigation() {
-    sideNavigation.classList.remove("open");
-    overlay.classList.remove("show");
-    toggleButton.style.display = "block";
-  }
+// Function to toggle dropdown menus
+function toggleDropdown(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  // Toggle the display of the dropdown
+  dropdown.style.display =
+    dropdown.style.display === "block" ? "none" : "block";
+}
 
-  function toggleNavigation() {
-    if (sideNavigation.classList.contains("open")) {
-      closeSideNavigation();
-    } else {
-      openSideNavigation();
-    }
-  }
+// Event listener for the toggle button to open the side navigation
+toggleButton.addEventListener("click", openSideNavigation);
 
-  // Functions to toggle dropdown menus
-  function toggleReviewsDropdown() {
-    reviewsDropdownContent.classList.toggle("show");
-  }
+// Event listener for the overlay to close the side navigation
+overlay.addEventListener("click", closeSideNavigation);
 
-  function toggleBonusDropdown() {
-    bonusDropdownContent.classList.toggle("show");
-  }
+// Event listener for the close button to close the side navigation
+closeButton.addEventListener("click", closeSideNavigation);
 
-  // Attach event listeners
-  toggleButton.addEventListener("click", toggleNavigation);
-  closeButton.addEventListener("click", toggleNavigation);
-  overlay.addEventListener("click", toggleNavigation);
-
-  reviewsDropdown.addEventListener("click", toggleReviewsDropdown);
-  bonusDropdown.addEventListener("click", toggleBonusDropdown);
+// Handle swipe gestures for opening the side navigation
+document.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX;
 });
 
-console.log("JavaScript is loaded!");
+document.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX;
+  handleSwipeGesture();
+});
+
+function handleSwipeGesture() {
+  // Check for a right swipe to open the side navigation
+  if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
+    openSideNavigation();
+  }
+}
+
+// Close dropdowns if clicked outside the navigation
+document.addEventListener("click", function (event) {
+  const isClickInsideNavigation = sideNavigation.contains(event.target);
+
+  if (!isClickInsideNavigation) {
+    // Close all dropdowns if clicked outside the navigation
+    document.querySelectorAll(".dropdown-menu").forEach(function (dropdown) {
+      dropdown.style.display = "none";
+    });
+  }
+});
