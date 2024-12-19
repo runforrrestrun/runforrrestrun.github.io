@@ -31,66 +31,138 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  // Get references to navigation and dropdown elements
-  const toggleButton = document.querySelector(".toggle-button");
-  const sideNavigation = document.getElementById("side-navigation");
-  const overlay = document.getElementById("navigation-overlay");
-  const closeButton = document.querySelector(".close-button");
 
-  const reviewsDropdown = document.querySelector(".reviews-dropdown-toggle");
-  const bonusDropdown = document.querySelector(".bonus-dropdown-toggle");
-  const reviewsDropdownContent = document.getElementById(
-    "reviews-dropdown-content"
-  );
-  const bonusDropdownContent = document.getElementById(
-    "bonus-dropdown-content"
-  );
+// smartphone menu
+// Select necessary elements
+const toggleButton = document.querySelector(".toggle-button");
+const sideNavigation = document.querySelector(".side-navigation");
+const overlay = document.querySelector(".overlay");
+const closeButton = document.querySelector(".close-button");
+const dropdownButtons = document.querySelectorAll(".dropdown-toggle");
 
-  // Check if all elements exist
-  if (
-    !toggleButton ||
-    !sideNavigation ||
-    !overlay ||
-    !closeButton ||
-    !reviewsDropdown ||
-    !bonusDropdown ||
-    !reviewsDropdownContent ||
-    !bonusDropdownContent
-  ) {
-    console.error("One or more required elements are missing.");
-    return;
-  }
+// Track if the side menu is open
+let isSideMenuOpen = false;
 
-  // Open the side navigation
-  function openSideNavigation() {
-    sideNavigation.classList.add("open");
-    overlay.classList.add("show");
-    toggleButton.style.display = "none";
-  }
+// Variables to track swipe gestures
+let touchStartX = 0;
+let touchEndX = 0;
 
-  // Close the side navigation
-  function closeSideNavigation() {
-    sideNavigation.classList.remove("open");
-    overlay.classList.remove("show");
-    toggleButton.style.display = "flex";
-  }
+// Function to open the side navigation
+function openSideNavigation() {
+  sideNavigation.classList.add("open"); // Open the side navigation
+  overlay.classList.add("show"); // Show the overlay
+  toggleButton.style.display = "none"; // Hide the toggle button
+  isSideMenuOpen = true; // Set the flag to true when side menu is open
+}
+// Add event listeners to each button to toggle the dropdown menu
+dropdownButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    // Get the next sibling (dropdown menu)
+    const dropdownMenu = event.target.nextElementSibling;
 
-  // Toggle reviews dropdown
-  function toggleReviewsDropdown() {
-    reviewsDropdownContent.classList.toggle("show");
-  }
-
-  // Toggle bonus dropdown
-  function toggleBonusDropdown() {
-    bonusDropdownContent.classList.toggle("show");
-  }
-
-  // Event listeners
-  toggleButton.addEventListener("click", openSideNavigation);
-  closeButton.addEventListener("click", closeSideNavigation);
-  overlay.addEventListener("click", closeSideNavigation);
-  reviewsDropdown.addEventListener("click", toggleReviewsDropdown);
-  bonusDropdown.addEventListener("click", toggleBonusDropdown);
+    // Toggle the 'show' class to display or hide the dropdown
+    dropdownMenu.classList.toggle("show");
+  });
 });
+
+// Function to close the side navigation
+function closeSideNavigation() {
+  sideNavigation.classList.remove("open"); // Close the side navigation
+  overlay.classList.remove("show"); // Hide the overlay
+  toggleButton.style.display = "block"; // Show the toggle button
+  isSideMenuOpen = false; // Set the flag to false when side menu is closed
+}
+
+// Function to toggle dropdown menus (Review and Bonus)
+function toggleDropdown(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  if (dropdown) {
+    // Toggle the visibility by adding/removing the 'show' class
+    dropdown.classList.toggle("show");
+  }
+}
+
+// Event listener for the toggle button to open the side navigation
+toggleButton.addEventListener("click", openSideNavigation);
+
+// Event listener for the overlay to close the side navigation
+overlay.addEventListener("click", closeSideNavigation);
+
+// Event listener for the close button to close the side navigation
+closeButton.addEventListener("click", closeSideNavigation);
+
+// Handle swipe gestures for opening
+toggleButton.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+});
+
+toggleButton.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
+
+// Handle swipe gestures for closing
+sideNavigation.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+});
+
+sideNavigation.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
+
+overlay.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+});
+
+overlay.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
+
+// Function to handle swipe gestures
+function handleSwipeGesture() {
+  if (isSideMenuOpen) {
+    // Check for a left swipe to close the side navigation (swiping right to left)
+    if (touchStartX > touchEndX && touchStartX - touchEndX > 50) {
+      closeSideNavigation(); // Close the side navigation if swipe is from right to left
+    }
+  } else {
+    // Check for a right swipe to open the side navigation (swiping left to right)
+    if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
+      openSideNavigation(); // Open the side navigation if swipe is from left to right
+    }
+  }
+}
+
+// Close dropdowns if clicked outside
+document.addEventListener("click", function (event) {
+  const isClickInsideNavigation = sideNavigation.contains(event.target);
+  const isClickInsideDropdown =
+    event.target.closest(".dropdownbtn-review") ||
+    event.target.closest(".dropdownbtn-bonus");
+
+  // Close the dropdowns if clicked outside the navigation or dropdown button
+  if (!isClickInsideNavigation && !isClickInsideDropdown) {
+    document
+      .querySelectorAll(".dropdown-content-review, .dropdown-content-bonus")
+      .forEach(function (dropdown) {
+        dropdown.classList.remove("show"); // Hide the dropdown by removing 'show' class
+      });
+  }
+});
+
+// Make sure that clicking on the dropdown button toggles the dropdown menu
+document
+  .querySelector(".dropdownbtn-review")
+  ?.addEventListener("click", (e) => {
+    e.stopPropagation(); // Prevent the event from bubbling up to the document
+    toggleDropdown("dropdown-content-review");
+  });
+
+document.querySelector(".dropdownbtn-bonus")?.addEventListener("click", (e) => {
+  e.stopPropagation(); // Prevent the event from bubbling up to the document
+  toggleDropdown("dropdown-content-bonus");
+});
+
 console.log("JavaScript is loaded!");
