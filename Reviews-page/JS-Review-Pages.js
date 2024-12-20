@@ -1,143 +1,5 @@
 "use strict";
 
-// more info popUp
-// const elsModals = document.querySelectorAll(".modal");
-
-// const toggleModal = (ev) => {
-//   const elBtn = ev.currentTarget;
-//   const elModal = document.querySelector(elBtn.dataset.modal);
-//   if (elModal) {
-//     // Close all currently open modals:
-//     elsModals.forEach((el) => {
-//       if (el !== elModal) el.classList.remove("is-active");
-//     });
-//     // Toggle open/close targeted one:
-//     elModal.classList.toggle("is-active");
-//   }
-// };
-
-// const elsBtns = document.querySelectorAll("[data-modal]");
-// elsBtns.forEach((el) => el.addEventListener("click", toggleModal));
-
-// sidebar menu dropedown bonus
-document.addEventListener("DOMContentLoaded", () => {
-  const dropdowns = document.querySelectorAll(".box-dropdown");
-
-  dropdowns.forEach((dropdown) => {
-    const button = dropdown.querySelector("button");
-    const content = dropdown.querySelector(".dropdown-content-bonus");
-
-    button.addEventListener("click", (event) => {
-      // If the dropdown is already open, prevent the link click from firing
-      if (content.classList.contains("visible")) {
-        event.preventDefault();
-      }
-
-      // Close other dropdowns
-      dropdowns.forEach((otherDropdown) => {
-        if (otherDropdown !== dropdown) {
-          otherDropdown
-            .querySelector(".dropdown-content-bonus")
-            .classList.remove("visible");
-          otherDropdown.style.marginBottom = "0";
-        }
-      });
-
-      // Toggle the current dropdown
-      const isVisible = content.classList.toggle("visible");
-
-      if (isVisible) {
-        dropdown.style.marginBottom = "250px";
-        content.style.opacity = "1";
-        content.style.visibility = "visible";
-      } else {
-        dropdown.style.marginBottom = "0";
-        content.style.opacity = "0";
-        content.style.visibility = "hidden";
-      }
-    });
-  });
-
-  // Close dropdowns when clicking outside
-  document.addEventListener("click", (event) => {
-    const isDropdownClick = [...dropdowns].some((dropdown) =>
-      dropdown.contains(event.target)
-    );
-
-    if (!isDropdownClick) {
-      dropdowns.forEach((dropdown) => {
-        dropdown
-          .querySelector(".dropdown-content-bonus")
-          .classList.remove("visible");
-        dropdown.style.marginBottom = "0";
-        const content = dropdown.querySelector(".dropdown-content-bonus");
-        content.style.opacity = "0";
-        content.style.visibility = "hidden";
-      });
-    }
-  });
-});
-// the dropdowns in the hamburger menu
-document.addEventListener("DOMContentLoaded", () => {
-  const dropdownButtons = document.querySelectorAll(".dropedownbtn");
-
-  dropdownButtons.forEach((button) => {
-    const dropdownContent = button.querySelector(".dropdown-content");
-
-    button.addEventListener("click", (event) => {
-      // Close other dropdowns
-      dropdownButtons.forEach((otherButton) => {
-        const otherContent = otherButton.querySelector(".dropdown-content");
-        if (otherButton !== button) {
-          otherContent.classList.remove("visible");
-        }
-      });
-
-      // Toggle current dropdown
-      dropdownContent.classList.toggle("visible");
-      event.stopPropagation(); // Prevent event bubbling
-    });
-  });
-
-  // Close dropdowns when clicking outside
-  document.addEventListener("click", () => {
-    dropdownButtons.forEach((button) => {
-      const dropdownContent = button.querySelector(".dropdown-content");
-      dropdownContent.classList.remove("visible");
-    });
-  });
-});
-
-// hamburger menu x animation
-let navToggle = document.querySelector(".nav-toggle");
-let bars = document.querySelectorAll(".bar");
-
-function toggleHamburger(e) {
-  if (bars) {
-    bars.forEach((bar) => bar.classList.toggle("x"));
-  }
-}
-
-if (navToggle) {
-  navToggle.addEventListener("click", toggleHamburger);
-}
-
-// Hamburger menu
-function myFunction() {
-  const x = document.getElementById("myLinks");
-  if (x) {
-    x.style.display = x.style.display === "block" ? "" : "block";
-  }
-}
-
-// Close menu click
-const y = document.getElementById("myLinks");
-function myFunction2() {
-  if (y && y.style.display === "block") {
-    y.style.display = "";
-  }
-}
-
 // tabs review papge
 
 // back to previous tab
@@ -304,40 +166,72 @@ overlay.addEventListener("touchend", (e) => {
   handleSwipeGesture(); // Handle the swipe gesture
 });
 
-// Function to handle swipe gestures
+// Function to detect swipe gestures
 function handleSwipeGesture() {
-  if (isSideMenuOpen) {
-    // Check for a left swipe to close the side navigation (swiping right to left)
-    if (touchStartX > touchEndX && touchStartX - touchEndX > 50) {
-      closeSideNavigation(); // Close the side navigation if swipe is from right to left
-    }
-  } else {
-    // Check for a right swipe to open the side navigation (swiping left to right)
-    if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
-      openSideNavigation(); // Open the side navigation if swipe is from left to right
-    }
+  const swipeThreshold = 50; // Minimum distance to recognize as a swipe
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (swipeDistance > swipeThreshold && !isSideMenuOpen) {
+    openSideNavigation(); // Open side menu on swipe right
+  } else if (swipeDistance < -swipeThreshold && isSideMenuOpen) {
+    closeSideNavigation(); // Close side menu on swipe left
   }
 }
 
-// Close dropdowns if clicked outside
-document.addEventListener("click", function (event) {
-  const isClickInsideNavigation = sideNavigation.contains(event.target);
+// Prevent back and forward navigation from the browser
+window.addEventListener("popstate", function (e) {
+  // Prevent the browser from navigating back or forward
+  history.pushState(null, null, location.href);
+});
 
-  if (!isClickInsideNavigation) {
-    // Close all dropdowns if clicked outside the navigation
-    document.querySelectorAll(".dropdown-menu").forEach(function (dropdown) {
-      dropdown.style.display = "none";
-    });
+// Disable browser swipe back navigation (specifically for iOS)
+document.body.addEventListener("touchstart", function (e) {
+  if (e.touches.length === 1) {
+    touchStartX = e.touches[0].clientX;
   }
 });
 
-// Make sure that clicking on the dropdown button toggles the dropdown menu
-document.querySelector(".dropdownbtn-review").addEventListener("click", () => {
-  toggleDropdown("dropdown-content-review");
-});
-
-document.querySelector(".dropdownbtn-bonus").addEventListener("click", () => {
-  toggleDropdown("dropdown-content-bonus");
+document.body.addEventListener("touchmove", function (e) {
+  const swipeDistance = e.touches[0].clientX - touchStartX;
+  // If swiping right, prevent default browser navigation
+  if (swipeDistance > 0) {
+    e.preventDefault(); // Prevent the browser's back action if swiping right
+  }
 });
 
 console.log("JavaScript is loaded!");
+
+// prevent back forward in browser
+
+// Disable browser back and forward actions by preventing default on touchmove
+window.addEventListener(
+  "touchmove",
+  function (e) {
+    // Only prevent horizontal swipe if the movement is primarily horizontal
+    if (e.touches.length === 1) {
+      const touchMoveX = e.touches[0].pageX;
+      const touchMoveY = e.touches[0].pageY;
+      const deltaX = touchMoveX - this.touchStartX;
+      const deltaY = touchMoveY - this.touchStartY;
+
+      // Allow vertical scrolling (deltaY) but prevent horizontal swipe (deltaX)
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        e.preventDefault(); // Prevent horizontal swipe navigation
+      }
+    }
+  },
+  { passive: false }
+);
+
+// Disable popstate event to prevent browser's back navigation
+window.addEventListener("popstate", function (e) {
+  history.pushState(null, null, location.href); // Keep the current state, prevent back navigation
+});
+
+// Track touch start position for swipe detection
+window.addEventListener("touchstart", function (e) {
+  if (e.touches.length === 1) {
+    this.touchStartX = e.touches[0].pageX;
+    this.touchStartY = e.touches[0].pageY;
+  }
+});
