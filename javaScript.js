@@ -284,59 +284,33 @@ overlay.addEventListener("touchend", (e) => {
   handleSwipeGesture(); // Handle the swipe gesture
 });
 
-// Function to handle swipe gestures
+// Function to detect swipe gestures
 function handleSwipeGesture() {
-  if (isSideMenuOpen) {
-    // Check for a left swipe to close the side navigation (swiping right to left)
-    if (touchStartX > touchEndX && touchStartX - touchEndX > 50) {
-      closeSideNavigation(); // Close the side navigation if swipe is from right to left
-    }
-  } else {
-    // Check for a right swipe to open the side navigation (swiping left to right)
-    if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
-      openSideNavigation(); // Open the side navigation if swipe is from left to right
-    }
+  const swipeThreshold = 50; // Minimum distance to recognize as a swipe
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (swipeDistance > swipeThreshold && !isSideMenuOpen) {
+    openSideNavigation(); // Open side menu on swipe right
+  } else if (swipeDistance < -swipeThreshold && isSideMenuOpen) {
+    closeSideNavigation(); // Close side menu on swipe left
   }
 }
 
-// Close dropdowns if clicked outside
-document.addEventListener("click", function (event) {
-  const isClickInsideNavigation = sideNavigation.contains(event.target);
-
-  if (!isClickInsideNavigation) {
-    // Close all dropdowns if clicked outside the navigation
-    document.querySelectorAll(".dropdown-menu").forEach(function (dropdown) {
-      dropdown.style.display = "none";
-    });
+// Prevent default swipe-back behavior (to avoid page navigation)
+document.addEventListener("touchstart", (e) => {
+  if (e.touches.length === 1) {
+    touchStartX = e.touches[0].clientX; // Start of swipe
   }
 });
 
-// Make sure that clicking on the dropdown button toggles the dropdown menu
-document.querySelector(".dropdownbtn-review").addEventListener("click", () => {
-  toggleDropdown("dropdown-content-review");
-});
+document.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // End of swipe
 
-document.querySelector(".dropdownbtn-bonus").addEventListener("click", () => {
-  toggleDropdown("dropdown-content-bonus");
-});
+  // Prevent default action if swipe is in the correct direction
+  const swipeThreshold = 50;
+  const swipeDistance = touchEndX - touchStartX;
 
-console.log("JavaScript is loaded!");
-
-// Prevent default behavior for swipe gestures on mobile
-document
-  .querySelector(".side-navigation")
-  .addEventListener("touchstart", (e) => {
-    e.preventDefault(); // Prevent the default browser swipe action
-    touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
-  });
-
-document
-  .querySelector(".side-navigation")
-  .addEventListener("touchmove", (e) => {
-    e.preventDefault(); // Prevent the default browser swipe action
-  });
-
-document.querySelector(".side-navigation").addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
-  handleSwipeGesture(); // Handle the swipe gesture
+  if (swipeDistance < -swipeThreshold || swipeDistance > swipeThreshold) {
+    e.preventDefault();
+  }
 });
