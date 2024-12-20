@@ -7,6 +7,35 @@ body {
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
   background-color: rgb(0, 0, 0);
 }
+/* Style for the scroll-to-top arrow */
+/* Style for the Back to Top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 50px; /* Distance from the bottom */
+  right: -50px; /* Distance from the right */
+  display: none; /* Hidden by default */
+  z-index: 1000; /* Ensure it's above other content */
+  width: fit-content; /* Size of the arrow */
+  height: fit-content;
+  font-weight: 700;
+  color: purple; /* Arrow color */
+  padding: 0px;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+}
+.scroll-to-top img {
+  background-color: #000;
+  border-radius: 50px;
+  width: 10px;
+  height: 10px;
+}
+
+.scroll-to-top.show {
+  display: block; /* Display the button when the user scrolls down */
+}
+
+/* end of arrow to top */
 #home-background {
   background-color: black;
   background-image: url("/img/HomeScreen.webp");
@@ -617,6 +646,9 @@ strong {
   width: 48px;
   margin: auto 50px;
 }
+.contact-us {
+  text-align: center;
+}
 
 .bottom-page p a {
   text-decoration: none;
@@ -637,6 +669,15 @@ strong {
   }
 }
 @media only screen and (min-width: 5px) {
+  /* scroll to top */
+  .scroll-to-top {
+    right: -40px;
+  }
+  .scroll-to-top img {
+    width: 40px;
+    height: 40px;
+  }
+  /* end of scroll ot top */
   .content ul {
     padding: 0;
     margin: 5px;
@@ -810,6 +851,14 @@ strong {
 
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
 @media (min-width: 550px) {
+  /* scroll to top */
+  .scroll-to-top {
+    right: -30px;
+  }
+  .scroll-to-top img {
+    width: 40px;
+    height: 40px;
+  }
   /* content */
   .toggle-button {
     padding: 150px 20px;
@@ -917,6 +966,17 @@ strong {
 
 /* max-mediaquwry content Tablets iPads (portrait mode) */
 @media (min-width: 1200px) {
+  /* scroll to top */
+
+  .scroll-to-top {
+    right: -15px;
+    bottom: 50px;
+  }
+  .scroll-to-top img {
+    width: 50px;
+    height: 50px;
+  }
+  /* end of scroll to top */
   .navBar {
     width: 0;
   }

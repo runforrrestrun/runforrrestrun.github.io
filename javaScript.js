@@ -351,3 +351,19 @@ window.addEventListener("touchstart", function (e) {
     this.touchStartY = e.touches[0].pageY;
   }
 });
+
+// back to the top arrow
+// Event listener to show the scroll-to-top button when scrolling
+window.addEventListener("scroll", function () {
+  const scrollButton = document.querySelector(".scroll-to-top");
+
+  // Show the button when the page is scrolled down 100px or more
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
+    scrollButton.classList.add("show");
+  } else {
+    scrollButton.classList.remove("show");
+  }
+});
