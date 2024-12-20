@@ -296,21 +296,8 @@ function handleSwipeGesture() {
   }
 }
 
-// Prevent default swipe-back behavior (to avoid page navigation)
-document.addEventListener("touchstart", (e) => {
-  if (e.touches.length === 1) {
-    touchStartX = e.touches[0].clientX; // Start of swipe
-  }
-});
-
-document.addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].clientX; // End of swipe
-
-  // Prevent default action if swipe is in the correct direction
-  const swipeThreshold = 50;
-  const swipeDistance = touchEndX - touchStartX;
-
-  if (swipeDistance < -swipeThreshold || swipeDistance > swipeThreshold) {
-    e.preventDefault();
-  }
+// Disable back action on the browser
+window.addEventListener("popstate", function (e) {
+  // Prevent the browser from navigating back
+  history.pushState(null, null, location.href);
 });
