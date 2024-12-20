@@ -11,7 +11,7 @@ body {
 /* Style for the Back to Top button */
 .scroll-to-top {
   position: fixed;
-  bottom: 50px; /* Distance from the bottom */
+  bottom: 5px; /* Distance from the bottom */
   right: -50px; /* Distance from the right */
   display: none; /* Hidden by default */
   z-index: 1000; /* Ensure it's above other content */
@@ -811,6 +811,7 @@ a {
     width: 90%;
     display: flex;
     flex-direction: row;
+
     flex-wrap: wrap;
     height: 100vh;
     padding-top: 0;
@@ -841,7 +842,7 @@ a {
 
 @media (min-width: 2000px) {
   .container-news {
-    width: 100%;
+    width: fit-content;
     margin: 0 auto 0 190px;
   }
   .news-box {

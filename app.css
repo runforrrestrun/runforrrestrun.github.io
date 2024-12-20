@@ -12,7 +12,7 @@ body {
 /* Style for the Back to Top button */
 .scroll-to-top {
   position: fixed;
-  bottom: 20px; /* Distance from the bottom */
+  bottom: 5px; /* Distance from the bottom */
   right: -30px; /* Distance from the right */
   display: none; /* Hidden by default */
   z-index: 1000; /* Ensure it's above other content */
