@@ -321,3 +321,22 @@ document.querySelector(".dropdownbtn-bonus").addEventListener("click", () => {
 });
 
 console.log("JavaScript is loaded!");
+
+// Prevent default behavior for swipe gestures on mobile
+document
+  .querySelector(".side-navigation")
+  .addEventListener("touchstart", (e) => {
+    e.preventDefault(); // Prevent the default browser swipe action
+    touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+  });
+
+document
+  .querySelector(".side-navigation")
+  .addEventListener("touchmove", (e) => {
+    e.preventDefault(); // Prevent the default browser swipe action
+  });
+
+document.querySelector(".side-navigation").addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
