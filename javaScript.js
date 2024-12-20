@@ -317,6 +317,8 @@ document.body.addEventListener("touchmove", function (e) {
   }
 });
 
+// prevent back forward in browser
+
 // Disable browser back and forward actions by preventing default on touchmove
 window.addEventListener(
   "touchmove",
