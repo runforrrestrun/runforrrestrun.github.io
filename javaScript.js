@@ -296,8 +296,15 @@ function handleSwipeGesture() {
   }
 }
 
-// Disable back action on the browser
+// Prevent back and forward navigation from the browser
 window.addEventListener("popstate", function (e) {
-  // Prevent the browser from navigating back
+  // Prevent the browser from navigating back or forward
   history.pushState(null, null, location.href);
+});
+
+// Disable swipe-to-go-back in iOS
+document.body.addEventListener("touchmove", function (e) {
+  if (isSideMenuOpen) {
+    e.preventDefault(); // Prevent the default scroll behavior when the side menu is open
+  }
 });
