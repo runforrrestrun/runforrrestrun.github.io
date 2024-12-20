@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// smartphone menu
 // Select necessary elements
 const toggleButton = document.querySelector(".toggle-button");
 const sideNavigation = document.querySelector(".side-navigation");
@@ -46,6 +45,8 @@ let isSideMenuOpen = false;
 // Variables to track swipe gestures
 let touchStartX = 0;
 let touchEndX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
 
 // Function to open the side navigation
 function openSideNavigation() {
@@ -54,6 +55,7 @@ function openSideNavigation() {
   toggleButton.style.display = "none"; // Hide the toggle button
   isSideMenuOpen = true; // Set the flag to true when side menu is open
 }
+
 // Add event listeners to each button to toggle the dropdown menu
 dropdownButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
@@ -94,42 +96,52 @@ closeButton.addEventListener("click", closeSideNavigation);
 // Handle swipe gestures for opening
 toggleButton.addEventListener("touchstart", (e) => {
   touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+  touchStartY = e.touches[0].clientY; // Record the starting point of the swipe
 });
 
 toggleButton.addEventListener("touchend", (e) => {
   touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  touchEndY = e.changedTouches[0].clientY; // Record the ending point of the swipe
   handleSwipeGesture(); // Handle the swipe gesture
 });
 
 // Handle swipe gestures for closing
 sideNavigation.addEventListener("touchstart", (e) => {
   touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+  touchStartY = e.touches[0].clientY; // Record the starting point of the swipe
 });
 
 sideNavigation.addEventListener("touchend", (e) => {
   touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  touchEndY = e.changedTouches[0].clientY; // Record the ending point of the swipe
   handleSwipeGesture(); // Handle the swipe gesture
 });
 
 overlay.addEventListener("touchstart", (e) => {
   touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+  touchStartY = e.touches[0].clientY; // Record the starting point of the swipe
 });
 
 overlay.addEventListener("touchend", (e) => {
   touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  touchEndY = e.changedTouches[0].clientY; // Record the ending point of the swipe
   handleSwipeGesture(); // Handle the swipe gesture
 });
 
 // Function to handle swipe gestures
 function handleSwipeGesture() {
-  if (isSideMenuOpen) {
+  // Check for horizontal swipes (left or right)
+  const horizontalSwipe = Math.abs(touchEndX - touchStartX) > 50;
+  const verticalSwipe = Math.abs(touchEndY - touchStartY) < 50; // Ensure it's primarily horizontal
+
+  if (isSideMenuOpen && horizontalSwipe && verticalSwipe) {
     // Check for a left swipe to close the side navigation (swiping right to left)
-    if (touchStartX > touchEndX && touchStartX - touchEndX > 50) {
+    if (touchStartX > touchEndX) {
       closeSideNavigation(); // Close the side navigation if swipe is from right to left
     }
-  } else {
+  } else if (!isSideMenuOpen && horizontalSwipe && verticalSwipe) {
     // Check for a right swipe to open the side navigation (swiping left to right)
-    if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
+    if (touchEndX > touchStartX) {
       openSideNavigation(); // Open the side navigation if swipe is from left to right
     }
   }
@@ -166,3 +178,36 @@ document.querySelector(".dropdownbtn-bonus")?.addEventListener("click", (e) => {
 });
 
 console.log("JavaScript is loaded!");
+
+// prevent pshone browser back forward on swipe
+window.addEventListener(
+  "touchmove",
+  function (e) {
+    // Only prevent horizontal swipe if the movement is primarily horizontal
+    if (e.touches.length === 1) {
+      const touchMoveX = e.touches[0].pageX;
+      const touchMoveY = e.touches[0].pageY;
+      const deltaX = touchMoveX - this.touchStartX;
+      const deltaY = touchMoveY - this.touchStartY;
+
+      // Allow vertical scrolling (deltaY) but prevent horizontal swipe (deltaX)
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        e.preventDefault(); // Prevent horizontal swipe navigation
+      }
+    }
+  },
+  { passive: false }
+);
+
+// Disable popstate event to prevent browser's back navigation
+window.addEventListener("popstate", function (e) {
+  history.pushState(null, null, location.href); // Keep the current state, prevent back navigation
+});
+
+// Track touch start position for swipe detection
+window.addEventListener("touchstart", function (e) {
+  if (e.touches.length === 1) {
+    this.touchStartX = e.touches[0].pageX;
+    this.touchStartY = e.touches[0].pageY;
+  }
+});
