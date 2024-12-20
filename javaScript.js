@@ -1,109 +1,4 @@
 "use strict";
-// Hamburger menu
-function myFunction() {
-  const x = document.getElementById("myLinks");
-  if (x) {
-    x.style.display = x.style.display === "block" ? "" : "block";
-  }
-}
-
-// Close menu click
-const y = document.getElementById("myLinks");
-function myFunction2() {
-  if (y && y.style.display === "block") {
-    y.style.display = "";
-  }
-}
-
-//
-// sidebar menu dropedown bonus
-document.addEventListener("DOMContentLoaded", () => {
-  const dropdowns = document.querySelectorAll(".box-dropdown");
-
-  dropdowns.forEach((dropdown) => {
-    const button = dropdown.querySelector("button");
-    const content = dropdown.querySelector(".dropdown-content-bonus");
-
-    button.addEventListener("click", (event) => {
-      // If the dropdown is already open, prevent the link click from firing
-      if (content.classList.contains("visible")) {
-        event.preventDefault();
-      }
-
-      // Close other dropdowns
-      dropdowns.forEach((otherDropdown) => {
-        if (otherDropdown !== dropdown) {
-          otherDropdown
-            .querySelector(".dropdown-content-bonus")
-            .classList.remove("visible");
-          otherDropdown.style.marginBottom = "0";
-        }
-      });
-
-      // Toggle the current dropdown
-      const isVisible = content.classList.toggle("visible");
-
-      if (isVisible) {
-        dropdown.style.marginBottom = "250px";
-        content.style.opacity = "1";
-        content.style.visibility = "visible";
-      } else {
-        dropdown.style.marginBottom = "0";
-        content.style.opacity = "0";
-        content.style.visibility = "hidden";
-      }
-    });
-  });
-
-  // Close dropdowns when clicking outside
-  document.addEventListener("click", (event) => {
-    const isDropdownClick = [...dropdowns].some((dropdown) =>
-      dropdown.contains(event.target)
-    );
-
-    if (!isDropdownClick) {
-      dropdowns.forEach((dropdown) => {
-        dropdown
-          .querySelector(".dropdown-content-bonus")
-          .classList.remove("visible");
-        dropdown.style.marginBottom = "0";
-        const content = dropdown.querySelector(".dropdown-content-bonus");
-        content.style.opacity = "0";
-        content.style.visibility = "hidden";
-      });
-    }
-  });
-});
-// the dropdowns in the hamburger menu
-document.addEventListener("DOMContentLoaded", () => {
-  const dropdownButtons = document.querySelectorAll(".dropedownbtn");
-
-  dropdownButtons.forEach((button) => {
-    const dropdownContent = button.querySelector(".dropdown-content");
-
-    button.addEventListener("click", (event) => {
-      // Close other dropdowns
-      dropdownButtons.forEach((otherButton) => {
-        const otherContent = otherButton.querySelector(".dropdown-content");
-        if (otherButton !== button) {
-          otherContent.classList.remove("visible");
-        }
-      });
-
-      // Toggle current dropdown
-      dropdownContent.classList.toggle("visible");
-      event.stopPropagation(); // Prevent event bubbling
-    });
-  });
-
-  // Close dropdowns when clicking outside
-  document.addEventListener("click", () => {
-    dropdownButtons.forEach((button) => {
-      const dropdownContent = button.querySelector(".dropdown-content");
-      dropdownContent.classList.remove("visible");
-    });
-  });
-});
 
 // more info popUp
 const elsModals = document.querySelectorAll(".modal");
@@ -124,96 +19,146 @@ const toggleModal = (ev) => {
 const elsBtns = document.querySelectorAll("[data-modal]");
 elsBtns.forEach((el) => el.addEventListener("click", toggleModal));
 
-// hamburger menu x animation
-let navToggle = document.querySelector(".nav-toggle");
-let bars = document.querySelectorAll(".bar");
-
-function toggleHamburger(e) {
-  if (bars) {
-    bars.forEach((bar) => bar.classList.toggle("x"));
-  }
-}
-
-if (navToggle) {
-  navToggle.addEventListener("click", toggleHamburger);
-}
-
 // news slidebar
 let currentSlide = 0;
 let isDragging = false;
+let isTransitioning = false;
 let startX = 0;
-let previousTranslate = 0;
 let currentTranslate = 0;
+let previousTranslate = 0;
 
 const slides = document.querySelectorAll(".news-item");
-const totalSlides = slides.length;
 const newsWrapper = document.querySelector(".news-wrapper");
 
+// Clone first and last slides
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
+newsWrapper.append(firstClone);
+newsWrapper.prepend(lastClone);
+
+const allSlides = document.querySelectorAll(".news-item"); // Include clones
+const totalSlides = allSlides.length;
+
+// Function to set slide widths and initial position
 function setSlideWidth() {
   const sliderWidth = document.querySelector(".news-slider").offsetWidth;
-  slides.forEach((slide) => (slide.style.width = `${sliderWidth}px`));
-  updateSlidePosition();
+
+  // Set width for all slides
+  allSlides.forEach((slide) => {
+    slide.style.width = `${sliderWidth}px`;
+  });
+
+  // Set the wrapper width to fit all slides
+  newsWrapper.style.width = `${totalSlides * sliderWidth}px`;
+
+  // Position at the first real slide (account for cloned slides)
+  newsWrapper.style.transform = `translateX(-${
+    (currentSlide + 1) * sliderWidth
+  }px)`;
 }
 
 setSlideWidth();
 window.addEventListener("resize", setSlideWidth);
 
+// Function to update slide position with smooth transitions
 function updateSlidePosition() {
   const sliderWidth = document.querySelector(".news-slider").offsetWidth;
-  newsWrapper.style.transform = `translateX(-${currentSlide * sliderWidth}px)`;
+  newsWrapper.style.transition = "transform 0.5s ease";
+  newsWrapper.style.transform = `translateX(-${
+    (currentSlide + 1) * sliderWidth
+  }px)`;
 }
 
+// Move to the next slide
 function moveToNextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
+  if (isTransitioning) return;
+  isTransitioning = true;
+  currentSlide++;
   updateSlidePosition();
+  newsWrapper.addEventListener("transitionend", handleTransitionEnd);
 }
 
+// Move to the previous slide
 function moveToPreviousSlide() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  if (isTransitioning) return;
+  isTransitioning = true;
+  currentSlide--;
   updateSlidePosition();
+  newsWrapper.addEventListener("transitionend", handleTransitionEnd);
 }
 
-document.querySelector(".forth-btn").addEventListener("click", moveToNextSlide);
-document
-  .querySelector(".back-btn")
-  .addEventListener("click", moveToPreviousSlide);
+// Handle transition end for wrapping logic
+function handleTransitionEnd() {
+  const sliderWidth = document.querySelector(".news-slider").offsetWidth;
+  isTransitioning = false;
+  newsWrapper.style.transition = "none";
 
-setInterval(moveToNextSlide, 7000);
+  // Wrap around logic
+  if (currentSlide === totalSlides - 2) {
+    currentSlide = 0; // Go to the first real slide
+    newsWrapper.style.transform = `translateX(-${
+      (currentSlide + 1) * sliderWidth
+    }px)`;
+  } else if (currentSlide === -1) {
+    currentSlide = totalSlides - 3; // Go to the last real slide
+    newsWrapper.style.transform = `translateX(-${
+      (currentSlide + 1) * sliderWidth
+    }px)`;
+  }
 
+  newsWrapper.removeEventListener("transitionend", handleTransitionEnd);
+}
+
+// Touch/drag events
 function handleTouchStart(e) {
-  startX = e.touches[0].clientX;
+  if (isTransitioning) return;
   isDragging = true;
-  previousTranslate = currentTranslate;
+  startX = getPointerPosition(e);
+  previousTranslate = -(
+    (currentSlide + 1) *
+    document.querySelector(".news-slider").offsetWidth
+  );
+  newsWrapper.style.transition = "none"; // Disable transition during drag
 }
 
 function handleTouchMove(e) {
   if (!isDragging) return;
-  const touchX = e.touches[0].clientX;
-  const deltaX = touchX - startX;
+  const currentX = getPointerPosition(e);
+  const deltaX = currentX - startX;
 
   currentTranslate = previousTranslate + deltaX;
   newsWrapper.style.transform = `translateX(${currentTranslate}px)`;
 }
 
-function handleTouchEnd(e) {
+function handleTouchEnd() {
+  if (!isDragging) return;
   isDragging = false;
-  const endX = e.changedTouches[0].clientX;
-  const deltaX = endX - startX;
 
-  // Only handle swipe if side menu is not open
-  if (!isSideMenuOpen) {
-    if (Math.abs(deltaX) > 50) {
-      if (deltaX < 0) {
-        moveToNextSlide();
-      } else {
-        moveToPreviousSlide();
-      }
-    } else {
-      updateSlidePosition();
-    }
+  const sliderWidth = document.querySelector(".news-slider").offsetWidth;
+  const movementThreshold = sliderWidth / 4; // Minimum drag distance to change slide
+  const movedBy = currentTranslate - previousTranslate;
+
+  if (movedBy < -movementThreshold) {
+    moveToNextSlide();
+  } else if (movedBy > movementThreshold) {
+    moveToPreviousSlide();
+  } else {
+    updateSlidePosition(); // Snap back to the current slide
   }
 }
 
+// Helper to get touch or mouse position
+function getPointerPosition(e) {
+  return e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+}
+
+// Event listeners for buttons
+document.querySelector(".forth-btn").addEventListener("click", moveToNextSlide);
+document
+  .querySelector(".back-btn")
+  .addEventListener("click", moveToPreviousSlide);
+
+// Event listeners for touch/drag
 newsWrapper.addEventListener("touchstart", handleTouchStart);
 newsWrapper.addEventListener("touchmove", handleTouchMove);
 newsWrapper.addEventListener("touchend", handleTouchEnd);
@@ -222,6 +167,11 @@ newsWrapper.addEventListener("mousedown", handleTouchStart);
 newsWrapper.addEventListener("mousemove", handleTouchMove);
 newsWrapper.addEventListener("mouseup", handleTouchEnd);
 newsWrapper.addEventListener("mouseleave", handleTouchEnd);
+
+// Auto-slide
+setInterval(() => {
+  if (!isDragging) moveToNextSlide();
+}, 7000);
 
 // sanow
 document.addEventListener("DOMContentLoaded", function () {
