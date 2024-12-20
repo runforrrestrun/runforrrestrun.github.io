@@ -111,40 +111,72 @@ overlay.addEventListener("touchend", (e) => {
   handleSwipeGesture(); // Handle the swipe gesture
 });
 
-// Function to handle swipe gestures
+// Function to detect swipe gestures
 function handleSwipeGesture() {
-  if (isSideMenuOpen) {
-    // Check for a left swipe to close the side navigation (swiping right to left)
-    if (touchStartX > touchEndX && touchStartX - touchEndX > 50) {
-      closeSideNavigation(); // Close the side navigation if swipe is from right to left
-    }
-  } else {
-    // Check for a right swipe to open the side navigation (swiping left to right)
-    if (touchEndX > touchStartX && touchEndX - touchStartX > 50) {
-      openSideNavigation(); // Open the side navigation if swipe is from left to right
-    }
+  const swipeThreshold = 50; // Minimum distance to recognize as a swipe
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (swipeDistance > swipeThreshold && !isSideMenuOpen) {
+    openSideNavigation(); // Open side menu on swipe right
+  } else if (swipeDistance < -swipeThreshold && isSideMenuOpen) {
+    closeSideNavigation(); // Close side menu on swipe left
   }
 }
 
-// Close dropdowns if clicked outside
-document.addEventListener("click", function (event) {
-  const isClickInsideNavigation = sideNavigation.contains(event.target);
+// Prevent back and forward navigation from the browser
+window.addEventListener("popstate", function (e) {
+  // Prevent the browser from navigating back or forward
+  history.pushState(null, null, location.href);
+});
 
-  if (!isClickInsideNavigation) {
-    // Close all dropdowns if clicked outside the navigation
-    document.querySelectorAll(".dropdown-menu").forEach(function (dropdown) {
-      dropdown.style.display = "none";
-    });
+// Disable browser swipe back navigation (specifically for iOS)
+document.body.addEventListener("touchstart", function (e) {
+  if (e.touches.length === 1) {
+    touchStartX = e.touches[0].clientX;
   }
 });
 
-// Make sure that clicking on the dropdown button toggles the dropdown menu
-document.querySelector(".dropdownbtn-review").addEventListener("click", () => {
-  toggleDropdown("dropdown-content-review");
-});
-
-document.querySelector(".dropdownbtn-bonus").addEventListener("click", () => {
-  toggleDropdown("dropdown-content-bonus");
+document.body.addEventListener("touchmove", function (e) {
+  const swipeDistance = e.touches[0].clientX - touchStartX;
+  // If swiping right, prevent default browser navigation
+  if (swipeDistance > 0) {
+    e.preventDefault(); // Prevent the browser's back action if swiping right
+  }
 });
 
 console.log("JavaScript is loaded!");
+
+// prevent back forward in browser
+
+// Disable browser back and forward actions by preventing default on touchmove
+window.addEventListener(
+  "touchmove",
+  function (e) {
+    // Only prevent horizontal swipe if the movement is primarily horizontal
+    if (e.touches.length === 1) {
+      const touchMoveX = e.touches[0].pageX;
+      const touchMoveY = e.touches[0].pageY;
+      const deltaX = touchMoveX - this.touchStartX;
+      const deltaY = touchMoveY - this.touchStartY;
+
+      // Allow vertical scrolling (deltaY) but prevent horizontal swipe (deltaX)
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        e.preventDefault(); // Prevent horizontal swipe navigation
+      }
+    }
+  },
+  { passive: false }
+);
+
+// Disable popstate event to prevent browser's back navigation
+window.addEventListener("popstate", function (e) {
+  history.pushState(null, null, location.href); // Keep the current state, prevent back navigation
+});
+
+// Track touch start position for swipe detection
+window.addEventListener("touchstart", function (e) {
+  if (e.touches.length === 1) {
+    this.touchStartX = e.touches[0].pageX;
+    this.touchStartY = e.touches[0].pageY;
+  }
+});
