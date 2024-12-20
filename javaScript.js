@@ -275,19 +275,10 @@ sideNavigation.addEventListener("touchend", (e) => {
   handleSwipeGesture(); // Handle the swipe gesture
 });
 
-overlay.addEventListener("touchstart", (e) => {
-  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
-});
-
-overlay.addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
-  handleSwipeGesture(); // Handle the swipe gesture
-});
-
-// Function to detect swipe gestures
+// Function to handle swipe gestures for opening and closing the side menu
 function handleSwipeGesture() {
-  const swipeThreshold = 50; // Minimum distance to recognize as a swipe
-  const swipeDistance = touchEndX - touchStartX;
+  const swipeDistance = touchEndX - touchStartX; // Calculate the distance of the swipe
+  const swipeThreshold = 100; // Minimum distance to trigger swipe action
 
   if (swipeDistance > swipeThreshold && !isSideMenuOpen) {
     openSideNavigation(); // Open side menu on swipe right
@@ -296,15 +287,27 @@ function handleSwipeGesture() {
   }
 }
 
-// Prevent back and forward navigation from the browser
-window.addEventListener("popstate", function (e) {
-  // Prevent the browser from navigating back or forward
-  history.pushState(null, null, location.href);
-});
-
-// Disable swipe-to-go-back in iOS
+// Disable swipe-to-go-back functionality by blocking the touchmove event
 document.body.addEventListener("touchmove", function (e) {
   if (isSideMenuOpen) {
     e.preventDefault(); // Prevent the default scroll behavior when the side menu is open
   }
+});
+
+// Disable browser swipe back navigation (specifically for iOS)
+document.body.addEventListener("touchstart", function (e) {
+  if (e.touches.length === 1) {
+    touchStartX = e.touches[0].clientX;
+  }
+});
+
+document.body.addEventListener("touchmove", function (e) {
+  const swipeDistance = e.touches[0].clientX - touchStartX;
+  if (swipeDistance > 0) {
+    e.preventDefault(); // Prevent the browser's back action if swiping right
+  }
+});
+
+window.addEventListener("popstate", function (e) {
+  history.pushState(null, null, location.href); // Prevent browser navigation
 });
