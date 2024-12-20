@@ -275,10 +275,19 @@ sideNavigation.addEventListener("touchend", (e) => {
   handleSwipeGesture(); // Handle the swipe gesture
 });
 
-// Function to handle swipe gestures for opening and closing the side menu
+overlay.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+});
+
+overlay.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
+  handleSwipeGesture(); // Handle the swipe gesture
+});
+
+// Function to detect swipe gestures
 function handleSwipeGesture() {
-  const swipeDistance = touchEndX - touchStartX; // Calculate the distance of the swipe
-  const swipeThreshold = 100; // Minimum distance to trigger swipe action
+  const swipeThreshold = 50; // Minimum distance to recognize as a swipe
+  const swipeDistance = touchEndX - touchStartX;
 
   if (swipeDistance > swipeThreshold && !isSideMenuOpen) {
     openSideNavigation(); // Open side menu on swipe right
@@ -287,11 +296,10 @@ function handleSwipeGesture() {
   }
 }
 
-// Disable swipe-to-go-back functionality by blocking the touchmove event
-document.body.addEventListener("touchmove", function (e) {
-  if (isSideMenuOpen) {
-    e.preventDefault(); // Prevent the default scroll behavior when the side menu is open
-  }
+// Prevent back and forward navigation from the browser
+window.addEventListener("popstate", function (e) {
+  // Prevent the browser from navigating back or forward
+  history.pushState(null, null, location.href);
 });
 
 // Disable browser swipe back navigation (specifically for iOS)
@@ -303,11 +311,22 @@ document.body.addEventListener("touchstart", function (e) {
 
 document.body.addEventListener("touchmove", function (e) {
   const swipeDistance = e.touches[0].clientX - touchStartX;
+  // If swiping right, prevent default browser navigation
   if (swipeDistance > 0) {
     e.preventDefault(); // Prevent the browser's back action if swiping right
   }
 });
 
+// Disable browser back and forward actions by preventing default on touchmove
+window.addEventListener(
+  "touchmove",
+  function (e) {
+    e.preventDefault(); // Disable browser navigation swipe actions
+  },
+  { passive: false }
+);
+
+// Disable popstate event to prevent browser's back navigation
 window.addEventListener("popstate", function (e) {
-  history.pushState(null, null, location.href); // Prevent browser navigation
+  history.pushState(null, null, location.href); // Keep the current state, prevent back navigation
 });
