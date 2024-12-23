@@ -692,6 +692,7 @@ a {
   /* news page */
   .container-news {
     height: 100%;
+    width: 100%;
     justify-content: flex-start;
     display: flex;
     flex-direction: row;
@@ -700,6 +701,7 @@ a {
     padding: 90px 10px 10px 10px;
   }
   .news-content-main {
+    width: 100%;
     font-size: 25px;
     padding: 30px;
     margin: 0;
@@ -717,6 +719,13 @@ a {
     margin: 20px auto;
     width: 350px;
     height: 600px;
+  }
+  .banner-box img {
+    margin: 0;
+    width: 100%;
+  }
+  .banner-box {
+    width: 100%;
   }
 
   .news-content h2 {
@@ -837,9 +846,6 @@ a {
     width: 70%;
     margin: 0 auto;
     border: 1px solid black(128, 128, 128, 0.459);
-  }
-  .banner-box img {
-    margin: 0;
   }
 }
 
