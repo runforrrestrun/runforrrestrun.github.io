@@ -265,9 +265,19 @@ body {
   font-size: 100px; /* Increase font size for larger text */
   text-align: center; /* Center the text inside */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: auto; /* Allow width to be dynamic */
+}
+.toggle-bar {
+  display: flex;
+  flex-direction: column;
+  width: 10px; /* Adjust width as needed */
+  height: 10px; /* Adjust height as needed */
+  background-color: white; /* Color of the dots */
+  border-radius: 50%;
+  margin: 3px 0; /* Adjust the spacing between the dots */
 }
 
 .toggle-button:hover {
@@ -1016,9 +1026,7 @@ strong {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
-  .toggle-button {
-    display: none;
-  }
+
   .name-content {
     display: none;
   }
