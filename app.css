@@ -336,11 +336,11 @@ body {
 .toggle-bar {
   display: flex;
   flex-direction: column;
-  width: 10px; /* Adjust width as needed */
-  height: 10px; /* Adjust height as needed */
-  background-color: white; /* Color of the dots */
+  width: 6px; /* Adjust width as needed */
+  height: 6px; /* Adjust height as needed */
+  background-color: rgba(255, 255, 255, 0.616); /* Color of the dots */
   border-radius: 50%;
-  margin: 3px 0; /* Adjust the spacing between the dots */
+  margin: 3px auto; /* Adjust the spacing between the dots */
 }
 
 .toggle-button:hover {
