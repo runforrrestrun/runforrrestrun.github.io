@@ -352,6 +352,31 @@ window.addEventListener("touchstart", function (e) {
   }
 });
 
+// ios back forward prevention
+
+// Detect and prevent the swipe-back gesture on iOS (when swiping from the left edge)
+
+window.addEventListener("touchstart", function (e) {
+  if (e.touches.length === 1) {
+    touchStartX = e.touches[0].pageX;
+  }
+});
+
+window.addEventListener("touchmove", function (e) {
+  if (touchStartX === 0) return; // Ignore if no touchstart was detected
+  touchEndX = e.touches[0].pageX;
+
+  // Prevent native back swipe when touching near the left edge (swipe-back gesture)
+  if (touchStartX < 60 && touchEndX > touchStartX) {
+    e.preventDefault(); // Prevent the swipe-back gesture
+  }
+});
+
+window.addEventListener("touchend", function () {
+  touchStartX = 0; // Reset touch positions
+  touchEndX = 0;
+});
+
 // back to the top arrow
 // Event listener to show the scroll-to-top button when scrolling
 window.addEventListener("scroll", function () {
