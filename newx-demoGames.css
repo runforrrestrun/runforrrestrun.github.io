@@ -329,6 +329,69 @@ body::-webkit-scrollbar {
 /*  */
 
 /* news page */
+
+/* news slider  */
+.casino-sliders {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.slider {
+  background: inherit;
+  padding: 20px 50px;
+  border-radius: 8px;
+  position: relative;
+  background-image: linear-gradient(black, purple);
+  border: 1px solid rgba(204, 201, 201, 0.733);
+}
+.slider h2 {
+  font-size: 40px;
+  text-align: center;
+}
+.slider-wrapper {
+  display: flex;
+  overflow-x: hidden;
+  gap: 15px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+.news-box {
+  flex: 0 0 300px;
+  box-sizing: border-box;
+  text-align: center;
+  scroll-snap-align: start;
+}
+.news-box img {
+  width: 100%;
+  height: auto;
+}
+
+.back-btn,
+.forth-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 30px;
+  font-weight: 800;
+  padding: 20px;
+
+  cursor: pointer;
+}
+.back-btn {
+  left: 10px;
+}
+.forth-btn {
+  right: 10px;
+}
+.back-btn:hover,
+.forth-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* end of nes slider  */
 .container-news {
   box-sizing: border-box;
   width: 100%;
@@ -344,8 +407,8 @@ body::-webkit-scrollbar {
   flex-direction: column;
   text-align: center;
   border: 1px solid rgba(204, 201, 201, 0.733);
-  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
-    /* Softer top shadow */ 0 40px 40px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0),
+    /* Softer top shadow */ 0 10px 10px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
   border-radius: 10px;
   background-image: linear-gradient(black, purple);
 }
@@ -598,6 +661,53 @@ a {
     width: 60px;
     height: 60px;
   }
+  /* news slider */
+  .slider-wrapper {
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory; /* Ensures smooth snapping to slides */
+    scroll-behavior: smooth;
+  }
+  .back-btn,
+  .forth-btn {
+    font-size: 20px;
+    padding: 10px;
+  }
+  .back-btn {
+    left: 30px;
+  }
+  .forth-btn {
+    right: 10px;
+  }
+
+  .news-box {
+    flex: 0 0 100%; /* Each news box takes up the full width */
+    scroll-snap-align: start; /* Align at the start of the box */
+    margin: 10px;
+    height: fit-content;
+  }
+
+  /* Hide scrollbar for all browsers */
+  .slider-wrapper {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .slider-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+  .casino-sliders {
+    width: 95%;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  .slider {
+    padding: 10px 0 0 40px;
+  }
+  .slider h2 {
+    font-size: 30px;
+    margin: 0;
+  }
+  /* end of nes slider */
 
   /* news page */
 
@@ -611,8 +721,6 @@ a {
 
   .news-box {
     box-sizing: border-box;
-    width: fit-content;
-    height: fit-content;
   }
   .banner-box {
     display: flex;
@@ -710,6 +818,32 @@ a {
     margin: 0;
     padding: 90px 10px 10px 10px;
   }
+  .slider {
+    width: 89%;
+    padding: 20px 0px 20px 10px;
+    margin: 20px 0 0 60px;
+  }
+  .slider h2 {
+    font-size: 40px;
+  }
+  .back-btn,
+  .forth-btn {
+    font-size: 35px;
+    padding: 10px;
+  }
+  .back-btn {
+    left: -20px;
+  }
+  .forth-btn {
+    right: -20px;
+  }
+  /* news slider */
+  @media (min-width: 550px) {
+    .news-box {
+      flex: 0 0 300px; /* Original size for each news box */
+    }
+  }
+  /* ens of news slider */
   .news-content-main {
     width: 100%;
     font-size: 25px;
@@ -826,14 +960,13 @@ a {
 
   /* News Page */
   .container-news {
-    margin: 0 0 0 200px;
-    width: 90%;
+    margin: 0 0 0 190px;
+    width: 89%;
     display: flex;
     flex-direction: row;
-
+    padding: 0;
     flex-wrap: wrap;
     height: 100vh;
-    padding-top: 0;
   }
   .news-content-main h1 {
     font-size: 35px;
@@ -846,6 +979,17 @@ a {
   }
   .news-content-main p {
     font-size: 25px;
+  }
+  .slider {
+    width: 90%;
+    padding: 10px;
+    padding: 20px 0 0px 30px;
+    margin-top: 100px;
+  }
+  .casino-sliders {
+    width: 100%;
+    padding: 0;
+    margin: 100px 0;
   }
 
   /* article from news */
@@ -861,11 +1005,15 @@ a {
 
 @media (min-width: 2000px) {
   .container-news {
-    width: fit-content;
+    width: 92.5%;
     margin: 0 auto 0 190px;
   }
+  .slider {
+    width: 95%;
+    margin: 100px auto;
+  }
   .news-box {
-    margin: 15px auto;
+    margin: 15px 30px;
   }
   .news-content-main h1 {
     font-size: 45px;

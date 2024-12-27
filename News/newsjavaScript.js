@@ -227,3 +227,84 @@ window.addEventListener("scroll", function () {
     scrollButton.classList.remove("show");
   }
 });
+
+// News Slider
+document.addEventListener("DOMContentLoaded", function () {
+  // Select all slider containers
+  const sliders = document.querySelectorAll(".slider");
+
+  sliders.forEach((sliderContainer) => {
+    const slider = sliderContainer.querySelector(".slider-wrapper");
+    const backBtn = sliderContainer.querySelector(".back-btn");
+    const forthBtn = sliderContainer.querySelector(".forth-btn");
+
+    if (!slider || !backBtn || !forthBtn) return; // Skip if elements are missing
+
+    const updateBoxWidth = () => {
+      return window.innerWidth < 550
+        ? slider.offsetWidth // Full slider width for smaller screens
+        : 500 + 15; // Original box width + gap for larger screens
+    };
+
+    let boxWidth = updateBoxWidth(); // Initialize box width
+    let totalWidth = slider.scrollWidth; // Total scrollable width
+
+    // Update boxWidth on window resize
+    window.addEventListener("resize", () => {
+      boxWidth = updateBoxWidth();
+      totalWidth = slider.scrollWidth; // Recalculate total width
+    });
+
+    // Back button functionality
+    backBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent click propagation
+      if (slider.scrollLeft <= 0) {
+        slider.scrollLeft = totalWidth - slider.offsetWidth; // Jump to end
+      } else {
+        slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
+      }
+    });
+
+    // Forward button functionality
+    forthBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent click propagation
+      if (slider.scrollLeft + slider.offsetWidth >= totalWidth) {
+        slider.scrollLeft = 0; // Jump to start
+      } else {
+        slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+      }
+    });
+
+    // Swipe functionality
+    let startX;
+
+    slider.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener("touchmove", (e) => {
+      const moveX = e.touches[0].clientX;
+      const diff = startX - moveX;
+
+      if (diff > 50) {
+        e.stopPropagation(); // Prevent swipe propagation
+        // Swipe left
+        if (slider.scrollLeft + slider.offsetWidth >= totalWidth) {
+          slider.scrollLeft = 0; // Jump to start
+        } else {
+          slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+        }
+        startX = moveX;
+      } else if (diff < -50) {
+        e.stopPropagation(); // Prevent swipe propagation
+        // Swipe right
+        if (slider.scrollLeft <= 0) {
+          slider.scrollLeft = totalWidth - slider.offsetWidth; // Jump to end
+        } else {
+          slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
+        }
+        startX = moveX;
+      }
+    });
+  });
+});
