@@ -284,7 +284,7 @@ body::-webkit-scrollbar {
   height: 6px; /* Adjust height as needed */
   background-color: rgba(255, 255, 255, 0.616); /* Color of the dots */
   border-radius: 50%;
-  margin: 3px auto; /* Adjust the spacing between the dots */
+  margin: 2px auto; /* Adjust the spacing between the dots */
 }
 
 .toggle-button:hover {
