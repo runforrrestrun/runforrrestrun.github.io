@@ -240,16 +240,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!slider || !backBtn || !forthBtn) return; // Skip if elements are missing
 
+    // Function to calculate the box width (accounting for gap/margin)
     const updateBoxWidth = () => {
-      return window.innerWidth < 550
-        ? slider.offsetWidth // Full slider width for smaller screens
-        : 500 + 15; // Original box width + gap for larger screens
+      const newsBox = slider.querySelector(".news-box");
+      if (newsBox) {
+        // Dynamically adjust the width based on the box's width
+        return (
+          newsBox.offsetWidth +
+          parseInt(getComputedStyle(newsBox).marginRight, 10)
+        ); // Ensure margin is included
+      }
+      return 500 + 15; // Default for larger screens, adjust as needed
     };
 
     let boxWidth = updateBoxWidth(); // Initialize box width
     let totalWidth = slider.scrollWidth; // Total scrollable width
 
-    // Update boxWidth on window resize
+    // Update boxWidth and totalWidth on window resize
     window.addEventListener("resize", () => {
       boxWidth = updateBoxWidth();
       totalWidth = slider.scrollWidth; // Recalculate total width
@@ -261,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (slider.scrollLeft <= 0) {
         slider.scrollLeft = totalWidth - slider.offsetWidth; // Jump to end
       } else {
-        slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
+        slider.scrollLeft -= boxWidth; // Scroll one box left
       }
     });
 
@@ -271,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (slider.scrollLeft + slider.offsetWidth >= totalWidth) {
         slider.scrollLeft = 0; // Jump to start
       } else {
-        slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+        slider.scrollLeft += boxWidth; // Scroll one box right
       }
     });
 
@@ -279,32 +286,38 @@ document.addEventListener("DOMContentLoaded", function () {
     let startX;
 
     slider.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
+      startX = e.touches[0].clientX; // Track starting touch position
     });
 
     slider.addEventListener("touchmove", (e) => {
-      const moveX = e.touches[0].clientX;
-      const diff = startX - moveX;
+      const moveX = e.touches[0].clientX; // Current touch position
+      const diff = startX - moveX; // Difference in touch position
 
-      if (diff > 50) {
-        e.stopPropagation(); // Prevent swipe propagation
-        // Swipe left
-        if (slider.scrollLeft + slider.offsetWidth >= totalWidth) {
-          slider.scrollLeft = 0; // Jump to start
-        } else {
-          slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+      if (Math.abs(diff) > 30) {
+        e.preventDefault(); // Prevent default touch behavior (like page scroll)
+
+        if (diff > 50) {
+          // Swipe left
+          if (slider.scrollLeft + slider.offsetWidth >= totalWidth) {
+            slider.scrollLeft = 0; // Jump to start
+          } else {
+            slider.scrollLeft += boxWidth; // Scroll one box right
+          }
+          startX = moveX;
+        } else if (diff < -50) {
+          // Swipe right
+          if (slider.scrollLeft <= 0) {
+            slider.scrollLeft = totalWidth - slider.offsetWidth; // Jump to end
+          } else {
+            slider.scrollLeft -= boxWidth; // Scroll one box left
+          }
+          startX = moveX;
         }
-        startX = moveX;
-      } else if (diff < -50) {
-        e.stopPropagation(); // Prevent swipe propagation
-        // Swipe right
-        if (slider.scrollLeft <= 0) {
-          slider.scrollLeft = totalWidth - slider.offsetWidth; // Jump to end
-        } else {
-          slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
-        }
-        startX = moveX;
       }
+    });
+
+    slider.addEventListener("touchend", () => {
+      startX = null; // Reset on touch end
     });
   });
 });

@@ -407,10 +407,8 @@ body::-webkit-scrollbar {
   flex-direction: column;
   text-align: center;
   border: 1px solid rgba(204, 201, 201, 0.733);
-  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0),
-    /* Softer top shadow */ 0 10px 10px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
+
   border-radius: 10px;
-  background-image: linear-gradient(black, purple);
 }
 
 .news-box a {
@@ -663,7 +661,7 @@ a {
   }
   /* news slider */
   .slider-wrapper {
-    overflow-x: hidden;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory; /* Ensures smooth snapping to slides */
     scroll-behavior: smooth;
   }
@@ -673,10 +671,10 @@ a {
     padding: 10px;
   }
   .back-btn {
-    left: 30px;
+    left: 15px;
   }
   .forth-btn {
-    right: 10px;
+    right: 5px;
   }
 
   .news-box {
@@ -684,6 +682,9 @@ a {
     scroll-snap-align: start; /* Align at the start of the box */
     margin: 10px;
     height: fit-content;
+    border: 0 solid black;
+    padding-bottom: 20px;
+    background-image: none;
   }
 
   /* Hide scrollbar for all browsers */
@@ -838,11 +839,14 @@ a {
     right: -20px;
   }
   /* news slider */
-  @media (min-width: 550px) {
-    .news-box {
-      flex: 0 0 300px; /* Original size for each news box */
-    }
+
+  .news-box {
+    flex: 0 0 300px; /* Original size for each news box */
+    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0),
+      /* Softer top shadow */ 0 10px 10px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
+    border: 1px solid rgba(255, 255, 255, 0.438);
   }
+
   /* ens of news slider */
   .news-content-main {
     width: 100%;
