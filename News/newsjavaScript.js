@@ -266,7 +266,8 @@ document.addEventListener("DOMContentLoaded", function () {
     backBtn.addEventListener("click", (e) => {
       e.stopPropagation(); // Prevent click propagation
       if (slider.scrollLeft <= 0) {
-        slider.scrollLeft = totalWidth - slider.offsetWidth; // Jump to end
+        // Ensure seamless scrolling on all devices
+        slider.scrollLeft = totalWidth - slider.offsetWidth - 1; // Jump to end
       } else {
         slider.scrollLeft -= boxWidth; // Scroll one box left
       }
@@ -275,7 +276,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Forward button functionality
     forthBtn.addEventListener("click", (e) => {
       e.stopPropagation(); // Prevent click propagation
-      if (slider.scrollLeft + slider.offsetWidth >= totalWidth) {
+      if (slider.scrollLeft + slider.offsetWidth >= totalWidth - 1) {
+        // Ensure seamless scrolling on all devices
         slider.scrollLeft = 0; // Jump to start
       } else {
         slider.scrollLeft += boxWidth; // Scroll one box right
@@ -298,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (diff > 50) {
           // Swipe left
-          if (slider.scrollLeft + slider.offsetWidth >= totalWidth) {
+          if (slider.scrollLeft + slider.offsetWidth >= totalWidth - 1) {
             slider.scrollLeft = 0; // Jump to start
           } else {
             slider.scrollLeft += boxWidth; // Scroll one box right
@@ -307,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (diff < -50) {
           // Swipe right
           if (slider.scrollLeft <= 0) {
-            slider.scrollLeft = totalWidth - slider.offsetWidth; // Jump to end
+            slider.scrollLeft = totalWidth - slider.offsetWidth - 1; // Jump to end
           } else {
             slider.scrollLeft -= boxWidth; // Scroll one box left
           }
