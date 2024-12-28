@@ -136,3 +136,38 @@ window.addEventListener("scroll", () => {
 });
 
 console.log("JavaScript is loaded!");
+
+// prevent back forward in browser
+
+// Disable browser back and forward actions by preventing default on touchmove
+window.addEventListener(
+  "touchmove",
+  function (e) {
+    // Only prevent horizontal swipe if the movement is primarily horizontal
+    if (e.touches.length === 1) {
+      const touchMoveX = e.touches[0].pageX;
+      const touchMoveY = e.touches[0].pageY;
+      const deltaX = touchMoveX - this.touchStartX;
+      const deltaY = touchMoveY - this.touchStartY;
+
+      // Allow vertical scrolling (deltaY) but prevent horizontal swipe (deltaX)
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        e.preventDefault(); // Prevent horizontal swipe navigation
+      }
+    }
+  },
+  { passive: false }
+);
+
+// Disable popstate event to prevent browser's back navigation
+window.addEventListener("popstate", function (e) {
+  history.pushState(null, null, location.href); // Keep the current state, prevent back navigation
+});
+
+// Track touch start position for swipe detection
+window.addEventListener("touchstart", function (e) {
+  if (e.touches.length === 1) {
+    this.touchStartX = e.touches[0].pageX;
+    this.touchStartY = e.touches[0].pageY;
+  }
+});
