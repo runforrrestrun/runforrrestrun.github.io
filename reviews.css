@@ -630,7 +630,7 @@ strong {
 
   border: 0px solid #ccc;
   margin-top: 20px;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
@@ -808,7 +808,7 @@ strong {
     justify-content: start;
   }
   #tab-buttons {
-    text-align: start;
+    text-align: center;
   }
   .tab-button-bonus {
     font-size: 13px;
@@ -817,12 +817,15 @@ strong {
   .short-info,
   .casino-bonus,
   .buttons-toWebsite {
-    margin: 0 10px 20px 0;
+    margin: 0 auto;
     padding: 0;
+    justify-content: center;
+    align-items: center;
   }
   .short-info ul {
     font-size: 15px;
     padding: 0;
+    text-align: center;
   }
   .casino-bonus {
     text-align: start;
@@ -831,6 +834,7 @@ strong {
   .casino-bonus p {
     font-size: 24px;
     text-align: start;
+    text-align: center;
   }
   .casino-bonus-title {
     color: white;
@@ -963,7 +967,7 @@ strong {
   }
   #tab-buttons,
   .tab-content-bonus {
-    text-align: start;
+    text-align: center;
     justify-content: start;
   }
   .short-info {
@@ -972,6 +976,7 @@ strong {
   .casino-bonus {
     width: 300px;
   }
+
   .buttons-toWebsite {
     width: 200px;
   }
@@ -1106,13 +1111,18 @@ strong {
   /* tabs bonus section */
   #tab-buttons,
   .tab-content-bonus {
+    flex-direction: row;
     text-align: center;
     justify-content: center;
   }
   .casino-bonus {
     width: 400px;
   }
-  .review-img {
+  .casino-bonus p,
+  .short-info ul li {
+    text-align: start;
+  }
+  .short-info ul .review-img {
     width: 100%;
   }
   .review-img img {
