@@ -367,3 +367,44 @@ window.addEventListener("scroll", function () {
     scrollButton.classList.remove("show");
   }
 });
+
+// breadcrumbs
+// Function to generate breadcrumb based on the current URL
+function generateBreadcrumb() {
+  var breadcrumb = document.getElementById("breadcrumb");
+  var pathArray = window.location.pathname.split("/").filter(function (e) {
+    return e;
+  });
+
+  // Add "Home" link as the first breadcrumb item
+  var breadcrumbHTML = '<ul><li><a href="/">Home</a></li>';
+
+  // Loop through the pathArray and create the breadcrumb links
+  var currentPath = "";
+  pathArray.forEach(function (segment, index) {
+    currentPath += "/" + segment;
+    if (index < pathArray.length - 1) {
+      breadcrumbHTML +=
+        '<li><a href="' +
+        currentPath +
+        '">' +
+        capitalizeFirstLetter(segment) +
+        "</a></li>";
+    } else {
+      breadcrumbHTML += "<li>" + capitalizeFirstLetter(segment) + "</li>";
+    }
+  });
+
+  breadcrumbHTML += "</ul>";
+  breadcrumb.innerHTML = breadcrumbHTML;
+}
+
+// Function to capitalize the first letter of a string
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// Run the function when the page loads
+window.onload = function () {
+  generateBreadcrumb();
+};

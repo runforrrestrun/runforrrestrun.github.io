@@ -13,17 +13,20 @@ body {
 
 /* scrollbar */
 /* For WebKit browsers (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
+::-webkit-scrollbar,
+.side-navigation.open::-webkit-scrollbar {
   width: 6px; /* Thin scrollbar */
   height: 6px; /* Thin horizontal scrollbar */
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb,
+.side-navigation.open::-webkit-scrollbar-thumb {
   background-color: purple; /* Semi-transparent black for the thumb */
   border-radius: 10px; /* Rounded corners for the thumb */
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track,
+.side-navigation.open::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.2); /* Transparent track with a hint of black */
   border-radius: 10px; /* Rounded corners for the track */
 }
@@ -89,7 +92,7 @@ body {
 /* When side navigation is open, slide it in */
 .side-navigation.open {
   left: 0; /* Move the side navigation into view */
-  overflow-y: scroll; /* Allow scrolling within side navigation */
+  overflow-y: auto; /* Allow scrolling within side navigation */
 }
 
 .side-navigation a {
@@ -918,8 +921,8 @@ a {
   }
   .side-navigation {
     left: 0;
-    overflow: scroll;
-    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow: auto;
     position: fixed;
   }
 
