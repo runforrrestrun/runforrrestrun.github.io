@@ -661,6 +661,7 @@ a {
     overflow-x: scroll;
     scroll-snap-type: x mandatory; /* Ensures smooth snapping to slides */
     scroll-behavior: smooth;
+    margin: 10px 0 0 40px;
   }
   .back-btn,
   .forth-btn {
@@ -699,10 +700,10 @@ a {
     padding: 20px 0 20px 20px;
   }
   .slider {
-    padding: 10px 0 0 40px;
+    padding: 10px 0;
   }
   .slider h2 {
-    font-size: 30px;
+    font-size: 25px;
     margin: 0;
   }
   /* end of nes slider */
@@ -816,11 +817,14 @@ a {
   }
   .slider {
     width: 89%;
-    padding: 20px 0px 20px 10px;
+    padding: 20px 0px;
     margin: 20px 0 0 60px;
   }
   .slider h2 {
     font-size: 40px;
+  }
+  .slider-wrapper {
+    margin: 10px 0;
   }
   .back-btn,
   .forth-btn {
@@ -1015,7 +1019,7 @@ a {
     margin: 0 auto 0 190px;
   }
   .slider {
-    width: 95%;
+    width: 90%;
     margin: 100px auto;
   }
   .news-box {
