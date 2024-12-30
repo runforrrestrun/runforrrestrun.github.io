@@ -71,50 +71,6 @@ body {
   position: fixed;
 }
 
-/* For Chrome, Edge, Safari */
-body::-webkit-scrollbar {
-  width: 6px; /* Set width of the scrollbar to thin */
-}
-
-/* Make the scrollbar track invisible */
-body::-webkit-scrollbar-track {
-  background: transparent; /* Transparent track, making it invisible */
-}
-
-/* Style for the scrollbar thumb (the part that moves) */
-body::-webkit-scrollbar-thumb {
-  height: 10px;
-  background-color: #000; /* Black color for the scrollbar thumb */
-  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
-}
-
-body::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Darker shade when hovering over the thumb */
-}
-
-/* smarthphone menu*/
-/* scroll bars */
-/* Custom thin black scrollbar styles for Webkit browsers */
-.side-navigation::-webkit-scrollbar {
-  width: 6px; /* Set width of the scrollbar to thin */
-}
-
-/* Make the scrollbar track invisible */
-.side-navigation::-webkit-scrollbar-track {
-  background: transparent; /* Transparent track, making it invisible */
-}
-
-/* Style for the scrollbar thumb (the part that moves) */
-.side-navigation::-webkit-scrollbar-thumb {
-  height: 10px;
-  background-color: #000; /* Black color for the scrollbar thumb */
-  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
-}
-
-.side-navigation::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Darker shade when hovering over the thumb */
-}
-
 /* ens of scroll bars  */
 /* Side Navigation Styles */
 /* Side Navigation */
@@ -163,7 +119,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .side-navigation .navigation-header .logo-image {
-  width: 40%;
+  width: 35%;
   height: auto;
 }
 
@@ -955,7 +911,6 @@ a {
   }
   /* end of scroll to top */
   .navBar {
-    left: 0;
     width: 0;
   }
   .toggle-button {
@@ -964,8 +919,10 @@ a {
   .side-navigation {
     left: 0;
     overflow: scroll;
+    overflow-x: hidden;
     position: fixed;
   }
+
   .close-button {
     display: none;
   }
@@ -987,6 +944,12 @@ a {
     width: fit-content;
     font-size: 22px;
     padding: 6px;
+  }
+  .navBar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    overflow-y: scroll; /* Add the ability to scroll */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 
   .name-content {
