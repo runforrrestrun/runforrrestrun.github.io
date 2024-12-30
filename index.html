@@ -34,7 +34,9 @@
       All4Wins: Top Casino, Sports & Esports Betting FS, FB Offers and Generous
       WB!
     </title>
+    <!-- Breadcrumb Schema Markup -->
   </head>
+
   <body>
     <div id="snow"></div>
     <div id="home-background"></div>
@@ -66,122 +68,118 @@
             >
           </li>
         </ul>
-
-        <!-- smartphone  Menu Button -->
-        <div class="toggle-button" onclick="toggleNavigation()">
-          <div class="toggle-bar"></div>
-          <div class="toggle-bar"></div>
-          <div class="toggle-bar"></div>
-        </div>
-
-        <!-- Side Menu -->
-        <div id="side-navigation" class="side-navigation">
-          <div class="navigation-header">
-            <img src="/img/All4Wins-logo.webp" alt="Logo" class="logo-image" />
-            <a href="/"><p>All4Wins</p></a>
-            <span class="close-button" onclick="toggleNavigation()"
-              >&times;</span
-            >
-          </div>
-
-          <div class="navigation-links">
-            <a href="/Casinos">
-              <div class="nav-link casino-link">
-                <img
-                  src="img/casino-logo.webp"
-                  alt="Casino Icon"
-                  class="nav-icon"
-                />
-                Casinos
-              </div>
-            </a>
-
-            <a href="/Esports">
-              <div class="nav-link esports-link">
-                <img
-                  src="img/controller-logo.webp"
-                  alt="Esports Icon"
-                  class="nav-icon"
-                />
-                ESports
-              </div>
-            </a>
-
-            <a href="/Sports">
-              <div class="nav-link sports-link">
-                <img
-                  src="img/football-logo.webp"
-                  alt="Sports Icon"
-                  class="nav-icon"
-                />
-                Sports
-              </div>
-            </a>
-
-            <!-- Dropdown Button for Reviews -->
-            <button
-              class="dropdown-toggle reviews-dropdown-toggle"
-              onclick="toggleDropdown('reviews-dropdown-content')"
-            >
-              <img
-                src="/img/review-icon.webp"
-                alt="Reviews Icon"
-                class="nav-icon"
-              />
-              Reviews
-            </button>
-            <div class="dropdown-menu" id="reviews-dropdown-content">
-              <a href="/Reviews-page/Roobet/">Roobet</a>
-              <a href="/Reviews-page/BC.Games/">BC.Games</a>
-              <a href="/Reviews-page/BetFury/">BetFury</a>
-              <a href="/Reviews-page/Vave/">Vave</a>
-              <a href="/Reviews-page/GG.Bet/">GG.Bet</a>
-              <a href="/Reviews-page/CloudBet/">ClowdBet</a>
-              <a href="/Reviews-page/Rabona/">Rabona</a>
-              <a href="/Reviews-page/Wazamba/">Wazamba</a>
-              <a href="/Reviews-page/Loot.bet/">Loot.Bet</a>
-              <a href="/Reviews-page/TrustDice/">TrustDice</a>
-            </div>
-
-            <!-- Dropdown Button for Bonus -->
-            <button
-              class="dropdown-toggle bonus-dropdown-toggle"
-              onclick="toggleDropdown('bonus-dropdown-content')"
-            >
-              <img
-                src="img/diamond-logo.webp"
-                alt="Bonus Icon"
-                class="nav-icon"
-              />
-              Bonus
-            </button>
-            <div class="dropdown-menu" id="bonus-dropdown-content">
-              <a href="/Bonuses/No-Deposit/">No Deposit</a>
-              <a href="/Bonuses/First-Deposit/">First Deposit</a>
-              <a href="/Bonuses/Cashback/">Cashback</a>
-              <a href="/Bonuses/No-Wagering/">No Wagering</a>
-            </div>
-
-            <a href="/News/">
-              <div class="nav-link news-link">
-                <img
-                  src="img/news-logo.webp"
-                  alt="News Icon"
-                  class="nav-icon"
-                />
-                News
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Overlay -->
-        <div
-          id="navigation-overlay"
-          class="overlay"
-          onclick="toggleNavigation()"
-        ></div>
       </div>
+      <!-- Breadcrumbs -->
+      <div id="breadcrumb"></div>
+
+      <!-- smartphone  Menu Button -->
+      <div class="toggle-button" onclick="toggleNavigation()">
+        <div class="toggle-bar"></div>
+        <div class="toggle-bar"></div>
+        <div class="toggle-bar"></div>
+      </div>
+
+      <!-- Side Menu -->
+      <div id="side-navigation" class="side-navigation">
+        <div class="navigation-header">
+          <img src="/img/All4Wins-logo.webp" alt="Logo" class="logo-image" />
+          <a href="/"><p>All4Wins</p></a>
+          <span class="close-button" onclick="toggleNavigation()">&times;</span>
+        </div>
+
+        <div class="navigation-links">
+          <a href="/Casinos">
+            <div class="nav-link casino-link">
+              <img
+                src="img/casino-logo.webp"
+                alt="Casino Icon"
+                class="nav-icon"
+              />
+              Casinos
+            </div>
+          </a>
+
+          <a href="/Esports">
+            <div class="nav-link esports-link">
+              <img
+                src="img/controller-logo.webp"
+                alt="Esports Icon"
+                class="nav-icon"
+              />
+              ESports
+            </div>
+          </a>
+
+          <a href="/Sports">
+            <div class="nav-link sports-link">
+              <img
+                src="img/football-logo.webp"
+                alt="Sports Icon"
+                class="nav-icon"
+              />
+              Sports
+            </div>
+          </a>
+
+          <!-- Dropdown Button for Reviews -->
+          <button
+            class="dropdown-toggle reviews-dropdown-toggle"
+            onclick="toggleDropdown('reviews-dropdown-content')"
+          >
+            <img
+              src="/img/review-icon.webp"
+              alt="Reviews Icon"
+              class="nav-icon"
+            />
+            Reviews
+          </button>
+          <div class="dropdown-menu" id="reviews-dropdown-content">
+            <a href="/Reviews-page/Roobet/">Roobet</a>
+            <a href="/Reviews-page/BC.Games/">BC.Games</a>
+            <a href="/Reviews-page/BetFury/">BetFury</a>
+            <a href="/Reviews-page/Vave/">Vave</a>
+            <a href="/Reviews-page/GG.Bet/">GG.Bet</a>
+            <a href="/Reviews-page/CloudBet/">ClowdBet</a>
+            <a href="/Reviews-page/Rabona/">Rabona</a>
+            <a href="/Reviews-page/Wazamba/">Wazamba</a>
+            <a href="/Reviews-page/Loot.bet/">Loot.Bet</a>
+            <a href="/Reviews-page/TrustDice/">TrustDice</a>
+          </div>
+
+          <!-- Dropdown Button for Bonus -->
+          <button
+            class="dropdown-toggle bonus-dropdown-toggle"
+            onclick="toggleDropdown('bonus-dropdown-content')"
+          >
+            <img
+              src="img/diamond-logo.webp"
+              alt="Bonus Icon"
+              class="nav-icon"
+            />
+            Bonus
+          </button>
+          <div class="dropdown-menu" id="bonus-dropdown-content">
+            <a href="/Bonuses/No-Deposit/">No Deposit</a>
+            <a href="/Bonuses/First-Deposit/">First Deposit</a>
+            <a href="/Bonuses/Cashback/">Cashback</a>
+            <a href="/Bonuses/No-Wagering/">No Wagering</a>
+          </div>
+
+          <a href="/News/">
+            <div class="nav-link news-link">
+              <img src="img/news-logo.webp" alt="News Icon" class="nav-icon" />
+              News
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Overlay -->
+      <div
+        id="navigation-overlay"
+        class="overlay"
+        onclick="toggleNavigation()"
+      ></div>
     </nav>
 
     <!-- Content -->
@@ -670,19 +668,14 @@
               </div>
 
               <div class="top top2">
-                <a
-                  href="https://go.thunder.partners/visit/?bta=36640&nci=5502&campaign=ALL4WINS"
-                >
+                <a href="https://betfury.bet/d27e2abbb">
                   <div class="top-left nr2"><p class="n1">2</p></div>
                   <div class="img-box-top">
-                    <img
-                      src="img/thunder-prick-logo.webp"
-                      alt="thunderpick logo"
-                    />
+                    <img src="/img/BetFury-logo.webp" alt="thunderpick logo" />
                   </div>
 
                   <div class="content-top">
-                    <p>100% up to 2,000€</p>
+                    <p>Welcome bonus up to 590% + 225 free spins</p>
                   </div>
 
                   <div class="top-bonus">
@@ -692,14 +685,16 @@
               </div>
 
               <div class="top top3">
-                <a href="https://betfury.bet/d27e2abbb">
+                <a
+                  href="https://lootclick.net/_HszlLf-Uqqkt5ET4DcCllGNd7ZgqdRLk/1/"
+                >
                   <div class="top-left nr3"><p class="n1">3</p></div>
                   <div class="img-box-top">
-                    <img src="/img/BetFury-logo.webp" alt="BetFury logo" />
+                    <img src="/img/loot.bet-logo.webp" alt="BetFury logo" />
                   </div>
 
                   <div class="content-top">
-                    <p>Welcome bonus up to 590% + 225 free spins</p>
+                    <p>First deposit bonus 100% up to 100€</p>
                   </div>
 
                   <div class="top-bonus">
@@ -846,136 +841,6 @@
 
           <div class="bottom"></div>
         </div>
-        <!-- Thunderpick -->
-        <div class="main">
-          <div class="second">
-            <div class="casino-info">
-              <a class="roobet-infoLinks-box" href="/Reviews-page/Thunderpick/">
-                <div class="links-to-roobet-info">
-                  <div class="content-box">
-                    <div class="Image-box">
-                      <img
-                        class="casino-image"
-                        src="/img/thunder-prick-logo.webp"
-                        loading="lazy"
-                        alt="Roobet logo"
-                      />
-                    </div>
-                    <div class="name-buttons">
-                      <div class="name-holder">
-                        <p class="casino-name">Thunderpick</p>
-                      </div>
-                      <div class="buttons-casino-info">
-                        <button class="best-rewards">
-                          Top Odds Guaranteed
-                        </button>
-                        <button class="high-withdrawal">
-                          Dedicated Esports Hub
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="casino-bonus">
-              <div class="bonus-info">
-                <p class="info">100% up to 2,000 €</p>
-              </div>
-
-              <div class="buttons-bonus">
-                <a href="/Reviews-page/Thunderpick/">
-                  <button class="inactive">Review</button>
-                </a>
-                <a
-                  href="https://go.thunder.partners/visit/?bta=36640&nci=5502&campaign=ALL4WINS"
-                >
-                  <button class="bonus-link">Claim bonus</button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="more-info">
-            <button type="button" data-modal="#thunderpick">more info</button>
-          </div>
-
-          <div class="modal" id="thunderpick">
-            <div
-              type="button"
-              data-modal="#thunderpick"
-              class="modal-close"
-            ></div>
-            <div class="modal-content">
-              <button
-                type="button"
-                data-modal="#thunderpick"
-                class="modal-close"
-                id="close-insede-content"
-              >
-                &times;
-              </button>
-
-              <div class="deposit-methods">
-                <h2>Deposit Methods:</h2>
-                <div class="logo-methods">
-                  <img
-                    class="card-tipe"
-                    src="/img/visa-logo.webp"
-                    alt="visa icon"
-                  />
-                  <img
-                    class="card-tipe"
-                    src="/img/mastercard-logo.webp"
-                    alt="master card icon"
-                  />
-                  <img
-                    class="card-tipe"
-                    src="/img/skrill-logo.webp"
-                    alt="skrill logo"
-                  />
-                  <img
-                    class="card-tipe tipe4"
-                    src="/img/AstroPay.webp"
-                    loading="lazy"
-                    alt="astropay icon"
-                  />
-                  <img
-                    class="card-tipe"
-                    src="/img/litecoin-logo.webp"
-                    loading="lazy"
-                    alt="litecoin logo"
-                  />
-                  <img
-                    class="card-tipe"
-                    src="/img/ethrtium-logo.webp"
-                    loading="lazy"
-                    alt="etherium logo"
-                  />
-                  <img
-                    class="card-tipe"
-                    src="/img/bit-coin-logo.webp"
-                    loading="lazy"
-                    alt="bitcoin logo"
-                  />
-                </div>
-              </div>
-
-              <div class="withdrawal">
-                <h2>Withdrawal Time : 5-20 minutes</h2>
-              </div>
-
-              <div class="bonus-terms">
-                <h2>Bonus Terms & Conditions</h2>
-                <ul>
-                  <li>Minimum Deposit: 1€</li>
-                  <li>Wagering: x30</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="bottom"></div>
-        </div>
 
         <!-- BetFury -->
         <div class="main">
@@ -1099,139 +964,6 @@
                 <ul>
                   <li>Minimum Deposit:0.05 mBTC</li>
                   <li>Wagering: x40</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="bottom"></div>
-        </div>
-        <!-- GG.bet -->
-        <div class="main">
-          <div class="second">
-            <div class="casino-info">
-              <a class="roobet-infoLinks-box" href="/Reviews-page/GG.Bet/">
-                <div class="links-to-roobet-info">
-                  <div class="content-box">
-                    <div class="Image-box">
-                      <img
-                        class="casino-image"
-                        loading="lazy"
-                        src="img/GG.bet-logo.webp"
-                        alt="katsubet logo"
-                      />
-                    </div>
-                    <div class="name-buttons">
-                      <div class="name-holder">
-                        <p class="casino-name">GG.Bet</p>
-                      </div>
-                      <div class="buttons-casino-info">
-                        <button class="best-rewards">
-                          Exclusive Esports Bonuses
-                        </button>
-                        <button class="high-withdrawal">
-                          High Betting Limits
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="casino-bonus">
-              <div class="bonus-info">
-                <p class="info">Welcome bonus up to 4,500€ +275 FS</p>
-              </div>
-
-              <div class="buttons-bonus">
-                <a href="/Reviews-page/GG.Bet/"
-                  ><button class="inactive">Review</button></a
-                >
-
-                <a href=" https://ggbetpro.com/l/66c441bc84bb190bc0013f57 ">
-                  <button class="bonus-link">Claim bonus</button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="more-info">
-            <button type="button" data-modal="#GGBet-moreInfo">
-              more info
-            </button>
-          </div>
-
-          <div id="GGBet-moreInfo" class="modal">
-            <div
-              type="button"
-              data-modal="#GGBet-moreInfo"
-              class="modal-close"
-            ></div>
-            <div class="modal-content">
-              <button
-                type="button"
-                data-modal="#GGBet-moreInfo"
-                class="modal-close"
-                id="close-insede-content"
-              >
-                &times;
-              </button>
-
-              <div class="deposit-methods">
-                <h2>Deposit Methods:</h2>
-                <div class="logo-methods">
-                  <img
-                    class="card-tipe"
-                    src="/img/visa-logo.webp"
-                    loading="lazy"
-                    alt="visa icon"
-                  />
-                  <img
-                    class="card-tipe"
-                    src="/img/visa-logo.webp"
-                    loading="lazy"
-                    alt="master card icon"
-                  />
-                  <img
-                    class="card-tipe"
-                    src="/img/skrill-logo.webp"
-                    loading="lazy"
-                    alt="skrill logo"
-                  />
-                  <img
-                    class="card-tipe tipe4"
-                    src="/img/AstroPay.webp"
-                    loading="lazy"
-                    alt="astropay icon"
-                  />
-                  <img
-                    class="card-tipe"
-                    src="/img/litecoin-logo.webp"
-                    loading="lazy"
-                    alt="litecoin logo"
-                  />
-                  <img
-                    class="card-tipe"
-                    src="/img/ethrtium-logo.webp"
-                    loading="lazy"
-                    alt="etherium logo"
-                  />
-                  <img
-                    class="card-tipe"
-                    src="/img/bit-coin-logo.webp"
-                    loading="lazy"
-                    alt="bitcoin logo"
-                  />
-                </div>
-              </div>
-
-              <div class="withdrawal">
-                <h2>Withdrawal Time : Instant</h2>
-              </div>
-
-              <div class="bonus-terms">
-                <h2>Bonus Terms & Conditions</h2>
-                <ul>
-                  <li>Minimum Deposit: $1</li>
-                  <li>Wagering:40x</li>
                 </ul>
               </div>
             </div>
@@ -1372,30 +1104,31 @@
           </div>
           <div class="bottom"></div>
         </div>
-        <!-- TrustDice -->
+
+        <!-- Wild.io -->
         <div class="main">
           <div class="second">
             <div class="casino-info">
-              <a class="roobet-infoLinks-box" href="/Reviews-page/TrustDice/">
+              <a class="roobet-infoLinks-box" href="/Reviews-page/Wild.io/">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
                       <img
                         class="casino-image"
                         loading="lazy"
-                        src="/img/TrustDice-Logo.webp"
-                        alt="vave logo"
+                        src="/img/wild-logo.webp"
+                        alt="Wild.io logo"
                       />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
-                        <p class="casino-name">TrustDice</p>
+                        <p class="casino-name">Wild.io</p>
                       </div>
                       <div class="buttons-casino-info">
-                        <button class="best-rewards">
-                          Best Bitcoin Platform
+                        <button class="best-rewards">Weekly Promotions</button>
+                        <button class="high-withdrawal">
+                          Exclusive VIP Program
                         </button>
-                        <button class="high-withdrawal">Generous WB</button>
                       </div>
                     </div>
                   </div>
@@ -1404,37 +1137,34 @@
             </div>
             <div class="casino-bonus">
               <div class="bonus-info">
-                <p class="info">Welcome bonus up to 3 BTC / 90,000$ + 100 FS</p>
+                <p class="info">Welcome bonuses 350% + 200 free spins</p>
               </div>
 
               <div class="buttons-bonus">
-                <a href="/Reviews-page/TrustDice/"
+                <a href="/Reviews-page/Wild.io/"
                   ><button class="inactive">Review</button></a
                 >
 
-                <a
-                  href="https://trustdice.win/?ref=u_all4wins"
-                  aria-label="Read more about TrustDice"
-                >
+                <a href="https://wildpartners.app/a55d1e542">
                   <button class="bonus-link">Claim bonus</button>
                 </a>
               </div>
             </div>
           </div>
           <div class="more-info">
-            <button type="button" data-modal="#TrustDice">more info</button>
+            <button type="button" data-modal="#Wild-moreInfo">more info</button>
           </div>
 
-          <div id="TrustDice" class="modal">
+          <div id="Wild-moreInfo" class="modal">
             <div
               type="button"
-              data-modal="#TrustDice"
+              data-modal="#Wild-moreInfo"
               class="modal-close"
             ></div>
             <div class="modal-content">
               <button
                 type="button"
-                data-modal="#TrustDice"
+                data-modal="#Wild-moreInfo"
                 class="modal-close"
                 id="close-insede-content"
               >
@@ -1490,14 +1220,278 @@
               </div>
 
               <div class="withdrawal">
-                <h2>Withdrawal Time :instantly</h2>
+                <h2>Withdrawal Time : 5 minutes</h2>
               </div>
 
               <div class="bonus-terms">
                 <h2>Bonus Terms & Conditions</h2>
                 <ul>
-                  <li>Minimum Deposit: 0.001 BTC/ 0.05 ETH/ 10 USDT</li>
-                  <li>Wagering: x40</li>
+                  <li>Minimum Deposit: 0.00006 BTC</li>
+                  <li>Wagering:40x</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="bottom"></div>
+        </div>
+
+        <!-- Thunderpick -->
+        <div class="main">
+          <div class="second">
+            <div class="casino-info">
+              <a class="roobet-infoLinks-box" href="/Reviews-page/Thunderpick/">
+                <div class="links-to-roobet-info">
+                  <div class="content-box">
+                    <div class="Image-box">
+                      <img
+                        class="casino-image"
+                        src="/img/thunder-prick-logo.webp"
+                        loading="lazy"
+                        alt="Roobet logo"
+                      />
+                    </div>
+                    <div class="name-buttons">
+                      <div class="name-holder">
+                        <p class="casino-name">Thunderpick</p>
+                      </div>
+                      <div class="buttons-casino-info">
+                        <button class="best-rewards">
+                          Top Odds Guaranteed
+                        </button>
+                        <button class="high-withdrawal">
+                          Dedicated Esports Hub
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="casino-bonus">
+              <div class="bonus-info">
+                <p class="info">100% up to 2,000 €</p>
+              </div>
+
+              <div class="buttons-bonus">
+                <a href="/Reviews-page/Thunderpick/">
+                  <button class="inactive">Review</button>
+                </a>
+                <a
+                  href="https://go.thunder.partners/visit/?bta=36640&nci=5502&campaign=ALL4WINS"
+                >
+                  <button class="bonus-link">Claim bonus</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="more-info">
+            <button type="button" data-modal="#thunderpick">more info</button>
+          </div>
+
+          <div class="modal" id="thunderpick">
+            <div
+              type="button"
+              data-modal="#thunderpick"
+              class="modal-close"
+            ></div>
+            <div class="modal-content">
+              <button
+                type="button"
+                data-modal="#thunderpick"
+                class="modal-close"
+                id="close-insede-content"
+              >
+                &times;
+              </button>
+
+              <div class="deposit-methods">
+                <h2>Deposit Methods:</h2>
+                <div class="logo-methods">
+                  <img
+                    class="card-tipe"
+                    src="/img/visa-logo.webp"
+                    alt="visa icon"
+                  />
+                  <img
+                    class="card-tipe"
+                    src="/img/mastercard-logo.webp"
+                    alt="master card icon"
+                  />
+                  <img
+                    class="card-tipe"
+                    src="/img/skrill-logo.webp"
+                    alt="skrill logo"
+                  />
+                  <img
+                    class="card-tipe tipe4"
+                    src="/img/AstroPay.webp"
+                    loading="lazy"
+                    alt="astropay icon"
+                  />
+                  <img
+                    class="card-tipe"
+                    src="/img/litecoin-logo.webp"
+                    loading="lazy"
+                    alt="litecoin logo"
+                  />
+                  <img
+                    class="card-tipe"
+                    src="/img/ethrtium-logo.webp"
+                    loading="lazy"
+                    alt="etherium logo"
+                  />
+                  <img
+                    class="card-tipe"
+                    src="/img/bit-coin-logo.webp"
+                    loading="lazy"
+                    alt="bitcoin logo"
+                  />
+                </div>
+              </div>
+
+              <div class="withdrawal">
+                <h2>Withdrawal Time : 5-20 minutes</h2>
+              </div>
+
+              <div class="bonus-terms">
+                <h2>Bonus Terms & Conditions</h2>
+                <ul>
+                  <li>Minimum Deposit: 1€</li>
+                  <li>Wagering: x30</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bottom"></div>
+        </div>
+        <!-- GG.bet -->
+        <div class="main">
+          <div class="second">
+            <div class="casino-info">
+              <a class="roobet-infoLinks-box" href="/Reviews-page/GG.Bet/">
+                <div class="links-to-roobet-info">
+                  <div class="content-box">
+                    <div class="Image-box">
+                      <img
+                        class="casino-image"
+                        loading="lazy"
+                        src="img/GG.bet-logo.webp"
+                        alt="katsubet logo"
+                      />
+                    </div>
+                    <div class="name-buttons">
+                      <div class="name-holder">
+                        <p class="casino-name">GG.Bet</p>
+                      </div>
+                      <div class="buttons-casino-info">
+                        <button class="best-rewards">
+                          Exclusive Esports Bonuses
+                        </button>
+                        <button class="high-withdrawal">
+                          High Betting Limits
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="casino-bonus">
+              <div class="bonus-info">
+                <p class="info">Welcome bonus up to 4,500€ +275 FS</p>
+              </div>
+
+              <div class="buttons-bonus">
+                <a href="/Reviews-page/GG.Bet/"
+                  ><button class="inactive">Review</button></a
+                >
+
+                <a href=" https://ggbetpro.com/l/66c441bc84bb190bc0013f57 ">
+                  <button class="bonus-link">Claim bonus</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="more-info">
+            <button type="button" data-modal="#GGBet-moreInfo">
+              more info
+            </button>
+          </div>
+
+          <div id="GGBet-moreInfo" class="modal">
+            <div
+              type="button"
+              data-modal="#GGBet-moreInfo"
+              class="modal-close"
+            ></div>
+            <div class="modal-content">
+              <button
+                type="button"
+                data-modal="#GGBet-moreInfo"
+                class="modal-close"
+                id="close-insede-content"
+              >
+                &times;
+              </button>
+
+              <div class="deposit-methods">
+                <h2>Deposit Methods:</h2>
+                <div class="logo-methods">
+                  <img
+                    class="card-tipe"
+                    src="/img/visa-logo.webp"
+                    loading="lazy"
+                    alt="visa icon"
+                  />
+                  <img
+                    class="card-tipe"
+                    src="/img/visa-logo.webp"
+                    loading="lazy"
+                    alt="master card icon"
+                  />
+                  <img
+                    class="card-tipe"
+                    src="/img/skrill-logo.webp"
+                    loading="lazy"
+                    alt="skrill logo"
+                  />
+                  <img
+                    class="card-tipe tipe4"
+                    src="/img/AstroPay.webp"
+                    loading="lazy"
+                    alt="astropay icon"
+                  />
+                  <img
+                    class="card-tipe"
+                    src="/img/litecoin-logo.webp"
+                    loading="lazy"
+                    alt="litecoin logo"
+                  />
+                  <img
+                    class="card-tipe"
+                    src="/img/ethrtium-logo.webp"
+                    loading="lazy"
+                    alt="etherium logo"
+                  />
+                  <img
+                    class="card-tipe"
+                    src="/img/bit-coin-logo.webp"
+                    loading="lazy"
+                    alt="bitcoin logo"
+                  />
+                </div>
+              </div>
+
+              <div class="withdrawal">
+                <h2>Withdrawal Time : Instant</h2>
+              </div>
+
+              <div class="bonus-terms">
+                <h2>Bonus Terms & Conditions</h2>
+                <ul>
+                  <li>Minimum Deposit: $1</li>
+                  <li>Wagering:40x</li>
                 </ul>
               </div>
             </div>
@@ -2552,30 +2546,31 @@
           </div>
           <div class="bottom"></div>
         </div>
-        <!-- Wild.io -->
+
+        <!-- TrustDice -->
         <div class="main">
           <div class="second">
             <div class="casino-info">
-              <a class="roobet-infoLinks-box" href="/Reviews-page/Wild.io/">
+              <a class="roobet-infoLinks-box" href="/Reviews-page/TrustDice/">
                 <div class="links-to-roobet-info">
                   <div class="content-box">
                     <div class="Image-box">
                       <img
                         class="casino-image"
                         loading="lazy"
-                        src="/img/wild-logo.webp"
-                        alt="Wild.io logo"
+                        src="/img/TrustDice-Logo.webp"
+                        alt="vave logo"
                       />
                     </div>
                     <div class="name-buttons">
                       <div class="name-holder">
-                        <p class="casino-name">Wild.io</p>
+                        <p class="casino-name">TrustDice</p>
                       </div>
                       <div class="buttons-casino-info">
-                        <button class="best-rewards">Weekly Promotions</button>
-                        <button class="high-withdrawal">
-                          Exclusive VIP Program
+                        <button class="best-rewards">
+                          Best Bitcoin Platform
                         </button>
+                        <button class="high-withdrawal">Generous WB</button>
                       </div>
                     </div>
                   </div>
@@ -2584,34 +2579,37 @@
             </div>
             <div class="casino-bonus">
               <div class="bonus-info">
-                <p class="info">Welcome bonuses 350% + 200 free spins</p>
+                <p class="info">Welcome bonus up to 3 BTC / 90,000$ + 100 FS</p>
               </div>
 
               <div class="buttons-bonus">
-                <a href="/Reviews-page/Wild.io/"
+                <a href="/Reviews-page/TrustDice/"
                   ><button class="inactive">Review</button></a
                 >
 
-                <a href="https://wildpartners.app/a55d1e542">
+                <a
+                  href="https://trustdice.win/?ref=u_all4wins"
+                  aria-label="Read more about TrustDice"
+                >
                   <button class="bonus-link">Claim bonus</button>
                 </a>
               </div>
             </div>
           </div>
           <div class="more-info">
-            <button type="button" data-modal="#Wild-moreInfo">more info</button>
+            <button type="button" data-modal="#TrustDice">more info</button>
           </div>
 
-          <div id="Wild-moreInfo" class="modal">
+          <div id="TrustDice" class="modal">
             <div
               type="button"
-              data-modal="#Wild-moreInfo"
+              data-modal="#TrustDice"
               class="modal-close"
             ></div>
             <div class="modal-content">
               <button
                 type="button"
-                data-modal="#Wild-moreInfo"
+                data-modal="#TrustDice"
                 class="modal-close"
                 id="close-insede-content"
               >
@@ -2667,14 +2665,14 @@
               </div>
 
               <div class="withdrawal">
-                <h2>Withdrawal Time : 5 minutes</h2>
+                <h2>Withdrawal Time :instantly</h2>
               </div>
 
               <div class="bonus-terms">
                 <h2>Bonus Terms & Conditions</h2>
                 <ul>
-                  <li>Minimum Deposit: 0.00006 BTC</li>
-                  <li>Wagering:40x</li>
+                  <li>Minimum Deposit: 0.001 BTC/ 0.05 ETH/ 10 USDT</li>
+                  <li>Wagering: x40</li>
                 </ul>
               </div>
             </div>

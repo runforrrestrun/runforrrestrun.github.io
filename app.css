@@ -706,7 +706,7 @@ body {
 }
 /* container casinos bosex */
 .container-casinos {
-  overflow: auto;
+  overflow: hidden;
   border: 0 solid black;
   margin: 0 auto 50px auto;
   row-gap: 20px;
@@ -715,7 +715,7 @@ body {
   font-family: inherit;
   flex-direction: column;
   width: 92.1%;
-
+  z-index: 10;
   min-width: 300px;
 }
 .lol-main,
@@ -790,6 +790,7 @@ body {
   padding: 1.5rem 1.5rem 0 1.5rem;
   display: block;
   border-radius: 16px;
+  z-index: 10;
 }
 
 .second {
@@ -1352,7 +1353,7 @@ body {
     right: 0;
     bottom: 0;
     pointer-events: none;
-    z-index: 1; /* Ensure snowflakes are in the background */
+    z-index: 0; /* Ensure snowflakes are in the background */
     overflow: hidden;
   }
 
