@@ -387,11 +387,12 @@ body {
 }
 
 .casino-infoLogo {
+  width: 100%;
   display: flex;
   box-sizing: border-box;
   width: fit-content;
   height: auto;
-  margin: 10px 0 10px 0;
+  margin: 10px auto;
 }
 .logo-box {
   width: 100px;
@@ -399,29 +400,26 @@ body {
   border: 1px solid black;
   border-radius: 10px;
   background-color: black;
-  margin-left: 50px;
 }
 .logo-box img {
   width: 100px;
   height: 100px;
 }
 .play-now {
-  width: fit-content;
+  width: 110px;
   box-sizing: border-box;
   height: auto;
-  margin: 10px 0 30px 0;
+  margin: 10px auto;
 }
+
 .play-now button {
-  cursor: pointer;
-}
-.play-now button {
-  width: 200px;
+  width: 110px;
   height: 50px;
   border-radius: 10px;
-  font-size: 30px;
+  font-size: 18px;
   font-family: inherit;
-  font-weight: 600;
-  margin-left: 50px;
+  font-weight: 800;
+  cursor: pointer;
   background-color: gold;
 }
 
@@ -447,9 +445,9 @@ body {
 
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 14px auto;
   height: fit-content;
-  width: 120px;
+  width: fit-content;
   transition: 0.3s;
   color: white;
   /* background-color: purple; */
@@ -777,11 +775,8 @@ strong {
   }
   .play-now {
     display: flex;
-    margin: 20px;
   }
-  .play-now a button {
-    margin-left: 0;
-  }
+
   .tabcontent-info {
     box-sizing: border-box;
     width: 95%;
@@ -913,27 +908,27 @@ strong {
     padding: 110px 0 0 0;
     margin: 0;
   }
-  .casino-infoLogo,
-  .play-now {
-    justify-content: start;
-  }
+
   .logo-box,
   .logo-box img {
     width: 150px;
     height: 150px;
   }
-
   .play-now,
-  .logo-box {
-    margin-left: 50px;
+  .play-now button {
+    width: 150px;
+    font-size: 25px;
   }
-
+  .tab-info {
+    border-radius: 10px;
+  }
   .tab-info button {
-    margin-left: 30px;
+    margin: 20px 30px;
     height: fit-content;
     width: fit-content;
     font-size: 18px;
     font-weight: 600;
+    padding: 10px 20px;
   }
   .tabcontent-info {
     font-size: 20px;
@@ -1112,9 +1107,11 @@ strong {
 
   /* Casino info page */
   .casino-allInfo {
-    margin: 0 0 0 200px;
+    width: 100%;
+    margin: 0 auto 0 auto;
     padding: 40px 0 0 0;
-    max-width: 1400px;
+    max-width: 1200px;
+    justify-items: center;
   }
   .overview-button {
     height: fit-content;

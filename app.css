@@ -1001,7 +1001,7 @@ body {
   text-align: center;
   text-size-adjust: 100%;
   font-weight: 600;
-  width: 230px;
+  width: fit-content;
   min-width: 100px;
   height: 40px;
   border-radius: 9999px;
@@ -1464,7 +1464,7 @@ body {
   }
 
   .container-content {
-    margin: 10px 0px;
+    margin: 50px 0px;
     width: 100%;
   }
   .logo-container {
