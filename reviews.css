@@ -382,7 +382,8 @@ body {
 }
 .casino-banner img {
   width: 100%;
-  height: fit-content;
+  object-fit: cover; /* Optional: adjusts how the image fits */
+  height: auto;
 }
 
 .casino-infoLogo {
