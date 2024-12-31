@@ -748,7 +748,8 @@ a {
   .container-news {
     margin: 0;
     height: 100%;
-    padding: 111px 0px 0px 0px;
+
+    padding: 130px 0px 0px 0px;
     width: 98%;
     justify-content: center;
   }
@@ -1015,7 +1016,7 @@ a {
     width: 89%;
     display: flex;
     flex-direction: row;
-    padding: 0;
+    padding: 40px 0 0 0;
     flex-wrap: wrap;
     height: 100vh;
   }
