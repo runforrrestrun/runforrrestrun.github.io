@@ -300,6 +300,40 @@ body {
 }
 /* end test */
 
+/* breadcrumbs */
+/* Breadcrumbs Styles */
+.breadcrumbs {
+  margin: 70px 0 0 0px;
+  padding: 10px;
+  width: 100%;
+  background-color: purple;
+  box-sizing: border-box;
+  display: block;
+  position: fixed;
+  gap: 3px;
+  align-items: start;
+  font-size: 15px;
+
+  z-index: 15;
+  font-weight: 700;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #007bff;
+  margin: 0 3px;
+}
+
+.breadcrumbs span {
+  color: white;
+  margin-left: 3px;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+/* end of bredcrumbs */
+
 /* nav Bar */
 
 .navBar {
@@ -713,7 +747,7 @@ a {
   .container-news {
     margin: 0;
     height: 100%;
-    padding: 70px 0px 0px 0px;
+    padding: 111px 0px 0px 0px;
     width: 98%;
     justify-content: center;
   }
@@ -813,7 +847,7 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0;
-    padding: 90px 10px 10px 10px;
+    padding: 111px 10px 10px 10px;
   }
   .slider {
     width: 89%;
@@ -914,6 +948,12 @@ a {
     height: 50px;
   }
   /* end of scroll to top */
+
+  /* breadcrumbs */
+  .breadcrumbs {
+    margin: 0 0 0 220px;
+    background-color: #000;
+  }
   .navBar {
     width: 0;
   }

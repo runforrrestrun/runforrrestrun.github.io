@@ -118,6 +118,39 @@ body {
 }
 
 /* nav Bar */
+/* breadcrumbs */
+/* Breadcrumbs Styles */
+.breadcrumbs {
+  margin: 70px 0 0 0px;
+  padding: 10px;
+  width: 100%;
+  background-color: purple;
+  box-sizing: border-box;
+  display: block;
+  position: fixed;
+  gap: 3px;
+  align-items: start;
+  font-size: 15px;
+
+  z-index: 15;
+  font-weight: 700;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #007bff;
+  margin: 0 3px;
+}
+
+.breadcrumbs span {
+  color: white;
+  margin-left: 3px;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+/* end of bredcrumbs */
 
 .navBar {
   font-family: inherit;
@@ -1417,7 +1450,7 @@ body {
   /* content main paiges */
   .container {
     margin: 0;
-    padding-top: 40px;
+    padding-top: 50px;
   }
   .name-content img {
     border-radius: 100%;
@@ -2353,6 +2386,12 @@ body {
   #news-background {
     background-size: cover;
   }
+  /* breadcrumbs */
+  .breadcrumbs {
+    margin: 0 0 0 200px;
+    background-color: #000;
+  }
+
   .navBar {
     width: 0;
   }
