@@ -748,7 +748,7 @@ body {
   font-family: inherit;
   flex-direction: column;
   width: 92.1%;
-  z-index: 10;
+  z-index: 100;
   min-width: 300px;
 }
 .lol-main,
@@ -795,7 +795,7 @@ body {
   width: 400px;
   position: relative;
   height: auto;
-  top: 260px; /* Adjust as needed */
+  top: 200px; /* Adjust as needed */
   left: 50%;
 
   transform: translate(-50%, -50%); /* Adjust to center the element */
@@ -809,7 +809,7 @@ body {
 }
 
 .main {
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid rgba(129, 129, 129, 0.582);
   box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
     /* Softer top shadow */ 0 40px 40px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
@@ -823,7 +823,6 @@ body {
   padding: 1.5rem 1.5rem 0 1.5rem;
   display: block;
   border-radius: 16px;
-  z-index: 10;
 }
 
 .second {
@@ -839,13 +838,13 @@ body {
 .casino-info {
   box-sizing: border-box;
   border: 0px solid (7, 9, 15);
-  width: 60%;
+  width: 50%;
   height: fit-content;
   min-width: 200px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  flex: 1 1 70%;
+  flex: 1 1 50%;
   align-content: center;
   font-family: inherit;
   margin-top: 30px;
@@ -975,11 +974,11 @@ body {
   font-weight: 600;
   font-family: inherit;
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
-  width: 230px;
+  width: 250px;
   height: 40px;
   min-width: 100px;
   border-radius: 9999px;
-  padding: 10px;
+  padding: 10px 15px;
 }
 
 .high-withdrawal:hover {
@@ -1001,12 +1000,12 @@ body {
   text-align: center;
   text-size-adjust: 100%;
   font-weight: 600;
-  width: fit-content;
+  width: 250px;
   min-width: 100px;
   height: 40px;
   border-radius: 9999px;
 
-  padding: 10px;
+  padding: 10px 15px;
 }
 .game-icons {
   margin: 10px 0 0 0;
@@ -1192,7 +1191,7 @@ body {
 
 .modal {
   position: fixed;
-  z-index: 999999;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1414,7 +1413,7 @@ body {
       opacity: 0;
     }
     100% {
-      opacity: 1;
+      opacity: 0.7;
     }
   }
   .content ul {
@@ -1934,7 +1933,7 @@ body {
     background-size: contain;
   }
   .name-buttons {
-    width: 80%;
+    width: 100%;
   }
   .modal-content {
     width: 70%;
@@ -2301,11 +2300,14 @@ body {
   }
   .casino-main img {
     width: 450px;
-    top: 265px;
+    top: 225px;
   }
   .main {
     width: 99%;
     padding: 10px 10px;
+  }
+  .name-buttons {
+    width: 60%;
   }
 
   .best-rewards,
@@ -2389,7 +2391,8 @@ body {
   /* breadcrumbs */
   .breadcrumbs {
     margin: 0 0 0 200px;
-    background-color: #000;
+    background-image: linear-gradient(90deg, black 30%, rgba(128, 0, 128, 0));
+    background-color: rgba(0, 0, 0, 0);
   }
 
   .navBar {
@@ -2484,6 +2487,9 @@ body {
   .name-content img {
     height: 400px;
     width: 400px;
+  }
+  .name-buttons {
+    width: 80%;
   }
   .bonus-info {
     margin-top: 10px;
@@ -2615,7 +2621,7 @@ body {
   .top,
   .topa {
     width: 180px;
-    height: 450px;
+    height: 440px;
   }
   .top1,
   .top2,
@@ -2632,15 +2638,15 @@ body {
   .img-box-top {
     position: absolute;
     border-radius: 9999px;
-    top: 106px;
-    left: 40px;
+    top: 101px;
+    left: 39px;
     height: 105px;
     width: 105px;
   }
   .content-top {
     position: absolute;
-    top: 260px;
-    font-size: 20px;
+    top: 250px;
+    font-size: 19px;
     font-weight: 500;
     width: 95%;
     margin: 0 5px;
@@ -2649,10 +2655,11 @@ body {
   }
   .top-bonus {
     top: 335px;
+    left: 35px;
     font-size: 30px;
   }
   .top-bonus span {
-    font-size: 30px;
+    font-size: 25px;
   }
   /* top3 esports img */
   .top3img {
