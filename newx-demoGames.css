@@ -460,6 +460,7 @@ body {
   max-height: 370px;
   object-fit: cover; /* Optional: adjusts how the image fits */
   height: auto;
+  width: 100%;
   border-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -467,7 +468,7 @@ body {
 
 .news-content {
   box-sizing: border-box;
-  margin: auto 10px;
+  margin: 10px 5px;
   text-decoration: none;
   word-spacing: 2px;
 }
@@ -716,7 +717,7 @@ a {
     flex: 0 0 100%; /* Each news box takes up the full width */
     scroll-snap-align: start; /* Align at the start of the box */
     margin: 10px;
-
+    height: fit-content;
     border: 0 solid black;
     padding-bottom: 20px;
     background-image: none;
@@ -776,7 +777,7 @@ a {
   }
   .news-content h2 {
     font-size: 20px;
-    margin: 20px;
+    margin: 5px;
   }
   .news-content p {
     font-size: 15px;
