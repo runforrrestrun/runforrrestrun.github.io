@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Home Link
   const homeCrumb = document.createElement("a");
   homeCrumb.href = "/";
-  homeCrumb.textContent = "HOME"; // Uppercase 'Home'
+  homeCrumb.textContent = "Home";
   breadcrumbsContainer.appendChild(homeCrumb);
 
   let cumulativePath = "";
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Debug: Log each segment to check what's being processed
     console.log("Processing segment:", segment);
 
-    // Skip "reviews-page", "news-articles", and "bonuses" folders
+    // Skip "reviews-page" and "bonuses" folders
     if (
       segment.toLowerCase() === "reviews-page" ||
       segment.toLowerCase() === "bonuses"
@@ -199,21 +199,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return; // Skip this segment and don't add it to breadcrumbs
     }
 
-    // Change "news-articles" to "news"
+    // Replace "news-articles" with "News" (uppercase N)
     if (segment.toLowerCase() === "news-articles") {
-      segment = "news"; // Replace segment with "news"
+      segment = "News"; // Change the segment to "News" with an uppercase N
+      cumulativePath = "/News"; // Set cumulativePath to "/News"
+    } else {
+      cumulativePath += `/${segment}`;
     }
 
-    // Sanitize: Replace symbols and non-alphanumeric characters with spaces, except for apostrophe and letter 's'
-    segment = segment.replace(/[^a-zA-Z0-9\s']/g, " "); // Keep apostrophes
-    segment = segment.replace(/\s+/g, " "); // Replace multiple spaces with a single space
-
-    // Ensure that possessive forms like 's are handled properly (e.g., roobet's becomes "Roobet's")
-    if (segment.includes("'s")) {
-      segment = segment.replace("'s", "’s"); // Replace with correct apostrophe
-    }
-
-    cumulativePath += `/${segment}`;
+    // Sanitize: Remove symbols and non-alphanumeric characters, keep spaces
+    segment = segment.replace(/[^a-zA-Z0-9\s]/g, "").trim();
 
     // Separator
     const separator = document.createElement("span");
@@ -224,16 +219,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const crumb = document.createElement(
       index === path.length - 1 ? "span" : "a"
     );
-    crumb.textContent = segment.toUpperCase(); // Convert the segment to uppercase
-    if (index !== path.length - 1) crumb.href = cumulativePath;
+    crumb.textContent = segment.charAt(0).toUpperCase() + segment.slice(1); // Capitalize the first letter
+    if (index !== path.length - 1)
+      crumb.href = window.location.origin + cumulativePath; // Correct the link URL
     breadcrumbsContainer.appendChild(crumb);
 
     // Add breadcrumb data for JSON-LD structured data
     breadcrumbData.itemListElement.push({
       "@type": "ListItem",
       position: index + 1,
-      name: segment.toUpperCase(), // Convert the segment to uppercase
-      item: window.location.origin + cumulativePath,
+      name: segment.charAt(0).toUpperCase() + segment.slice(1), // Capitalize the first letter
+      item: window.location.origin + cumulativePath, // Include full URL in item data
     });
   });
 

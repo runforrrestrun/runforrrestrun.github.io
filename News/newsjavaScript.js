@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Debug: Log each segment to check what's being processed
     console.log("Processing segment:", segment);
 
-    // Skip "reviews-page", "news-articles", and "bonuses" folders
+    // Skip "reviews-page" and "bonuses" folders
     if (
       segment.toLowerCase() === "reviews-page" ||
       segment.toLowerCase() === "bonuses"
@@ -326,15 +326,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return; // Skip this segment and don't add it to breadcrumbs
     }
 
-    // Change "news-articles" to "news"
+    // Change "news-articles" to "News" and link to /News/
     if (segment.toLowerCase() === "news-articles") {
-      segment = "news"; // Replace segment with "news"
+      segment = "News"; // Replace segment with "News"
+      cumulativePath = "/News"; // Set cumulativePath directly to "/News"
+    } else {
+      cumulativePath += `/${segment}`;
     }
 
     // Sanitize: Remove symbols and non-alphanumeric characters, keep spaces
     segment = segment.replace(/[^a-zA-Z0-9\s]/g, "").trim();
-
-    cumulativePath += `/${segment}`;
 
     // Separator
     const separator = document.createElement("span");
@@ -345,16 +346,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const crumb = document.createElement(
       index === path.length - 1 ? "span" : "a"
     );
-    crumb.textContent = segment.charAt(0).toUpperCase() + segment.slice(1);
-    if (index !== path.length - 1) crumb.href = cumulativePath;
+    crumb.textContent = segment.charAt(0).toUpperCase() + segment.slice(1); // Capitalize the first letter
+    if (index !== path.length - 1)
+      crumb.href = window.location.origin + cumulativePath; // Correct the link URL
     breadcrumbsContainer.appendChild(crumb);
 
     // Add breadcrumb data for JSON-LD structured data
     breadcrumbData.itemListElement.push({
       "@type": "ListItem",
       position: index + 1,
-      name: segment.charAt(0).toUpperCase() + segment.slice(1),
-      item: window.location.origin + cumulativePath,
+      name: segment.charAt(0).toUpperCase() + segment.slice(1), // Capitalize the first letter
+      item: window.location.origin + cumulativePath, // Include full URL in item data
     });
   });
 
