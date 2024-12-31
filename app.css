@@ -2472,7 +2472,7 @@ body {
     top: 224px;
   }
   .casino-main img {
-    width: 600px;
+    width: 500px;
     top: 330px;
   }
   .name-content {
@@ -2570,7 +2570,7 @@ body {
   }
   .news-item a {
     height: fit-content;
-    flex-direction: column;
+    flex-direction: row;
     text-align: start;
     margin: 0 auto;
   }
@@ -2589,15 +2589,18 @@ body {
     margin-top: 20px;
   }
   .news-content {
+    height: fit-content;
     width: 100%;
-    margin-bottom: 0;
-    margin-top: 10px;
+
+    margin: auto 20px;
     text-align: center;
+
+    justify-items: start;
   }
   .news-content h2 {
     font-size: 28px;
-    text-align: center;
-    max-width: 600px;
+    text-align: start;
+    max-width: 700px;
     margin: 0 auto;
   }
   .news-wrapper {
@@ -2680,9 +2683,9 @@ body {
 
   /* top3 sports img */
   .roulette-top3-casino {
-    width: 500px;
+    width: 450px;
     left: 33%;
-    top: 20%;
+    top: 16%;
   }
   /* news slider img sports */
   .news-sports-img {
