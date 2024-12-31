@@ -458,7 +458,8 @@ body {
   border-bottom: 1px solid rgba(204, 201, 201, 0.733);
   width: 100%;
   max-height: 370px;
-  height: fit-content;
+  object-fit: cover; /* Optional: adjusts how the image fits */
+  height: auto;
   border-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -694,6 +695,7 @@ a {
   /* news slider */
   .slider-wrapper {
     overflow-x: scroll;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory; /* Ensures smooth snapping to slides */
     scroll-behavior: smooth;
     margin: 10px 0 0 40px;
