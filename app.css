@@ -1747,16 +1747,16 @@ body {
   .top,
   .top a {
     align-items: center;
-    min-width: 120px;
-    width: 120px;
-    min-height: 300px;
-    height: 300px;
+    min-width: 110px;
+    width: 110px;
+    min-height: 100px;
+    height: 270px;
     margin: 5px 4px;
   }
   .top1,
   .top2,
   .top3 {
-    background-size: cover;
+    background-size: contain;
   }
   .top3casinos .top a {
     color: white;
@@ -1839,10 +1839,10 @@ body {
   .img-box-top {
     position: absolute;
     border-radius: 9999px;
-    top: 68px;
-    left: 27px;
-    height: 69px;
-    width: 69px;
+    top: 58px;
+    left: 22px;
+    height: 65px;
+    width: 65px;
   }
 
   .img-box-top img {
@@ -1852,9 +1852,9 @@ body {
   }
   .content-top {
     position: absolute;
-    top: 160px;
+    top: 140px;
     left: 0px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     width: 100%;
     margin: 0;
@@ -1867,8 +1867,8 @@ body {
 
     position: absolute;
     margin: 0;
-    top: 230px;
-    left: 20px;
+    top: 205px;
+    left: 13px;
   }
   .top-bonus span {
     font-size: 15px;
@@ -2311,7 +2311,7 @@ body {
   .best-rewards,
   .high-withdrawal {
     box-sizing: border-box;
-    width: 160px;
+
     font-size: 12px;
     font-weight: 600;
   }
@@ -2692,7 +2692,7 @@ body {
   .best-rewards,
   .high-withdrawal {
     box-sizing: border-box;
-    width: 200px;
+
     font-size: 15px;
   }
   .bonus-link,
