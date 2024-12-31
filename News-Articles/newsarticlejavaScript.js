@@ -1,37 +1,5 @@
 "use strict";
 
-// sanow
-document.addEventListener("DOMContentLoaded", function () {
-  const snowContainer = document.getElementById("snow");
-  const snowflakeCount = 100; // Number of snowflakes
-
-  for (let i = 0; i < snowflakeCount; i++) {
-    let snowflake = document.createElement("div");
-    snowflake.classList.add("snowflake");
-    snowflake.textContent = "❄"; // Snowflake character
-
-    // Random position, size, speed, and delay for smoother animation
-    snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-    snowflake.style.fontSize = `${Math.random() * 1 + 0.5}em`; // Smaller random size (0.5em to 1.5em)
-    snowflake.style.animationDuration = `${Math.random() * 8 + 8}s`; // Random speed for the animation
-    snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random start time
-
-    snowContainer.appendChild(snowflake);
-  }
-
-  // Update snowflakes based on scroll position
-  window.addEventListener("scroll", function () {
-    const scrollPosition = window.scrollY; // Get the current scroll position
-
-    // Adjust the top position of snowflakes based on scroll
-    const snowflakes = document.querySelectorAll(".snowflake");
-    snowflakes.forEach((snowflake, index) => {
-      const fallDistance = (scrollPosition * (index + 1)) / 50; // Calculate distance based on scroll
-      snowflake.style.top = `${fallDistance}px`; // Move snowflake based on scroll
-    });
-  });
-});
-
 // smartphone menu
 // Select necessary elements
 const toggleButton = document.querySelector(".toggle-button");
@@ -195,4 +163,83 @@ window.addEventListener("scroll", function () {
   } else {
     scrollButton.classList.remove("show");
   }
+});
+
+// breadcrumbs.js
+document.addEventListener("DOMContentLoaded", () => {
+  const breadcrumbsContainer = document.getElementById("breadcrumbs");
+  const path = window.location.pathname.split("/").filter(Boolean);
+
+  // Debug: Log the path to inspect how it's being split
+  console.log("Full path segments:", path);
+
+  // Home Link
+  const homeCrumb = document.createElement("a");
+  homeCrumb.href = "/";
+  homeCrumb.textContent = "HOME"; // Uppercase 'Home'
+  breadcrumbsContainer.appendChild(homeCrumb);
+
+  let cumulativePath = "";
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [],
+  };
+
+  path.forEach((segment, index) => {
+    // Debug: Log each segment to check what's being processed
+    console.log("Processing segment:", segment);
+
+    // Skip "reviews-page", "news-articles", and "bonuses" folders
+    if (
+      segment.toLowerCase() === "reviews-page" ||
+      segment.toLowerCase() === "bonuses"
+    ) {
+      console.log("Skipping segment:", segment); // Debug log to confirm the filtering
+      return; // Skip this segment and don't add it to breadcrumbs
+    }
+
+    // Change "news-articles" to "news"
+    if (segment.toLowerCase() === "news-articles") {
+      segment = "news"; // Replace segment with "news"
+    }
+
+    // Sanitize: Replace symbols and non-alphanumeric characters with spaces, except for apostrophe and letter 's'
+    segment = segment.replace(/[^a-zA-Z0-9\s']/g, " "); // Keep apostrophes
+    segment = segment.replace(/\s+/g, " "); // Replace multiple spaces with a single space
+
+    // Ensure that possessive forms like 's are handled properly (e.g., roobet's becomes "Roobet's")
+    if (segment.includes("'s")) {
+      segment = segment.replace("'s", "’s"); // Replace with correct apostrophe
+    }
+
+    cumulativePath += `/${segment}`;
+
+    // Separator
+    const separator = document.createElement("span");
+    separator.textContent = ">";
+    breadcrumbsContainer.appendChild(separator);
+
+    // Page Link or Current Page
+    const crumb = document.createElement(
+      index === path.length - 1 ? "span" : "a"
+    );
+    crumb.textContent = segment.toUpperCase(); // Convert the segment to uppercase
+    if (index !== path.length - 1) crumb.href = cumulativePath;
+    breadcrumbsContainer.appendChild(crumb);
+
+    // Add breadcrumb data for JSON-LD structured data
+    breadcrumbData.itemListElement.push({
+      "@type": "ListItem",
+      position: index + 1,
+      name: segment.toUpperCase(), // Convert the segment to uppercase
+      item: window.location.origin + cumulativePath,
+    });
+  });
+
+  // Insert the JSON-LD structured data into the document
+  const jsonLdScript = document.createElement("script");
+  jsonLdScript.type = "application/ld+json";
+  jsonLdScript.innerHTML = JSON.stringify(breadcrumbData);
+  document.head.appendChild(jsonLdScript);
 });
