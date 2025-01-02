@@ -19,159 +19,128 @@ const toggleModal = (ev) => {
 const elsBtns = document.querySelectorAll("[data-modal]");
 elsBtns.forEach((el) => el.addEventListener("click", toggleModal));
 
-// news slidebar
-let currentSlide = 0;
-let isDragging = false;
-let isTransitioning = false;
-let startX = 0;
-let currentTranslate = 0;
-let previousTranslate = 0;
+// news slider
+let currentSlide = 0,
+  isDragging = false,
+  isTransitioning = false,
+  startX = 0,
+  currentTranslate = 0,
+  previousTranslate = 0,
+  autoSlideTimer = null,
+  autoSlideDelay = 7000;
+const slides = document.querySelectorAll(".news-item"),
+  newsWrapper = document.querySelector(".news-wrapper"),
+  firstClone = slides[0].cloneNode(true),
+  lastClone = slides[slides.length - 1].cloneNode(true);
+newsWrapper.append(firstClone), newsWrapper.prepend(lastClone);
+const allSlides = document.querySelectorAll(".news-item"),
+  totalSlides = allSlides.length;
 
-const slides = document.querySelectorAll(".news-item");
-const newsWrapper = document.querySelector(".news-wrapper");
-
-// Clone first and last slides
-const firstClone = slides[0].cloneNode(true);
-const lastClone = slides[slides.length - 1].cloneNode(true);
-newsWrapper.append(firstClone);
-newsWrapper.prepend(lastClone);
-
-const allSlides = document.querySelectorAll(".news-item"); // Include clones
-const totalSlides = allSlides.length;
-
-// Function to set slide widths and initial position
 function setSlideWidth() {
   const sliderWidth = document.querySelector(".news-slider").offsetWidth;
-
-  // Set width for all slides
-  allSlides.forEach((slide) => {
-    slide.style.width = `${sliderWidth}px`;
-  });
-
-  // Set the wrapper width to fit all slides
+  allSlides.forEach((slide) => (slide.style.width = `${sliderWidth}px`));
   newsWrapper.style.width = `${totalSlides * sliderWidth}px`;
-
-  // Position at the first real slide (account for cloned slides)
   newsWrapper.style.transform = `translateX(-${
     (currentSlide + 1) * sliderWidth
   }px)`;
 }
+setSlideWidth(), window.addEventListener("resize", setSlideWidth);
 
-setSlideWidth();
-window.addEventListener("resize", setSlideWidth);
-
-// Function to update slide position with smooth transitions
 function updateSlidePosition() {
-  const sliderWidth = document.querySelector(".news-slider").offsetWidth;
   newsWrapper.style.transition = "transform 0.5s ease";
   newsWrapper.style.transform = `translateX(-${
-    (currentSlide + 1) * sliderWidth
+    (currentSlide + 1) * document.querySelector(".news-slider").offsetWidth
   }px)`;
 }
 
-// Move to the next slide
 function moveToNextSlide() {
   if (isTransitioning) return;
-  isTransitioning = true;
-  currentSlide++;
-  updateSlidePosition();
-  newsWrapper.addEventListener("transitionend", handleTransitionEnd);
+  (isTransitioning = true),
+    currentSlide++,
+    updateSlidePosition(),
+    newsWrapper.addEventListener("transitionend", handleTransitionEnd);
 }
 
-// Move to the previous slide
 function moveToPreviousSlide() {
   if (isTransitioning) return;
-  isTransitioning = true;
-  currentSlide--;
-  updateSlidePosition();
-  newsWrapper.addEventListener("transitionend", handleTransitionEnd);
+  (isTransitioning = true),
+    currentSlide--,
+    updateSlidePosition(),
+    newsWrapper.addEventListener("transitionend", handleTransitionEnd);
 }
 
-// Handle transition end for wrapping logic
 function handleTransitionEnd() {
   const sliderWidth = document.querySelector(".news-slider").offsetWidth;
-  isTransitioning = false;
-  newsWrapper.style.transition = "none";
-
-  // Wrap around logic
-  if (currentSlide === totalSlides - 2) {
-    currentSlide = 0; // Go to the first real slide
-    newsWrapper.style.transform = `translateX(-${
-      (currentSlide + 1) * sliderWidth
-    }px)`;
-  } else if (currentSlide === -1) {
-    currentSlide = totalSlides - 3; // Go to the last real slide
-    newsWrapper.style.transform = `translateX(-${
-      (currentSlide + 1) * sliderWidth
-    }px)`;
-  }
-
+  (isTransitioning = false), (newsWrapper.style.transition = "none");
+  if (currentSlide === totalSlides - 2) currentSlide = 0;
+  else if (currentSlide === -1) currentSlide = totalSlides - 3;
+  newsWrapper.style.transform = `translateX(-${
+    (currentSlide + 1) * sliderWidth
+  }px)`;
   newsWrapper.removeEventListener("transitionend", handleTransitionEnd);
 }
 
-// Touch/drag events
+function startAutoSlide() {
+  autoSlideTimer = setInterval(() => {
+    if (!isDragging && !isTransitioning) moveToNextSlide();
+  }, autoSlideDelay);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlideTimer);
+}
+
+function pauseAutoSlideDuringInteraction() {
+  stopAutoSlide(), setTimeout(startAutoSlide, autoSlideDelay);
+}
+
+document.querySelector(".forth-btn").addEventListener("click", () => {
+  pauseAutoSlideDuringInteraction(), moveToNextSlide();
+});
+
+document.querySelector(".back-btn").addEventListener("click", () => {
+  pauseAutoSlideDuringInteraction(), moveToPreviousSlide();
+});
+
 function handleTouchStart(e) {
   if (isTransitioning) return;
-  isDragging = true;
-  startX = getPointerPosition(e);
-  previousTranslate = -(
-    (currentSlide + 1) *
-    document.querySelector(".news-slider").offsetWidth
-  );
-  newsWrapper.style.transition = "none"; // Disable transition during drag
+  stopAutoSlide(),
+    (isDragging = true),
+    (startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX);
+  previousTranslate =
+    -(currentSlide + 1) * document.querySelector(".news-slider").offsetWidth;
+  newsWrapper.style.transition = "none";
 }
 
 function handleTouchMove(e) {
   if (!isDragging) return;
-  const currentX = getPointerPosition(e);
-  const deltaX = currentX - startX;
-
-  currentTranslate = previousTranslate + deltaX;
+  const currentX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+  currentTranslate = previousTranslate + (currentX - startX);
   newsWrapper.style.transform = `translateX(${currentTranslate}px)`;
 }
 
 function handleTouchEnd() {
   if (!isDragging) return;
   isDragging = false;
-
-  const sliderWidth = document.querySelector(".news-slider").offsetWidth;
-  const movementThreshold = sliderWidth / 4; // Minimum drag distance to change slide
-  const movedBy = currentTranslate - previousTranslate;
-
-  if (movedBy < -movementThreshold) {
-    moveToNextSlide();
-  } else if (movedBy > movementThreshold) {
-    moveToPreviousSlide();
-  } else {
-    updateSlidePosition(); // Snap back to the current slide
-  }
+  const sliderWidth = document.querySelector(".news-slider").offsetWidth,
+    movedBy = currentTranslate - previousTranslate;
+  if (movedBy < -sliderWidth / 4) moveToNextSlide();
+  else if (movedBy > sliderWidth / 4) moveToPreviousSlide();
+  else updateSlidePosition();
+  pauseAutoSlideDuringInteraction();
 }
 
-// Helper to get touch or mouse position
-function getPointerPosition(e) {
-  return e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
-}
+["touchstart", "mousedown"].forEach((evt) =>
+  newsWrapper.addEventListener(evt, handleTouchStart)
+);
+["touchmove", "mousemove"].forEach((evt) =>
+  newsWrapper.addEventListener(evt, handleTouchMove)
+);
+["touchend", "mouseup", "mouseleave"].forEach((evt) =>
+  newsWrapper.addEventListener(evt, handleTouchEnd)
+);
 
-// Event listeners for buttons
-document.querySelector(".forth-btn").addEventListener("click", moveToNextSlide);
-document
-  .querySelector(".back-btn")
-  .addEventListener("click", moveToPreviousSlide);
-
-// Event listeners for touch/drag
-newsWrapper.addEventListener("touchstart", handleTouchStart);
-newsWrapper.addEventListener("touchmove", handleTouchMove);
-newsWrapper.addEventListener("touchend", handleTouchEnd);
-
-newsWrapper.addEventListener("mousedown", handleTouchStart);
-newsWrapper.addEventListener("mousemove", handleTouchMove);
-newsWrapper.addEventListener("mouseup", handleTouchEnd);
-newsWrapper.addEventListener("mouseleave", handleTouchEnd);
-
-// Auto-slide
-setInterval(() => {
-  if (!isDragging) moveToNextSlide();
-}, 7000);
+startAutoSlide();
 
 // sanow
 document.addEventListener("DOMContentLoaded", function () {
@@ -393,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Debug: Log each segment to check what's being processed
     console.log("Processing segment:", segment);
 
-    // Skip "reviews-page", "news-articles", and "bonuses" folders
+    // Skip "reviews-page" and "bonuses" folders
     if (
       segment.toLowerCase() === "reviews-page" ||
       segment.toLowerCase() === "bonuses"
@@ -402,15 +371,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return; // Skip this segment and don't add it to breadcrumbs
     }
 
-    // Change "news-articles" to "news"
+    // Replace "news-articles" with "News" (uppercase N)
     if (segment.toLowerCase() === "news-articles") {
-      segment = "news"; // Replace segment with "news"
+      segment = "News"; // Change the segment to "News" with an uppercase N
+      cumulativePath = "/News"; // Set cumulativePath to "/News"
+    } else {
+      cumulativePath += `/${segment}`;
     }
 
     // Sanitize: Remove symbols and non-alphanumeric characters, keep spaces
     segment = segment.replace(/[^a-zA-Z0-9\s]/g, "").trim();
-
-    cumulativePath += `/${segment}`;
 
     // Separator
     const separator = document.createElement("span");
@@ -421,16 +391,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const crumb = document.createElement(
       index === path.length - 1 ? "span" : "a"
     );
-    crumb.textContent = segment.charAt(0).toUpperCase() + segment.slice(1);
-    if (index !== path.length - 1) crumb.href = cumulativePath;
+    crumb.textContent = segment.charAt(0).toUpperCase() + segment.slice(1); // Capitalize the first letter
+    if (index !== path.length - 1)
+      crumb.href = window.location.origin + cumulativePath; // Correct the link URL
     breadcrumbsContainer.appendChild(crumb);
 
     // Add breadcrumb data for JSON-LD structured data
     breadcrumbData.itemListElement.push({
       "@type": "ListItem",
       position: index + 1,
-      name: segment.charAt(0).toUpperCase() + segment.slice(1),
-      item: window.location.origin + cumulativePath,
+      name: segment.charAt(0).toUpperCase() + segment.slice(1), // Capitalize the first letter
+      item: window.location.origin + cumulativePath, // Include full URL in item data
     });
   });
 
