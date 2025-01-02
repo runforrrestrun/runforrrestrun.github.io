@@ -3,9 +3,12 @@
 // Tabs Review Page
 
 // Track tab history for navigation
+// Track tab history for navigation
 let tabHistory = [];
 let currentTabIndex = -1;
+let tabs = [];
 
+// Open the specified tab
 function openTab(evt, tabName) {
   // Hide all tab contents
   const tabcontent = document.querySelectorAll(".tabcontent-info");
@@ -36,8 +39,20 @@ function openTab(evt, tabName) {
 
 // Set default tab on page load
 window.onload = function () {
+  // Get all tab names for navigation
+  tabs = Array.from(document.querySelectorAll(".tabcontent-info")).map(
+    (tab) => tab.id
+  );
+
   const hash = window.location.hash.substring(1);
-  openTab(null, hash || "Overview");
+  const defaultTab = hash || "Overview";
+  openTab(null, defaultTab);
+
+  // Set the first tab as default to be visible
+  const firstTabButton = document.querySelector(
+    `.tablinks[data-tab="Overview"]`
+  );
+  if (firstTabButton) firstTabButton.classList.add("active");
 };
 
 // Handle browser navigation
@@ -47,9 +62,23 @@ window.onpopstate = function (event) {
     const previousTab = tabHistory[currentTabIndex];
     openTab(null, previousTab);
   } else {
-    openTab(null, "Overview");
+    // If we're already on the "Overview" tab, go back to the previous page
+    window.history.back();
   }
 };
+
+// Navigation through keyboard arrows
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+    // Move forward
+    currentTabIndex = (currentTabIndex + 1) % tabs.length;
+    openTab(null, tabs[currentTabIndex]);
+  } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+    // Move backward
+    currentTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length;
+    openTab(null, tabs[currentTabIndex]);
+  }
+});
 
 // Tabs in Bonus Section
 function showTab(tabName) {
@@ -61,7 +90,7 @@ function showTab(tabName) {
     .forEach((content) => content.classList.remove("active"));
 
   const activeButton = document.querySelector(
-    `button[onclick=\"showTab('${tabName}')\"]`
+    `button[onclick="showTab('${tabName}')"]`
   );
   const activeContent = document.getElementById(tabName);
 
