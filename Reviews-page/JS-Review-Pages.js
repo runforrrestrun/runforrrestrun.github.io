@@ -7,7 +7,6 @@ let tabHistory = [],
   currentTabIndex = -1,
   tabs = [];
 
-// Open a tab
 function openTab(evt, tabName) {
   document
     .querySelectorAll(".tabcontent-info")
@@ -29,7 +28,6 @@ function openTab(evt, tabName) {
   history.pushState({ tab: tabName }, null, "#" + tabName);
 }
 
-// Initialize tabs on page load
 window.onload = function () {
   tabs = Array.from(
     document.querySelectorAll(".tabcontent-info"),
@@ -39,18 +37,13 @@ window.onload = function () {
   document
     .querySelector(`.tablinks[data-tab="Overview"]`)
     ?.classList.add("active");
-
-  // Add swipe listener
-  addSwipeListeners();
 };
 
-// Handle browser back/forward buttons
 window.onpopstate = function () {
   if (currentTabIndex > 0) openTab(null, tabHistory[--currentTabIndex]);
   else window.history.back();
 };
 
-// Keyboard navigation
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight" || e.key === "ArrowDown")
     openTab(
@@ -66,39 +59,6 @@ document.addEventListener("keydown", (e) => {
     );
 });
 
-// Swipe navigation
-function addSwipeListeners() {
-  let startX = 0;
-
-  document.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  document.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const deltaX = endX - startX;
-
-    // Swipe thresholds
-    const threshold = 50;
-    if (deltaX > threshold) {
-      // Swipe right
-      openTab(
-        null,
-        tabs[
-          (currentTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length)
-        ]
-      );
-    } else if (deltaX < -threshold) {
-      // Swipe left
-      openTab(
-        null,
-        tabs[(currentTabIndex = (currentTabIndex + 1) % tabs.length)]
-      );
-    }
-  });
-}
-
-// Additional function for bonus tabs (if needed)
 function showTab(tabName) {
   document
     .querySelectorAll(".tab-button-bonus")
@@ -109,9 +69,7 @@ function showTab(tabName) {
   document
     .querySelector(`button[onclick="showTab('${tabName}')"]`)
     ?.classList.add("active");
-  document
-    .querySelector(`.tab-content-bonus[data-tab="${tabName}"]`)
-    ?.classList.add("active");
+  document.getElementById(tabName)?.classList.add("active");
 }
 
 // smartphone menu
@@ -261,6 +219,40 @@ window.addEventListener("touchstart", function (e) {
   }
 });
 
+// Back to Top Button
+("use strict");
+
+// Flag to track if scrolling is programmatic
+let isScrolling = false;
+
+// Add a scroll event listener to show or hide the "Back to Top" button
+window.addEventListener("scroll", () => {
+  const scrollButton = document.querySelector(".scroll-to-top");
+  if (scrollButton) {
+    if (window.scrollY > 100) {
+      scrollButton.classList.add("show"); // Show the button
+    } else {
+      scrollButton.classList.remove("show"); // Hide the button
+    }
+  }
+});
+
+// Add a click event listener to the "Back to Top" button
+document.querySelector(".scroll-to-top")?.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent default link behavior
+  isScrolling = true; // Set the scrolling flag
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Smooth scroll to the top
+  });
+  // Reset the scrolling flag after a delay matching the scroll animation
+  setTimeout(() => {
+    isScrolling = false;
+  }, 300); // Adjust delay if needed
+});
+
+console.log("JavaScript is loaded!");
+
 // breadcrumbs.js
 document.addEventListener("DOMContentLoaded", () => {
   const breadcrumbsContainer = document.getElementById("breadcrumbs");
@@ -332,34 +324,4 @@ document.addEventListener("DOMContentLoaded", () => {
   jsonLdScript.type = "application/ld+json";
   jsonLdScript.innerHTML = JSON.stringify(breadcrumbData);
   document.head.appendChild(jsonLdScript);
-});
-
-// back to top arrow
-// Flag to track if scrolling is programmatic
-let isScrolling = false;
-
-// Add a scroll event listener to show or hide the "Back to Top" button
-window.addEventListener("scroll", () => {
-  const scrollButton = document.querySelector(".scroll-to-top");
-  if (scrollButton) {
-    if (window.scrollY > 100) {
-      scrollButton.classList.add("show"); // Show the button
-    } else {
-      scrollButton.classList.remove("show"); // Hide the button
-    }
-  }
-});
-
-// Add a click event listener to the "Back to Top" button
-document.querySelector(".scroll-to-top")?.addEventListener("click", (e) => {
-  e.preventDefault(); // Prevent default link behavior
-  isScrolling = true; // Set the scrolling flag
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Smooth scroll to the top
-  });
-  // Reset the scrolling flag after a delay matching the scroll animation
-  setTimeout(() => {
-    isScrolling = false;
-  }, 300); // Adjust delay if needed
 });
