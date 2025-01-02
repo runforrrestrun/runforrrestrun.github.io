@@ -138,12 +138,12 @@ body {
 
 .breadcrumbs a {
   text-decoration: none;
-  color: #007bff;
+  color: white;
   margin: 0 3px;
 }
 
 .breadcrumbs span {
-  color: white;
+  color: yellow;
   margin-left: 3px;
 }
 

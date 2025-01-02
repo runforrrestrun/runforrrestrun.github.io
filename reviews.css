@@ -316,12 +316,12 @@ body {
 
 .breadcrumbs a {
   text-decoration: none;
-  color: #007bff;
+  color: white;
   margin: 0 3px;
 }
 
 .breadcrumbs span {
-  color: white;
+  color: yellow;
   margin-left: 3px;
 }
 
@@ -463,7 +463,7 @@ body {
   background-image: linear-gradient(black, purple);
 }
 
-/* Create an active/current tablink class */
+/* Active tab button style */
 .tab-info button.active {
   background-image: linear-gradient(black, purple);
 }
@@ -1110,7 +1110,7 @@ strong {
     width: 100%;
     margin: 0 auto 0 auto;
     padding: 40px 0 0 0;
-    max-width: 1200px;
+    max-width: 1000px;
     justify-items: center;
   }
   .overview-button {
@@ -1150,6 +1150,7 @@ strong {
   .casino-allInfo {
     margin: auto;
     justify-items: center;
+    max-width: 1200px;
   }
   .casino-banner img {
     border-bottom-left-radius: 10px;
