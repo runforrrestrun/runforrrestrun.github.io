@@ -32,7 +32,9 @@ const slides = document.querySelectorAll(".news-item"),
   newsWrapper = document.querySelector(".news-wrapper"),
   firstClone = slides[0].cloneNode(true),
   lastClone = slides[slides.length - 1].cloneNode(true);
-newsWrapper.append(firstClone), newsWrapper.prepend(lastClone);
+
+newsWrapper.append(firstClone);
+newsWrapper.prepend(lastClone);
 const allSlides = document.querySelectorAll(".news-item"),
   totalSlides = allSlides.length;
 
@@ -41,10 +43,12 @@ function setSlideWidth() {
   allSlides.forEach((slide) => (slide.style.width = `${sliderWidth}px`));
   newsWrapper.style.width = `${totalSlides * sliderWidth}px`;
   newsWrapper.style.transform = `translateX(-${
-    (currentSlide + 1) * sliderWidth
+    (currentSlide + 1) * document.querySelector(".news-slider").offsetWidth
   }px)`;
 }
-setSlideWidth(), window.addEventListener("resize", setSlideWidth);
+
+setSlideWidth();
+window.addEventListener("resize", setSlideWidth);
 
 function updateSlidePosition() {
   newsWrapper.style.transition = "transform 0.5s ease";
@@ -81,6 +85,7 @@ function handleTransitionEnd() {
 }
 
 function startAutoSlide() {
+  stopAutoSlide(); // Clear any previous timers to avoid multiple intervals
   autoSlideTimer = setInterval(() => {
     if (!isDragging && !isTransitioning) moveToNextSlide();
   }, autoSlideDelay);
@@ -88,18 +93,22 @@ function startAutoSlide() {
 
 function stopAutoSlide() {
   clearInterval(autoSlideTimer);
+  autoSlideTimer = null;
 }
 
 function pauseAutoSlideDuringInteraction() {
-  stopAutoSlide(), setTimeout(startAutoSlide, autoSlideDelay);
+  stopAutoSlide();
+  setTimeout(startAutoSlide, autoSlideDelay); // Restart auto-slide after interaction
 }
 
 document.querySelector(".forth-btn").addEventListener("click", () => {
-  pauseAutoSlideDuringInteraction(), moveToNextSlide();
+  pauseAutoSlideDuringInteraction();
+  moveToNextSlide();
 });
 
 document.querySelector(".back-btn").addEventListener("click", () => {
-  pauseAutoSlideDuringInteraction(), moveToPreviousSlide();
+  pauseAutoSlideDuringInteraction();
+  moveToPreviousSlide();
 });
 
 function handleTouchStart(e) {
