@@ -3,101 +3,74 @@
 // Tabs Review Page
 
 // Track tab history for navigation
-// Track tab history for navigation
-let tabHistory = [];
-let currentTabIndex = -1;
-let tabs = [];
+let tabHistory = [],
+  currentTabIndex = -1,
+  tabs = [];
 
-// Open the specified tab
 function openTab(evt, tabName) {
-  // Hide all tab contents
-  const tabcontent = document.querySelectorAll(".tabcontent-info");
-  tabcontent.forEach((content) => (content.style.display = "none"));
-
-  // Remove "active" class from all tab links
-  const tablinks = document.querySelectorAll(".tablinks");
-  tablinks.forEach((link) => link.classList.remove("active"));
-
-  // Show the current tab and set the "active" class
+  document
+    .querySelectorAll(".tabcontent-info")
+    .forEach((el) => (el.style.display = "none"));
+  document
+    .querySelectorAll(".tablinks")
+    .forEach((el) => el.classList.remove("active"));
   const activeTab = document.getElementById(tabName);
   if (activeTab) {
     activeTab.style.display = "block";
-    evt?.currentTarget?.classList.add("active");
+    const activeButton = document.querySelector(
+      `.tablinks[data-tab="${tabName}"]`
+    );
+    if (activeButton) activeButton.classList.add("active");
   }
-
-  // Update tab history
-  if (!tabHistory.includes(tabName)) {
-    tabHistory.push(tabName);
-    currentTabIndex = tabHistory.length - 1;
-  } else {
-    currentTabIndex = tabHistory.indexOf(tabName);
-  }
-
-  // Update the URL
+  currentTabIndex = tabHistory.includes(tabName)
+    ? tabHistory.indexOf(tabName)
+    : (tabHistory.push(tabName), tabHistory.length - 1);
   history.pushState({ tab: tabName }, null, "#" + tabName);
 }
 
-// Set default tab on page load
 window.onload = function () {
-  // Get all tab names for navigation
-  tabs = Array.from(document.querySelectorAll(".tabcontent-info")).map(
+  tabs = Array.from(
+    document.querySelectorAll(".tabcontent-info"),
     (tab) => tab.id
   );
-
-  const hash = window.location.hash.substring(1);
-  const defaultTab = hash || "Overview";
-  openTab(null, defaultTab);
-
-  // Set the first tab as default to be visible
-  const firstTabButton = document.querySelector(
-    `.tablinks[data-tab="Overview"]`
-  );
-  if (firstTabButton) firstTabButton.classList.add("active");
+  openTab(null, window.location.hash.substring(1) || "Overview");
+  document
+    .querySelector(`.tablinks[data-tab="Overview"]`)
+    ?.classList.add("active");
 };
 
-// Handle browser navigation
-window.onpopstate = function (event) {
-  if (currentTabIndex > 0) {
-    currentTabIndex--;
-    const previousTab = tabHistory[currentTabIndex];
-    openTab(null, previousTab);
-  } else {
-    // If we're already on the "Overview" tab, go back to the previous page
-    window.history.back();
-  }
+window.onpopstate = function () {
+  if (currentTabIndex > 0) openTab(null, tabHistory[--currentTabIndex]);
+  else window.history.back();
 };
 
-// Navigation through keyboard arrows
-document.addEventListener("keydown", function (e) {
-  if (e.key === "ArrowRight" || e.key === "ArrowDown") {
-    // Move forward
-    currentTabIndex = (currentTabIndex + 1) % tabs.length;
-    openTab(null, tabs[currentTabIndex]);
-  } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
-    // Move backward
-    currentTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length;
-    openTab(null, tabs[currentTabIndex]);
-  }
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight" || e.key === "ArrowDown")
+    openTab(
+      null,
+      tabs[(currentTabIndex = (currentTabIndex + 1) % tabs.length)]
+    );
+  else if (e.key === "ArrowLeft" || e.key === "ArrowUp")
+    openTab(
+      null,
+      tabs[
+        (currentTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length)
+      ]
+    );
 });
 
-// Tabs in Bonus Section
 function showTab(tabName) {
   document
     .querySelectorAll(".tab-button-bonus")
-    .forEach((btn) => btn.classList.remove("active"));
+    .forEach((el) => el.classList.remove("active"));
   document
     .querySelectorAll(".tab-content-bonus")
-    .forEach((content) => content.classList.remove("active"));
-
-  const activeButton = document.querySelector(
-    `button[onclick="showTab('${tabName}')"]`
-  );
-  const activeContent = document.getElementById(tabName);
-
-  if (activeButton) activeButton.classList.add("active");
-  if (activeContent) activeContent.classList.add("active");
+    .forEach((el) => el.classList.remove("active"));
+  document
+    .querySelector(`button[onclick="showTab('${tabName}')"]`)
+    ?.classList.add("active");
+  document.getElementById(tabName)?.classList.add("active");
 }
-
 // Smartphone Menu
 const toggleButton = document.querySelector(".toggle-button");
 const sideNavigation = document.querySelector(".side-navigation");
