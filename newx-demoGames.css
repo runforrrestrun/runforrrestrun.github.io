@@ -399,7 +399,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   color: white;
   border: none;
   font-size: 30px;
@@ -707,7 +707,7 @@ a {
     padding: 10px;
   }
   .back-btn {
-    left: 15px;
+    left: 20px;
   }
   .forth-btn {
     right: 5px;
@@ -735,7 +735,7 @@ a {
   .casino-sliders {
     width: 95%;
     margin: 50px auto;
-    padding: 20px 0 20px 20px;
+    padding: 20px 0;
   }
   .slider {
     padding: 10px 0;
@@ -777,7 +777,7 @@ a {
   }
   .news-content h2 {
     font-size: 20px;
-    margin: 5px;
+    margin: 15px;
   }
   .news-content p {
     font-size: 15px;
