@@ -2587,7 +2587,7 @@ body {
     width: 80%;
     height: auto;
     max-height: 350px;
-    margin: 0 auto;
+    margin: 10px auto;
   }
 
   .news-item button {
