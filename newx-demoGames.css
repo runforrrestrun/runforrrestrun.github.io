@@ -1056,6 +1056,7 @@ a {
     margin: 0 auto;
     border: 1px solid black(128, 128, 128, 0.459);
   }
+  
 }
 
 @media (min-width: 2000px) {
