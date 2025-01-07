@@ -816,10 +816,10 @@ a {
 
   .news-content-main {
     box-sizing: border-box;
-    width: 95%;
+    width: 97%;
     margin: 0 auto;
     font-size: 20px;
-    padding: 10px 20px;
+    padding: 10px 10px 10px 21px;
   }
   .news-content-main h1 {
     font-size: 28px;
@@ -830,7 +830,17 @@ a {
   .news-content-main h3 {
     font-size: 20px;
   }
-
+  table th,
+  td {
+    font-size: 15px;
+    padding: 3px;
+  }
+  table {
+    border-collapse: separate; /* Important: allows border-radius to work */
+    border-spacing: 0; /* Removes space between cells */
+    border: 2px solid rgba(255, 255, 255, 0.541); /* Adds a border to the table */
+    border-radius: 10px; /* Rounds the corners of the table */
+  }
   .banner-box {
     width: 100%;
   }
@@ -938,6 +948,13 @@ a {
   }
   .news-content-main h3 {
     font-size: 25px;
+  }
+  table {
+    margin: 20px auto;
+  }
+  table th,
+  td {
+    font-size: 19px;
   }
   .news-box {
     margin: 20px auto;
@@ -1077,6 +1094,10 @@ a {
     width: 87%;
     margin: 40px auto;
     padding: 20px 40px;
+  }
+  table th,
+  td {
+    font-size: 25px;
   }
 
   .slider {
