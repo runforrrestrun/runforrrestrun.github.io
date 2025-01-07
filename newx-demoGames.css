@@ -356,6 +356,15 @@ body {
 /*  */
 
 /* news page */
+.content-text {
+  display: block;
+  background: inherit;
+  padding: 20px 20px;
+  border-radius: 8px;
+
+  background-image: linear-gradient(black, purple);
+  border: 1px solid rgba(204, 201, 201, 0.733);
+}
 
 /* news slider  */
 .casino-sliders {
@@ -737,6 +746,18 @@ a {
     margin: 50px auto;
     padding: 20px 0;
   }
+  .content-text {
+    width: 85%;
+    margin: 20px auto;
+  }
+  .content-text h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+  .content-text p {
+    font-size: 20px;
+    text-align: center;
+  }
   .slider {
     padding: 10px 0;
   }
@@ -852,18 +873,34 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0;
-    padding: 111px 10px 10px 10px;
+    padding: 111px 0 10px 0;
+  }
+
+  .content-text {
+    width: 83%;
+    margin: 20px auto;
+  }
+  .content-text h1 {
+    font-size: 35px;
+    text-align: center;
+  }
+  .content-text p {
+    font-size: 25px;
+    text-align: center;
+  }
+  .casino-sliders {
+    width: 100%;
   }
   .slider {
-    width: 89%;
+    width: 87%;
     padding: 20px 0px;
-    margin: 20px 0 0 60px;
+    margin: 20px auto;
   }
   .slider h2 {
-    font-size: 40px;
+    font-size: 35px;
   }
   .slider-wrapper {
-    margin: 10px 0;
+    margin: 10px 0px 10px 10px;
   }
   .back-btn,
   .forth-btn {
@@ -1035,6 +1072,12 @@ a {
   .news-content-main p {
     font-size: 25px;
   }
+  .content-text {
+    width: 87%;
+    margin: 40px auto;
+    padding: 20px 40px;
+  }
+
   .slider {
     width: 90%;
     padding: 10px;
@@ -1056,7 +1099,6 @@ a {
     margin: 0 auto;
     border: 1px solid black(128, 128, 128, 0.459);
   }
-  
 }
 
 @media (min-width: 2000px) {
@@ -1064,6 +1106,10 @@ a {
     width: 92.5%;
     margin: 0 auto 0 190px;
   }
+  .content-text {
+    width: 89%;
+  }
+
   .slider {
     width: 90%;
     margin: 100px auto;
