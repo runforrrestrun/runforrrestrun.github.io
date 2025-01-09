@@ -351,60 +351,61 @@ document.addEventListener("DOMContentLoaded", () => {
   const breadcrumbsContainer = document.getElementById("breadcrumbs");
   const path = window.location.pathname.split("/").filter(Boolean);
 
-  // Debug: Log the path segments
   console.log("Full path segments:", path);
 
-  // Home Link
-  const homeCrumb = document.createElement("a");
-  homeCrumb.href = "/";
-  homeCrumb.textContent = "Home";
-  breadcrumbsContainer.appendChild(homeCrumb);
-
-  let cumulativePath = "";
   const breadcrumbData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [],
   };
 
+  // Home Breadcrumb
+  const homeCrumb = document.createElement("a");
+  homeCrumb.href = "/";
+  homeCrumb.textContent = "Home";
+  breadcrumbsContainer.appendChild(homeCrumb);
+
+  breadcrumbData.itemListElement.push({
+    "@type": "ListItem",
+    position: 1,
+    name: "Home",
+    item: window.location.origin + "/",
+  });
+
+  let cumulativePath = "";
+
   path.forEach((segment, index) => {
-    // Debug: Log each segment
     console.log("Processing segment:", segment);
 
-    // Skip unwanted folders
     if (["reviews-page", "bonuses"].includes(segment.toLowerCase())) {
       console.log("Skipping segment:", segment);
       return;
     }
 
-    // Replace specific segment names
     if (segment.toLowerCase() === "news-articles") {
       segment = "News";
     }
 
-    // Update cumulative path
     cumulativePath += `/${segment}`;
 
-    // Sanitize the segment for display
     const displayName = segment.replace(/[^a-zA-Z0-9\s]/g, "").trim();
 
-    // Add separator
     const separator = document.createElement("span");
     separator.textContent = " > ";
     breadcrumbsContainer.appendChild(separator);
 
-    // Create breadcrumb element
     const crumb = document.createElement(
       index === path.length - 1 ? "span" : "a"
     );
     crumb.textContent =
       displayName.charAt(0).toUpperCase() + displayName.slice(1);
+
     if (index !== path.length - 1) {
       crumb.href = window.location.origin + cumulativePath;
     }
+
     breadcrumbsContainer.appendChild(crumb);
 
-    // Add to JSON-LD structured data
     breadcrumbData.itemListElement.push({
       "@type": "ListItem",
       position: breadcrumbData.itemListElement.length + 1,
@@ -413,12 +414,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Insert JSON-LD structured data
+  // Insert JSON-LD
   const jsonLdScript = document.createElement("script");
   jsonLdScript.type = "application/ld+json";
   jsonLdScript.innerHTML = JSON.stringify(breadcrumbData, null, 2);
   document.head.appendChild(jsonLdScript);
 
-  // Debug: Log the final JSON-LD data
   console.log("Generated JSON-LD:", breadcrumbData);
 });
