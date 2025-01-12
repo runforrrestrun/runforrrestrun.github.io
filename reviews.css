@@ -890,6 +890,7 @@ strong {
   .review-img img {
     width: 100%;
     height: auto;
+    max-width: 100%;
     border: 1px solid grey;
     border-radius: 10px;
   }
@@ -1007,7 +1008,7 @@ strong {
 
   .review-img img {
     width: 80%;
-    height: auto;
+   
     max-width: 80%;
   }
 }
