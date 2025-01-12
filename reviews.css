@@ -386,6 +386,7 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover; /* Optional: adjusts how the image fits */
+
   max-width: 100%;
   display: block;
 }
