@@ -1379,45 +1379,6 @@ body {
     margin: 5px;
   }
 
-  /* snow */
-  #snow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 0; /* Ensure snowflakes are in the background */
-    overflow: hidden;
-  }
-
-  .snowflake {
-    position: absolute;
-    color: white;
-    font-size: 0.8em; /* Smaller snowflakes */
-    user-select: none;
-    pointer-events: none;
-    opacity: 0; /* Start with opacity 0 for a smooth fade-in effect */
-    animation: snow 10s linear infinite, fadeIn 2s ease-in forwards; /* Fade-in and snowfall animation */
-  }
-
-  /* Snowfall animation */
-  @keyframes snow {
-    to {
-      transform: translateY(100vh); /* Snowflakes move vertically */
-      opacity: 0; /* Fade out as it reaches the bottom */
-    }
-  }
-
-  /* Smooth fade-in effect for snowflakes at the start */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0.7;
-    }
-  }
   .content ul {
     padding: 0;
     margin: 5px;
@@ -2726,14 +2687,6 @@ body {
   .modal-content {
     width: 25%;
     height: auto;
-  }
-
-  /* main info page of casino */
-  #Overview,
-  #Bonuses,
-  #Games,
-  #Payments {
-    font-size: 25px;
   }
 }
 
