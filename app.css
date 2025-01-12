@@ -535,13 +535,13 @@ body {
 }
 
 .top1 {
-  background-image: url(/img/news-banners/gold.png);
+  background-image: url(/img/news-banners/gold.webp);
 }
 .top2 {
-  background-image: url(/img/news-banners/silver.png);
+  background-image: url(/img/news-banners/silver.webp);
 }
 .top3 {
-  background-image: url(/img/news-banners/bronze.png);
+  background-image: url(/img/news-banners/bronze.webp);
 }
 .top-left {
   border: 1px solid rgba(128, 119, 119, 0.705);
