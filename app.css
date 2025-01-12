@@ -1379,6 +1379,19 @@ body {
     margin: 5px;
   }
 
+  /* snow */
+  #snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0; /* Ensure snowflakes are in the background */
+    overflow: hidden;
+  }
+
+ 
   .content ul {
     padding: 0;
     margin: 5px;
@@ -1477,10 +1490,10 @@ body {
   }
   /* casino content-text img */
   .poker-cards-casino {
-    width: 250px;
+    width: 300px;
     position: absolute;
     height: auto;
-    top: -6%; /* Adjust as needed */
+    top: -8%; /* Adjust as needed */
     left: 50%; /* Adjust as needed */
     transform: translate(-50%, -50%); /* Adjust to center the element */
 
@@ -1488,7 +1501,7 @@ body {
     /* Maintain aspect ratio */
     z-index: 1; /* Ensure it stays above other elements */
     margin: 0;
-    display: none;
+
     max-width: 900px;
     max-height: 600px;
   }
@@ -2005,7 +2018,7 @@ body {
   }
   /* casino content text img */
   .poker-cards-casino {
-    width: 300px;
+    width: 400px;
     top: -10px;
   }
   #content-main-title {
@@ -2481,7 +2494,6 @@ body {
   .poker-cards-casino {
     width: 350px;
     top: -14%;
-    display: block;
   }
   .content-text,
   .content-main {
