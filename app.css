@@ -1488,7 +1488,7 @@ body {
     /* Maintain aspect ratio */
     z-index: 1; /* Ensure it stays above other elements */
     margin: 0;
-
+    display: none;
     max-width: 900px;
     max-height: 600px;
   }
@@ -2481,6 +2481,7 @@ body {
   .poker-cards-casino {
     width: 350px;
     top: -14%;
+    display: block;
   }
   .content-text,
   .content-main {
