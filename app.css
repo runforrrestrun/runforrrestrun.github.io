@@ -1477,10 +1477,10 @@ body {
   }
   /* casino content-text img */
   .poker-cards-casino {
-    width: 300px;
+    width: 250px;
     position: absolute;
     height: auto;
-    top: -8%; /* Adjust as needed */
+    top: -6%; /* Adjust as needed */
     left: 50%; /* Adjust as needed */
     transform: translate(-50%, -50%); /* Adjust to center the element */
 
@@ -2005,7 +2005,7 @@ body {
   }
   /* casino content text img */
   .poker-cards-casino {
-    width: 400px;
+    width: 300px;
     top: -10px;
   }
   #content-main-title {
