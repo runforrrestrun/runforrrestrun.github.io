@@ -384,8 +384,9 @@ body {
 }
 .casino-banner img {
   width: 100%;
-  object-fit: cover; /* Optional: adjusts how the image fits */
   height: auto;
+  object-fit: cover; /* Optional: adjusts how the image fits */
+  max-width: 100%;
 }
 
 .casino-infoLogo {
@@ -882,10 +883,12 @@ strong {
     display: block;
     margin: 10px auto;
     width: 90%;
+    max-width: 90%;
   }
 
   .review-img img {
     width: 100%;
+    height: auto;
     border: 1px solid grey;
     border-radius: 10px;
   }
@@ -1003,6 +1006,8 @@ strong {
 
   .review-img img {
     width: 80%;
+    height: auto;
+    max-width: 80%;
   }
 }
 /*   */
@@ -1147,6 +1152,7 @@ strong {
   }
   .review-img img {
     width: 70%;
+    max-width: 70%;
   }
 }
 
