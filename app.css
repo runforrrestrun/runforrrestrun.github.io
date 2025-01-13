@@ -1,224 +1,829 @@
 body {
   margin: 0;
-  background-image: url("neonCasino.jpg");
-  background-size: auto;
-  background-repeat: repeat;
-  display: flex;
-  box-sizing: border-box;
-  margin: 0;
   height: 100vh;
-  width: 100%;
-  /* NAV-BAR */
+  background-color: rgb(0, 0, 0);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 5px;
+  color: #ffffff;
+  text-shadow: 2px 2px 10px rgb(0, 0, 0);
 }
-.navBar {
-  opacity: 0.9;
-  background-image: linear-gradient(black, purple);
-  box-sizing: border-box;
-  height: 100vh;
-  width: 200px;
-  margin: 0;
-  background-color: black;
-  box-shadow: 0 6px 20px rgb(0 0 0 / 0.2);
-  display: flex;
-  flex-direction: column;
+
+/* scrollbar */
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 6px; /* Thin scrollbar */
+  height: 6px; /* Thin horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: purple; /* Semi-transparent black for the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2); /* Transparent track with a hint of black */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* end of scrollbar */
+
+/* Style for the scroll-to-top arrow */
+/* Style for the Back to Top button */
+.scroll-to-top {
   position: fixed;
-  align-content: start;
-  align-items: start;
-  justify-content: start;
-}
-.container {
-  box-sizing: border-box;
-  margin: 100px 0 0 20px;
-  width: 70%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-}
-.info-btn:hover {
-  border-bottom: 1px solid rgb(240, 3, 228);
-  transition: 0.6s;
-}
-
-.box {
-  border: 0px solid rgba(255, 255, 255, 0.411);
-  border-radius: 10px;
-  margin-top: 10px;
-  height: 150px;
-  width: 70%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.info-btn {
-  border: 0 solid black;
-  background-color: inherit;
-  color: white;
-  font-size: 24px;
-  font-weight: 900;
-  text-size-adjust: 100%;
-}
-
-.dropbtn {
-  margin-top: 10px;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  align-self: center;
-}
-.dropedown {
-  width: 400px;
-  height: 50px;
-  border: 0 solid black;
-  display: none;
-  grid-template-rows: repeat(20, 70px);
-  margin-top: 5px;
-  flex-direction: row;
-}
-.btnBox:hover button {
-  background-color: rgb(218, 6, 218);
-  text-decoration: underline;
-}
-.btnBox {
-  width: 20%;
-  margin: 0 auto;
-}
-.btnBox button {
-  box-sizing: border-box;
-  border: 1px solid rgba(233, 228, 228, 0.623);
-  border-radius: 10px;
-  margin: 0;
-  padding: 0;
-  color: white;
-  background-color: black;
-  text-decoration: none;
-  display: flex;
+  bottom: 5px; /* Distance from the bottom */
+  right: -30px; /* Distance from the right */
+  display: none; /* Hidden by default */
+  z-index: 1000; /* Ensure it's above other content */
+  width: fit-content; /* Size of the arrow */
+  height: fit-content;
+  font-weight: 700;
+  color: purple; /* Arrow color */
+  padding: 0px;
   text-align: center;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 20px;
+  line-height: 30px;
+  text-decoration: none;
+}
+.scroll-to-top img {
+  background-color: #000;
+  border-radius: 50px;
+  width: 10px;
+  height: 10px;
+}
+
+.scroll-to-top.show {
+  display: block; /* Display the button when the user scrolls down */
+}
+
+/* end of arrow to top */
+
+#home-background {
+  background-color: black;
+  background-image: url("/img/HomeScreen.webp");
+  background-size: contain;
+
+  background-position: center;
+  filter: blur(2px);
+  z-index: -1;
+  height: 100%;
   width: 100%;
-  height: 40px;
+  position: fixed;
 }
 
-@media (max-width: 1000px) {
-  .box {
-    height: 50px;
-    width: 150px;
-    justify-content: center;
-  }
-  .info-btn {
-    font-size: 20px;
-  }
-  .navBar {
-    margin: 0;
-    flex-direction: row;
-    box-sizing: border-box;
-    height: 150px;
-    width: 100%;
+#Casino-Background {
+  background-color: black;
+  background-image: url("img/CasinoBackground.webp");
+  background-size: contain;
 
-    position: fixed;
-    align-self: start;
-    position: fixed;
-  }
-  #fourth {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 400px;
-  }
-  .container {
-    margin: 0 0 0 30px;
-    width: 100%;
-
-    height: 150px;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    justify-content: start;
-    align-items: start;
-    align-content: start;
-    align-self: start;
-  }
-  .FIFTH,
-  .SIXTH,
-  .SEVENTH,
-  .EIGHTH {
-    display: none;
-  }
-
-  #fourth:hover .dropedown {
-    display: flex;
-    flex-direction: row;
-    overflow: visible;
-  }
+  background-position: center;
+  filter: blur(2px);
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }
-@media (min-width: 1000px) {
-  #fourth {
-    display: none;
-  }
-}
-/* end of navbar */
-/*  */
-/*  */
-/*  */
+#ESports-backgound {
+  background-color: black;
+  background-image: url("img/ESportsBackground1.webp");
+  background-size: cover;
 
-.content {
-  align-self: end;
+  background-position: center;
+  filter: blur(2px);
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+#Casino-sports-background {
+  background-image: url("img/Sports-background.webp");
+
+  background-position: center;
+  filter: blur(2px);
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+#Bonus-Page-Background {
+  background-image: url("img/BnusBackground.webp");
+  background-size: cover;
+  background-position: center;
+
+  background-position: center;
+  filter: blur(2px);
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+/* nav Bar */
+/* breadcrumbs */
+/* Breadcrumbs Styles */
+.breadcrumbs {
+  margin: 70px 0 0 0px;
+  padding: 10px;
+  width: 100%;
+  background-color: purple;
   box-sizing: border-box;
   display: block;
-  flex-direction: column;
-  flex: 1 1 0%;
-  height: 88.5%;
-  width: 100%;
-  min-width: 300px;
-  margin: 0px;
-  overflow: auto;
+  position: fixed;
+  gap: 3px;
+  align-items: start;
+  font-size: 15px;
+
+  z-index: 15;
+  font-weight: 700;
 }
-.container-content {
-  background-image: linear-gradient(270deg, black, purple);
-  overflow: auto;
-  border: 0 solid black;
-  margin: 10px 0px 50px 200px;
-  opacity: 0.9;
-  row-gap: 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex: 1 1 0%;
-  flex-direction: row;
-  width: 92.1%;
-  height: 500px;
-  min-width: 300px;
-  overflow: auto;
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: white;
+  margin: 0 3px;
 }
-.container-casinos {
-  overflow: auto;
-  border: 0 solid black;
-  margin: 50px 0 0 200px;
-  row-gap: 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex: 1 1 0%;
-  flex-direction: column;
-  width: 92.1%;
-  min-width: 300px;
-  overflow: auto;
+
+.breadcrumbs span {
+  color: yellow;
+  margin-left: 3px;
 }
-.main {
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+/* end of bredcrumbs */
+
+.navBar {
+  font-family: inherit;
+  background-image: linear-gradient(black, purple);
+  display: block;
   overflow: hidden;
-  opacity: 0.95;
-  border: 1px solid #e5e7eb;
-  background-color: rgb(7, 9, 15);
-  background-image: linear-gradient(240deg, black, purple);
+  background-color: #333;
+  position: relative;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  margin-bottom: 50px;
+}
+/* smarthphone menu*/
+
+/* Side Navigation Styles */
+.side-navigation {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially off-screen */
+  width: 200px;
+  height: 100%;
+  transition: left 0.3s ease-in-out; /* Smooth transition for left property */
+  background-image: linear-gradient(190deg, black 50%, purple);
+  color: white;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* When side navigation is open, slide it in */
+.side-navigation.open {
+  left: 0; /* Move the side navigation into view */
+  overflow-y: scroll; /* Allow scrolling within side navigation */
+}
+
+.side-navigation a {
+  width: 100%;
+  text-decoration: none;
+}
+
+.side-navigation p {
+  width: 100%;
+  font-size: 25px;
+  font-weight: 800;
+  text-decoration: none;
+  color: white;
+}
+
+.navigation-header {
+  display: flex;
+  flex-direction: row;
+  background-color: inherit;
+}
+
+.side-navigation .navigation-header {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side-navigation .navigation-header .logo-image {
+  width: 35%;
+  height: auto;
+}
+
+.side-navigation .navigation-header .close-button {
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.close-button {
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  left: 85%;
+}
+
+/* Navigation Links Styles */
+.navigation-links {
+  padding: 20px;
+}
+
+/* Styling for images in the navigation links */
+.nav-icon {
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  margin-right: 4px; /* Space between the image and text */
+  padding-bottom: 6px;
+  vertical-align: middle; /* Vertically align the image with the text */
+}
+
+/* Optional: Style for dropdown button images */
+.dropdown-toggle img {
+  padding-bottom: 6px;
+  width: 30px;
+  height: auto;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.nav-link {
+  width: fit-content;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav-link a {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: purple;
+  border-radius: 10px;
+}
+
+/* Dropdown Button Styles */
+.dropdown-toggle {
+  background-color: inherit;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: fit-content;
+  padding: 5px 10px;
+  text-align: left;
+  font-size: 20px;
+  margin: 10px 0;
+  border-radius: 10px; /* Make the button edges round like the dropdown menu */
+  text-align: center;
+}
+
+/* Hover effect for dropdown buttons */
+.dropdown-toggle:hover {
+  background-color: purple;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none; /* Hide by default */
+  background-color: inherit;
+
+  margin-top: 5px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
+.dropdown-menu.show {
+  display: block; /* Show when the 'show' class is added */
+}
+
+.dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+  padding: 5px 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.dropdown-menu a:hover {
+  background-color: purple;
+}
+
+/* Overlay for Navigation */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Ensure it's below the side navigation */
+}
+
+/* Toggle Button Styles */
+.toggle-button {
+  position: fixed;
+  top: 60%;
+  left: 0px; /* Move the button further outside the screen */
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1001;
+  background-color: rgba(
+    128,
+    0,
+    128,
+    0.5
+  ); /* Background color for the rectangle */
+  color: #fff;
+  border: none;
+  padding: 130px 11px; /* Increase padding for a larger button */
+  border-top-right-radius: 25px; /* Increase border radius for more rounded corners */
+  border-bottom-right-radius: 25px;
+  border: 1px solid rgba(63, 58, 58, 0.849);
+  border-left: 0 solid white;
+  font-size: 100px; /* Increase font size for larger text */
+  text-align: center; /* Center the text inside */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* Allow width to be dynamic */
+}
+.toggle-bar {
+  display: flex;
+  flex-direction: column;
+  width: 6px; /* Adjust width as needed */
+  height: 6px; /* Adjust height as needed */
+  background-color: rgba(255, 255, 255, 0.616); /* Color of the dots */
+  border-radius: 50%;
+  margin: 2px auto; /* Adjust the spacing between the dots */
+}
+
+.toggle-button:hover {
+  /* Slightly lighter shade on hover */
+  background-color: purple;
+}
+
+/* To make the button visible once the navigation is opened */
+.side-navigation.open .toggle-button {
+  display: none; /* Hide button when navigation is open */
+}
+
+/* Animation for the Side Navigation */
+.side-navigation.open {
+  left: 0;
+}
+
+.overlay.show {
+  display: block;
+}
+
+/* end of  smartphone navbar */
+/*  */
+/*  */
+/*  */
+/*  */
+/* page content */
+.container {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  margin: 0 0 0 200px;
+}
+.content::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+  overflow-y: scroll; /* Add the ability to scroll */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* container content */
+
+.container-content {
+  /* background-image: linear-gradient(270deg, black, purple); */
+
+  border: 0 solid black;
+  border-radius: 10px;
+  margin: 50px auto;
+  row-gap: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  width: 100%;
+  height: fit-content;
+  min-width: 300px;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: inherit;
+  color: #ffffff;
+}
+.name-content {
+  text-shadow: 2px 2px 10px rgb(0, 0, 0);
+  max-width: 1100px;
   box-sizing: border-box;
   width: 100%;
+  height: auto;
+  text-align: center;
+}
+.content-text {
+  background-image: linear-gradient(190deg, black 50%, purple);
+  text-shadow: 2px 2px 10px rgb(0, 0, 0);
+  max-width: 1200px;
+  box-sizing: border-box;
+  border: 1px solid rgba(129, 129, 129, 0.582);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
+    /* Softer top shadow */ 0 20px 20px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+
+  padding-bottom: 20px;
+}
+.content-text h1 {
+  color: white;
+  text-shadow: 1px -5px 5px rgb(0, 0, 0);
+}
+.content-text a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+/* top3 */
+.top3-container,
+.content-text-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  z-index: 1;
+  margin-top: 20px;
+  max-width: 1200px;
+  border-radius: 10px;
+  min-width: 250px;
+
+  margin: 10px auto;
+}
+.top3-image {
+  position: absolute;
+  top: 100px; /* Adjust as needed */
+  left: 100px; /* Adjust as needed */
+  width: 100px; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 1; /* Ensure it stays above other elements */
+}
+.top3casinos {
+  background-image: linear-gradient(190deg, black 60%, purple);
+  text-shadow: 2px 2px 10px rgb(0, 0, 0);
+  border: 1px solid rgba(129, 129, 129, 0.582);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
+    /* Softer top shadow */ 0 20px 20px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
+  border-radius: 10px;
   max-width: 1100px;
+  width: 100%;
+  height: 600px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin: 10px;
+}
+.top3casinos .top a {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+.top-container {
+  display: flex;
+
+  width: auto;
+  height: auto;
+}
+
+.top {
+  box-sizing: border-box;
+
+  overflow: visible;
+  position: relative;
+}
+
+.top1 {
+  background-image: url(/img/news-banners/gold.webp);
+}
+.top2 {
+  background-image: url(/img/news-banners/silver.webp);
+}
+.top3 {
+  background-image: url(/img/news-banners/bronze.webp);
+}
+.top-left {
+  border: 1px solid rgba(128, 119, 119, 0.705);
+
+  border-radius: 100px;
+  font-size: 20px;
+
+  align-self: flex-start;
+  background-color: black;
+  position: relative;
+}
+.n1 {
+  width: fit-content;
+  font-size: 16px;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 30%;
+}
+.nr1 {
+  background-color: rgb(61, 53, 4);
+}
+.nr2 {
+  background-color: rgb(77, 12, 12);
+}
+.nr3 {
+  background-color: rgb(8, 1, 8);
+}
+.top-info {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+}
+.img-box-top {
+  margin: 10px 0 0 0;
+  display: block;
+  background-color: black;
+  border: 1px solid black;
+  box-sizing: border-box;
+  height: 120px;
+  width: 120px;
+}
+.img-box-top img {
+  height: 120px;
+  width: 120px;
+}
+.content-top {
+  font-size: 15px;
+  width: auto;
+  height: auto;
+  text-align: center;
+  margin-top: 20px;
+}
+.content-top p {
+  box-sizing: border-box;
+
+  border-radius: 10px;
+}
+.top-bonus {
+  width: fit-content;
+}
+.top-bonus span:hover {
+  background-color: black;
+}
+
+.top-bonus a {
+  text-decoration: none;
+}
+.top-bonus span {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  color: white;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 10px;
+}
+/*  */
+/*  */
+
+/* news slider */
+.news-slider-container {
+  box-sizing: border-box;
+  font-family: inherit;
+  position: relative;
+  z-index: 1;
+
+  max-width: 1200px;
+  width: 100%;
+  height: fit-content;
+  border-radius: 10px;
+  min-width: 250px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+/* news esports img */
+.top-right-image {
+  position: absolute;
+  top: 0px; /* Adjust as needed */
+  right: 5px; /* Adjust as needed */
+  width: 400px; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 10; /* Ensure it stays above other elements */
+
+  max-width: 400px;
+  max-height: 302px;
+}
+/* news sports img */
+
+.news-slider {
+  box-sizing: border-box;
+  font-family: inherit;
+  position: relative;
+
+  margin-top: 50px;
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 10px;
+  min-width: 250px;
+  overflow: hidden;
+  touch-action: pan-y; /* Allow vertical scrolling only */
+  margin: 300px auto;
+  background-image: linear-gradient(190deg, black 50%, purple);
+  border: 1px solid rgba(129, 129, 129, 0.582);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
+    /* Softer top shadow */ 0 20px 20px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
+}
+
+.news-wrapper {
+  display: flex;
+  transition: transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth easing */
+  width: 100%; /* Full width of the container */
+}
+
+.news-slide {
+  display: flex;
+  width: 100%; /* Make each slide full width of news-slider */
+  height: fit-content;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.news-item {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  width: 100%; /* Full width of .news-slider */
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: inherit;
+  text-align: center;
+}
+.news-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.news-item img {
+  width: 100%; /* Adjusted to fill container */
+  height: auto;
+  border-radius: 30px;
+}
+
+/* Navigation Buttons */
+.back-btn,
+.forth-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 15;
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
+}
+.back-btn:hover,
+.forth-btn:hover {
+  opacity: 1;
+}
+
+.back-btn {
+  left: 0px;
+}
+
+.forth-btn {
+  right: 0px;
+}
+/* container casinos bosex */
+.container-casinos {
+  overflow: hidden;
+  border: 0 solid black;
+  margin: 0 auto 50px auto;
+  row-gap: 20px;
+  box-sizing: border-box;
+  display: flex;
+  font-family: inherit;
+  flex-direction: column;
+  width: 92.1%;
+  z-index: 100;
+  min-width: 300px;
+}
+.lol-main,
+.sports-main,
+.casino-main {
+  box-sizing: border-box;
+  width: 100%;
+  height: 400px;
+  max-width: 1200px;
+  min-width: 250px;
+  margin: 0 auto;
+}
+/* main esports img */
+.lol-main img {
+  width: 400px;
+  height: auto;
+  position: relative;
+  z-index: 12;
+  top: -280px;
+  left: 0px;
+
+  max-width: 400px;
+  max-height: 322px;
+}
+/* main sports img */
+.sports-main img {
+  width: 350px;
+  position: relative;
+  height: auto;
+  top: 196px; /* Adjust as needed */
+  left: 50%;
+
+  transform: translate(-50%, -50%); /* Adjust to center the element */
+  /* Adjust width */
+  /* Maintain aspect ratio */
+  z-index: 1; /* Ensure it stays above other elements */
+  margin: 0;
+
+  max-width: 600px;
+  max-height: 400px;
+}
+/* main casino img */
+.casino-main img {
+  width: 400px;
+  position: relative;
+  height: auto;
+  top: 200px; /* Adjust as needed */
+  left: 50%;
+
+  transform: translate(-50%, -50%); /* Adjust to center the element */
+  /* Adjust width */
+  /* Maintain aspect ratio */
+  z-index: 12; /* Ensure it stays above other elements */
+  margin: 0;
+
+  max-width: 700px;
+  max-height: 600px;
+}
+
+.main {
+  overflow: visible;
+  border: 1px solid rgba(129, 129, 129, 0.582);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
+    /* Softer top shadow */ 0 40px 40px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
+  background-image: linear-gradient(210deg, black 30%, purple);
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
   min-width: 250px;
   align-self: center;
   padding: 1.5rem 1.5rem 0 1.5rem;
   display: block;
-  border-color: rgb(31, 41, 55);
   border-radius: 16px;
 }
 
@@ -228,28 +833,33 @@ body {
   flex: 1 1 100%;
   display: flex;
   flex-wrap: wrap;
+  height: auto;
   min-width: 200px;
 }
 
 .casino-info {
   box-sizing: border-box;
   border: 0px solid (7, 9, 15);
-  width: 100%;
+  width: 50%;
+  height: fit-content;
   min-width: 200px;
   display: flex;
   flex-wrap: wrap;
-  flex: 1 1 70%;
-  align-content: center;
-  border-image-repeat: stretch;
   flex-direction: row;
+  flex: 1 1 50%;
+  align-content: center;
+  font-family: inherit;
+  margin-top: 30px;
 }
 
 .casino-info a {
   text-decoration: none;
+  width: 100%;
   min-width: 200px;
 }
 .links-to-roobet-info {
   display: flex;
+  flex-direction: row;
   /* flex: 1 1 0%; */
   flex-wrap: wrap;
   border: 0px solid black;
@@ -264,7 +874,7 @@ body {
   align-items: flex-start;
   column-gap: 20px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex: 1 1 0%;
   box-sizing: border-box;
   tab-size: 4;
@@ -279,28 +889,29 @@ body {
   border-radius: 6px;
   display: block;
   box-sizing: border-box;
-  max-width: 150px;
-  min-width: 150px;
+  width: 100px;
+  height: 100px;
 }
 .casino-image {
-  opacity: 2;
-  background-color: black;
+  /* background-color: black; */
   border: 0 solid black;
   border-radius: 6px;
   display: block;
   box-sizing: border-box;
-  max-width: 150px;
-  min-width: 150px;
-  width: 100%;
+  width: 100px;
+  height: 100px;
 }
 
 .name-buttons {
   border: 0 solid rgb(7, 9, 15);
   box-sizing: border-box;
   display: block;
-  min-width: 200px;
+
+  min-width: 150px;
   text-size-adjust: 100%;
-  width: 70%;
+  width: 80%;
+  height: fit-content;
+  font-family: inherit;
 }
 .name-holder {
   align-items: center;
@@ -313,7 +924,7 @@ body {
   text-size-adjust: 100%;
   color: rgb(248, 250, 252);
   width: 100%;
-  min-width: 200px;
+  min-width: 100px;
 }
 .casino-name {
   opacity: 2;
@@ -326,7 +937,7 @@ body {
   line-height: 45px;
   text-size-adjust: 100%;
   font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
 }
 .buttons-casino-info {
   color: rgb(248, 250, 252);
@@ -335,12 +946,13 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   flex: 1 1 0%;
   column-gap: 10px;
   margin: 14px 0 0 0;
   text-size-adjust: 100%;
-  width: 100%;
-  min-width: 200px;
+
+  min-width: 100px;
   row-gap: 10px;
 }
 
@@ -348,6 +960,7 @@ body {
   background-color: rgb(167, 4, 189);
   transition: background-color 0.5s;
   box-shadow: 3px 3px 10px purple;
+  cursor: pointer;
 }
 .best-rewards {
   display: block;
@@ -361,16 +974,20 @@ body {
   color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
   font-weight: 600;
-  width: 30%;
-  min-width: 200px;
+  font-family: inherit;
+  text-shadow: 2px 2px 10px rgb(0, 0, 0);
+  width: 250px;
+  height: 40px;
+  min-width: 100px;
   border-radius: 9999px;
-  padding: 10px;
+  padding: 10px 15px;
 }
 
 .high-withdrawal:hover {
   background-color: rgb(167, 4, 189);
   transition: background-color 0.5s;
   box-shadow: 3px 3px 10px purple;
+  cursor: pointer;
 }
 .high-withdrawal {
   display: block;
@@ -379,104 +996,177 @@ body {
   background-color: rgb(0, 0, 0);
   border: 0 solid rgb(0, 0, 0);
   font-size: 14px;
+  font-family: inherit;
+  text-shadow: 2px 2px 10px rgb(0, 0, 0);
   word-spacing: 2px;
   text-align: center;
   text-size-adjust: 100%;
   font-weight: 600;
-  width: 35%;
+  width: 250px;
+  min-width: 100px;
+  height: 40px;
   border-radius: 9999px;
-  min-width: 200px;
-  padding: 10px;
-}
 
+  padding: 10px 15px;
+}
+.game-icons {
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 50%;
+  height: 50px;
+}
 .casino-bonus {
   display: block;
   align-items: flex-start;
   border: 1px solid(7, 9, 15);
-  width: 30%;
-  min-width: 200px;
+  width: 40%;
+  min-width: 270px;
   box-sizing: border-box;
   flex-basis: 30%;
+  font-family: inherit;
 }
 
 .bonus-info {
   border: 0 solid black;
   box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
+  font-family: inherit;
   flex: 1 1 100%;
-  flex-direction: column;
   text-align: center;
   text-size-adjust: 100%;
   width: 100%;
-  min-width: 200px;
+  min-width: 100px;
   font-weight: 700;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 23px;
   justify-content: center;
   color: rgb(248, 250, 252);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .info {
   margin: 0;
   border: 0 solid black;
+  font-family: inherit;
 }
+
 .buttons-bonus {
+  height: auto;
   width: 100%;
 }
 .buttons-bonus a {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
   text-decoration: none;
 }
 .inactive {
-  margin: 0 auto;
+  font-family: inherit;
+  font-weight: 900;
+
   align-items: center;
   justify-content: center;
   display: flex;
-  flex-wrap: wrap;
   box-sizing: border-box;
   align-items: flex-start;
   width: 90%;
-  flex: 1 1 0%;
-  min-width: 200px;
-  font-weight: 600;
-  background-color: rgb(41, 33, 49);
-  padding: 10px 5px;
-  border-radius: 7px;
+  height: 50px;
+
+  min-width: 100px;
+  background-color: rgb(0, 0, 0);
+
+  border-radius: 90px;
   color: white;
-  font-size: 20px;
-  letter-spacing: 5px;
-  margin: 8px;
-  border: 0 solid black;
-}
-.bonus-link {
-  border: 0 solid black;
-  color: white;
-  display: flex;
-  flex: 1 1 0%;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  align-items: flex-start;
-  width: 90%;
-  min-width: 200px;
-  font-weight: 600;
-  padding: 10px 5px;
-  background-color: rgb(120, 15, 225);
-  border-radius: 7px;
-  font-size: 15px;
-  margin: 8px;
-}
-.bonus-link:hover {
-  opacity: 0.9;
+  font-size: 24px;
+
+  border: 2px solid rgb(56, 7, 56);
 }
 
-.button-info:hover {
-  text-decoration: underline;
-  box-shadow: 1px 1px 5px rgb(197, 11, 182);
+.bonus-link {
+  border: 2px solid black;
+  color: black;
+  display: flex;
+  flex: 1 1 0%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: flex-start;
+  width: 90%;
+  height: 50px;
+  min-width: 100px;
+  font-weight: 900;
+  padding: 10px 5px;
+  background-color: gold;
+  border-radius: 90px;
+  font-size: 20px;
+  font-family: inherit;
+  margin: 10px 0 20px 0;
 }
-.button-info {
+
+.bonus-link:hover,
+.inactive:hover {
+  background-color: #af03f398;
+  cursor: pointer;
+  color: white;
+}
+.content-main {
+  background-image: linear-gradient(240deg, black, purple);
+  text-shadow: 2px 2px 10px rgb(0, 0, 0);
+  max-width: 1100px;
+  box-sizing: border-box;
+  border: 1px solid rgba(129, 129, 129, 0.582);
+  z-index: 10;
+  border-radius: 10px;
+  width: fit-content;
+  height: auto;
+  text-align: start;
+  padding: 20px 0 20px 20px;
+  position: relative;
+}
+.content-main ul li {
+  list-style-type: "◇";
+}
+.content-main a {
+  text-decoration: none;
+}
+.content-main p strong,
+.content-main em {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+#content-main-title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.content-main h1 {
+  color: white;
+}
+/* diamond underline  */
+
+.empty-diamond-underline,
+.diamond-underline {
+  position: relative;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+/* Add the diamond */
+
+/* mrore info(short info) */
+.more-info:hover button {
+  text-decoration: none;
+  box-shadow: 1px 1px 5px rgb(197, 11, 182);
+  border-radius: 10px;
+  background-color: black;
+}
+.more-info button {
+  cursor: pointer;
   background-color: inherit;
   display: block;
   font-weight: 600;
@@ -486,7 +1176,7 @@ body {
   border: 0px solid rgb(186, 3, 241);
   padding: 12px 12px 8px 12px;
   color: rgb(255, 255, 255);
-  width: 100%;
+  width: 30%;
 }
 .more-info {
   box-sizing: border-box;
@@ -494,115 +1184,1490 @@ body {
   justify-content: center;
   flex: 1 1 0%;
   border-top: 0px solid rgb(186, 3, 241);
-  background-image: linear-gradient(240deg, black -10%, purple 103%);
   width: 100%;
-  min-width: 150px;
+  min-width: 100px;
   color: rgb(255, 255, 255);
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: 24px;
+  margin-top: 10px;
 }
 
-.show-popUp:hover {
-  border: 1px solid rgba(241, 236, 236, 0.14);
-  box-shadow: 2px 2px 10px rgb(167, 4, 189);
-}
-.show-popUp {
+.modal {
+  position: fixed;
+  z-index: 100;
   display: flex;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 5px 5px;
-  margin: 10px 10px;
-  border: none;
-  background-color: inherit;
   justify-content: center;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-  height: 30px;
-  width: 100%;
-  text-align: center;
+  align-items: center;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  transition: 0.4s;
+  /* backdrop-filter: blur(3px); */
+  background: rgba(0, 0, 0, 0.815);
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
 }
-
-.hidden {
-  display: none;
-}
-.close-popUp {
-  position: absolute;
-  top: 50px;
-  right: 50px;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 24px;
-}
-
-.popUp {
+.modal.is-active {
   position: fixed;
-  overflow-wrap: break-word;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
 
-  background-color: white;
-  padding: 10px;
+.modal-content {
+  position: fixed;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
   border-radius: 5px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  z-index: 10;
+  border: 2px solid rgb(141, 3, 134);
+  box-shadow: 1px 1px 10px rgb(203, 2, 243);
+  background-image: linear-gradient(black 40%, rgb(99, 2, 99));
+  width: 40%;
+  height: auto;
+  font-size: 20px;
+  font-weight: 600;
+
+  overflow: scroll;
+}
+.modal-content::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+  overflow-y: scroll; /* Add the ability to scroll */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.modal-close {
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
-  z-index: 5;
+  font-size: 30px;
+  border: 0 solid black;
+  color: white;
+  background-color: inherit;
+  position: relative;
+}
+
+#close-insede-content {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  right: 3%;
+  text-align: end;
 }
 
 .bottom {
   box-sizing: border-box;
   display: block;
-  height: 0;
   width: 100%;
-  min-width: 200px;
-  margin-top: 24px;
+  min-width: 100px;
+  margin-top: 10px;
   line-height: 24px;
 }
 
-@media (min-width: 1000px) {
-  .content {
-    height: 100%;
-  }
+/* content in more info */
+.deposit-methods {
+  width: 95%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.425);
+  border-radius: 10px;
+  text-align: center;
 }
-@media (max-width: 800px) {
-  .container-content {
-    width: 450px;
-    height: 100%;
-    margin: 21px auto;
+.logo-methods {
+  height: fit-content;
+}
+.deposit-methods h2 {
+  margin: 5px;
+}
+
+.card-tipe {
+  margin-left: 20px;
+  width: 48px;
+  height: 48px;
+}
+.tipe4 {
+  width: 46px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+.withdrawal,
+.bonus-terms {
+  font-size: auto;
+  width: 95%;
+  min-height: auto;
+  margin: 10px auto;
+  border: 1px solid rgba(255, 255, 255, 0.425);
+  border-radius: 10px;
+  text-align: center;
+  list-style: none;
+}
+.bonus-terms ul li {
+  list-style: none;
+  margin-top: 5px;
+  text-align: center;
+}
+/* 
+*/
+
+/* 
+/* end of page */
+.bottom-page {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(black, purple);
+  box-sizing: border-box;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+.gambleAware,
+.copyright {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  font-family: inherit;
+  font-size: 20px;
+}
+
+.bottom-page img {
+  height: 48px;
+  width: 48px;
+  margin: auto 50px;
+}
+.contact-us {
+  text-align: center;
+}
+
+.bottom-page p a {
+  text-decoration: none;
+  color: white;
+}
+.bottom-page p a span {
+  color: orange;
+}
+
+/* MEDIA QUERY */
+/* max- media query  phones */
+
+@media (min-width: 5px) {
+  /* scroll to top */
+  .scroll-to-top {
+    right: -40px;
   }
-  .container-casinos {
-    margin: 50px auto;
-    width: 450px;
+  .scroll-to-top img {
+    width: 40px;
+    height: 40px;
+  }
+  /* end of scroll ot top */
+
+  .content ul {
+    padding: 0;
+    margin: 5px;
   }
 
-  .second,
-  .content-box,
+  .content ul {
+    padding: 0;
+    margin: 5px;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .box a {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 750;
+    align-self: center;
+  }
+
+  #logo-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* more info */
+
+  /* content main paiges */
+  .container {
+    margin: 0;
+    padding-top: 50px;
+  }
+  .name-content img {
+    border-radius: 100%;
+  }
+  .container-casinos {
+    margin: 0 0 0 0;
+    width: 100%;
+  }
+  .casino-bonus {
+    margin-top: 20px;
+  }
+
+  .container-content {
+    margin: 50px 0px;
+    width: 100%;
+  }
+  .logo-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logo-container img,
+  .name-content img {
+    width: 200px;
+    height: 200px;
+  }
+  .content-text-container {
+    margin: 220px 0 0 0;
+  }
+  /* esports content-text img*/
+  .content-img {
+    width: 300px;
+    position: absolute;
+    height: auto;
+    top: -150px; /* Adjust as needed */
+    left: 0px; /* Adjust as needed */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 400px;
+    max-height: 400px;
+  }
+  /* Sports content-text img */
+  .content-sports {
+    width: 350px;
+    position: absolute;
+    height: auto;
+    top: 1.1%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Adjust to center the element */
+
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 600px;
+    max-height: 400px;
+  }
+  /* casino content-text img */
+  .poker-cards-casino {
+    width: 300px;
+    position: absolute;
+    height: auto;
+    top: -8%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Adjust to center the element */
+
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 900px;
+    max-height: 600px;
+  }
+  .content-text,
+  .content-main {
+    overflow: hidden;
+    z-index: 10;
+    margin: 30px 5px;
+    width: 97%;
+  }
+
+  .content-text h1,
+  .content-main h1 {
+    position: relative;
+    z-index: 10;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 10px;
+    margin: 20px 5px 0 5px;
+    padding: 5px 5px;
+  }
+  .content-text h2,
+  .content-main h2 {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    font-size: 20px;
+    margin: 30px 10px 0 0px;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .content-main h3 {
+    font-size: 20px;
+
+    padding-left: 5px;
+  }
+
+  .content-text p {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    font-size: 18px;
+    padding: 0px 10px 0 10px;
+    margin: 30px 5px 0 5px;
+    font-weight: 500;
+  }
+  .content-main p,
+  .content-main ul {
+    font-size: 18px;
+    padding: 0 5px 0 0;
+    margin: 15px 5px 0 0;
+  }
+
+  .content-main ul li p {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  .content-main ul li {
+    margin: 0 25px;
+  }
+
+  .name-content img {
+    padding: 3px;
+    height: 250px;
+    width: 250px;
+    margin: 0 5px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+  }
+
+  /* news slider */
+  .news-slider-container {
+    width: 98%;
+    margin: 0;
+    border: 0 solid black;
+  }
+  /* news esports img */
+  .top-right-image {
+    position: absolute;
+    top: -20px; /* Adjust as needed */
+    right: 0px; /* Adjust as needed */
+    width: 300px; /* Adjust width */
+
+    height: 250px; /* Maintain aspect ratio */
+  }
+  /* news sports img */
+  .news-sports-img {
+    width: 390px;
+    position: absolute;
+    height: auto;
+    top: 280px; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Adjust to center the element */
+
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 600px;
+    max-height: 600px;
+  }
+
+  /* news casino img */
+  .slots-news-casino {
+    width: 200px;
+    position: absolute;
+    height: auto;
+    top: 230px; /* Adjust as needed */
+    left: 50%;
+
+    transform: translate(-50%, -50%); /* Adjust to center the element */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 600px;
+    max-height: 600px;
+  }
+  .news-slider {
+    height: fit-content;
+    width: 97%;
+    margin: 230px auto 50px auto;
+  }
+  .slider-title {
+    position: relative;
+    z-index: 10;
+    font-size: 30px;
+    text-align: center;
+    padding: 0;
+    margin: 25px 0 0 0;
+
+    text-shadow: -10px -8px 20px rgb(0, 0, 0);
+  }
+  .news-slide {
+    width: 100%;
+  }
+  .news-item {
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    height: fit-content;
+    margin: auto 0;
+  }
+  .news-item a {
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: fit-content;
+  }
+  .news-item img {
+    width: 320px;
+    height: auto;
+    max-height: 200px;
+    border: 5px solid rgba(131, 130, 130, 0.336);
+
+    margin-top: 20px;
+  }
+  .news-content {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .news-content h2 {
+    width: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 15px;
+    margin: 50px 0px 10px 0px;
+    font-weight: 500;
+  }
+  .news-content br {
+    content: "";
+    display: block;
+    margin-top: 10px;
+  }
+  .news-button {
+    margin: 10px 0;
+  }
+  .news-button button {
+    width: 130px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 800;
+    border-radius: 10px;
+    background-color: gold;
+    border: 2px solid rgba(0, 0, 0, 0.788);
+    cursor: pointer;
+  }
+
+  /* top3 */
+  .top3-container {
+    width: 96%;
+    margin: 70px 5px 10px 5px;
+    border: 0 solid black;
+  }
+  .top3casinos {
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+  .top-container {
+    overflow: visible;
+    justify-content: center;
+    height: fit-content;
+  }
+  .top,
+  .top a {
+    align-items: center;
+    min-width: 110px;
+    width: 110px;
+    min-height: 100px;
+    height: 270px;
+    margin: 5px 4px;
+  }
+  .top1,
+  .top2,
+  .top3 {
+    background-size: contain;
+  }
+  .top3casinos .top a {
+    color: white;
+  }
+  .top-left {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    font-size: 13px;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px black;
+    margin: 0 0 auto 0;
+    top: -6px;
+    left: -5px;
+  }
+  /* top3 esports img */
+  .top3img {
+    width: 300px;
+    position: absolute;
+    height: auto;
+    top: -120px; /* Adjust as needed */
+    left: 60px; /* Adjust as needed */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 500px;
+    max-height: 354px;
+  }
+  /* top3 sports img */
+  .top3-spors-img {
+    width: 340px;
+    position: absolute;
+    height: auto;
+    top: -130px; /* Adjust as needed */
+    left: 0px; /* Adjust as needed */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 500px;
+    max-height: 400px;
+  }
+  /* top3 casino img */
+  .roulette-top3-casino {
+    width: 300px;
+    position: absolute;
+    height: auto;
+    top: -2%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Adjust to center the element */
+
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it stays above other elements */
+    margin: 0;
+
+    max-width: 600px;
+    max-height: 400px;
+  }
+  .top-info {
+    margin-top: 0;
+  }
+  .top-info h2 {
+    font-size: 25px;
+    position: relative;
+    z-index: 10;
+    text-shadow: 10px -2px 5px rgb(0, 0, 0), 5px 2px 5px rgb(0, 0, 0);
+  }
+  .top-info p {
+    position: relative;
+    padding: 10px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 10;
+  }
+  .img-box-top {
+    position: absolute;
+    border-radius: 9999px;
+    top: 58px;
+    left: 22px;
+    height: 65px;
+    width: 65px;
+  }
+
+  .img-box-top img {
+    width: 100%;
+    height: 100%;
+    border-radius: 999999px;
+  }
+  .content-top {
+    position: absolute;
+    top: 140px;
+    left: 0px;
+    font-size: 13px;
+    font-weight: 500;
+    width: 100%;
+    margin: 0;
+
+    height: fit-content;
+  }
+  .top-bonus {
+    width: fit-content;
+    height: fit-content;
+
+    position: absolute;
+    margin: 0;
+    top: 205px;
+    left: 13px;
+  }
+  .top-bonus span {
+    font-size: 15px;
+    margin: 5px 10px;
+  }
+
+  .content-box {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .lol-main img {
+    width: 350px;
+    left: 10px;
+    top: 74px;
+  }
+  .lol-main,
+  .sports-main,
+  .casino-main {
+    height: 290px;
+  }
+  .main {
+    width: 80%;
+    align-self: center;
+    margin: 0 0 10px 0;
+  }
+  .second {
+    justify-content: center;
+  }
+
+  .bonus-link,
+  .inactive {
+    margin: 20px auto;
+    width: 65%;
+    height: fit-content;
+    padding: 7px;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 0.8px;
+  }
+  .game-icons {
+    width: 100%;
+    margin: 10px auto;
+  }
+  .game-icons img {
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+  }
+
   .name-holder,
   .buttons-casino-info {
     justify-content: center;
   }
+
+  body,
+  #home-background,
+  #Casino-Background,
+  #ESports-backgound,
+  #Casino-sports-background,
+  #Bonus-Page-Background,
+  #news-background {
+    background-size: contain;
+  }
+  .name-buttons {
+    width: 100%;
+  }
+  .modal-content {
+    width: 70%;
+    margin: 10px;
+  }
+  .modal {
+    width: 100%;
+  }
+  .deposit-methods h2,
+  .withdrawal h2,
+  .bonus-terms h2 {
+    font-size: 18px;
+  }
+  .deposit-methods,
+  .withdrawal,
+  .bonus-terms {
+    font-size: 15px;
+  }
+
+  .logo-methods {
+    justify-content: start;
+    text-align: center;
+    height: auto;
+  }
+  .more-info button {
+    width: fit-content;
+  }
+  .moreInfo-img {
+    position: relative;
+    z-index: 10;
+    bottom: -39px;
+    width: 70vw;
+    height: fit-content;
+  }
+
+  #content-main-title {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 700;
+    margin: 20px 10px 20px 0;
+  }
+  .main-page-imgs,
+  .main-page-imgs img {
+    width: 100%;
+  }
+
+  /* CAsino info page */
+  .missionU img {
+    border: 1px solid rgba(228, 225, 225, 0.507);
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+  }
+  .missionU {
+    width: 100%;
+    text-align: center;
+    margin: 50px 0;
+    border: 0 solid black;
+  }
+
+  /* botom page */
+
+  .gambleAware,
+  .copyright {
+    flex-wrap: wrap;
+    font-size: 15px;
+    justify-content: center;
+  }
+  .gambleAware p {
+    text-align: center;
+    width: 100%;
+  }
 }
+
+/* max mediaQuery content Low-Resolution Tablets and iPad  */
+@media (min-width: 550px) {
+  /* scroll to top */
+  .scroll-to-top {
+    right: -30px;
+  }
+  .scroll-to-top img {
+    width: 40px;
+    height: 40px;
+  }
+  /* new navbar */
+  .toggle-button {
+    padding: 150px 20px;
+  }
+  /* content */
+  .content-text-container {
+    margin-top: 250px;
+  }
+
+  .name-content {
+    width: 100%;
+  }
+  /* esports content-text img */
+  .content-img {
+    width: 350px;
+
+    top: -183px; /* Adjust as needed */
+  }
+  /* scports content-text img */
+  .content-sports {
+    width: 500px;
+    top: -12%;
+  }
+  /* casino content text img */
+  .poker-cards-casino {
+    width: 400px;
+    top: -10px;
+  }
+  #content-main-title {
+    font-size: 30px;
+    margin: 40px 10px;
+  }
+  .content-main {
+    margin: 30px 5px;
+    padding-bottom: 20px;
+  }
+  .content-text h1,
+  .content-main h1 {
+    font-size: 38px;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  .content-text h2,
+  .content-main h2 {
+    font-size: 23px;
+    margin-top: 50px;
+    margin-left: 10px;
+    font-weight: 700;
+  }
+  .content-main h3 {
+    font-size: 23px;
+  }
+
+  .content-text p,
+  .content-main p,
+  .comtent-main ul {
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+  }
+  .content-main ul li {
+    font-size: 20px;
+  }
+
+  /* news slider */
+  .news-slider-container {
+    width: 98%;
+    height: fit-content;
+  }
+  /* news esports img */
+  .top-right-image {
+    top: 0px; /* Adjust as needed */
+    right: 5px; /* Adjust as needed */
+    width: 400px; /* Adjust width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  /* news sports img */
+  .news-sports-img {
+    top: 340px; /* Adjust as needed */
+    left: 50%;
+    width: 500px; /* Adjust width */
+    height: fit-content;
+  }
+
+  /* news casino img */
+  .slots-news-casino {
+    width: 300px;
+
+    top: 280px;
+  }
+  .news-slider {
+    width: 100%;
+    margin: 300px 0 40px 0;
+  }
+  .slider-title {
+    font-size: 40px;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .news-item {
+    display: flex;
+    text-align: center;
+    margin: auto 0;
+    height: fit-content;
+  }
+  .news-item a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+  .news-banner {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .news-item img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+
+    border: 5px solid rgba(128, 128, 128, 0.274);
+  }
+  .news-item button {
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .news-content {
+    width: 70%;
+    margin: 30px auto;
+  }
+
+  .news-content h2 {
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 10px 0px;
+    text-align: center;
+  }
+
+  /* topp 3 */
+  .top3casinos {
+    height: fit-content;
+    flex-direction: column;
+    margin: 180px auto 30px auto;
+  }
+  .top-container {
+    justify-content: center;
+    padding: 0 10px;
+  }
+  .top {
+    width: 150px;
+    height: 370px;
+    margin: 5px 10px;
+  }
+  .top a {
+    color: white;
+  }
+  .top-left {
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px black;
+    top: -11px;
+    left: -5px;
+  }
+
+  .n1 {
+    top: 2px;
+    left: 11.5px;
+    font-size: 20px;
+  }
+  .top-info {
+    font-size: 20px;
+    width: 100%;
+  }
+  /* top3 esports img */
+  .top3img {
+    width: 400px;
+    top: -5px; /* Adjust as needed */
+    left: 140px; /* Adjust as needed */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it stays above other elements */
+    margin: 0;
+  }
+  /* top3 sports img */
+  .top3-spors-img {
+    width: 500px;
+    top: -10px; /* Adjust as needed */
+    left: -20px; /* Adjust as needed */
+  }
+
+  /* top3 sports img */
+  .roulette-top3-casino {
+    width: 350px;
+    left: 50%;
+    top: 24%;
+  }
+  .top-info h2 {
+    font-size: 35px;
+  }
+  .img-box-top {
+    position: absolute;
+    border-radius: 9999px;
+    top: 84px;
+    left: 32px;
+    height: 89px;
+    width: 89px;
+  }
+  .img-box-top img {
+    border-radius: 9999px;
+    height: 100%;
+    width: 100%;
+  }
+  .content-top {
+    position: absolute;
+    top: 210px;
+    font-size: 18px;
+    font-weight: 500;
+    width: 95%;
+    margin: 0 5px;
+
+    height: fit-content;
+  }
+  .content-top p {
+    margin: 0;
+  }
+  .top-bonus {
+    position: absolute;
+    margin: 0;
+    top: 280px;
+    left: 28px;
+  }
+  .top-bonus span {
+    font-size: 20px;
+  }
+  /* ods */
+
+  .name-holder,
+  .buttons-casino-info {
+    justify-content: start;
+    width: 90%;
+    flex-wrap: wrap;
+  }
+  .content-box {
+    flex-wrap: nowrap;
+  }
+  .container {
+    margin: 0;
+    padding-top: 50px;
+  }
+  .container-casinos,
+  .container-content {
+    width: 100%;
+  }
+
+  .lol-main,
+  .sports-main,
+  .casino-main {
+    height: 310px;
+  }
+  /* main esports img */
+  .lol-main img {
+    left: 170px;
+    width: 400px;
+    top: 63px;
+  }
+  .sports-main img {
+    width: 500px;
+    top: 167px;
+  }
+  .casino-main img {
+    width: 450px;
+    top: 225px;
+  }
+  .main {
+    width: 99%;
+    padding: 10px 10px;
+  }
+  .name-buttons {
+    width: 60%;
+  }
+
+  .best-rewards,
+  .high-withdrawal {
+    box-sizing: border-box;
+
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .bonus-link,
+  .inactive {
+    width: 70%;
+    font-size: 20px;
+    padding: 5px;
+  }
+  .game-icons {
+    width: 80%;
+    margin: 20px 0;
+  }
+  .game-icons img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .more-info {
+    height: auto;
+    margin: 0;
+    text-align: center;
+  }
+  .modal-content {
+    width: 50%;
+    height: auto;
+  }
+  .deposit-methods h2,
+  .withdrawal h2,
+  .bonus-terms h2 {
+    font-size: 20px;
+  }
+
+  .logo-methods {
+    justify-content: start;
+    text-align: center;
+  }
+  .moreInfo-img {
+    width: 50vw;
+  }
+
+  /* end of page */
+  .gambleAware {
+    flex-direction: row;
+  }
+}
+/*   */
+
+/* max-mediaquwry content Tablets iPads (portrait mode) */
+@media (min-width: 1200px) {
+  /* scroll to top */
+  .scroll-to-top {
+    right: -15px;
+  }
+  .scroll-to-top img {
+    width: 50px;
+    height: 50px;
+  }
+  /* end of scroll to top */
+
+  body,
+  #home-background,
+  #Casino-Background,
+  #ESports-backgound,
+  #Casino-sports-background,
+  #Bonus-Page-Background,
+  #news-background {
+    background-size: cover;
+  }
+  /* breadcrumbs */
+  .breadcrumbs {
+    margin: 0 0 0 200px;
+    background-image: linear-gradient(90deg, black 30%, rgba(128, 0, 128, 0));
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .navBar {
+    width: 0;
+  }
+  .toggle-button {
+    display: none;
+  }
+  .side-navigation {
+    left: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: fixed;
+  }
+  .close-button {
+    display: none;
+  }
+  .nav-link,
+  .dropdown-toggle {
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+  .nav-icon,
+  .dropdown-toggle img {
+    width: 35px;
+    height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .dropdown-menu a {
+    font-weight: 700;
+    width: fit-content;
+    font-size: 22px;
+    padding: 6px;
+  }
+
+  .navBar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    overflow-y: scroll; /* Add the ability to scroll */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .name-content {
+    display: none;
+  }
+
+  .home2 {
+    display: none;
+  }
+
+  .bonusThird {
+    margin-bottom: 50px;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 205px;
+    padding-top: 0;
+  }
+  body {
+    display: flex;
+    background-size: cover;
+  }
+  .lol-main,
+  .sports-main,
+  .casino-main {
+    height: 400px;
+  }
+  .lol-main img {
+    top: 150px;
+    left: 450px;
+  }
+  .sports-main img {
+    width: 600px;
+    top: 224px;
+  }
+  .casino-main img {
+    width: 500px;
+    top: 330px;
+  }
+  .name-content {
+    max-width: 1200px;
+  }
+  .name-content img {
+    height: 400px;
+    width: 400px;
+  }
+  .name-buttons {
+    width: 80%;
+  }
+  .bonus-info {
+    margin-top: 10px;
+  }
+
+  /* content top */
+
+  .content-text-container {
+    margin-top: 350px;
+  }
+  /* esports content-text img */
+  .content-img {
+    width: 400px;
+    position: absolute;
+    height: auto;
+    top: -230px; /* Adjust as needed */
+  }
+  /* scports content-text img */
+  .content-sports {
+    width: 600px;
+    top: -11.8%;
+  }
+  /* casino content text img */
+  .poker-cards-casino {
+    width: 350px;
+    top: -14%;
+  }
+  .content-text,
+  .content-main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px 0;
+    justify-self: center;
+  }
+
+  .content-text p,
+  .content-main p,
+  .content-main ul li p {
+    font-size: 25px;
+    position: relative;
+    z-index: 10;
+    margin: 10px 25px;
+  }
+  .content-main ul li {
+    margin: 10px 50px;
+    font-size: 25px;
+  }
+  .missionU img {
+    width: 60%;
+  }
+
+  .content-main h2 {
+    margin-left: 10px;
+    font-size: 30px;
+  }
+  .content-main h3 {
+    font-size: 25px;
+  }
+  #content-main-title {
+    font-size: 35px;
+  }
+
+  /* news slidebar */
+
+  /* news casino img */
+  .slots-news-casino {
+    width: 300px;
+    top: 280px;
+  }
+  .news-slider-container {
+    width: 100%;
+  }
+  .news-item {
+    width: 1195px;
+    height: fit-content;
+    margin: auto 0;
+    overflow: hidden;
+  }
+  .news-item a {
+    height: fit-content;
+    flex-direction: row;
+    text-align: start;
+    margin: 0 auto;
+  }
+  .news-banner {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+  }
+  .news-item img {
+    display: block;
+    width: 80%;
+    height: auto;
+    max-height: 350px;
+    margin: 10px auto;
+  }
+
+  .news-item button {
+    margin-top: 20px;
+  }
+  .news-content {
+    height: fit-content;
+    width: 100%;
+
+    margin: auto 0px;
+    text-align: center;
+
+    justify-items: start;
+  }
+  .news-content h2 {
+    font-size: 28px;
+    text-align: start;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .news-wrapper {
+    height: fit-content;
+  }
+
+  /* top 3 */
+  .top3-container {
+    margin-top: 150px;
+  }
+  .top3casinos {
+    max-width: 1200px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 40px auto;
+    padding: 15px;
+  }
+  .top,
+  .topa {
+    width: 180px;
+    height: 440px;
+  }
+  .top1,
+  .top2,
+  .top3 {
+    top: -20.5px;
+  }
+  .top-info {
+    width: 50%;
+    margin-bottom: 100px;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+  }
+  .img-box-top {
+    position: absolute;
+    border-radius: 9999px;
+    top: 101px;
+    left: 39px;
+    height: 105px;
+    width: 105px;
+  }
+  .content-top {
+    position: absolute;
+    top: 250px;
+    font-size: 19px;
+    font-weight: 500;
+    width: 95%;
+    margin: 0 5px;
+
+    height: fit-content;
+  }
+  .top-bonus {
+    top: 335px;
+    left: 35px;
+    font-size: 30px;
+  }
+  .top-bonus span {
+    font-size: 25px;
+  }
+  /* top3 esports img */
+  .top3img {
+    width: 500px;
+    top: -125px; /* Adjust as needed */
+    left: 130px; /* Adjust as needed */
+    /* Adjust width */
+    /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it stays above other elements */
+    margin: 0;
+  }
+  /* top3 sports img */
+  .top3-spors-img {
+    width: 500px;
+    top: -105px; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
+  }
+
+  /* top3 sports img */
+  .roulette-top3-casino {
+    width: 450px;
+    left: 33%;
+    top: 16%;
+  }
+  /* news slider img sports */
+  .news-sports-img {
+    top: 330px; /* Adjust as needed */
+    left: 50%;
+    width: 600px; /* Adjust width */
+    height: fit-content;
+  }
+
+  .top-info p {
+    font-size: 25px;
+  }
+
+  .best-rewards,
+  .high-withdrawal {
+    box-sizing: border-box;
+
+    font-size: 15px;
+  }
+  .bonus-link,
+  .inactive {
+    width: 60%;
+    margin: 20px auto;
+  }
+  .moreInfo-img {
+    width: 20vw;
+    justify-content: center;
+  }
+  .modal-content {
+    width: 25%;
+    height: auto;
+  }
+}
+
+/*  */
+
+/*  */
+/*  */
+/*  */

@@ -1,0 +1,1166 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 5px;
+  color: #ffffff;
+  text-shadow: 2px 2px 10px rgb(0, 0, 0);
+  background-color: black;
+  /* Add custom scrollbar styles */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #333 #000; /* Firefox (thumb and track colors) */
+}
+
+/* scrollbar */
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 6px; /* Thin scrollbar */
+  height: 6px; /* Thin horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: purple; /* Semi-transparent black for the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2); /* Transparent track with a hint of black */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* end of scrollbar */
+
+/* Style for the scroll-to-top arrow */
+/* Style for the Back to Top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 5px; /* Distance from the bottom */
+  right: -50px; /* Distance from the right */
+  display: none; /* Hidden by default */
+  z-index: 1000; /* Ensure it's above other content */
+  width: fit-content; /* Size of the arrow */
+  height: fit-content;
+  font-weight: 700;
+  color: purple; /* Arrow color */
+  padding: 0px;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+}
+.scroll-to-top img {
+  background-color: #000;
+  border-radius: 50px;
+  width: 10px;
+  height: 10px;
+}
+
+.scroll-to-top.show {
+  display: block; /* Display the button when the user scrolls down */
+}
+
+/* end of arrow to top */
+
+#news-background {
+  background-size: cover;
+  background-position: center;
+  background-image: url("img/NewsBackground.webp");
+  filter: blur(2px);
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+/* ens of scroll bars  */
+/* Side Navigation Styles */
+/* Side Navigation */
+.side-navigation {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially off-screen */
+  width: 220px;
+  height: 100%;
+  transition: left 0.3s ease-in-out; /* Smooth transition for left property */
+  background-image: linear-gradient(190deg, black 50%, purple);
+  color: white;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* When side navigation is open, slide it in */
+.side-navigation.open {
+  left: 0; /* Move the side navigation into view */
+  overflow-y: auto; /* Allow scrolling within side navigation */
+}
+
+.side-navigation a {
+  width: 100%;
+  text-decoration: none;
+}
+
+.side-navigation p {
+  width: 100%;
+  font-size: 25px;
+  font-weight: 800;
+  text-decoration: none;
+  color: white;
+}
+
+.navigation-header {
+  display: flex;
+  flex-direction: row;
+  background-color: inherit;
+}
+
+.side-navigation .navigation-header {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side-navigation .navigation-header .logo-image {
+  width: 35%;
+  height: auto;
+}
+
+.side-navigation .navigation-header .close-button {
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.close-button {
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  left: 85%;
+}
+
+/* Navigation Links Styles */
+.navigation-links {
+  padding: 20px;
+}
+
+/* Styling for images in the navigation links */
+.nav-icon {
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  margin-right: 4px; /* Space between the image and text */
+  padding-bottom: 6px;
+  vertical-align: middle; /* Vertically align the image with the text */
+}
+
+/* Optional: Style for dropdown button images */
+.dropdown-toggle img {
+  padding-bottom: 6px;
+  width: 30px;
+  height: auto;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.nav-link {
+  width: fit-content;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav-link a {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: purple;
+  border-radius: 10px;
+}
+
+/* Dropdown Button Styles */
+.dropdown-toggle {
+  background-color: inherit;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: fit-content;
+  padding: 5px 10px;
+  text-align: left;
+  font-size: 20px;
+  margin: 10px 0;
+  border-radius: 10px; /* Make the button edges round like the dropdown menu */
+  text-align: center;
+}
+
+/* Hover effect for dropdown buttons */
+.dropdown-toggle:hover {
+  background-color: purple;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none; /* Hide by default */
+  background-color: inherit;
+
+  margin-top: 5px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
+.dropdown-menu.show {
+  display: block; /* Show when the 'show' class is added */
+}
+
+.dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+  padding: 5px 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.dropdown-menu a:hover {
+  background-color: purple;
+}
+
+/* Overlay for Navigation */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Ensure it's below the side navigation */
+}
+
+/* Toggle Button Styles */
+.toggle-button {
+  position: fixed;
+  top: 60%;
+  left: 0px; /* Move the button further outside the screen */
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1001;
+  background-color: rgba(
+    128,
+    0,
+    128,
+    0.5
+  ); /* Background color for the rectangle */
+  color: #fff;
+  border: none;
+  padding: 130px 11px; /* Increase padding for a larger button */
+  border-top-right-radius: 25px; /* Increase border radius for more rounded corners */
+  border-bottom-right-radius: 25px;
+  border: 1px solid rgba(63, 58, 58, 0.849);
+  border-left: 0 solid white;
+  font-size: 100px; /* Increase font size for larger text */
+  text-align: center; /* Center the text inside */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* Allow width to be dynamic */
+}
+.toggle-bar {
+  display: flex;
+  flex-direction: column;
+  width: 6px; /* Adjust width as needed */
+  height: 6px; /* Adjust height as needed */
+  background-color: rgba(255, 255, 255, 0.616); /* Color of the dots */
+  border-radius: 50%;
+  margin: 2px auto; /* Adjust the spacing between the dots */
+}
+
+.toggle-button:hover {
+  /* Slightly lighter shade on hover */
+  background-color: purple;
+}
+
+/* To make the button visible once the navigation is opened */
+.side-navigation.open .toggle-button {
+  display: none; /* Hide button when navigation is open */
+}
+
+/* Animation for the Side Navigation */
+.side-navigation.open {
+  left: 0;
+}
+
+.overlay.show {
+  display: block;
+}
+/* end test */
+
+/* breadcrumbs */
+/* Breadcrumbs Styles */
+.breadcrumbs {
+  margin: 70px 0 0 0px;
+  padding: 10px;
+  width: 100%;
+  background-color: purple;
+  box-sizing: border-box;
+  display: block;
+  position: fixed;
+  gap: 3px;
+  align-items: start;
+  font-size: 15px;
+
+  z-index: 15;
+  font-weight: 700;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: white;
+  margin: 0 3px;
+}
+
+.breadcrumbs span {
+  color: yellow;
+  margin-left: 3px;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+/* end of bredcrumbs */
+
+/* nav Bar */
+
+.navBar {
+  font-family: inherit;
+  background-image: linear-gradient(black, purple);
+  display: block;
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
+
+/* Show the dropdown menu on hover */
+
+/* vertical menu hamburger menu */
+
+/*  */
+/*  */
+
+/* news page */
+.content-text {
+  display: block;
+  background: inherit;
+  padding: 20px 10px;
+  border-radius: 8px;
+
+  background-image: linear-gradient(black, purple);
+  border: 1px solid rgba(204, 201, 201, 0.733);
+}
+
+/* news slider  */
+.casino-sliders {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.slider {
+  background: inherit;
+  padding: 20px 50px;
+  border-radius: 8px;
+  position: relative;
+  background-image: linear-gradient(black, purple);
+  border: 1px solid rgba(204, 201, 201, 0.733);
+}
+.slider h2 {
+  font-size: 40px;
+  text-align: center;
+}
+.slider-wrapper {
+  display: flex;
+  overflow-x: hidden;
+  gap: 15px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+.news-box {
+  flex: 0 0 300px;
+  box-sizing: border-box;
+  text-align: center;
+  scroll-snap-align: start;
+}
+.news-box img {
+  width: 100%;
+  height: auto;
+}
+
+.back-btn,
+.forth-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  font-size: 30px;
+  font-weight: 800;
+  padding: 20px;
+
+  cursor: pointer;
+}
+.back-btn {
+  left: 10px;
+}
+.forth-btn {
+  right: 10px;
+}
+.back-btn:hover,
+.forth-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* end of nes slider  */
+.container-news {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  margin: 20px 0 20px 200px;
+}
+.news-box {
+  box-sizing: border-box;
+  height: 550px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid rgba(204, 201, 201, 0.733);
+
+  border-radius: 10px;
+}
+
+.news-box a {
+  text-decoration: none;
+  color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-tap-highlight-color: transparent; /* Removes tap highlight color */
+}
+.news-banner {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  flex-shrink: 0;
+}
+.news-banner img {
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(204, 201, 201, 0.733);
+  width: 100%;
+  max-height: 370px;
+  object-fit: cover; /* Optional: adjusts how the image fits */
+  height: auto;
+  width: 100%;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.news-content {
+  box-sizing: border-box;
+  margin: 10px 5px;
+  text-decoration: none;
+  word-spacing: 2px;
+}
+.news-content br {
+  content: "";
+  display: block;
+  margin: 30px;
+}
+.news-button {
+  margin-top: auto;
+}
+.news-button button {
+  width: auto;
+  height: auto;
+  font-family: inherit;
+  background-color: white;
+  font-size: 25px;
+  font-weight: 600;
+  border: 1px solid grey;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 900;
+}
+.news-content h2 {
+  color: white;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+.news-content p strong {
+  font-weight: 900;
+}
+
+.news-smallBox-content {
+  margin-bottom: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 100%;
+  height: 450px;
+}
+
+/* news-page article CONTENT */
+.missionU {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: fit-content;
+}
+.missionU a {
+  width: 100%;
+}
+.missionU img {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(228, 225, 225, 0.507);
+  border-radius: 10px;
+
+  height: auto;
+}
+
+.banner-box {
+  box-sizing: border-box;
+  height: auto;
+  background-color: black;
+}
+.banner-box img {
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  box-sizing: border-box;
+  background-color: white;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.news-content-main {
+  box-sizing: border-box;
+  background-image: linear-gradient(black, purple);
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  font-size: 30px;
+  text-align: start;
+}
+.news-content-main p a {
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+}
+.news-content-main li {
+  list-style-position: inside;
+  text-align: start;
+  margin-top: 15px;
+}
+.news-content-main h1 {
+  text-align: center;
+  color: white;
+}
+
+.news-content-main h2,
+h3 {
+  color: white;
+}
+strong,
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.claim-news-bonus {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.claim-news-bonus button {
+  box-sizing: border-box;
+  width: 200px;
+  height: 50px;
+  font-size: 25px;
+  font-family: inherit;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  background-color: gold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* end of page */
+.bottom-page {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(black, purple);
+
+  box-sizing: border-box;
+  width: 100%;
+  height: fit-content;
+
+  justify-content: center;
+  align-items: center;
+}
+.gambleAware,
+.copyright {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  font-family: inherit;
+  font-size: 20px;
+}
+.bottom-page img {
+  height: 48px;
+  width: 48px;
+  margin: auto 50px;
+}
+.contact-us {
+  text-align: center;
+}
+
+.bottom-page p a {
+  text-decoration: none;
+  color: white;
+}
+.bottom-page p a span {
+  color: orange;
+}
+
+/* MEDIA QUERY */
+/* max- media query  phones */
+@media (max-height: 1000px) {
+  .all4wins,
+  .all4wins img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 5px) {
+  /* scroll to top */
+  .scroll-to-top {
+    right: -40px;
+  }
+  .scroll-to-top img {
+    width: 40px;
+    height: 40px;
+  }
+  /* end of scroll ot top */
+  .content ul {
+    padding: 0;
+    margin: 5px;
+  }
+
+  .content ul {
+    padding: 0;
+    margin: 5px;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .box a {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 750;
+    align-self: center;
+  }
+
+  #logo-img {
+    width: 60px;
+    height: 60px;
+  }
+  /* news slider */
+  .slider-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory; /* Ensures smooth snapping to slides */
+    scroll-behavior: smooth;
+    margin: 10px 0 0 40px;
+  }
+  .back-btn,
+  .forth-btn {
+    font-size: 20px;
+    padding: 10px;
+  }
+  .back-btn {
+    left: 20px;
+  }
+  .forth-btn {
+    right: 5px;
+  }
+
+  .news-box {
+    flex: 0 0 100%; /* Each news box takes up the full width */
+    scroll-snap-align: start; /* Align at the start of the box */
+    margin: 10px;
+    height: fit-content;
+    border: 0 solid black;
+    padding-bottom: 20px;
+    background-image: none;
+  }
+
+  /* Hide scrollbar for all browsers */
+  .slider-wrapper {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .slider-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+  .casino-sliders {
+    width: 95%;
+    margin: 50px auto;
+    padding: 20px 0;
+  }
+  .content-text {
+    width: 85%;
+    margin: 20px auto;
+  }
+  .content-text h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+  .content-text p {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .slider {
+    padding: 10px 0;
+  }
+  .slider h2 {
+    font-size: 25px;
+    margin: 0;
+  }
+  /* end of nes slider */
+
+  /* news page */
+
+  .container-news {
+    margin: 0;
+    height: 100%;
+
+    padding: 130px 0px 0px 0px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .news-box {
+    box-sizing: border-box;
+  }
+  .banner-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: inherit;
+  }
+  .banner-box img,
+  banner-box a {
+    border-radius: 0;
+    display: block;
+    background-color: #000;
+    width: 95%;
+    margin: 0 auto;
+  }
+  .news-content h2 {
+    font-size: 20px;
+    margin: 15px;
+  }
+  .news-content p {
+    font-size: 15px;
+  }
+  .br {
+    margin-top: 10px;
+  }
+
+  .news-button button {
+    font-size: 25px;
+    background-color: gold;
+    border: 2px solid rgba(0, 0, 0, 0.788);
+  }
+
+  .news-content-main {
+    box-sizing: border-box;
+    width: 97%;
+    margin: 0 auto;
+    font-size: 20px;
+    padding: 10px 10px 10px 21px;
+  }
+  .news-content-main h1 {
+    font-size: 28px;
+  }
+  .news-content-main h2 {
+    font-size: 25px;
+  }
+  .news-content-main h3 {
+    font-size: 20px;
+  }
+  table th,
+  td {
+    font-size: 15px;
+    padding: 3px;
+  }
+  table {
+    border-collapse: separate; /* Important: allows border-radius to work */
+    border-spacing: 0; /* Removes space between cells */
+    border: 2px solid rgba(255, 255, 255, 0.541); /* Adds a border to the table */
+    border-radius: 10px; /* Rounds the corners of the table */
+  }
+  .banner-box {
+    width: 100%;
+  }
+  .bottom-page {
+    margin-top: 50px;
+  }
+
+  /* botom page */
+  .gambleAware,
+  .copyright {
+    flex-wrap: wrap;
+    font-size: 15px;
+    justify-content: center;
+  }
+  .gambleAware p {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* max mediaQuery content Low-Resolution Tablets and iPad  */
+@media (min-width: 550px) {
+  /* scroll to top */
+  .scroll-to-top {
+    right: -30px;
+  }
+  .scroll-to-top img {
+    width: 40px;
+    height: 40px;
+  }
+  /* new navbar */
+  .toggle-button {
+    padding: 150px 20px;
+  }
+  /* news page */
+  .container-news {
+    height: 100%;
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 111px 0 10px 0;
+  }
+
+  .content-text {
+    width: 83%;
+    margin: 20px auto;
+  }
+  .content-text h1 {
+    font-size: 35px;
+    text-align: center;
+  }
+  .content-text p {
+    font-size: 25px;
+    text-align: center;
+  }
+  .casino-sliders {
+    width: 100%;
+  }
+  .slider {
+    width: 87%;
+    padding: 20px 0px;
+    margin: 20px auto;
+  }
+  .slider h2 {
+    font-size: 35px;
+  }
+  .slider-wrapper {
+    margin: 10px 0px 10px 10px;
+  }
+  .back-btn,
+  .forth-btn {
+    font-size: 35px;
+    padding: 10px;
+  }
+  .back-btn {
+    left: -20px;
+  }
+  .forth-btn {
+    right: -20px;
+  }
+  /* news slider */
+
+  .news-box {
+    flex: 0 0 300px; /* Original size for each news box */
+    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0),
+      /* Softer top shadow */ 0 10px 10px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
+    border: 1px solid rgba(255, 255, 255, 0.438);
+  }
+
+  /* ens of news slider */
+  .news-content-main {
+    width: 100%;
+    font-size: 25px;
+    padding: 30px;
+    margin: 0;
+  }
+  .news-content-main h1 {
+    font-size: 32px;
+  }
+  .news-content-main h2 {
+    font-size: 27px;
+  }
+  .news-content-main h3 {
+    font-size: 25px;
+  }
+  table {
+    margin: 20px auto;
+  }
+  table th,
+  td {
+    font-size: 19px;
+  }
+  .news-box {
+    margin: 20px auto;
+    width: 350px;
+    height: 600px;
+  }
+  .banner-box img {
+    margin: 0;
+    width: 100%;
+  }
+  .banner-box {
+    width: 100%;
+  }
+
+  .news-content h2 {
+    font-size: 23px;
+  }
+  .news-content p {
+    font-size: 19px;
+  }
+  .news-button button {
+    font-size: 25px;
+  }
+
+  .missionU {
+    justify-content: center;
+  }
+  .missionU a {
+    width: 100%;
+  }
+  .missionU img {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+/* 
+    
+  
+  
+}
+/*   */
+
+/* max-mediaquwry content Tablets iPads (portrait mode) */
+@media (min-width: 1200px) {
+  /* scroll to top */
+  .scroll-to-top {
+    right: -15px;
+  }
+  .scroll-to-top img {
+    width: 50px;
+    height: 50px;
+  }
+  /* end of scroll to top */
+
+  /* breadcrumbs */
+  .breadcrumbs {
+    margin: 0 0 0 220px;
+    background-color: #000;
+  }
+  .navBar {
+    width: 0;
+  }
+  .toggle-button {
+    display: none;
+  }
+  .side-navigation {
+    left: 0;
+    overflow-y: hidden;
+    overflow: auto;
+  }
+
+  .close-button {
+    display: none;
+  }
+  .nav-link,
+  .dropdown-toggle {
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+  .nav-icon,
+  .dropdown-toggle img {
+    width: 35px;
+    height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .dropdown-menu a {
+    font-weight: 700;
+    width: fit-content;
+    font-size: 21px;
+    padding: 6px;
+  }
+  .content::-webkit-scrollbar,
+  .navBar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    overflow-y: scroll; /* Add the ability to scroll */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .name-content {
+    display: none;
+  }
+
+  .home2 {
+    display: none;
+  }
+
+  .bonusThird {
+    margin-bottom: 50px;
+  }
+
+  /* News Page */
+  .container-news {
+    margin: 0 0 0 190px;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    padding: 40px 0 0 0;
+    flex-wrap: wrap;
+    height: 100vh;
+  }
+  .news-content-main h1 {
+    font-size: 35px;
+  }
+  .news-content-main h2 {
+    font-size: 30px;
+  }
+  .news-content-main h3 {
+    font-size: 28px;
+  }
+  .news-content-main p {
+    font-size: 25px;
+  }
+  .content-text {
+    width: 87%;
+    margin: 40px auto;
+    padding: 20px 40px;
+  }
+  table th,
+  td {
+    font-size: 25px;
+  }
+
+  .slider {
+    width: 90%;
+    padding: 10px;
+    padding: 20px 0 0px 30px;
+    margin-top: 100px;
+  }
+  .casino-sliders {
+    width: 100%;
+    padding: 0;
+    margin: 100px 0;
+  }
+
+  /* article from news */
+  .banner-img {
+    height: 250px;
+  }
+  .banner-box {
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid black(128, 128, 128, 0.459);
+  }
+}
+
+@media (min-width: 2000px) {
+  .container-news {
+    width: 90%;
+    margin: 0 auto 0 190px;
+  }
+  .content-text {
+    width: 89%;
+  }
+
+  .slider {
+    width: 90%;
+    margin: 100px auto;
+  }
+  .news-box {
+    margin: 15px 30px;
+  }
+  .news-content-main h1 {
+    font-size: 45px;
+  }
+  .news-content-main h2 {
+    font-size: 35px;
+  }
+  .news-content-main h3 {
+    font-size: 30px;
+  }
+  .news-content-main p {
+    font-size: 30px;
+    font-weight: 450;
+  }
+  .banner-box {
+    width: 50%;
+  }
+}
+/*  */
+
+/*  */
+/*  */
+/*  */
