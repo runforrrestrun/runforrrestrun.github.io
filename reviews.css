@@ -886,6 +886,7 @@ strong {
 
   .review-img img {
     width: 100%;
+    height: auto;
     border: 1px solid grey;
     border-radius: 10px;
   }
