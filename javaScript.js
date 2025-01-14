@@ -299,17 +299,23 @@ window.addEventListener("touchstart", function (e) {
 });
 
 // back to the top arrow
-// Event listener to show the scroll-to-top button when scrolling
-window.addEventListener("scroll", function () {
-  const scrollButton = document.querySelector(".scroll-to-top");
+// Event listener to show or hide the back-to-top button
+window.addEventListener(
+  "scroll",
+  function () {
+    const scrollButton = document.querySelector(".scroll-to-top");
 
-  // Show the button when the page is scrolled down 100px or more
-  if (
-    document.body.scrollTop > 100 ||
-    document.documentElement.scrollTop > 100
-  ) {
-    scrollButton.classList.add("show");
-  } else {
-    scrollButton.classList.remove("show");
-  }
+    // Show the button when scrolled down 100px, otherwise hide it
+    if (window.scrollY > 100) {
+      scrollButton.style.display = "block";
+    } else {
+      scrollButton.style.display = "none";
+    }
+  },
+  { passive: true } // Use passive listener for performance
+);
+
+// Event listener for clicking the back-to-top button
+document.querySelector(".scroll-to-top").addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
 });
