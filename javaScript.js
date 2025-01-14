@@ -284,6 +284,21 @@ window.addEventListener(
   },
   { passive: false }
 );
+// For scroll events, use passive: true to enhance performance
+window.addEventListener(
+  "scroll",
+  function () {
+    const scrollButton = document.querySelector(".scroll-to-top");
+
+    // Show the button when scrolled down 100px, otherwise hide it
+    if (window.scrollY > 100) {
+      scrollButton.style.display = "block";
+    } else {
+      scrollButton.style.display = "none";
+    }
+  },
+  { passive: true } // Use passive for scroll performance
+);
 
 // Disable popstate event to prevent browser's back navigation
 window.addEventListener("popstate", function (e) {
