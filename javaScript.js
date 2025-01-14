@@ -1,6 +1,6 @@
 "use strict";
 
-// more info popUp
+// More info pop-up
 const elsModals = document.querySelectorAll(".modal");
 
 const toggleModal = (ev) => {
@@ -19,7 +19,7 @@ const toggleModal = (ev) => {
 const elsBtns = document.querySelectorAll("[data-modal]");
 elsBtns.forEach((el) => el.addEventListener("click", toggleModal));
 
-// news slider
+// News slider
 let currentSlide = 0,
   isDragging = false,
   isTransitioning = false,
@@ -59,23 +59,24 @@ function updateSlidePosition() {
 
 function moveToNextSlide() {
   if (isTransitioning) return;
-  (isTransitioning = true),
-    currentSlide++,
-    updateSlidePosition(),
-    newsWrapper.addEventListener("transitionend", handleTransitionEnd);
+  isTransitioning = true;
+  currentSlide++;
+  updateSlidePosition();
+  newsWrapper.addEventListener("transitionend", handleTransitionEnd);
 }
 
 function moveToPreviousSlide() {
   if (isTransitioning) return;
-  (isTransitioning = true),
-    currentSlide--,
-    updateSlidePosition(),
-    newsWrapper.addEventListener("transitionend", handleTransitionEnd);
+  isTransitioning = true;
+  currentSlide--;
+  updateSlidePosition();
+  newsWrapper.addEventListener("transitionend", handleTransitionEnd);
 }
 
 function handleTransitionEnd() {
   const sliderWidth = document.querySelector(".news-slider").offsetWidth;
-  (isTransitioning = false), (newsWrapper.style.transition = "none");
+  isTransitioning = false;
+  newsWrapper.style.transition = "none";
   if (currentSlide === totalSlides - 2) currentSlide = 0;
   else if (currentSlide === -1) currentSlide = totalSlides - 3;
   newsWrapper.style.transform = `translateX(-${
@@ -85,7 +86,7 @@ function handleTransitionEnd() {
 }
 
 function startAutoSlide() {
-  stopAutoSlide(); // Clear any previous timers to avoid multiple intervals
+  stopAutoSlide();
   autoSlideTimer = setInterval(() => {
     if (!isDragging && !isTransitioning) moveToNextSlide();
   }, autoSlideDelay);
@@ -98,7 +99,7 @@ function stopAutoSlide() {
 
 function pauseAutoSlideDuringInteraction() {
   stopAutoSlide();
-  setTimeout(startAutoSlide, autoSlideDelay); // Restart auto-slide after interaction
+  setTimeout(startAutoSlide, autoSlideDelay);
 }
 
 document.querySelector(".forth-btn").addEventListener("click", () => {
@@ -113,9 +114,9 @@ document.querySelector(".back-btn").addEventListener("click", () => {
 
 function handleTouchStart(e) {
   if (isTransitioning) return;
-  stopAutoSlide(),
-    (isDragging = true),
-    (startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX);
+  stopAutoSlide();
+  isDragging = true;
+  startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
   previousTranslate =
     -(currentSlide + 1) * document.querySelector(".news-slider").offsetWidth;
   newsWrapper.style.transition = "none";
@@ -151,186 +152,141 @@ function handleTouchEnd() {
 
 startAutoSlide();
 
-// smartphone menu
-// Select necessary elements
+// Smartphone menu
 const toggleButton = document.querySelector(".toggle-button");
 const sideNavigation = document.querySelector(".side-navigation");
 const overlay = document.querySelector(".overlay");
 const closeButton = document.querySelector(".close-button");
 
-// Track if the side menu is open
 let isSideMenuOpen = false;
 
-// Variables to track swipe gestures
 let touchStartX = 0;
 let touchEndX = 0;
 
-// Function to open the side navigation
 function openSideNavigation() {
-  sideNavigation.classList.add("open"); // Open the side navigation
-  overlay.classList.add("show"); // Show the overlay
-  toggleButton.style.display = "none"; // Hide the toggle button
-  isSideMenuOpen = true; // Set the flag to true when side menu is open
+  sideNavigation.classList.add("open");
+  overlay.classList.add("show");
+  toggleButton.style.display = "none";
+  isSideMenuOpen = true;
 }
 
-// Function to close the side navigation
 function closeSideNavigation() {
-  sideNavigation.classList.remove("open"); // Close the side navigation
-  overlay.classList.remove("show"); // Hide the overlay
-  toggleButton.style.display = "block"; // Show the toggle button
-  isSideMenuOpen = false; // Set the flag to false when side menu is closed
+  sideNavigation.classList.remove("open");
+  overlay.classList.remove("show");
+  toggleButton.style.display = "block";
+  isSideMenuOpen = false;
 }
 
-// Function to toggle dropdown menus (Review and Bonus)
 function toggleDropdown(dropdownId) {
   const dropdown = document.getElementById(dropdownId);
-  // Toggle the display of the dropdown
-  if (dropdown.style.display === "block") {
-    dropdown.style.display = "none";
-  } else {
-    dropdown.style.display = "block";
-  }
+  dropdown.style.display =
+    dropdown.style.display === "block" ? "none" : "block";
 }
 
-// Event listener for the toggle button to open the side navigation
 toggleButton.addEventListener("click", openSideNavigation);
-
-// Event listener for the overlay to close the side navigation
 overlay.addEventListener("click", closeSideNavigation);
-
-// Event listener for the close button to close the side navigation
 closeButton.addEventListener("click", closeSideNavigation);
 
-// Handle swipe gestures for opening
 toggleButton.addEventListener("touchstart", (e) => {
-  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+  touchStartX = e.touches[0].clientX;
 });
 
 toggleButton.addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
-  handleSwipeGesture(); // Handle the swipe gesture
+  touchEndX = e.changedTouches[0].clientX;
+  handleSwipeGesture();
 });
 
-// Handle swipe gestures for closing
 sideNavigation.addEventListener("touchstart", (e) => {
-  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+  touchStartX = e.touches[0].clientX;
 });
 
 sideNavigation.addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
-  handleSwipeGesture(); // Handle the swipe gesture
+  touchEndX = e.changedTouches[0].clientX;
+  handleSwipeGesture();
 });
 
 overlay.addEventListener("touchstart", (e) => {
-  touchStartX = e.touches[0].clientX; // Record the starting point of the swipe
+  touchStartX = e.touches[0].clientX;
 });
 
 overlay.addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].clientX; // Record the ending point of the swipe
-  handleSwipeGesture(); // Handle the swipe gesture
+  touchEndX = e.changedTouches[0].clientX;
+  handleSwipeGesture();
 });
 
-// Function to detect swipe gestures
 function handleSwipeGesture() {
-  const swipeThreshold = 50; // Minimum distance to recognize as a swipe
+  const swipeThreshold = 50;
   const swipeDistance = touchEndX - touchStartX;
 
   if (swipeDistance > swipeThreshold && !isSideMenuOpen) {
-    openSideNavigation(); // Open side menu on swipe right
+    openSideNavigation();
   } else if (swipeDistance < -swipeThreshold && isSideMenuOpen) {
-    closeSideNavigation(); // Close side menu on swipe left
+    closeSideNavigation();
   }
 }
 
-// Prevent back and forward navigation from the browser
-window.addEventListener("popstate", function (e) {
-  // Prevent the browser from navigating back or forward
+window.addEventListener("popstate", function () {
   history.pushState(null, null, location.href);
 });
 
-// Disable browser swipe back navigation (specifically for iOS)
+// Fix to prevent unwanted swipe blocking (back and forward gestures)
 document.body.addEventListener("touchstart", function (e) {
   if (e.touches.length === 1) {
     touchStartX = e.touches[0].clientX;
   }
 });
 
-document.body.addEventListener("touchmove", function (e) {
-  const swipeDistance = e.touches[0].clientX - touchStartX;
-  // If swiping right, prevent default browser navigation
-  if (swipeDistance > 0) {
-    e.preventDefault(); // Prevent the browser's back action if swiping right
-  }
-});
+// Prevent swipe only inside specific areas (modal, side-navigation)
+document.body.addEventListener(
+  "touchmove",
+  function (e) {
+    const swipeDistance = e.touches[0].clientX - touchStartX;
+    const swipeThreshold = 30;
 
-// prevent back forward in browser
+    // Prevent swipe gestures inside modal or side navigation, not at the edges
+    if (swipeDistance > swipeThreshold) {
+      if (e.target.closest(".modal, .side-navigation")) {
+        e.preventDefault();
+      }
+    }
+  },
+  { passive: false }
+);
 
-// Disable browser back and forward actions by preventing default on touchmove
 window.addEventListener(
   "touchmove",
   function (e) {
-    // Only prevent horizontal swipe if the movement is primarily horizontal
     if (e.touches.length === 1) {
       const touchMoveX = e.touches[0].pageX;
       const touchMoveY = e.touches[0].pageY;
       const deltaX = touchMoveX - this.touchStartX;
       const deltaY = touchMoveY - this.touchStartY;
 
-      // Allow vertical scrolling (deltaY) but prevent horizontal swipe (deltaX)
+      // Prevent swipe behavior only in designated areas (modal, side navigation)
       if (Math.abs(deltaX) > Math.abs(deltaY)) {
-        e.preventDefault(); // Prevent horizontal swipe navigation
+        if (e.target.closest(".modal, .side-navigation")) {
+          e.preventDefault();
+        }
       }
     }
   },
   { passive: false }
 );
-// For scroll events, use passive: true to enhance performance
+
+// Back to the top arrow
 window.addEventListener(
   "scroll",
   function () {
     const scrollButton = document.querySelector(".scroll-to-top");
-
-    // Show the button when scrolled down 100px, otherwise hide it
-    if (window.scrollY > 100) {
+    if (window.scrollY > 500) {
       scrollButton.style.display = "block";
     } else {
       scrollButton.style.display = "none";
     }
   },
-  { passive: true } // Use passive for scroll performance
+  false
 );
 
-// Disable popstate event to prevent browser's back navigation
-window.addEventListener("popstate", function (e) {
-  history.pushState(null, null, location.href); // Keep the current state, prevent back navigation
-});
-
-// Track touch start position for swipe detection
-window.addEventListener("touchstart", function (e) {
-  if (e.touches.length === 1) {
-    this.touchStartX = e.touches[0].pageX;
-    this.touchStartY = e.touches[0].pageY;
-  }
-});
-
-// back to the top arrow
-// Event listener to show or hide the back-to-top button
-window.addEventListener(
-  "scroll",
-  function () {
-    const scrollButton = document.querySelector(".scroll-to-top");
-
-    // Show the button when scrolled down 100px, otherwise hide it
-    if (window.scrollY > 100) {
-      scrollButton.style.display = "block";
-    } else {
-      scrollButton.style.display = "none";
-    }
-  },
-  { passive: true } // Use passive listener for performance
-);
-
-// Event listener for clicking the back-to-top button
 document.querySelector(".scroll-to-top").addEventListener("click", function () {
-  window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
