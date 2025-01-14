@@ -1639,7 +1639,7 @@ body {
   .news-item img {
     width: 320px;
     height: auto;
-    max-height: 200px;
+    max-height: 300px;
     border: 5px solid rgba(131, 130, 130, 0.336);
 
     margin-top: 20px;
