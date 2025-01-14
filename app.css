@@ -1574,7 +1574,7 @@ body {
     width: 390px;
     position: absolute;
     height: auto;
-    top: 280px; /* Adjust as needed */
+    top: 260px; /* Adjust as needed */
     left: 50%; /* Adjust as needed */
     transform: translate(-50%, -50%); /* Adjust to center the element */
 
