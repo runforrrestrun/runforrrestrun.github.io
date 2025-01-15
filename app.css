@@ -121,7 +121,7 @@ body {
 /* breadcrumbs */
 /* Breadcrumbs Styles */
 .breadcrumbs {
-  margin: 70px 0 0 0px;
+  margin: 90px 0 0 0px;
   padding: 10px;
   width: 100%;
   background-color: purple;
@@ -200,8 +200,12 @@ body {
 
 .navigation-header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: inherit;
+}
+.navigation-header p {
+  margin: 0;
+  text-align: center;
 }
 
 .side-navigation .navigation-header {
@@ -209,11 +213,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.side-navigation .navigation-header .logo-image {
-  width: 35%;
-  height: auto;
 }
 
 .side-navigation .navigation-header .close-button {
@@ -1357,6 +1356,10 @@ body {
 /* max- media query  phones */
 
 @media (min-width: 5px) {
+  .side-navigation .navigation-header .logo-image {
+    width: 70%;
+    height: auto;
+  }
   /* scroll to top */
   .scroll-to-top {
     right: -40px;
@@ -1396,8 +1399,8 @@ body {
   }
 
   #logo-img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
   }
 
   /* more info */
@@ -1405,7 +1408,7 @@ body {
   /* content main paiges */
   .container {
     margin: 0;
-    padding-top: 50px;
+    padding-top: 130px;
   }
   .name-content img {
     border-radius: 100%;
@@ -1972,6 +1975,9 @@ body {
   .toggle-button {
     padding: 150px 20px;
   }
+  .side-navigation .navigation-header .logo-image {
+    width: 100%;
+  }
   /* content */
   .content-text-container {
     margin-top: 250px;
@@ -2226,7 +2232,6 @@ body {
   }
   .container {
     margin: 0;
-    padding-top: 50px;
   }
   .container-casinos,
   .container-content {
