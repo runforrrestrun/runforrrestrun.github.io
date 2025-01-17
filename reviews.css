@@ -472,7 +472,8 @@ body {
 
 /* Style the tab content */
 .tabcontent-info {
-  display: none;
+  display: block;
+  visibility: hidden;
   background-image: linear-gradient(black, purple);
   width: auto;
   height: auto;
@@ -485,6 +486,18 @@ body {
   border-radius: 10px;
   text-align: start;
   list-style: inside;
+}
+.tabcontent-info.hidden {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.tabcontent-info:not(.hidden) {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
 }
 .tabcontent-info h1 {
   text-align: center;

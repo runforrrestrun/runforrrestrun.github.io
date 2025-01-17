@@ -1,49 +1,62 @@
 "use strict";
 
-// Tabs Review Page
-
 // Track tab history for navigation
 let tabHistory = [],
   currentTabIndex = -1,
   tabs = [];
 
+// Open tab function with improved accessibility
 function openTab(evt, tabName) {
-  document
-    .querySelectorAll(".tabcontent-info")
-    .forEach((el) => (el.style.display = "none"));
+  // Remove hidden class from all tabs and set them as hidden except the active one
+  document.querySelectorAll(".tabcontent-info").forEach((el) => {
+    el.classList.add("hidden");
+    el.setAttribute("aria-hidden", "true"); // Mark as hidden for screen readers
+  });
+
+  // Remove active class from all tab links
   document
     .querySelectorAll(".tablinks")
     .forEach((el) => el.classList.remove("active"));
+
+  // Display the selected tab
   const activeTab = document.getElementById(tabName);
   if (activeTab) {
-    activeTab.style.display = "block";
+    activeTab.classList.remove("hidden");
+    activeTab.setAttribute("aria-hidden", "false"); // Mark as visible for screen readers
     const activeButton = document.querySelector(
       `.tablinks[data-tab="${tabName}"]`
     );
     if (activeButton) activeButton.classList.add("active");
   }
+
+  // Update tab history for navigation
   currentTabIndex = tabHistory.includes(tabName)
     ? tabHistory.indexOf(tabName)
     : (tabHistory.push(tabName), tabHistory.length - 1);
   history.pushState({ tab: tabName }, null, "#" + tabName);
 }
 
+// Initialize tabs on page load
 window.onload = function () {
   tabs = Array.from(
     document.querySelectorAll(".tabcontent-info"),
     (tab) => tab.id
   );
-  openTab(null, window.location.hash.substring(1) || "Overview");
+
+  const initialTab = window.location.hash.substring(1) || "Overview";
+  openTab(null, initialTab); // Open the default or specified tab
   document
-    .querySelector(`.tablinks[data-tab="Overview"]`)
+    .querySelector(`.tablinks[data-tab="${initialTab}"]`)
     ?.classList.add("active");
 };
 
+// Handle browser back and forward button navigation
 window.onpopstate = function () {
   if (currentTabIndex > 0) openTab(null, tabHistory[--currentTabIndex]);
   else window.history.back();
 };
 
+// Keyboard navigation for tabs
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight" || e.key === "ArrowDown")
     openTab(
@@ -59,6 +72,7 @@ document.addEventListener("keydown", (e) => {
     );
 });
 
+// Function for secondary tab groups (e.g., bonus tabs)
 function showTab(tabName) {
   document
     .querySelectorAll(".tab-button-bonus")
