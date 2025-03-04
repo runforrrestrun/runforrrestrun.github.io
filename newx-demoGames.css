@@ -522,7 +522,7 @@ body {
 .missionU {
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: 100%;
   height: fit-content;
 }
 .missionU a {
@@ -986,8 +986,8 @@ a {
     width: 100%;
   }
   .missionU img {
-    width: 70%;
-    margin: 0 auto;
+    width: 40%;
+    margin: 10px auto;
   }
 }
 /* 
