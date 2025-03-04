@@ -466,7 +466,7 @@ body {
   box-sizing: border-box;
   border-bottom: 1px solid rgba(204, 201, 201, 0.733);
   width: 100%;
-  max-height: 370px;
+  max-height: 345px;
   object-fit: cover; /* Optional: adjusts how the image fits */
   height: auto;
   width: 100%;
