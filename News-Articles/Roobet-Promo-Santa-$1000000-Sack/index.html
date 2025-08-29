@@ -60,26 +60,27 @@
       }
     </script>
 
-    <!-- JSON-LD for Santa’s $1,000,000 Sack Promotion -->
+    <!-- JSON-LD Product + Offer for Santa’s $1,000,000 Sack Promotion -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Promotion",
+        "@type": "Product",
         "name": "Santa’s $1,000,000 Sack",
         "description": "Celebrate the festive season with Roobet's Santa’s $1,000,000 Sack promotion, featuring weekly raffles, daily challenges, and festive mini-games from December 1 to 30, 2024.",
-        "url": "https://www.all4wins.com/News-Articles/Roobet-Promo-Santa-$1000000-Sack/",
         "image": "https://www.all4wins.com/img/news-banners/roobet-Santa-Sack-banner.webp",
-        "startDate": "2024-12-01",
-        "endDate": "2024-12-30",
+        "url": "https://www.all4wins.com/News-Articles/Roobet-Promo-Santa-$1000000-Sack/",
         "offers": {
           "@type": "Offer",
           "url": "https://www.all4wins.com/News-Articles/Roobet-Promo-Santa-$1000000-Sack/",
-          "price": "0",
+          "price": "0.00",
           "priceCurrency": "USD",
-          "eligibleRegion": "Worldwide",
           "availability": "https://schema.org/SoldOut",
-          "validFrom": "2024-12-01",
-          "validThrough": "2024-12-30"
+          "validFrom": "2024-12-01T00:00:00+00:00",
+          "validThrough": "2024-12-30T23:59:59+00:00",
+          "eligibleRegion": {
+            "@type": "Country",
+            "name": "Worldwide"
+          }
         },
         "publisher": {
           "@type": "Organization",
@@ -95,10 +96,12 @@
         "author": {
           "@type": "Person",
           "name": "Andrei"
-        }
+        },
+        "startDate": "2024-12-01T00:00:00+00:00",
+        "endDate": "2024-12-30T23:59:59+00:00"
       }
     </script>
-    <!-- End JSON-LD for Santa’s $1,000,000 Sack Promotion -->
+    <!-- End JSON-LD Product + Offer for Santa’s $1,000,000 Sack Promotion -->
   </head>
   <body>
     <div id="news-background"></div>

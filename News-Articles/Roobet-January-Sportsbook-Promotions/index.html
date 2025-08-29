@@ -59,26 +59,27 @@
       }
     </script>
 
-    <!-- JSON-LD for Roobet’s January Sportsbook Promotions -->
+    <!-- JSON-LD Product + Offer for Roobet’s January Sportsbook Promotions -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Promotion",
+        "@type": "Product",
         "name": "Roobet’s January Sportsbook Promotions",
         "description": "Ring in the new year with Roobet’s January sportsbook promotions—featuring profit boosts, free bets, and $100,000 weekly raffles tailored for sports betting.",
-        "url": "https://www.all4wins.com/News-Articles/Roobet-January-Sportsbook-Promotions/",
         "image": "https://www.all4wins.com/img/news-banners/roobet-sportsbook-january.webp",
-        "startDate": "2025-01-01",
-        "endDate": "2025-01-31",
+        "url": "https://www.all4wins.com/News-Articles/Roobet-January-Sportsbook-Promotions/",
         "offers": {
           "@type": "Offer",
           "url": "https://www.all4wins.com/News-Articles/Roobet-January-Sportsbook-Promotions/",
-          "price": "0",
+          "price": "0.00",
           "priceCurrency": "USD",
-          "eligibleRegion": "Worldwide",
           "availability": "https://schema.org/SoldOut",
-          "validFrom": "2025-01-01",
-          "validThrough": "2025-01-31"
+          "validFrom": "2025-01-01T00:00:00+00:00",
+          "validThrough": "2025-01-31T23:59:59+00:00",
+          "eligibleRegion": {
+            "@type": "Country",
+            "name": "Worldwide"
+          }
         },
         "publisher": {
           "@type": "Organization",
@@ -94,10 +95,12 @@
         "author": {
           "@type": "Person",
           "name": "Andrei"
-        }
+        },
+        "startDate": "2025-01-01T00:00:00+00:00",
+        "endDate": "2025-01-31T23:59:59+00:00"
       }
     </script>
-    <!-- End JSON-LD for Roobet’s January Sportsbook Promotions -->
+    <!-- End JSON-LD Product + Offer for Roobet’s January Sportsbook Promotions -->
   </head>
   <body>
     <div id="news-background"></div>

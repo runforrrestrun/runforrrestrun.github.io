@@ -62,24 +62,26 @@
       }
     </script>
 
-    <!-- JSON-LD Template for Ongoing Promotion (No End Date) -->
+    <!-- JSON-LD Product + Offer for Ongoing Promotion -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Promotion",
+        "@type": "Product",
         "name": "Promotion Name Here",
         "description": "Brief description of the promotion, highlighting key details and offers for users.",
-        "url": "https://www.all4wins.com/News-Articles/Your-Promo-Page/",
         "image": "https://www.all4wins.com/img/All4Wins-new-logo.webp",
-        "startDate": "2025-08-28",
+        "url": "https://www.all4wins.com/News-Articles/Your-Promo-Page/",
         "offers": {
           "@type": "Offer",
           "url": "https://www.all4wins.com/News-Articles/Plinko/",
-          "price": "0",
+          "price": "0.00",
           "priceCurrency": "USD",
-          "eligibleRegion": "Worldwide",
           "availability": "https://schema.org/InStock",
-          "validFrom": "2025-08-28"
+          "validFrom": "2025-08-28T00:00:00+00:00",
+          "eligibleRegion": {
+            "@type": "Country",
+            "name": "Worldwide"
+          }
         },
         "publisher": {
           "@type": "Organization",
@@ -95,10 +97,11 @@
         "author": {
           "@type": "Person",
           "name": "Andrei"
-        }
+        },
+        "startDate": "2025-08-28T00:00:00+00:00"
       }
     </script>
-    <!-- End JSON-LD Template for Ongoing Promotion -->
+    <!-- End JSON-LD Product + Offer for Ongoing Promotion -->
   </head>
   <body>
     <div id="news-background"></div>
