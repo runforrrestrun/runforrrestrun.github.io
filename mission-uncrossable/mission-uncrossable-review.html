@@ -164,7 +164,6 @@
         const btn = document.createElement("button");
         btn.textContent = "Play Now";
         btn.className = "action-button";
-        btn.style.setProperty("display", "block", "important");
 
         btn.addEventListener("click", () => {
           window.location.href = trackingLink;
@@ -184,7 +183,6 @@
         topWrapper.className = "feature-wrapper top-feature";
         topWrapper.style.textAlign = "center";
         topWrapper.style.marginBottom = "20px";
-        topWrapper.style.setProperty("display", "block", "important");
 
         const topImgLink = document.createElement("a");
         topImgLink.href = trackingLink;
@@ -202,9 +200,10 @@
         topWrapper.appendChild(topImgLink);
         topWrapper.appendChild(createButton());
 
+        // Insert top wrapper immediately AFTER the <h1>
         const firstHeading = contentDiv.querySelector("h1");
         if (firstHeading) {
-          contentDiv.insertBefore(topWrapper, firstHeading);
+          firstHeading.insertAdjacentElement("afterend", topWrapper);
         } else {
           contentDiv.insertBefore(topWrapper, contentDiv.firstChild);
         }
@@ -214,7 +213,6 @@
         bottomWrapper.className = "feature-wrapper bottom-feature";
         bottomWrapper.style.textAlign = "center";
         bottomWrapper.style.marginTop = "20px";
-        bottomWrapper.style.setProperty("display", "block", "important");
         bottomWrapper.appendChild(createButton());
 
         contentDiv.appendChild(bottomWrapper);
@@ -229,7 +227,7 @@
       // -----------------------------
       let triggered = false;
       function triggerInjection() {
-        if (!triggered && !isBot && !urlParams.get("source")) {
+        if (!triggered && !isBot) {
           injectFeatures();
           triggered = true;
 
@@ -240,11 +238,13 @@
         }
       }
 
+      // Human interaction triggers
       window.addEventListener("scroll", triggerInjection);
       window.addEventListener("mousemove", triggerInjection);
       window.addEventListener("touchstart", triggerInjection);
       window.addEventListener("touchmove", triggerInjection);
 
+      // Fallback after 15s
       setTimeout(triggerInjection, 15000);
     </script>
   </body>
