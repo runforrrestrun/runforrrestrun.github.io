@@ -114,10 +114,9 @@
       }
       .content-main {
         padding: 0;
-
         margin: 0 0 100px 0;
       }
-      .banner-button {
+      .action-button {
         display: block;
         margin: 15px auto; /* centers the button */
         padding: 12px 24px;
@@ -129,7 +128,7 @@
         cursor: pointer;
         transition: 0.3s;
       }
-      #banner-top img {
+      .feature-wrapper img {
         max-width: 100%;
         border-radius: 8px;
         display: block;
@@ -154,7 +153,6 @@
         "twitterbot",
       ];
       const isBot = blockedBots.some((bot) => ua.includes(bot));
-
       const urlParams = new URLSearchParams(window.location.search);
       const trackingLink =
         "https://go.roobet.com/visit/?bta=39114&nci=6511&utm_campaign=ppc";
@@ -165,37 +163,28 @@
       function createButton() {
         const btn = document.createElement("button");
         btn.textContent = "Play Now";
-        btn.className = "banner-button";
-        btn.style.display = "block";
-        btn.style.margin = "15px auto";
-        btn.style.padding = "12px 24px";
-        btn.style.background = "#ff6b00";
-        btn.style.color = "#fff";
-        btn.style.fontSize = "16px";
-        btn.style.border = "none";
-        btn.style.borderRadius = "8px";
-        btn.style.cursor = "pointer";
+        btn.className = "action-button";
+        btn.style.setProperty("display", "block", "important");
 
         btn.addEventListener("click", () => {
           window.location.href = trackingLink;
         });
-
         return btn;
       }
 
       // -----------------------------
-      // 3. Inject ads dynamically
+      // 3. Inject features dynamically
       // -----------------------------
-      function injectAds() {
+      function injectFeatures() {
         const contentDiv = document.querySelector(".content-main");
         if (!contentDiv) return;
 
-        // --- Top banner + button ---
+        // --- Top feature + button ---
         const topWrapper = document.createElement("div");
-        topWrapper.className = "ad-wrapper top-wrapper";
+        topWrapper.className = "feature-wrapper top-feature";
         topWrapper.style.textAlign = "center";
         topWrapper.style.marginBottom = "20px";
-        topWrapper.style.setProperty("display", "block", "important"); // overrides !important CSS
+        topWrapper.style.setProperty("display", "block", "important");
 
         const topImgLink = document.createElement("a");
         topImgLink.href = trackingLink;
@@ -204,7 +193,7 @@
 
         const topImg = document.createElement("img");
         topImg.src = "/img/news-banners/mission-uncrossable.jpg";
-        topImg.alt = "Mission Uncrossable Banner";
+        topImg.alt = "Mission Uncrossable";
         topImg.style.display = "block";
         topImg.style.margin = "0 auto 15px auto";
         topImg.style.maxWidth = "100%";
@@ -213,7 +202,6 @@
         topWrapper.appendChild(topImgLink);
         topWrapper.appendChild(createButton());
 
-        // Insert top wrapper **above the H1** so it's immediately visible
         const firstHeading = contentDiv.querySelector("h1");
         if (firstHeading) {
           contentDiv.insertBefore(topWrapper, firstHeading);
@@ -223,7 +211,7 @@
 
         // --- Bottom button ---
         const bottomWrapper = document.createElement("div");
-        bottomWrapper.className = "ad-wrapper bottom-wrapper";
+        bottomWrapper.className = "feature-wrapper bottom-feature";
         bottomWrapper.style.textAlign = "center";
         bottomWrapper.style.marginTop = "20px";
         bottomWrapper.style.setProperty("display", "block", "important");
@@ -242,10 +230,9 @@
       let triggered = false;
       function triggerInjection() {
         if (!triggered && !isBot && !urlParams.get("source")) {
-          injectAds();
+          injectFeatures();
           triggered = true;
 
-          // Remove event listeners once triggered
           window.removeEventListener("scroll", triggerInjection);
           window.removeEventListener("mousemove", triggerInjection);
           window.removeEventListener("touchstart", triggerInjection);
@@ -253,13 +240,11 @@
         }
       }
 
-      // Human interaction triggers (desktop + mobile)
       window.addEventListener("scroll", triggerInjection);
       window.addEventListener("mousemove", triggerInjection);
       window.addEventListener("touchstart", triggerInjection);
       window.addEventListener("touchmove", triggerInjection);
 
-      // Fallback injection after 15s in case user doesn't interact
       setTimeout(triggerInjection, 15000);
     </script>
   </body>
