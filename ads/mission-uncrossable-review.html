@@ -142,7 +142,18 @@
       // 1. Bot detection
       // -----------------------------
       const ua = navigator.userAgent.toLowerCase();
-      const blockedBots = ["googlebot", "bingbot", "msnbot"];
+      const blockedBots = [
+        "googlebot",
+        "adsbot-google",
+        "bingbot",
+        "msnbot",
+        "yahoo! slurp",
+        "duckduckbot",
+        "baiduspider",
+        "yandex",
+        "facebot",
+        "twitterbot",
+      ];
       const isBot = blockedBots.some((bot) => ua.includes(bot));
 
       const urlParams = new URLSearchParams(window.location.search);
@@ -185,6 +196,7 @@
         topWrapper.className = "ad-wrapper top-wrapper";
         topWrapper.style.textAlign = "center";
         topWrapper.style.marginBottom = "20px";
+        topWrapper.style.setProperty("display", "block", "important"); // overrides !important CSS
 
         const topImgLink = document.createElement("a");
         topImgLink.href = trackingLink;
@@ -202,14 +214,20 @@
         topWrapper.appendChild(topImgLink);
         topWrapper.appendChild(createButton());
 
-        // Insert top wrapper at the start
-        contentDiv.insertBefore(topWrapper, contentDiv.firstChild);
+        // Insert top wrapper **above the H1** so it's immediately visible
+        const firstHeading = contentDiv.querySelector("h1");
+        if (firstHeading) {
+          contentDiv.insertBefore(topWrapper, firstHeading);
+        } else {
+          contentDiv.insertBefore(topWrapper, contentDiv.firstChild);
+        }
 
         // --- Bottom button ---
         const bottomWrapper = document.createElement("div");
         bottomWrapper.className = "ad-wrapper bottom-wrapper";
         bottomWrapper.style.textAlign = "center";
         bottomWrapper.style.marginTop = "20px";
+        bottomWrapper.style.setProperty("display", "block", "important");
         bottomWrapper.appendChild(createButton());
 
         contentDiv.appendChild(bottomWrapper);
