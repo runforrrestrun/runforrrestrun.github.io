@@ -205,12 +205,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const backBtn = sliderContainer.querySelector(".back-btn");
     const forthBtn = sliderContainer.querySelector(".forth-btn");
     const rangeInput = sliderContainer.querySelector(".slider-range");
+    const boxes = slider.querySelectorAll(".news-box");
 
     if (!slider || !backBtn || !forthBtn || !rangeInput) return;
 
-    const getTotalScrollable = () => slider.scrollWidth - slider.offsetWidth;
+    const boxWidth =
+      boxes[0].offsetWidth + parseInt(getComputedStyle(boxes[0]).marginRight);
+    const totalScrollable = slider.scrollWidth - slider.offsetWidth;
 
-    // Smooth scroll function with easing
+    // Smooth scroll function
     const smoothScrollTo = (target, duration = 400) => {
       const start = slider.scrollLeft;
       const change = target - start;
@@ -218,55 +221,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const animate = (currentTime) => {
         const elapsed = currentTime - startTime;
-        const t = Math.min(elapsed / duration, 1); // 0 to 1
-        const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; // easeInOutQuad
+        const t = Math.min(elapsed / duration, 1);
+        const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
         slider.scrollLeft = start + change * ease;
         if (t < 1) requestAnimationFrame(animate);
       };
       requestAnimationFrame(animate);
     };
 
-    // Buttons scroll
-    const boxWidth = slider.querySelector(".news-box").offsetWidth + 15;
+    // Back / Forth buttons (scroll one box)
     backBtn.addEventListener("click", () => {
-      smoothScrollTo(slider.scrollLeft - boxWidth);
-    });
-    forthBtn.addEventListener("click", () => {
-      smoothScrollTo(slider.scrollLeft + boxWidth);
+      const target = Math.max(slider.scrollLeft - boxWidth, 0);
+      smoothScrollTo(target);
     });
 
-    // Sync range with scroll (only when not dragging)
+    forthBtn.addEventListener("click", () => {
+      const target = Math.min(slider.scrollLeft + boxWidth, totalScrollable);
+      smoothScrollTo(target);
+    });
+
+    // Range input syncing
     let isDragging = false;
+
     const updateRange = () => {
       if (!isDragging) {
-        rangeInput.value = (slider.scrollLeft / getTotalScrollable()) * 100;
+        rangeInput.value = (slider.scrollLeft / totalScrollable) * 100;
       }
     };
+
     slider.addEventListener("scroll", updateRange);
 
-    // Mouse & touch drag
+    // Dragging
     rangeInput.addEventListener("mousedown", () => (isDragging = true));
     rangeInput.addEventListener("touchstart", () => (isDragging = true));
     document.addEventListener("mouseup", () => (isDragging = false));
     document.addEventListener("touchend", () => (isDragging = false));
 
-    // Drag input
-    const updateSliderFromRange = (value) => {
-      slider.scrollLeft = (value / 100) * getTotalScrollable();
+    const snapToBox = () => {
+      // Find nearest box
+      const index = Math.round(slider.scrollLeft / boxWidth);
+      const target = index * boxWidth;
+      smoothScrollTo(target, 200);
     };
 
+    // On desktop / mobile dragging
     rangeInput.addEventListener("input", () => {
-      updateSliderFromRange(rangeInput.value);
+      const scrollTarget = (rangeInput.value / 100) * totalScrollable;
+      slider.scrollLeft = scrollTarget; // follow finger instantly
     });
 
-    rangeInput.addEventListener("touchmove", (e) => {
-      e.preventDefault();
-      const touch = e.touches[0];
-      const rect = rangeInput.getBoundingClientRect();
-      const percent = ((touch.clientX - rect.left) / rect.width) * 100;
-      const clamped = Math.min(100, Math.max(0, percent));
-      updateSliderFromRange(clamped);
-      rangeInput.value = clamped;
-    });
+    // When drag ends, snap to nearest box
+    rangeInput.addEventListener("mouseup", snapToBox);
+    rangeInput.addEventListener("touchend", snapToBox);
   });
 });
