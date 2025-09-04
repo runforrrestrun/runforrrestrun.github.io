@@ -196,98 +196,88 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// News Slider
+// News Slider with smooth scrollbar
 document.addEventListener("DOMContentLoaded", function () {
-  // Select all slider containers
   const sliders = document.querySelectorAll(".slider");
 
   sliders.forEach((sliderContainer) => {
     const slider = sliderContainer.querySelector(".slider-wrapper");
     const backBtn = sliderContainer.querySelector(".back-btn");
     const forthBtn = sliderContainer.querySelector(".forth-btn");
+    const rangeInput = sliderContainer.querySelector(".slider-range");
 
-    if (!slider || !backBtn || !forthBtn) return; // Skip if elements are missing
+    if (!slider || !backBtn || !forthBtn) return;
 
-    // Function to calculate the box width (accounting for gap/margin)
     const updateBoxWidth = () => {
       const newsBox = slider.querySelector(".news-box");
-      if (newsBox) {
-        // Dynamically adjust the width based on the box's width
-        return (
-          newsBox.offsetWidth +
-          parseInt(getComputedStyle(newsBox).marginRight, 10)
-        ); // Ensure margin is included
-      }
-      return 500 + 15; // Default for larger screens, adjust as needed
+      return newsBox
+        ? newsBox.offsetWidth + parseInt(getComputedStyle(newsBox).marginRight)
+        : 500 + 15;
     };
 
-    let boxWidth = updateBoxWidth(); // Initialize box width
-    let totalWidth = slider.scrollWidth; // Total scrollable width
+    let boxWidth = updateBoxWidth();
+    let totalWidth = slider.scrollWidth;
 
-    // Update boxWidth and totalWidth on window resize
     window.addEventListener("resize", () => {
       boxWidth = updateBoxWidth();
-      totalWidth = slider.scrollWidth; // Recalculate total width
+      totalWidth = slider.scrollWidth;
     });
 
-    // Back button functionality
-    backBtn.addEventListener("click", (e) => {
-      e.stopPropagation(); // Prevent click propagation
-      if (slider.scrollLeft <= 0) {
-        // Ensure seamless scrolling on all devices
-        slider.scrollLeft = totalWidth - slider.offsetWidth - 1; // Jump to end
-      } else {
-        slider.scrollLeft -= boxWidth; // Scroll one box left
-      }
+    // Back button
+    backBtn.addEventListener("click", () => {
+      slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
     });
 
-    // Forward button functionality
-    forthBtn.addEventListener("click", (e) => {
-      e.stopPropagation(); // Prevent click propagation
-      if (slider.scrollLeft + slider.offsetWidth >= totalWidth - 1) {
-        // Ensure seamless scrolling on all devices
-        slider.scrollLeft = 0; // Jump to start
-      } else {
-        slider.scrollLeft += boxWidth; // Scroll one box right
-      }
+    // Forth button
+    forthBtn.addEventListener("click", () => {
+      slider.scrollBy({ left: boxWidth, behavior: "smooth" });
     });
 
-    // Swipe functionality
+    // Swipe support
     let startX;
-
     slider.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX; // Track starting touch position
+      startX = e.touches[0].clientX;
     });
-
     slider.addEventListener("touchmove", (e) => {
-      const moveX = e.touches[0].clientX; // Current touch position
-      const diff = startX - moveX; // Difference in touch position
-
+      const diff = startX - e.touches[0].clientX;
       if (Math.abs(diff) > 30) {
-        e.preventDefault(); // Prevent default touch behavior (like page scroll)
-
-        if (diff > 50) {
-          // Swipe left
-          if (slider.scrollLeft + slider.offsetWidth >= totalWidth - 1) {
-            slider.scrollLeft = 0; // Jump to start
-          } else {
-            slider.scrollLeft += boxWidth; // Scroll one box right
-          }
-          startX = moveX;
-        } else if (diff < -50) {
-          // Swipe right
-          if (slider.scrollLeft <= 0) {
-            slider.scrollLeft = totalWidth - slider.offsetWidth - 1; // Jump to end
-          } else {
-            slider.scrollLeft -= boxWidth; // Scroll one box left
-          }
-          startX = moveX;
-        }
+        e.preventDefault();
+        if (diff > 50) slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+        else if (diff < -50)
+          slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
+        startX = e.touches[0].clientX;
       }
     });
-
     slider.addEventListener("touchend", () => {
-      startX = null; // Reset on touch end
+      startX = null;
     });
+
+    // Range/progress bar with smooth drag
+    if (rangeInput) {
+      let isDragging = false;
+
+      const updateRange = () => {
+        if (!isDragging) {
+          rangeInput.value =
+            (slider.scrollLeft / (totalWidth - slider.offsetWidth)) * 100;
+        }
+      };
+
+      slider.addEventListener("scroll", () =>
+        requestAnimationFrame(updateRange)
+      );
+
+      rangeInput.addEventListener("mousedown", () => (isDragging = true));
+      rangeInput.addEventListener("touchstart", () => (isDragging = true));
+      rangeInput.addEventListener("mouseup", () => (isDragging = false));
+      rangeInput.addEventListener("touchend", () => (isDragging = false));
+
+      rangeInput.addEventListener("input", () => {
+        slider.scrollTo({
+          left: (rangeInput.value / 100) * (totalWidth - slider.offsetWidth),
+          behavior: "smooth",
+        });
+      });
+    }
   });
 });

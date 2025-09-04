@@ -364,6 +364,57 @@ body {
   border: 1px solid rgba(204, 201, 201, 0.733);
 }
 
+/* scroll bar */
+/* Make the range take full width */
+.slider-range {
+  width: 95%;
+  margin: 10px auto 10px auto; /* top margin 10px, left/right auto centers it, bottom 0 */
+  display: block; /* ensures auto margins work */
+  margin-top: 10px;
+  -webkit-appearance: none;
+  background: black; /* Track color */
+  height: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.6s ease; /* smooth animation */
+}
+
+/* Webkit thumb styling */
+.slider-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 40px;
+  height: 10px;
+  border-radius: 20%;
+  background: purple; /* Thumb color */
+  border: 1px solid pink;
+  cursor: pointer;
+  transition: all 0.1s ease; /* smooth animation */
+}
+
+/* Firefox thumb styling */
+.slider-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 20%;
+  background: purple; /* Thumb color */
+  border: 1px solid pink;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* IE/Edge thumb */
+.slider-range::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 20%;
+  background: purple; /* Thumb color */
+  border: 1px solid pink;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/*end */
+
 /* news slider  */
 .casino-sliders {
   width: 100%;
@@ -659,6 +710,10 @@ a {
   }
 }
 @media only screen and (min-width: 5px) {
+  .back-btn,
+  .forth-btn {
+    display: none;
+  }
   .side-navigation .navigation-header .logo-image {
     width: 70%;
     height: auto;
@@ -999,6 +1054,11 @@ a {
 
 /* max-mediaquwry content Tablets iPads (portrait mode) */
 @media (min-width: 1200px) {
+  .back-btn,
+  .forth-btn {
+    display: block;
+  }
+
   /* scroll to top */
   .scroll-to-top {
     right: -15px;
