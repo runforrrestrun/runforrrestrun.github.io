@@ -373,7 +373,7 @@ body {
   margin-top: 10px;
   -webkit-appearance: none;
   background: black; /* Track color */
-  height: 3px;
+  height: 2px;
   border-radius: 3px;
   cursor: pointer;
   transition: all 0.6s ease; /* smooth animation */
