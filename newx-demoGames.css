@@ -364,53 +364,50 @@ body {
   border: 1px solid rgba(204, 201, 201, 0.733);
 }
 
-/* scroll bar */
-/* Make the range take full width */
+/* Slider track */
 .slider-range {
   width: 95%;
-  margin: 10px auto 10px auto; /* top margin 10px, left/right auto centers it, bottom 0 */
-  display: block; /* ensures auto margins work */
-  margin-top: 10px;
+  margin: 10px auto;
+  display: block;
   -webkit-appearance: none;
-  background: black; /* Track color */
-  height: 2px;
+  background: black;
+  height: 6px;
   border-radius: 3px;
   cursor: pointer;
-  transition: all 0.3s ease; /* smooth animation */
 }
 
-/* Webkit thumb styling */
+/* Webkit thumb */
 .slider-range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 40px;
-  height: 10px;
-  border-radius: 20%;
-  background: purple; /* Thumb color */
+  width: 30px;
+  height: 12px;
+  border-radius: 6px;
+  background: purple;
   border: 1px solid pink;
   cursor: pointer;
-  transition: all 0.3s ease; /* smooth animation */
+  transition: none; /* Remove transition to prevent bouncing */
 }
 
-/* Firefox thumb styling */
+/* Firefox thumb */
 .slider-range::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 20%;
-  background: purple; /* Thumb color */
+  width: 30px;
+  height: 12px;
+  border-radius: 6px;
+  background: purple;
   border: 1px solid pink;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: none;
 }
 
 /* IE/Edge thumb */
 .slider-range::-ms-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 20%;
-  background: purple; /* Thumb color */
+  width: 30px;
+  height: 12px;
+  border-radius: 6px;
+  background: purple;
   border: 1px solid pink;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: none;
 }
 
 /*end */

@@ -252,48 +252,41 @@ document.addEventListener("DOMContentLoaded", function () {
       startX = null;
     });
 
-    // Range/progress bar with smooth drag (mouse + touch)
+    // Range/progress bar with smooth drag
     if (rangeInput) {
       let isDragging = false;
 
       const updateRange = () => {
         if (!isDragging) {
-          rangeInput.value =
-            (slider.scrollLeft / (totalWidth - slider.offsetWidth)) * 100;
+          const scrollPercent =
+            slider.scrollLeft / (totalWidth - slider.offsetWidth);
+          rangeInput.value = scrollPercent * 100;
         }
       };
 
-      // Sync range on scroll
       slider.addEventListener("scroll", () =>
         requestAnimationFrame(updateRange)
       );
 
-      // Mouse dragging
+      // Mouse events
       rangeInput.addEventListener("mousedown", () => (isDragging = true));
       document.addEventListener("mouseup", () => (isDragging = false));
       rangeInput.addEventListener("input", () => {
         if (isDragging) {
-          slider.scrollTo({
-            left: (rangeInput.value / 100) * (totalWidth - slider.offsetWidth),
-            behavior: "smooth",
-          });
+          slider.scrollLeft =
+            (rangeInput.value / 100) * (totalWidth - slider.offsetWidth);
         }
       });
 
-      // Touch dragging
+      // Touch events
       rangeInput.addEventListener("touchstart", () => (isDragging = true));
       document.addEventListener("touchend", () => (isDragging = false));
       rangeInput.addEventListener("touchmove", (e) => {
-        e.preventDefault(); // Prevent page scroll
         const touch = e.touches[0];
         const rect = rangeInput.getBoundingClientRect();
         const percent = ((touch.clientX - rect.left) / rect.width) * 100;
         const clamped = Math.min(100, Math.max(0, percent));
-        rangeInput.value = clamped;
-        slider.scrollTo({
-          left: (clamped / 100) * (totalWidth - slider.offsetWidth),
-          behavior: "auto", // instant for smooth finger tracking
-        });
+        slider.scrollLeft = (clamped / 100) * (totalWidth - slider.offsetWidth);
       });
     }
   });
