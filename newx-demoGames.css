@@ -365,67 +365,43 @@ body {
 }
 
 /* Slider wrapper */
-.slider-wrapper {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth; /* smooth scroll */
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Each news box */
-.news-box {
-  flex: 0 0 auto;
-  width: 300px;
-  margin-right: 15px;
-  scroll-snap-align: start;
-}
-
-/* Range slider */
+/* Make the range take full width */
 .slider-range {
   width: 95%;
-  display: block;
-  margin: 10px auto;
+  margin: 10px auto 10px auto; /* top margin 10px, left/right auto centers it, bottom 0 */
+  display: block; /* ensures auto margins work */
   -webkit-appearance: none;
-  background: black;
+  background: black; /* Track color */
   height: 6px;
   border-radius: 3px;
   cursor: pointer;
+  transition: all 0.3s ease; /* smooth animation */
 }
-
-/* Webkit thumb */
 .slider-range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 30px;
-  height: 12px;
-  border-radius: 6px;
-  background: purple;
+  width: 50px;
+  height: 10px;
+  border-radius: 20%;
+  background: purple; /* Thumb color */
   border: 1px solid pink;
   cursor: pointer;
-  transition: none; /* instant while dragging */
+  transition: all 0.3s ease; /* smooth animation */
 }
 
-/* Firefox thumb */
-.slider-range::-moz-range-thumb {
-  width: 30px;
-  height: 12px;
-  border-radius: 6px;
-  background: purple;
-  border: 1px solid pink;
-  cursor: pointer;
-  transition: none;
-}
+/* Webkit thumb styling */
 
-/* IE/Edge thumb */
+.slider-range::-moz-range-thumb,
 .slider-range::-ms-thumb {
-  width: 30px;
-  height: 12px;
-  border-radius: 6px;
-  background: purple;
-  border: 1px solid pink;
+  -webkit-appearance: none;
+  width: 50px;
+  height: 10px;
+  border-radius: 20%;
+  background: purple; /* Thumb color */
+  border: none;
   cursor: pointer;
-  transition: none;
+  transition: all 0.3s ease; /* smooth animation */
 }
+
 /* end */
 
 /* news slider  */
@@ -723,8 +699,7 @@ a {
   }
 }
 @media only screen and (min-width: 5px) {
-  .back-btn,
-  .forth-btn {
+  .slider-range {
     display: none;
   }
   .side-navigation .navigation-header .logo-image {
@@ -1067,8 +1042,7 @@ a {
 
 /* max-mediaquwry content Tablets iPads (portrait mode) */
 @media (min-width: 1200px) {
-  .back-btn,
-  .forth-btn {
+  .slider-range {
     display: block;
   }
 

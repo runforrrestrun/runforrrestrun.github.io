@@ -197,7 +197,7 @@ window.addEventListener("scroll", function () {
 });
 
 // News Slider with smooth scrollbar
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const sliders = document.querySelectorAll(".slider");
 
   sliders.forEach((sliderContainer) => {
@@ -205,73 +205,73 @@ document.addEventListener("DOMContentLoaded", () => {
     const backBtn = sliderContainer.querySelector(".back-btn");
     const forthBtn = sliderContainer.querySelector(".forth-btn");
     const rangeInput = sliderContainer.querySelector(".slider-range");
-    const boxes = slider.querySelectorAll(".news-box");
 
-    if (!slider || !backBtn || !forthBtn || !rangeInput) return;
+    if (!slider || !backBtn || !forthBtn) return;
 
-    const boxWidth =
-      boxes[0].offsetWidth + parseInt(getComputedStyle(boxes[0]).marginRight);
-    const totalScrollable = slider.scrollWidth - slider.offsetWidth;
-
-    // Smooth scroll function
-    const smoothScrollTo = (target, duration = 400) => {
-      const start = slider.scrollLeft;
-      const change = target - start;
-      const startTime = performance.now();
-
-      const animate = (currentTime) => {
-        const elapsed = currentTime - startTime;
-        const t = Math.min(elapsed / duration, 1);
-        const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-        slider.scrollLeft = start + change * ease;
-        if (t < 1) requestAnimationFrame(animate);
-      };
-      requestAnimationFrame(animate);
+    const updateBoxWidth = () => {
+      const newsBox = slider.querySelector(".news-box");
+      return newsBox
+        ? newsBox.offsetWidth + parseInt(getComputedStyle(newsBox).marginRight)
+        : 500 + 15;
     };
 
-    // Back / Forth buttons (scroll one box)
+    let boxWidth = updateBoxWidth();
+    let totalWidth = slider.scrollWidth;
+
+    window.addEventListener("resize", () => {
+      boxWidth = updateBoxWidth();
+      totalWidth = slider.scrollWidth;
+    });
+
+    // Back/Forth buttons
     backBtn.addEventListener("click", () => {
-      const target = Math.max(slider.scrollLeft - boxWidth, 0);
-      smoothScrollTo(target);
+      slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
     });
-
     forthBtn.addEventListener("click", () => {
-      const target = Math.min(slider.scrollLeft + boxWidth, totalScrollable);
-      smoothScrollTo(target);
+      slider.scrollBy({ left: boxWidth, behavior: "smooth" });
     });
 
-    // Range input syncing
-    let isDragging = false;
-
-    const updateRange = () => {
-      if (!isDragging) {
-        rangeInput.value = (slider.scrollLeft / totalScrollable) * 100;
+    // Swipe support
+    let startX;
+    slider.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+    slider.addEventListener("touchmove", (e) => {
+      const diff = startX - e.touches[0].clientX;
+      if (Math.abs(diff) > 30) {
+        e.preventDefault();
+        if (diff > 50) slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+        else if (diff < -50)
+          slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
+        startX = e.touches[0].clientX;
       }
-    };
-
-    slider.addEventListener("scroll", updateRange);
-
-    // Dragging
-    rangeInput.addEventListener("mousedown", () => (isDragging = true));
-    rangeInput.addEventListener("touchstart", () => (isDragging = true));
-    document.addEventListener("mouseup", () => (isDragging = false));
-    document.addEventListener("touchend", () => (isDragging = false));
-
-    const snapToBox = () => {
-      // Find nearest box
-      const index = Math.round(slider.scrollLeft / boxWidth);
-      const target = index * boxWidth;
-      smoothScrollTo(target, 200);
-    };
-
-    // On desktop / mobile dragging
-    rangeInput.addEventListener("input", () => {
-      const scrollTarget = (rangeInput.value / 100) * totalScrollable;
-      slider.scrollLeft = scrollTarget; // follow finger instantly
     });
+    slider.addEventListener("touchend", () => (startX = null));
 
-    // When drag ends, snap to nearest box
-    rangeInput.addEventListener("mouseup", snapToBox);
-    rangeInput.addEventListener("touchend", snapToBox);
+    // Range input functionality (desktop only)
+    if (rangeInput && window.innerWidth >= 768) {
+      let isDragging = false;
+
+      const updateRange = () => {
+        if (!isDragging) {
+          rangeInput.value =
+            (slider.scrollLeft / (totalWidth - slider.offsetWidth)) * 100;
+        }
+      };
+
+      slider.addEventListener("scroll", updateRange);
+
+      rangeInput.addEventListener("mousedown", () => (isDragging = true));
+      rangeInput.addEventListener("touchstart", () => (isDragging = true));
+      document.addEventListener("mouseup", () => (isDragging = false));
+      document.addEventListener("touchend", () => (isDragging = false));
+
+      rangeInput.addEventListener("input", () => {
+        slider.scrollTo({
+          left: (rangeInput.value / 100) * (totalWidth - slider.offsetWidth),
+          behavior: "smooth", // native smooth
+        });
+      });
+    }
   });
 });
