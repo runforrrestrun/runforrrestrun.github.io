@@ -364,11 +364,28 @@ body {
   border: 1px solid rgba(204, 201, 201, 0.733);
 }
 
-/* Slider track */
+/* Slider wrapper */
+.slider-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; /* smooth scroll */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Each news box */
+.news-box {
+  flex: 0 0 auto;
+  width: 300px;
+  margin-right: 15px;
+  scroll-snap-align: start;
+}
+
+/* Range slider */
 .slider-range {
   width: 95%;
-  margin: 10px auto;
   display: block;
+  margin: 10px auto;
   -webkit-appearance: none;
   background: black;
   height: 6px;
@@ -385,7 +402,7 @@ body {
   background: purple;
   border: 1px solid pink;
   cursor: pointer;
-  transition: none; /* Remove transition to prevent bouncing */
+  transition: none; /* instant while dragging */
 }
 
 /* Firefox thumb */
@@ -409,8 +426,7 @@ body {
   cursor: pointer;
   transition: none;
 }
-
-/*end */
+/* end */
 
 /* news slider  */
 .casino-sliders {

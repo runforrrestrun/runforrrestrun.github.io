@@ -197,7 +197,7 @@ window.addEventListener("scroll", function () {
 });
 
 // News Slider with smooth scrollbar
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const sliders = document.querySelectorAll(".slider");
 
   sliders.forEach((sliderContainer) => {
@@ -206,88 +206,67 @@ document.addEventListener("DOMContentLoaded", function () {
     const forthBtn = sliderContainer.querySelector(".forth-btn");
     const rangeInput = sliderContainer.querySelector(".slider-range");
 
-    if (!slider || !backBtn || !forthBtn) return;
+    if (!slider || !backBtn || !forthBtn || !rangeInput) return;
 
-    const updateBoxWidth = () => {
-      const newsBox = slider.querySelector(".news-box");
-      return newsBox
-        ? newsBox.offsetWidth + parseInt(getComputedStyle(newsBox).marginRight)
-        : 500 + 15;
+    const getTotalScrollable = () => slider.scrollWidth - slider.offsetWidth;
+
+    // Smooth scroll function with easing
+    const smoothScrollTo = (target, duration = 400) => {
+      const start = slider.scrollLeft;
+      const change = target - start;
+      const startTime = performance.now();
+
+      const animate = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const t = Math.min(elapsed / duration, 1); // 0 to 1
+        const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; // easeInOutQuad
+        slider.scrollLeft = start + change * ease;
+        if (t < 1) requestAnimationFrame(animate);
+      };
+      requestAnimationFrame(animate);
     };
 
-    let boxWidth = updateBoxWidth();
-    let totalWidth = slider.scrollWidth;
-
-    window.addEventListener("resize", () => {
-      boxWidth = updateBoxWidth();
-      totalWidth = slider.scrollWidth;
-    });
-
-    // Back button
+    // Buttons scroll
+    const boxWidth = slider.querySelector(".news-box").offsetWidth + 15;
     backBtn.addEventListener("click", () => {
-      slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
+      smoothScrollTo(slider.scrollLeft - boxWidth);
     });
-
-    // Forth button
     forthBtn.addEventListener("click", () => {
-      slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+      smoothScrollTo(slider.scrollLeft + boxWidth);
     });
 
-    // Swipe support
-    let startX;
-    slider.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-    });
-    slider.addEventListener("touchmove", (e) => {
-      const diff = startX - e.touches[0].clientX;
-      if (Math.abs(diff) > 30) {
-        e.preventDefault();
-        if (diff > 50) slider.scrollBy({ left: boxWidth, behavior: "smooth" });
-        else if (diff < -50)
-          slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
-        startX = e.touches[0].clientX;
+    // Sync range with scroll (only when not dragging)
+    let isDragging = false;
+    const updateRange = () => {
+      if (!isDragging) {
+        rangeInput.value = (slider.scrollLeft / getTotalScrollable()) * 100;
       }
+    };
+    slider.addEventListener("scroll", updateRange);
+
+    // Mouse & touch drag
+    rangeInput.addEventListener("mousedown", () => (isDragging = true));
+    rangeInput.addEventListener("touchstart", () => (isDragging = true));
+    document.addEventListener("mouseup", () => (isDragging = false));
+    document.addEventListener("touchend", () => (isDragging = false));
+
+    // Drag input
+    const updateSliderFromRange = (value) => {
+      slider.scrollLeft = (value / 100) * getTotalScrollable();
+    };
+
+    rangeInput.addEventListener("input", () => {
+      updateSliderFromRange(rangeInput.value);
     });
-    slider.addEventListener("touchend", () => {
-      startX = null;
+
+    rangeInput.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const rect = rangeInput.getBoundingClientRect();
+      const percent = ((touch.clientX - rect.left) / rect.width) * 100;
+      const clamped = Math.min(100, Math.max(0, percent));
+      updateSliderFromRange(clamped);
+      rangeInput.value = clamped;
     });
-
-    // Range/progress bar with smooth drag
-    if (rangeInput) {
-      let isDragging = false;
-
-      const updateRange = () => {
-        if (!isDragging) {
-          const scrollPercent =
-            slider.scrollLeft / (totalWidth - slider.offsetWidth);
-          rangeInput.value = scrollPercent * 100;
-        }
-      };
-
-      slider.addEventListener("scroll", () =>
-        requestAnimationFrame(updateRange)
-      );
-
-      // Mouse events
-      rangeInput.addEventListener("mousedown", () => (isDragging = true));
-      document.addEventListener("mouseup", () => (isDragging = false));
-      rangeInput.addEventListener("input", () => {
-        if (isDragging) {
-          slider.scrollLeft =
-            (rangeInput.value / 100) * (totalWidth - slider.offsetWidth);
-        }
-      });
-
-      // Touch events
-      rangeInput.addEventListener("touchstart", () => (isDragging = true));
-      document.addEventListener("touchend", () => (isDragging = false));
-      rangeInput.addEventListener("touchmove", (e) => {
-        const touch = e.touches[0];
-        const rect = rangeInput.getBoundingClientRect();
-        const percent = ((touch.clientX - rect.left) / rect.width) * 100;
-        const clamped = Math.min(100, Math.max(0, percent));
-        slider.scrollLeft = (clamped / 100) * (totalWidth - slider.offsetWidth);
-      });
-    }
   });
 });
