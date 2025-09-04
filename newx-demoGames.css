@@ -376,7 +376,7 @@ body {
   height: 2px;
   border-radius: 3px;
   cursor: pointer;
-  transition: all 0.6s ease; /* smooth animation */
+  transition: all 0.3s ease; /* smooth animation */
 }
 
 /* Webkit thumb styling */
@@ -388,7 +388,7 @@ body {
   background: purple; /* Thumb color */
   border: 1px solid pink;
   cursor: pointer;
-  transition: all 0.1s ease; /* smooth animation */
+  transition: all 0.3s ease; /* smooth animation */
 }
 
 /* Firefox thumb styling */

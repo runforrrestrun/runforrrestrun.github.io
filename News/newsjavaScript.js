@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
       startX = null;
     });
 
-    // Range/progress bar with smooth drag
+    // Range/progress bar with smooth drag (mouse + touch)
     if (rangeInput) {
       let isDragging = false;
 
@@ -263,19 +263,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       };
 
+      // Sync range on scroll
       slider.addEventListener("scroll", () =>
         requestAnimationFrame(updateRange)
       );
 
+      // Mouse dragging
       rangeInput.addEventListener("mousedown", () => (isDragging = true));
-      rangeInput.addEventListener("touchstart", () => (isDragging = true));
-      rangeInput.addEventListener("mouseup", () => (isDragging = false));
-      rangeInput.addEventListener("touchend", () => (isDragging = false));
-
+      document.addEventListener("mouseup", () => (isDragging = false));
       rangeInput.addEventListener("input", () => {
+        if (isDragging) {
+          slider.scrollTo({
+            left: (rangeInput.value / 100) * (totalWidth - slider.offsetWidth),
+            behavior: "smooth",
+          });
+        }
+      });
+
+      // Touch dragging
+      rangeInput.addEventListener("touchstart", () => (isDragging = true));
+      document.addEventListener("touchend", () => (isDragging = false));
+      rangeInput.addEventListener("touchmove", (e) => {
+        e.preventDefault(); // Prevent page scroll
+        const touch = e.touches[0];
+        const rect = rangeInput.getBoundingClientRect();
+        const percent = ((touch.clientX - rect.left) / rect.width) * 100;
+        const clamped = Math.min(100, Math.max(0, percent));
+        rangeInput.value = clamped;
         slider.scrollTo({
-          left: (rangeInput.value / 100) * (totalWidth - slider.offsetWidth),
-          behavior: "smooth",
+          left: (clamped / 100) * (totalWidth - slider.offsetWidth),
+          behavior: "auto", // instant for smooth finger tracking
         });
       });
     }
