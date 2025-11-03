@@ -164,3 +164,177 @@ window.addEventListener("scroll", function () {
     scrollButton.classList.remove("show");
   }
 });
+
+// sliders apear dinamicaly
+
+// Slider functionality (works for static or dynamically added sliders)
+function initSliders(root = document) {
+  // Wrap root if it's a single slider
+  const sliders =
+    root.classList && root.classList.contains("slider")
+      ? [root]
+      : root.querySelectorAll(".slider");
+
+  sliders.forEach((sliderContainer) => {
+    const slider = sliderContainer.querySelector(".slider-wrapper");
+    const backBtn = sliderContainer.querySelector(".back-btn");
+    const forthBtn = sliderContainer.querySelector(".forth-btn");
+    const rangeInput = sliderContainer.querySelector(".slider-range");
+
+    if (!slider || !backBtn || !forthBtn) return;
+
+    const updateBoxWidth = () => {
+      const newsBox = slider.querySelector(".news-box");
+      return newsBox
+        ? newsBox.offsetWidth + parseInt(getComputedStyle(newsBox).marginRight)
+        : 515; // default width + margin
+    };
+
+    let boxWidth = updateBoxWidth();
+    let totalWidth = slider.scrollWidth;
+
+    // Recalculate on resize
+    const resizeHandler = () => {
+      boxWidth = updateBoxWidth();
+      totalWidth = slider.scrollWidth;
+    };
+    window.addEventListener("resize", resizeHandler);
+
+    // Back button
+    backBtn.addEventListener("click", () => {
+      if (window.innerWidth < 768) {
+        slider.scrollLeft <= 0
+          ? slider.scrollTo({
+              left: totalWidth - slider.offsetWidth,
+              behavior: "smooth",
+            })
+          : slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
+      } else {
+        slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
+      }
+    });
+
+    // Forth button
+    forthBtn.addEventListener("click", () => {
+      if (window.innerWidth < 768) {
+        slider.scrollLeft + slider.offsetWidth >= totalWidth
+          ? slider.scrollTo({ left: 0, behavior: "smooth" })
+          : slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+      } else {
+        slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+      }
+    });
+
+    // Swipe support
+    let startX;
+    slider.addEventListener(
+      "touchstart",
+      (e) => (startX = e.touches[0].clientX)
+    );
+    slider.addEventListener("touchmove", (e) => {
+      const diff = startX - e.touches[0].clientX;
+      if (Math.abs(diff) > 30) {
+        e.preventDefault();
+        if (window.innerWidth < 768) {
+          if (diff > 50) {
+            slider.scrollLeft + slider.offsetWidth >= totalWidth
+              ? slider.scrollTo({ left: 0, behavior: "smooth" })
+              : slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+          } else if (diff < -50) {
+            slider.scrollLeft <= 0
+              ? slider.scrollTo({
+                  left: totalWidth - slider.offsetWidth,
+                  behavior: "smooth",
+                })
+              : slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
+          }
+        } else {
+          if (diff > 50)
+            slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+          if (diff < -50)
+            slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
+        }
+        startX = e.touches[0].clientX;
+      }
+    });
+    slider.addEventListener("touchend", () => (startX = null));
+
+    // Range input (desktop only)
+    if (rangeInput && window.innerWidth >= 768) {
+      let isDragging = false;
+      const updateRange = () => {
+        if (!isDragging)
+          rangeInput.value =
+            (slider.scrollLeft / (totalWidth - slider.offsetWidth)) * 100;
+      };
+      slider.addEventListener("scroll", updateRange);
+      rangeInput.addEventListener("mousedown", () => (isDragging = true));
+      rangeInput.addEventListener("touchstart", () => (isDragging = true));
+      document.addEventListener("mouseup", () => (isDragging = false));
+      document.addEventListener("touchend", () => (isDragging = false));
+      rangeInput.addEventListener("input", () => {
+        slider.scrollTo({
+          left: (rangeInput.value / 100) * (totalWidth - slider.offsetWidth),
+          behavior: "smooth",
+        });
+      });
+    }
+  });
+}
+
+// Normalize string helper (remove special characters and lowercase)
+function normalize(str) {
+  return str ? str.toLowerCase().replace(/[^a-z0-9]/g, "") : "";
+}
+
+// Promo page logic
+document.addEventListener("DOMContentLoaded", async () => {
+  const path = window.location.pathname;
+  const promoMatch = path.match(/News-Articles\/([^/]+)/i);
+
+  if (!promoMatch) {
+    // Not a promo page, initialize all sliders normally
+    initSliders();
+    return;
+  }
+
+  const casinoRaw = promoMatch[1].split(/[-_]/)[0]; // first part of URL
+  const normalizedCasinoUrl = normalize(casinoRaw);
+  console.log(
+    "Promo page detected. Casino name (normalized):",
+    normalizedCasinoUrl
+  );
+
+  let targetContainer =
+    document.querySelector("#promo-content") || document.querySelector("main");
+  if (!targetContainer) return;
+
+  try {
+    const response = await fetch("/News/"); // all sliders page
+    if (!response.ok) throw new Error("Failed to fetch news page");
+
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+
+    // Find slider dynamically using normalized comparison
+    const sliders = Array.from(doc.querySelectorAll(".slider"));
+    const slider = sliders.find(
+      (s) => normalize(s.dataset.casino) === normalizedCasinoUrl
+    );
+
+    if (!slider) {
+      console.log(`No slider found for casino: ${normalizedCasinoUrl}`);
+      return;
+    }
+
+    const clonedSlider = slider.cloneNode(true);
+    targetContainer.appendChild(clonedSlider);
+
+    // Initialize slider functionality for cloned slider
+    initSliders(clonedSlider);
+    console.log("Slider appended and initialized for", normalizedCasinoUrl);
+  } catch (err) {
+    console.error("Error loading casino slider:", err);
+  }
+});
