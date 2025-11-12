@@ -360,7 +360,7 @@ body {
   background: inherit;
   padding: 20px 10px;
   border-radius: 8px;
-
+  display: block;
   background-image: linear-gradient(black, purple);
   border: 1px solid rgba(204, 201, 201, 0.733);
 }
@@ -506,6 +506,7 @@ body {
   height: auto;
   margin: 0;
   flex-shrink: 0;
+  display: block;
 }
 
 .news-banner img {
@@ -789,10 +790,12 @@ a {
     background-image: none;
   }
   .news-banner-text img {
-    max-width: 350px;
+    max-width: 300px;
     display: block;
-    max-height: 500px;
+    max-height: 400px;
     margin: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(204, 201, 201, 0.2);
   }
 
   /* Hide scrollbar for all browsers */
