@@ -354,7 +354,8 @@ body {
 /*  */
 
 /* news page */
-.content-text {
+.content-text,
+.news-smallBox-content {
   display: block;
   background: inherit;
   padding: 20px 10px;
@@ -499,6 +500,14 @@ body {
   margin: 0;
   flex-shrink: 0;
 }
+.news-banner-text {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  flex-shrink: 0;
+}
+
 .news-banner img {
   box-sizing: border-box;
   border-bottom: 1px solid rgba(204, 201, 201, 0.733);
@@ -548,11 +557,14 @@ body {
 }
 
 .news-smallBox-content {
-  margin-bottom: 0;
+  display: block;
+  margin: 0 auto;
   box-sizing: border-box;
   border-radius: 10px;
-  width: 100%;
-  height: 450px;
+  width: 95%;
+  height: fit-content;
+  background-image: linear-gradient(black, purple);
+  border: 1px solid rgba(204, 201, 201, 0.733);
 }
 
 /* news-page article CONTENT */
@@ -776,6 +788,12 @@ a {
     padding-bottom: 20px;
     background-image: none;
   }
+  .news-banner-text img {
+    max-width: 350px;
+    display: block;
+    max-height: 500px;
+    margin: auto;
+  }
 
   /* Hide scrollbar for all browsers */
   .slider-wrapper {
@@ -791,17 +809,35 @@ a {
     margin: 50px auto;
     padding: 20px 0;
   }
-  .content-text {
+  .content-text,
+  .news-smallBox-content {
     width: 85%;
     margin: 20px auto;
   }
   .content-text h1 {
-    font-size: 28px;
+    font-size: 30px;
     text-align: center;
   }
   .content-text p {
     font-size: 20px;
+    text-align: start;
+  }
+  .news-smallBox-content p,
+  .news-smallBox-content li {
+    font-size: 20px;
+    text-align: start;
+  }
+  .news-smallBox-content h2 {
+    font-size: 27px;
     text-align: center;
+  }
+  .news-smallBox-content h3 {
+    font-size: 24px;
+    text-align: center;
+  }
+  .news-smallBox-content a {
+    font-weight: 800;
+    color: rgb(255, 196, 0);
   }
 
   .slider {
@@ -929,7 +965,8 @@ a {
     padding: 130px 0 10px 0;
   }
 
-  .content-text {
+  .content-text,
+  .news-smallBox-content {
     width: 83%;
     margin: 20px auto;
   }
@@ -940,6 +977,21 @@ a {
   .content-text p {
     font-size: 25px;
     text-align: center;
+  }
+  .news-smallBox-content p,
+  .news-smallBox-content li {
+    font-size: 25px;
+  }
+  .news-smallBox-content h2 {
+    font-size: 32px;
+    text-align: start;
+  }
+  .news-smallBox-content h3 {
+    font-size: 29px;
+    text-align: start;
+  }
+  .news-smallBox-content a {
+    font-weight: 700;
   }
   .casino-sliders {
     width: 100%;
@@ -974,7 +1026,10 @@ a {
       /* Softer top shadow */ 0 10px 10px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
     border: 1px solid rgba(255, 255, 255, 0.438);
   }
-
+  .news-banner-text img {
+    max-width: 700px;
+    max-height: 600px;
+  }
   /* ens of news slider */
   .news-content-main {
     width: 100%;
@@ -1149,7 +1204,8 @@ a {
   .news-content-main p {
     font-size: 25px;
   }
-  .content-text {
+  .content-text,
+  .news-smallBox-content {
     width: 87%;
     margin: 40px auto;
     padding: 20px 40px;
@@ -1187,7 +1243,8 @@ a {
     width: 90%;
     margin: 0 auto 0 190px;
   }
-  .content-text {
+  .content-text,
+  .news-smallBox-content {
     width: 89%;
   }
 
@@ -1197,6 +1254,10 @@ a {
   }
   .news-box {
     margin: 15px 30px;
+  }
+  .news-banner-text img {
+    max-width: 800px;
+    max-height: 700px;
   }
   .news-content-main h1 {
     font-size: 45px;
