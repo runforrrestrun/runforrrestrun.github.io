@@ -351,7 +351,7 @@ body {
   ); /* Background color for the rectangle */
   color: #fff;
   border: none;
-  padding: 130px 11px; /* Increase padding for a larger button */
+  padding: 130px 10px; /* Increase padding for a larger button */
   border-top-right-radius: 25px; /* Increase border radius for more rounded corners */
   border-bottom-right-radius: 25px;
   border: 1px solid rgba(63, 58, 58, 0.849);
@@ -1983,7 +1983,7 @@ body {
   }
   /* new navbar */
   .toggle-button {
-    padding: 150px 20px;
+    padding: 150px 15px;
   }
   .side-navigation .navigation-header .logo-image {
     width: 100%;
