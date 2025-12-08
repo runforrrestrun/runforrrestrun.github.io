@@ -255,7 +255,7 @@ body {
   ); /* Background color for the rectangle */
   color: #fff;
   border: none;
-  padding: 130px 11px; /* Increase padding for a larger button */
+  padding: 130px 12px; /* Increase padding for a larger button */
   border-top-right-radius: 25px; /* Increase border radius for more rounded corners */
   border-bottom-right-radius: 25px;
   border: 1px solid rgba(63, 58, 58, 0.849);
@@ -875,7 +875,7 @@ a {
     border-radius: 0;
     display: block;
     background-color: #000;
-    width: 95%;
+    width: 96.5%;
     margin: 0 auto;
   }
   .news-content h2 {
@@ -954,7 +954,7 @@ a {
   }
   /* new navbar */
   .toggle-button {
-    padding: 150px 20px;
+    padding: 150px 15px;
   }
   /* news page */
   .container-news {

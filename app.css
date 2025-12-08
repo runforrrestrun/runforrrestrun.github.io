@@ -2013,10 +2013,13 @@ body {
     font-size: 30px;
     margin: 40px 10px;
   }
-  .content-main {
+  .content-main,
+  .content-text {
     margin: 30px 5px;
     padding-bottom: 20px;
+    width: 99%;
   }
+
   .content-text h1,
   .content-main h1 {
     font-size: 38px;
@@ -2325,7 +2328,7 @@ body {
 /*   */
 
 /* max-mediaquwry content Tablets iPads (portrait mode) */
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   /* scroll to top */
   .scroll-to-top {
     right: -15px;
@@ -2395,7 +2398,7 @@ body {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
- 
+
   .name-content {
     display: none;
   }

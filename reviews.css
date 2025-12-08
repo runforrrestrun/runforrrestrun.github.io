@@ -243,18 +243,18 @@ body {
   position: fixed;
   top: 60%;
   left: 0px; /* Move the button further outside the screen */
-  transform: translateY(-50%);
+  transform: translateY(-60%);
   cursor: pointer;
   z-index: 1001;
   background-color: rgba(
     128,
     0,
     128,
-    0.5
+    0.4
   ); /* Background color for the rectangle */
   color: #fff;
   border: none;
-  padding: 130px 11px; /* Increase padding for a larger button */
+  padding: 120px 12px; /* Increase padding for a larger button */
   border-top-right-radius: 25px; /* Increase border radius for more rounded corners */
   border-bottom-right-radius: 25px;
   border: 1px solid rgba(63, 58, 58, 0.849);
@@ -272,7 +272,7 @@ body {
   flex-direction: column;
   width: 6px; /* Adjust width as needed */
   height: 6px; /* Adjust height as needed */
-  background-color: rgba(255, 255, 255, 0.616); /* Color of the dots */
+  background-color: rgb(255, 255, 255); /* Color of the dots */
   border-radius: 50%;
   margin: 2px auto; /* Adjust the spacing between the dots */
 }
@@ -432,7 +432,9 @@ body {
   flex-direction: row;
   margin-bottom: 10px;
   overflow: hidden;
+  width: fit-content;
 
+  margin: 20px auto;
   border-bottom: 2px solid purple;
 }
 
@@ -802,11 +804,11 @@ strong {
     margin: 0 auto;
   }
   .tab-info button {
-    margin: 10px 0 5px 5px;
-    width: 100px;
+    margin: 10px 10px;
+    width: fit-content;
     height: fit-content;
 
-    font-size: 13px;
+    font-size: 14px;
   }
   .overview-button {
     width: 100%;
@@ -924,7 +926,7 @@ strong {
   }
   /* content */
   .toggle-button {
-    padding: 150px 20px;
+    padding: 150px 15px;
   }
 
   .logo-box,
@@ -939,12 +941,15 @@ strong {
   }
   .tab-info {
     border-radius: 10px;
+    justify-content: center;
+    width: fit-content;
+    margin: 20px auto;
   }
   .tab-info button {
-    margin: 20px 30px;
+    margin: 10px 10px;
     height: fit-content;
     width: fit-content;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
     padding: 10px 20px;
   }
@@ -1024,7 +1029,7 @@ strong {
 /*   */
 
 /* max-mediaquwry content Tablets iPads (portrait mode) */
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   /* scroll to top */
 
   .scroll-to-top {
