@@ -2328,7 +2328,7 @@ body {
 /*   */
 
 /* max-mediaquwry content Tablets iPads (portrait mode) */
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   /* scroll to top */
   .scroll-to-top {
     right: -15px;
