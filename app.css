@@ -429,7 +429,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
 
-  width: 100%;
+  width: fit-content;
   height: fit-content;
   min-width: 300px;
   overflow: auto;
@@ -441,7 +441,7 @@ body {
 }
 .name-content {
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
-  max-width: 1100px;
+  max-width: 1000px;
   box-sizing: border-box;
   width: 100%;
   height: auto;
@@ -479,7 +479,7 @@ body {
   font-family: inherit;
   z-index: 1;
   margin-top: 10px;
-  max-width: 1200px;
+  max-width: 1000px;
   border-radius: 10px;
   min-width: 250px;
 
@@ -500,7 +500,7 @@ body {
   box-shadow: 0 -10px 20px rgba(0, 0, 0, 0),
     /* Softer top shadow */ 0 20px 20px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
   border-radius: 10px;
-  max-width: 1100px;
+  max-width: 1000px;
   width: 100%;
   height: 600px;
   box-sizing: border-box;
@@ -664,7 +664,7 @@ body {
   position: relative;
 
   margin-top: 50px;
-  max-width: 1200px;
+  max-width: 1000px;
   width: 100%;
   border-radius: 10px;
   min-width: 250px;
@@ -819,7 +819,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: auto;
-  max-width: 1200px;
+  max-width: 1000px;
   min-width: 250px;
   align-self: center;
   padding: 1.5rem 1.5rem 0 1.5rem;
@@ -956,13 +956,15 @@ body {
   row-gap: 10px;
 }
 
-.best-rewards:hover {
+.best-rewards:hover,
+.high-withdrawal:hover {
   background-color: rgb(167, 4, 189);
   transition: background-color 0.5s;
   box-shadow: 3px 3px 10px purple;
   cursor: pointer;
 }
-.best-rewards {
+.best-rewards,
+.high-withdrawal {
   display: block;
   box-sizing: border-box;
   border: 0 solid rgb(0, 0, 0);
@@ -976,39 +978,13 @@ body {
   font-weight: 600;
   font-family: inherit;
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
-  width: 250px;
+  width: fit-content;
   height: 40px;
   min-width: 100px;
   border-radius: 9999px;
-  padding: 10px 15px;
+  padding: 10px 10px;
 }
 
-.high-withdrawal:hover {
-  background-color: rgb(167, 4, 189);
-  transition: background-color 0.5s;
-  box-shadow: 3px 3px 10px purple;
-  cursor: pointer;
-}
-.high-withdrawal {
-  display: block;
-  box-sizing: border-box;
-  color: rgb(248, 250, 252);
-  background-color: rgb(0, 0, 0);
-  border: 0 solid rgb(0, 0, 0);
-  font-size: 14px;
-  font-family: inherit;
-  text-shadow: 2px 2px 10px rgb(0, 0, 0);
-  word-spacing: 2px;
-  text-align: center;
-  text-size-adjust: 100%;
-  font-weight: 600;
-  width: 250px;
-  min-width: 100px;
-  height: 40px;
-  border-radius: 9999px;
-
-  padding: 10px 15px;
-}
 .game-icons {
   margin: 10px 0 0 0;
   display: flex;
@@ -1114,7 +1090,7 @@ body {
 .content-main {
   background-image: linear-gradient(240deg, black, purple);
   text-shadow: 2px 2px 10px rgb(0, 0, 0);
-  max-width: 1100px;
+  max-width: 1000px;
   box-sizing: border-box;
   border: 1px solid rgba(129, 129, 129, 0.582);
   z-index: 10;
@@ -2015,9 +1991,10 @@ body {
   }
   .content-main,
   .content-text {
-    margin: 30px 5px;
+    margin: 30px auto;
     padding-bottom: 20px;
     width: 99%;
+    max-width: 1000px;
   }
 
   .content-text h1,
@@ -2078,7 +2055,7 @@ body {
   }
   .news-slider {
     width: 100%;
-    margin: 100px 0 40px 0;
+    margin: 100px auto 40px auto;
   }
   .slider-title {
     font-size: 40px;
@@ -2245,7 +2222,7 @@ body {
   }
   .container-casinos,
   .container-content {
-    width: 100%;
+    margin: 0 auto;
   }
 
   .lol-main,
@@ -2481,8 +2458,8 @@ body {
   .content-text,
   .content-main {
     width: 100%;
-    max-width: 1200px;
-    margin: 10px 0;
+
+    margin: 10px auto;
     justify-self: center;
   }
 
@@ -2526,7 +2503,7 @@ body {
   }
   .news-slider {
     width: 100%;
-    margin: 300px 0 40px 0;
+    margin: 300px auto 40px auto;
   }
   .news-item {
     width: 1195px;
@@ -2583,7 +2560,7 @@ body {
     margin-top: 150px;
   }
   .top3casinos {
-    max-width: 1200px;
+    max-width: 1000px;
     width: 100%;
     height: fit-content;
     display: flex;
