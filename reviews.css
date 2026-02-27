@@ -760,6 +760,10 @@ strong {
   #overwiew {
     padding: 10px;
   }
+  .overview-summary a {
+    color: white;
+    text-decoration: none;
+  }
   /* tab bonus section */
   .tab-content-bonus {
     justify-content: start;
