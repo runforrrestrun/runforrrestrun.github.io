@@ -902,13 +902,16 @@ a {
   }
 
   .news-content-main h1 {
-    font-size: 28px;
+    font-size: 32px;
   }
   .news-content-main h2 {
-    font-size: 25px;
+    font-size: 28px;
   }
   .news-content-main h3 {
-    font-size: 20px;
+    font-size: 25px;
+  }
+  .news-content-main h4 {
+    font-size: 22px;
   }
   table th,
   td {
@@ -1025,7 +1028,8 @@ a {
 
   .news-box {
     flex: 0 0 300px; /* Original size for each news box */
-    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0),
+    box-shadow:
+      0 -5px 5px rgba(0, 0, 0, 0),
       /* Softer top shadow */ 0 10px 10px rgb(0, 0, 0, 1); /* Stronger bottom shadow */
     border: 1px solid rgba(255, 255, 255, 0.438);
   }
@@ -1041,16 +1045,20 @@ a {
     margin: 0;
   }
   .news-content-main h1 {
-    font-size: 32px;
+    font-size: 40px;
   }
   .news-content-main h2 {
-    font-size: 27px;
+    font-size: 35px;
   }
   .news-content-main h3 {
+    font-size: 30px;
+  }
+  .news-content-main h4 {
     font-size: 25px;
   }
+
   table {
-    margin: 20px auto;
+    margin: 24px auto;
   }
   table th,
   td {
@@ -1199,13 +1207,16 @@ a {
     font-size: 28px;
   }
   .news-content-main h1 {
-    font-size: 35px;
+    font-size: 38px;
   }
   .news-content-main h2 {
-    font-size: 30px;
+    font-size: 35px;
   }
   .news-content-main h3 {
-    font-size: 28px;
+    font-size: 32px;
+  }
+  .news-content-main h4 {
+    font-size: 27px;
   }
   .news-content-main p {
     font-size: 25px;
