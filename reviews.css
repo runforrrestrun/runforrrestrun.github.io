@@ -480,6 +480,9 @@ body {
 .tabcontent-info ul li {
   margin: 15px 0;
 }
+.tabcontent-info a {
+  text-decoration: none;
+}
 
 strong {
   color: white;
