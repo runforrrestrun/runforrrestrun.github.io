@@ -164,7 +164,7 @@ window.addEventListener(
       }
     }
   },
-  { passive: false }
+  { passive: false },
 );
 
 // Disable popstate event to prevent browser's back navigation
@@ -226,7 +226,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Back/Forth buttons
     backBtn.addEventListener("click", () => {
       if (window.innerWidth < 768) {
-        // Mobile looping
         slider.scrollLeft <= 0
           ? slider.scrollTo({
               left: totalWidth - slider.offsetWidth,
@@ -240,7 +239,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     forthBtn.addEventListener("click", () => {
       if (window.innerWidth < 768) {
-        // Mobile looping
         slider.scrollLeft + slider.offsetWidth >= totalWidth
           ? slider.scrollTo({ left: 0, behavior: "smooth" })
           : slider.scrollBy({ left: boxWidth, behavior: "smooth" });
@@ -249,42 +247,53 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Swipe support
-    let startX;
-    slider.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-    });
-    slider.addEventListener("touchmove", (e) => {
-      const diff = startX - e.touches[0].clientX;
-      if (Math.abs(diff) > 30) {
-        e.preventDefault();
-        if (window.innerWidth < 768) {
-          // Mobile looping
-          if (diff > 50) {
-            slider.scrollLeft + slider.offsetWidth >= totalWidth
-              ? slider.scrollTo({ left: 0, behavior: "smooth" })
-              : slider.scrollBy({ left: boxWidth, behavior: "smooth" });
-          } else if (diff < -50) {
-            slider.scrollLeft <= 0
-              ? slider.scrollTo({
-                  left: totalWidth - slider.offsetWidth,
-                  behavior: "smooth",
-                })
-              : slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
-          }
-        } else {
-          // Desktop normal swipe
-          if (diff > 50)
-            slider.scrollBy({ left: boxWidth, behavior: "smooth" });
-          if (diff < -50)
-            slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
-        }
-        startX = e.touches[0].clientX;
-      }
-    });
-    slider.addEventListener("touchend", () => (startX = null));
+    // --- MOBILE SWIPE SUPPORT ---
+    const isMobile = () => window.innerWidth < 768;
 
-    // Range input functionality (desktop only)
+    let startX = 0;
+    let moved = false;
+
+    slider.addEventListener("touchstart", (e) => {
+      if (!isMobile()) return;
+      startX = e.touches[0].clientX;
+      moved = false;
+    });
+
+    slider.addEventListener("touchmove", (e) => {
+      if (!isMobile()) return;
+      const diff = startX - e.touches[0].clientX;
+      if (Math.abs(diff) > 30) moved = true; // mark swipe, but don't scroll yet
+    });
+
+    slider.addEventListener("touchend", (e) => {
+      if (!isMobile() || !moved) return;
+
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+
+      if (diff > 30) {
+        // Swipe left → next
+        if (slider.scrollLeft + slider.offsetWidth >= totalWidth) {
+          slider.scrollTo({ left: 0, behavior: "smooth" }); // loop to start
+        } else {
+          slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+        }
+      } else if (diff < -30) {
+        // Swipe right → previous
+        if (slider.scrollLeft <= 0) {
+          slider.scrollTo({
+            left: totalWidth - slider.offsetWidth,
+            behavior: "smooth",
+          }); // loop to end
+        } else {
+          slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
+        }
+      }
+
+      moved = false;
+    });
+
+    // --- RANGE INPUT FUNCTIONALITY (DESKTOP ONLY) ---
     if (rangeInput && window.innerWidth >= 768) {
       let isDragging = false;
 
@@ -303,10 +312,9 @@ document.addEventListener("DOMContentLoaded", function () {
       document.addEventListener("touchend", () => (isDragging = false));
 
       rangeInput.addEventListener("input", () => {
-        slider.scrollTo({
-          left: (rangeInput.value / 100) * (totalWidth - slider.offsetWidth),
-          behavior: "smooth",
-        });
+        // instant scroll for natural dragging
+        slider.scrollLeft =
+          (rangeInput.value / 100) * (totalWidth - slider.offsetWidth);
       });
     }
   });
