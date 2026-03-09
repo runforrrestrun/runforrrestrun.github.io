@@ -419,6 +419,16 @@ body {
   background-image: linear-gradient(black, purple);
   border: 1px solid rgba(204, 201, 201, 0.733);
 }
+.slider-logo {
+  display: block;
+  width: 100%;
+  height: fit-content;
+}
+.slider-logo img {
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+}
 .slider h2 {
   font-size: 40px;
   text-align: center;
