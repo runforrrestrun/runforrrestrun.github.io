@@ -421,14 +421,13 @@ body {
 }
 .slider-logo {
   display: block;
-  width: 100%;
+  width: fit-content;
   height: fit-content;
-}
-.slider-logo img {
-  box-sizing: border-box;
   margin: 0 auto;
-  display: block;
+  max-width: 100px;
+  max-height: 100px;
 }
+
 .slider h2 {
   font-size: 40px;
   text-align: center;
@@ -1017,6 +1016,14 @@ a {
     padding: 20px 0px;
     margin: 20px auto;
   }
+  .slider-logo {
+    width: 20%;
+    max-width: 120px;
+    max-height: 120px;
+  }
+  .slider-logo img {
+    width: 100%;
+  }
   .slider h2 {
     font-size: 30px;
   }
@@ -1249,6 +1256,7 @@ a {
     padding: 20px 0 0px 30px;
     margin-top: 100px;
   }
+
   .casino-sliders {
     width: 100%;
     padding: 0;
