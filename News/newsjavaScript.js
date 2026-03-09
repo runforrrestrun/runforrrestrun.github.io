@@ -247,51 +247,56 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // --- MOBILE SWIPE SUPPORT ---
-    const isMobile = () => window.innerWidth < 768;
+    // --- MOBILE/TABLET SWIPE SUPPORT ---
+    const isTouchDevice = () =>
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
-    let startX = 0;
-    let moved = false;
+    if (isTouchDevice()) {
+      let startX = 0;
+      let moved = false;
 
-    slider.addEventListener("touchstart", (e) => {
-      if (!isMobile()) return;
-      startX = e.touches[0].clientX;
-      moved = false;
-    });
+      slider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        moved = false;
+      });
 
-    slider.addEventListener("touchmove", (e) => {
-      if (!isMobile()) return;
-      const diff = startX - e.touches[0].clientX;
-      if (Math.abs(diff) > 30) moved = true; // mark swipe, but don't scroll yet
-    });
+      slider.addEventListener("touchmove", (e) => {
+        const diff = startX - e.touches[0].clientX;
+        if (Math.abs(diff) > 30) moved = true; // mark swipe
+      });
 
-    slider.addEventListener("touchend", (e) => {
-      if (!isMobile() || !moved) return;
+      slider.addEventListener("touchend", (e) => {
+        if (!moved) return;
 
-      const endX = e.changedTouches[0].clientX;
-      const diff = startX - endX;
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
 
-      if (diff > 30) {
-        // Swipe left → next
-        if (slider.scrollLeft + slider.offsetWidth >= totalWidth) {
-          slider.scrollTo({ left: 0, behavior: "smooth" }); // loop to start
-        } else {
-          slider.scrollBy({ left: boxWidth, behavior: "smooth" });
+        // Calculate visible cards for tablet/desktop-like widths
+        const visibleCards = Math.floor(slider.offsetWidth / boxWidth);
+        const scrollDistance = boxWidth * (visibleCards || 1); // at least 1 card
+
+        if (diff > 30) {
+          // Swipe left → next
+          if (slider.scrollLeft + slider.offsetWidth >= totalWidth) {
+            slider.scrollTo({ left: 0, behavior: "smooth" }); // loop to start
+          } else {
+            slider.scrollBy({ left: scrollDistance, behavior: "smooth" });
+          }
+        } else if (diff < -30) {
+          // Swipe right → previous
+          if (slider.scrollLeft <= 0) {
+            slider.scrollTo({
+              left: totalWidth - slider.offsetWidth,
+              behavior: "smooth",
+            }); // loop to end
+          } else {
+            slider.scrollBy({ left: -scrollDistance, behavior: "smooth" });
+          }
         }
-      } else if (diff < -30) {
-        // Swipe right → previous
-        if (slider.scrollLeft <= 0) {
-          slider.scrollTo({
-            left: totalWidth - slider.offsetWidth,
-            behavior: "smooth",
-          }); // loop to end
-        } else {
-          slider.scrollBy({ left: -boxWidth, behavior: "smooth" });
-        }
-      }
 
-      moved = false;
-    });
+        moved = false;
+      });
+    }
 
     // --- RANGE INPUT FUNCTIONALITY (DESKTOP ONLY) ---
     if (rangeInput && window.innerWidth >= 768) {
