@@ -351,7 +351,46 @@ body {
 /*  */
 /*  */
 /* page content */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: inherit;
+}
 
+table thead {
+  background: linear-gradient(90deg, #ff7f50, #ff4500);
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+}
+
+table thead th {
+  padding: 12px 15px;
+}
+
+table tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+table tbody tr:hover {
+  background-color: rgba(255, 127, 80, 0.2);
+  transition: 0.3s;
+}
+
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
 /* review page */
 .missionU {
   display: flex;
