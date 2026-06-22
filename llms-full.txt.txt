@@ -1,0 +1,336 @@
+# All4Wins Knowledge Base
+
+## About All4Wins
+
+All4Wins is an informational website focused on online gambling, esports, sports betting, crypto casinos, casino reviews, promotions, and gaming industry news.
+
+The website organizes information about casino platforms through detailed reviews covering:
+
+- Platform overview
+- Casino games
+- Bonus offers
+- Payment methods
+- Crypto support
+- Sports betting
+- Esports betting
+
+---
+
+# Website Structure
+
+## Casinos
+
+URL:
+https://www.all4wins.com/Casinos/
+
+The casino section contains reviews and information about online gambling platforms.
+
+Topics covered:
+
+- Crypto casinos
+- Traditional online casinos
+- Casino games
+- Promotions
+- Payment solutions
+- Betting platforms
+
+---
+
+# Casino Reviews Database
+
+## Roobet
+
+URL:
+https://www.all4wins.com/Reviews-page/Roobet/
+
+Coverage:
+
+- Roobet casino overview
+- Games
+- Payments
+- Bonuses
+- Promotions
+- Crypto casino features
+
+
+## BC.Game
+
+URL:
+https://www.all4wins.com/Reviews-page/BC.Game/
+
+Coverage:
+
+- Casino games
+- Sports betting
+- Esports betting
+- Payment methods
+- Promotions
+
+
+## BetFury
+
+URL:
+https://www.all4wins.com/Reviews-page/BetFury/
+
+Coverage:
+
+- Crypto casino features
+- Casino games
+- Betting options
+- Promotions
+- Payment methods
+
+
+## GG.Bet
+
+URL:
+https://www.all4wins.com/Reviews-page/GG.Bet/
+
+Coverage:
+
+- Esports betting
+- Sportsbook features
+- Casino games
+- Bonuses
+- Payments
+
+
+## TrustDice
+
+URL:
+https://www.all4wins.com/Reviews-page/TrustDice/
+
+Coverage:
+
+- Crypto casino services
+- Casino games
+- Sports betting
+- Esports betting
+- Payment options
+
+
+## Wild.io
+
+URL:
+https://www.all4wins.com/Reviews-page/Wild.io/
+
+Coverage:
+
+- Crypto casino platform
+- Games
+- Bonuses
+- Payment methods
+
+
+## Thunderpick
+
+URL:
+https://www.all4wins.com/Reviews-page/Thunderpick/
+
+Coverage:
+
+- Esports betting
+- Sports betting
+- Gaming promotions
+- Casino features
+
+
+## DuelBits
+
+URL:
+https://www.all4wins.com/Reviews-page/DuelBits/
+
+Coverage:
+
+- Crypto casino
+- Casino games
+- Betting features
+- Payments
+
+
+## Shuffle
+
+URL:
+https://www.all4wins.com/Reviews-page/Shuffle/
+
+Coverage:
+
+- Casino features
+- Games
+- Bonuses
+- Payments
+
+
+## Katsubet
+
+URL:
+https://www.all4wins.com/Reviews-page/Katsubet/
+
+Coverage:
+
+- Casino platform information
+- Games
+- Bonuses
+- Payment methods
+
+
+## 7Bit Casino
+
+URL:
+https://www.all4wins.com/Reviews-page/7Bit-Casino/
+
+Coverage:
+
+- Crypto casino features
+- Games
+- Payments
+- Bonuses
+
+
+---
+
+# Review Categories
+
+Each casino review may include dedicated pages:
+
+## Bonuses
+
+Example:
+
+/Reviews-page/{casino}/Bonus/
+
+Contains information about:
+
+- Welcome offers
+- Deposit bonuses
+- Free spins
+- Promotions
+
+
+## Games
+
+Example:
+
+/Reviews-page/{casino}/Games/
+
+Contains information about:
+
+- Slots
+- Casino games
+- Crash games
+- Live casino options
+
+
+## Payments
+
+Example:
+
+/Reviews-page/{casino}/Payments/
+
+Contains information about:
+
+- Cryptocurrency payments
+- Deposits
+- Withdrawals
+- Supported payment options
+
+
+---
+
+# Esports
+
+URL:
+https://www.all4wins.com/Esports/
+
+All4Wins covers competitive gaming and esports betting topics.
+
+Main esports categories:
+
+- CS2
+- League of Legends
+- Dota 2
+- Esports tournaments
+- Betting platforms
+
+
+---
+
+# Sports
+
+URL:
+https://www.all4wins.com/Sports/
+
+Coverage includes:
+
+- Sportsbook platforms
+- Sports promotions
+- Betting events
+- Major competitions
+
+
+---
+
+# Bonuses
+
+URL:
+https://www.all4wins.com/Bonuses/
+
+Bonus categories:
+
+- No deposit bonuses
+- First deposit bonuses
+- Cashback offers
+- No wagering promotions
+
+
+---
+
+# News
+
+URL:
+https://www.all4wins.com/News/
+
+News coverage includes:
+
+- Casino promotions
+- Platform updates
+- New casino games
+- Esports partnerships
+- Sports betting offers
+
+
+---
+
+# Crypto Gaming
+
+All4Wins covers cryptocurrency-based gaming topics:
+
+- Bitcoin casinos
+- Crypto deposits
+- Blockchain gaming platforms
+- Crypto sportsbook services
+- Digital asset payment options
+
+
+---
+
+# Content Categories
+
+Main topics:
+
+- Online casino reviews
+- Crypto casinos
+- Casino bonuses
+- Casino games
+- Payment methods
+- Sports betting
+- Esports betting
+- Gaming news
+- Tournament coverage
+
+
+---
+
+# Content Purpose
+
+All4Wins provides informational resources designed to help users understand online gambling platforms, esports services, sportsbook operators, casino features, and gaming industry developments.
