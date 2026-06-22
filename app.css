@@ -343,12 +343,7 @@ body {
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1001;
-  background-color: rgba(
-    128,
-    0,
-    128,
-    0.5
-  ); /* Background color for the rectangle */
+  background-color: rgba(128, 0, 128, 0.5); /* Background color for the rectangle */
   color: #fff;
   border: none;
   padding: 130px 10px; /* Increase padding for a larger button */
@@ -1535,13 +1530,11 @@ table tbody tr:nth-child(even) {
   }
   .content-text h2,
   .content-main h2 {
-    text-align: center;
     position: relative;
     z-index: 10;
     font-size: 20px;
     margin: 30px 10px 0 0px;
     font-weight: 700;
-    text-decoration: underline;
   }
   .content-main h3 {
     font-size: 20px;
