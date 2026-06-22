@@ -246,12 +246,7 @@ body {
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1001;
-  background-color: rgba(
-    128,
-    0,
-    128,
-    0.5
-  ); /* Background color for the rectangle */
+  background-color: rgba(128, 0, 128, 0.5); /* Background color for the rectangle */
   color: #fff;
   border: none;
   padding: 130px 12px; /* Increase padding for a larger button */
@@ -351,46 +346,50 @@ body {
 
 /*  */
 /*  */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
+/* table */
+
+.table-responsive {
+  width: 95%;
+  overflow-x: auto;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  background-color: inherit;
+  -webkit-overflow-scrolling: touch;
 }
 
-table thead {
+table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background-color: inherit;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  table-layout: fixed; /* makes columns stretch */
+}
+
+th,
+td {
+  padding: 12px 0;
+  text-align: center;
+}
+
+thead {
   background: linear-gradient(90deg, #ff7f50, #ff4500);
   color: #fff;
-  text-align: left;
-  font-weight: bold;
 }
 
-table thead th {
-  padding: 12px 15px;
-}
-
-table tbody td {
-  padding: 12px 15px;
+tbody td {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-table tbody tr:hover {
-  background-color: rgba(255, 127, 80, 0.2);
-  transition: 0.3s;
-}
-
-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-table tbody tr:nth-child(even) {
+tbody tr:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.05);
 }
+
+tbody tr:hover {
+  background-color: rgba(255, 127, 80, 0.2);
+}
+/* table */
 
 /* news page */
 .content-text,
@@ -963,16 +962,9 @@ a {
   .news-content-main h4 {
     font-size: 22px;
   }
-  table th,
-  td {
-    font-size: 15px;
-    padding: 3px;
-  }
-  table {
-    border-collapse: separate; /* Important: allows border-radius to work */
-    border-spacing: 0; /* Removes space between cells */
-    border: 2px solid rgba(255, 255, 255, 0.541); /* Adds a border to the table */
-    border-radius: 10px; /* Rounds the corners of the table */
+
+  .table-responsive {
+    font-size: 12px;
   }
 
   .bottom-page {
@@ -1118,11 +1110,7 @@ a {
     font-size: 25px;
   }
 
-  table {
-    margin: 24px auto;
-  }
-  table th,
-  td {
+  .table-responsive {
     font-size: 19px;
   }
 
@@ -1287,9 +1275,8 @@ a {
     margin: 40px auto;
     padding: 20px 40px;
   }
-  table th,
-  td {
-    font-size: 25px;
+  .table-responsive {
+    font-size: 23px;
   }
 
   .slider {

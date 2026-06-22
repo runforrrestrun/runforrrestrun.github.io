@@ -246,12 +246,7 @@ body {
   transform: translateY(-60%);
   cursor: pointer;
   z-index: 1001;
-  background-color: rgba(
-    128,
-    0,
-    128,
-    0.4
-  ); /* Background color for the rectangle */
+  background-color: rgba(128, 0, 128, 0.4); /* Background color for the rectangle */
   color: #fff;
   border: none;
   padding: 120px 12px; /* Increase padding for a larger button */
@@ -351,45 +346,48 @@ body {
 /*  */
 /*  */
 /* page content */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   background-color: inherit;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  table-layout: fixed; /* makes columns stretch */
+  font-size: 23px;
 }
 
-table thead {
+th,
+td {
+  padding: 12px 0;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+thead {
   background: linear-gradient(90deg, #ff7f50, #ff4500);
   color: #fff;
-  text-align: left;
-  font-weight: bold;
 }
 
-table thead th {
-  padding: 12px 15px;
-}
-
-table tbody td {
-  padding: 12px 15px;
+tbody td {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-table tbody tr:hover {
-  background-color: rgba(255, 127, 80, 0.2);
-  transition: 0.3s;
-}
-
-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-table tbody tr:nth-child(even) {
+tbody tr:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 127, 80, 0.2);
 }
 /* review page */
 .missionU {
@@ -881,6 +879,9 @@ strong {
     border: 1px solid grey;
     border-radius: 10px;
   }
+  table {
+    font-size: 12px;
+  }
 }
 
 /* max mediaQuery content Low-Resolution Tablets and iPad  */
@@ -1004,7 +1005,11 @@ strong {
   .review-img img {
     width: 80%;
   }
+  table {
+    font-size: 19px;
+  }
 }
+
 /*   */
 
 /* max-mediaquwry content Tablets iPads (portrait mode) */
@@ -1156,6 +1161,9 @@ strong {
   }
   .review-img img {
     width: 80%;
+  }
+  table {
+    font-size: 23px;
   }
 }
 
