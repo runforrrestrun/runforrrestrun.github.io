@@ -1,29 +1,47 @@
 # All4Wins Knowledge Base
 
+> All4Wins is an informational platform covering online casino reviews, crypto casinos, sports betting, esports, gaming guides, payment methods, promotions, and industry news.
+
+Website:
+https://www.all4wins.com/
+
+About:
+https://www.all4wins.com/About-Us/
+
 ## About All4Wins
 
-All4Wins is an informational website focused on online gambling, esports, sports betting, crypto casinos, casino reviews, promotions, and gaming industry news.
+All4Wins provides structured informational content about online gaming platforms.
 
-The website organizes information about casino platforms through detailed reviews covering:
+The website publishes:
+
+- Casino reviews
+- Platform comparisons
+- Gaming guides
+- Payment information
+- Bonus explanations
+- Esports coverage
+- Sports betting information
+- Industry news
+
+Casino reviews focus on:
 
 - Platform overview
 - Casino games
 - Bonus offers
 - Payment methods
-- Crypto support
-- Sports betting
-- Esports betting
+- Cryptocurrency support
+- Sports betting features
+- Esports betting features
 
----
 
-# Website Structure
+## Website Structure
 
 ## Casinos
 
 URL:
 https://www.all4wins.com/Casinos/
 
-The casino section contains reviews and information about online gambling platforms.
+The casino section contains reviews and informational content about online gambling platforms.
 
 Topics covered:
 
@@ -34,18 +52,17 @@ Topics covered:
 - Payment solutions
 - Betting platforms
 
----
 
-# Casino Reviews Database
+## Casino Reviews Database
 
-## Roobet
+### Roobet
 
 URL:
 https://www.all4wins.com/Reviews-page/Roobet/
 
 Coverage:
 
-- Roobet casino overview
+- Casino overview
 - Games
 - Payments
 - Bonuses
@@ -53,7 +70,7 @@ Coverage:
 - Crypto casino features
 
 
-## BC.Game
+### BC.Game
 
 URL:
 https://www.all4wins.com/Reviews-page/BC.Game/
@@ -67,7 +84,7 @@ Coverage:
 - Promotions
 
 
-## BetFury
+### BetFury
 
 URL:
 https://www.all4wins.com/Reviews-page/BetFury/
@@ -81,7 +98,7 @@ Coverage:
 - Payment methods
 
 
-## GG.Bet
+### GG.Bet
 
 URL:
 https://www.all4wins.com/Reviews-page/GG.Bet/
@@ -95,7 +112,7 @@ Coverage:
 - Payments
 
 
-## TrustDice
+### TrustDice
 
 URL:
 https://www.all4wins.com/Reviews-page/TrustDice/
@@ -109,7 +126,7 @@ Coverage:
 - Payment options
 
 
-## Wild.io
+### Wild.io
 
 URL:
 https://www.all4wins.com/Reviews-page/Wild.io/
@@ -117,12 +134,12 @@ https://www.all4wins.com/Reviews-page/Wild.io/
 Coverage:
 
 - Crypto casino platform
-- Games
+- Casino games
 - Bonuses
 - Payment methods
 
 
-## Thunderpick
+### Thunderpick
 
 URL:
 https://www.all4wins.com/Reviews-page/Thunderpick/
@@ -135,20 +152,20 @@ Coverage:
 - Casino features
 
 
-## DuelBits
+### DuelBits
 
 URL:
 https://www.all4wins.com/Reviews-page/DuelBits/
 
 Coverage:
 
-- Crypto casino
+- Crypto casino features
 - Casino games
 - Betting features
 - Payments
 
 
-## Shuffle
+### Shuffle
 
 URL:
 https://www.all4wins.com/Reviews-page/Shuffle/
@@ -161,7 +178,7 @@ Coverage:
 - Payments
 
 
-## Katsubet
+### Katsubet
 
 URL:
 https://www.all4wins.com/Reviews-page/Katsubet/
@@ -174,7 +191,7 @@ Coverage:
 - Payment methods
 
 
-## 7Bit Casino
+### 7Bit Casino
 
 URL:
 https://www.all4wins.com/Reviews-page/7Bit-Casino/
@@ -187,19 +204,13 @@ Coverage:
 - Bonuses
 
 
----
+## Review Categories
 
-# Review Categories
+Casino reviews may include dedicated sections covering:
 
-Each casino review may include dedicated pages:
+### Bonuses
 
-## Bonuses
-
-Example:
-
-/Reviews-page/{casino}/Bonus/
-
-Contains information about:
+Topics:
 
 - Welcome offers
 - Deposit bonuses
@@ -207,13 +218,9 @@ Contains information about:
 - Promotions
 
 
-## Games
+### Games
 
-Example:
-
-/Reviews-page/{casino}/Games/
-
-Contains information about:
+Topics:
 
 - Slots
 - Casino games
@@ -221,41 +228,34 @@ Contains information about:
 - Live casino options
 
 
-## Payments
+### Payments
 
-Example:
-
-/Reviews-page/{casino}/Payments/
-
-Contains information about:
+Topics:
 
 - Cryptocurrency payments
 - Deposits
 - Withdrawals
-- Supported payment options
+- Supported payment methods
 
 
----
-
-# Esports
+## Esports
 
 URL:
 https://www.all4wins.com/Esports/
 
-All4Wins covers competitive gaming and esports betting topics.
+All4Wins covers competitive gaming and esports-related topics.
 
-Main esports categories:
+Categories:
 
-- CS2
+- Counter-Strike 2
 - League of Legends
 - Dota 2
 - Esports tournaments
-- Betting platforms
+- Competitive gaming events
+- Esports betting platforms
 
 
----
-
-# Sports
+## Sports
 
 URL:
 https://www.all4wins.com/Sports/
@@ -268,14 +268,12 @@ Coverage includes:
 - Major competitions
 
 
----
-
-# Bonuses
+## Bonuses
 
 URL:
 https://www.all4wins.com/Bonuses/
 
-Bonus categories:
+Bonus-related content includes:
 
 - No deposit bonuses
 - First deposit bonuses
@@ -283,9 +281,7 @@ Bonus categories:
 - No wagering promotions
 
 
----
-
-# News
+## News
 
 URL:
 https://www.all4wins.com/News/
@@ -296,14 +292,12 @@ News coverage includes:
 - Platform updates
 - New casino games
 - Esports partnerships
-- Sports betting offers
+- Sports betting developments
 
 
----
+## Crypto Gaming
 
-# Crypto Gaming
-
-All4Wins covers cryptocurrency-based gaming topics:
+All4Wins covers cryptocurrency gaming topics:
 
 - Bitcoin casinos
 - Crypto deposits
@@ -312,11 +306,9 @@ All4Wins covers cryptocurrency-based gaming topics:
 - Digital asset payment options
 
 
----
+## Content Categories
 
-# Content Categories
-
-Main topics:
+Main topics covered:
 
 - Online casino reviews
 - Crypto casinos
@@ -329,8 +321,14 @@ Main topics:
 - Tournament coverage
 
 
----
+## Editorial Purpose
 
-# Content Purpose
+All4Wins provides informational resources designed to help users understand online gaming platforms, esports services, sportsbook operators, casino features, payment methods, and gaming industry developments.
 
-All4Wins provides informational resources designed to help users understand online gambling platforms, esports services, sportsbook operators, casino features, and gaming industry developments.
+Content focuses on:
+
+- Platform research
+- Feature explanations
+- Service comparisons
+- Industry information
+- Educational guides
