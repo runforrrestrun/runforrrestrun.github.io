@@ -363,7 +363,7 @@ table {
   background-color: inherit;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   table-layout: fixed; /* makes columns stretch */
-  font-size: 23px;
+  font-size: 15px;
 }
 
 th,
@@ -376,10 +376,6 @@ td {
 thead {
   background: linear-gradient(90deg, #ff7f50, #ff4500);
   color: #fff;
-}
-
-tbody td {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 tbody tr:nth-child(even) {
@@ -1161,9 +1157,6 @@ strong {
   }
   .review-img img {
     width: 80%;
-  }
-  table {
-    font-size: 23px;
   }
 }
 
