@@ -13,6 +13,9 @@ URLS = {
     "ggbet": "https://gg.bet/promotions/all/bonuses",
     "bcgame": "https://bc.game/promotions/promotion",
     "betfury": "https://betfury.com/promo",
+    "roobet": "https://roobet.com/promotions",
+    "wazamba": "https://wazamba.com/ca/promotions/casino",
+    "shuffle": "https://shuffle.com/promotions",
 }
 
 BLOCK_HINTS = [
