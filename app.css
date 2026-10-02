@@ -1156,8 +1156,8 @@ tbody tr:hover {
 }
 .content-main p strong,
 .content-main em {
-  font-weight: 700;
-  color: white;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
@@ -2526,7 +2526,7 @@ tbody tr:hover {
   }
   .content-main ul li {
     margin: 10px 50px;
-    font-size: 25px;
+    
   }
   .missionU img {
     width: 60%;
