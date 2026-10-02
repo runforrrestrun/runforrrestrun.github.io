@@ -1060,7 +1060,7 @@ tbody tr:hover {
   width: 100%;
   min-width: 100px;
   font-weight: 700;
-  font-size: 23px;
+  font-size: 19px;
   justify-content: center;
   color: rgb(248, 250, 252);
 }
@@ -2057,7 +2057,7 @@ tbody tr:hover {
 
   .content-text h2,
   .content-main h2 {
-    font-size: 23px;
+    font-size: 25px;
     margin-top: 50px;
     margin-left: 10px;
     font-weight: 700;
@@ -2219,7 +2219,7 @@ tbody tr:hover {
     top: 24%;
   }
   .top-info h2 {
-    font-size: 35px;
+    font-size: 25px;
   }
   .img-box-top {
     position: absolute;
@@ -2352,7 +2352,7 @@ tbody tr:hover {
     flex-direction: row;
   }
   table {
-    font-size: 19px;
+    font-size: 18px;
   }
 }
 /*   */
@@ -2519,7 +2519,7 @@ tbody tr:hover {
   .content-text p,
   .content-main p,
   .content-main ul li p {
-    font-size: 25px;
+   
     position: relative;
     z-index: 10;
     margin: 10px 25px;
@@ -2534,7 +2534,7 @@ tbody tr:hover {
 
   .content-main h2 {
     margin-left: 10px;
-    font-size: 30px;
+    
   }
   .content-main h3 {
     font-size: 25px;
@@ -2704,9 +2704,7 @@ tbody tr:hover {
     display: block;
   }
 
-  .top-info p {
-    font-size: 25px;
-  }
+
 
   .best-rewards,
   .high-withdrawal {
@@ -2727,9 +2725,7 @@ tbody tr:hover {
     width: 25%;
     height: auto;
   }
-  table {
-    font-size: 23px;
-  }
+ 
 }
 
 /*  */
