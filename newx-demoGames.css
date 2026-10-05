@@ -522,7 +522,7 @@ tbody tr:hover {
   margin: 20px 0 20px 200px;
 }
 .news-box {
-  height: 550px;
+  height: 600px;
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -560,7 +560,7 @@ tbody tr:hover {
   box-sizing: border-box;
   border-bottom: 1px solid rgba(204, 201, 201, 0.733);
   width: 100%;
-  max-height: 300px;
+  max-height: 280px;
   object-fit: cover; /* Optional: adjusts how the image fits */
   height: auto;
 
@@ -581,7 +581,7 @@ tbody tr:hover {
   display: block;
   margin: 30px;
 }
-.news-button {
+/* .news-button {
   margin-top: auto;
 }
 .news-button button {
@@ -595,7 +595,59 @@ tbody tr:hover {
   border-radius: 10px;
   cursor: pointer;
   font-weight: 900;
+} */
+ /* test */
+ .news-button {
+  margin-top: 10px;
 }
+
+.news-button button {
+  position: relative;
+  overflow: hidden;
+
+  width: auto;
+  min-width: 125px;
+  height: 45px;
+  padding: 0 20px;
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.news-button button:hover {
+  transform: translateY(-2px) scale(1.03);
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 7px 18px rgba(34, 197, 94, 0.45),
+    0 0 20px rgba(34, 197, 94, 0.25);
+}
+
+.news-button button:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.news-button button:focus-visible {
+  outline: 3px solid rgba(34, 197, 94, 0.35);
+  outline-offset: 3px;
+}
+ /* test */
 .news-content h2 {
   color: white;
   margin: 0 0 5px 0;
@@ -688,7 +740,7 @@ a {
   color: white;
 }
 
-.claim-news-bonus {
+/* .claim-news-bonus {
   box-sizing: border-box;
   width: 100%;
   height: auto;
@@ -708,8 +760,127 @@ a {
   background-color: gold;
   border-radius: 10px;
   cursor: pointer;
+} */
+ /* test */
+ .claim-news-bonus {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
 }
 
+.claim-news-bonus a {
+  text-decoration: none;
+}
+
+.claim-news-bonus button {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  width: fit-content;
+  min-width: 130px;
+  height: 50px;
+  padding: 0 15px;
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(34, 197, 94, 0.35),
+    0 0 0 0 rgba(34, 197, 94, 0.4);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+
+  animation: claim-bonus-pulse 2.5s infinite;
+}
+
+/* Moving shine */
+.claim-news-bonus button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: claim-bonus-shine 3s infinite;
+}
+
+/* Hover */
+.claim-news-bonus button:hover {
+  transform: translateY(-2px) scale(1.03);
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 7px 18px rgba(34, 197, 94, 0.45),
+    0 0 20px rgba(34, 197, 94, 0.25);
+}
+
+/* Click */
+.claim-news-bonus button:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Shine animation */
+@keyframes claim-bonus-shine {
+  0% {
+    left: -100%;
+  }
+
+  40%,
+  100% {
+    left: 150%;
+  }
+}
+
+/* Pulse animation */
+@keyframes claim-bonus-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 4px 12px rgba(34, 197, 94, 0.35),
+      0 0 0 0 rgba(34, 197, 94, 0.35);
+  }
+
+  50% {
+    box-shadow:
+      0 5px 15px rgba(34, 197, 94, 0.4),
+      0 0 0 7px rgba(34, 197, 94, 0);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .claim-news-bonus button,
+  .claim-news-bonus button::before {
+    animation: none;
+  }
+}
+/* test */
 /* end of page */
 .bottom-page {
   display: flex;
@@ -937,11 +1108,11 @@ a {
     margin-top: 10px;
   }
 
-  .news-button button {
+  /* .news-button button {
     font-size: 25px;
     background-color: gold;
     border: 2px solid rgba(0, 0, 0, 0.788);
-  }
+  } */
 
   .news-content-main {
     width: 97%;
@@ -1130,10 +1301,10 @@ a {
     font-size: 19px;
     margin: 0;
   }
-  .news-button button {
+  /* .news-button button {
     font-size: 25px;
     margin-top: 15px;
-  }
+  } */
 
   .missionU {
     justify-content: center;

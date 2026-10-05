@@ -436,8 +436,9 @@ tbody tr:hover {
 .logo-box img {
   width: 100px;
   height: 100px;
+  border-radius: 10px;
 }
-.play-now {
+/* .play-now {
   display: flex;
   width: 110px;
   box-sizing: border-box;
@@ -451,11 +452,123 @@ tbody tr:hover {
   border-radius: 10px;
   font-size: 15px;
   font-family: inherit;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
   background-color: gold;
+  border: 3px solid black;
+} */
+/* test */
+.play-now {
+  display: flex;
+  width: 130px;
+  margin: 12px auto;
 }
 
+.play-now a {
+  width: 100%;
+  text-decoration: none;
+}
+
+.play-now button {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(34, 197, 94, 0.35),
+    0 0 0 0 rgba(34, 197, 94, 0.4);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+
+  animation: play-now-pulse 2.5s infinite;
+}
+
+/* Shine effect */
+.play-now button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+  animation: play-now-shine 3s infinite;
+}
+
+/* Hover */
+.play-now button:hover {
+  transform: translateY(-2px) scale(1.03);
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 7px 18px rgba(34, 197, 94, 0.45),
+    0 0 20px rgba(34, 197, 94, 0.25);
+}
+
+/* Click */
+.play-now button:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Shine movement */
+@keyframes play-now-shine {
+  0% {
+    left: -100%;
+  }
+
+  40%,
+  100% {
+    left: 150%;
+  }
+}
+
+/* Soft attention pulse */
+@keyframes play-now-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 4px 12px rgba(34, 197, 94, 0.35),
+      0 0 0 0 rgba(34, 197, 94, 0.35);
+  }
+
+  50% {
+    box-shadow:
+      0 5px 15px rgba(34, 197, 94, 0.4),
+      0 0 0 7px rgba(34, 197, 94, 0);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .play-now button,
+  .play-now button::before {
+    animation: none;
+  }
+}
+/* test */
 .tab-info {
   background-color: #000000;
   box-sizing: border-box;
@@ -906,14 +1019,14 @@ strong {
 
   .logo-box,
   .logo-box img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
   }
-  .play-now,
+  /* .play-now,
   .play-now button {
     width: 150px;
-    font-size: 25px;
-  }
+    font-size: 20px;
+  } */
   .tab-info {
     border-radius: 10px;
     justify-content: center;
