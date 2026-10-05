@@ -645,7 +645,7 @@ tbody tr:hover {
 
   border-radius: 10px;
 }
-.top-bonus {
+/* .top-bonus {
   width: fit-content;
 }
 .top-bonus span:hover {
@@ -667,9 +667,59 @@ tbody tr:hover {
   font-weight: 600;
   font-size: 20px;
   border-radius: 10px;
+} */
+/*  test*/
+.top-bonus {
+  width: fit-content;
 }
-/*  */
-/*  */
+
+.top-bonus span {
+  display: block;
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+  padding: 7px 14px;
+
+  text-align: center;
+  text-decoration: none;
+
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+
+  background: linear-gradient(135deg, #2e1065, #4c1d95);
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  box-shadow: 0 3px 8px rgba(76, 29, 149, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.top-bonus span:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+
+  box-shadow:
+    0 5px 12px rgba(76, 29, 149, 0.35),
+    0 0 12px rgba(124, 58, 237, 0.15);
+}
+
+.top-bonus span:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.top-bonus a {
+  text-decoration: none;
+}
+/* test */
 
 /* news slider */
 .news-slider-container {
@@ -1764,14 +1814,7 @@ tbody tr:hover {
     border: 0 solid black;
   }
   /* news esports img */
-  .top-right-image {
-    position: absolute;
-    top: -20px; /* Adjust as needed */
-    right: 0px; /* Adjust as needed */
-    width: 300px; /* Adjust width */
-
-    height: 250px; /* Maintain aspect ratio */
-  }
+  
   /* news sports img */
   .news-sports-img {
     display: none;
@@ -2067,7 +2110,7 @@ tbody tr:hover {
     position: absolute;
     top: 140px;
     left: 0px;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 500;
     width: 100%;
     margin: 0;
@@ -2080,11 +2123,11 @@ tbody tr:hover {
 
     position: absolute;
     margin: 0;
-    top: 205px;
-    left: 13px;
+    top: 195px;
+    left: 6px;
   }
   .top-bonus span {
-    font-size: 15px;
+    font-size: 11px;
     margin: 5px 10px;
   }
 
@@ -2249,11 +2292,7 @@ tbody tr:hover {
     width: 100%;
   }
   /* esports content-text img */
-  .content-img {
-    width: 350px;
-
-    top: -183px; /* Adjust as needed */
-  }
+  
   /* scports content-text img */
   .content-sports {
     width: 500px;
@@ -2313,8 +2352,8 @@ tbody tr:hover {
   }
   /* news esports img */
   .top-right-image {
-    top: 0px; /* Adjust as needed */
-    right: 5px; /* Adjust as needed */
+    top: 70px; /* Adjust as needed */
+    right: 400px; /* Adjust as needed */
     width: 400px; /* Adjust width */
     height: auto; /* Maintain aspect ratio */
   }
@@ -2442,11 +2481,7 @@ tbody tr:hover {
   }
 
   /* top3 sports img */
-  .roulette-top3-casino {
-    width: 350px;
-    left: 50%;
-    top: 24%;
-  }
+  
   .top-info h2 {
     font-size: 25px;
   }
@@ -2466,7 +2501,7 @@ tbody tr:hover {
   .content-top {
     position: absolute;
     top: 210px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     width: 95%;
     margin: 0 5px;
@@ -2479,12 +2514,13 @@ tbody tr:hover {
   .top-bonus {
     position: absolute;
     margin: 0;
-    top: 280px;
-    left: 28px;
+    top: 270px;
+    left: 20px;
   }
   .top-bonus span {
-    font-size: 20px;
+    font-size: 15px;
   }
+ 
   /* ods */
 
   .name-holder,
@@ -2724,6 +2760,7 @@ tbody tr:hover {
     position: absolute;
     height: auto;
     top: -230px; /* Adjust as needed */
+    left:710px;
   }
   /* scports content-text img */
   .content-sports {
@@ -2880,7 +2917,7 @@ tbody tr:hover {
   .content-top {
     position: absolute;
     top: 250px;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 500;
     width: 95%;
     margin: 0 5px;
@@ -2888,19 +2925,19 @@ tbody tr:hover {
     height: fit-content;
   }
   .top-bonus {
-    top: 335px;
-    left: 35px;
+    top: 315px;
+    left: 28px;
     font-size: 30px;
   }
   .top-bonus span {
-    font-size: 25px;
+    font-size: 20px;
   }
   /* top3 esports img */
   .top3img {
     display: block;
     width: 400px;
-    top: -90px; /* Adjust as needed */
-    left: 210px; /* Adjust as needed */
+    top: -100px; /* Adjust as needed */
+    left: 0px; /* Adjust as needed */
     /* Adjust width */
     /* Maintain aspect ratio */
     z-index: 10; /* Ensure it stays above other elements */
@@ -2918,8 +2955,8 @@ tbody tr:hover {
   .roulette-top3-casino {
     display: block;
     width: 300px;
-    left: 33%;
-    top: 16%;
+    left: 10%;
+    top:20%;
   }
   /* news slider img sports */
   .news-sports-img {
